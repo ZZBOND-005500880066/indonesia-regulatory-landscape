@@ -3,6 +3,17 @@
     {
       "date": "2026-07-17",
       "type": "模块优化",
+      "title": "P2P 板块同步商业银行优化",
+      "summary": "P2P 详情页改为全宽竞品对比，并为最新监管规定和法规索引补充可核验链接。",
+      "changes": [
+        "竞争对手板块新增生态型平台、现金贷平台、生产性融资三层判断。",
+        "SPinjam、Easycash、AdaKami、Kredit Pintar、Amartha、Modalku 和 JULO 改为可横向比较的表格字段。",
+        "最新监管规定和法规索引补充 BPK、OJK、peraturan.go.id 或相关报道链接；POJK 8/2026 暂以可核验报道作为跟踪入口。"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "type": "模块优化",
       "title": "Multi-Finance 板块同步商业银行优化",
       "summary": "Multi-Finance 详情页改为全宽竞品对比，并为最新监管规定和法规索引补充官方链接。",
       "changes": [

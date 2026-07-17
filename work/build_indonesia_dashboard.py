@@ -391,28 +391,136 @@ licenses = [
             "综合融资成本按融资类型和期限设定上限，约 0.1%-0.3% 每日。",
             "资金需通过 escrow 和监管认可流程隔离，平台需满足信用评估、数据保护、催收、消费者保护和监管数据接入要求。",
         ],
+        "competitorLens": [
+            {
+                "label": "第一层",
+                "title": "生态型平台决定获客效率",
+                "note": "SPinjam 依托 Shopee/ShopeePay 场景，核心不只是放款能力，而是交易数据、商户关系和复借入口。",
+            },
+            {
+                "label": "第二层",
+                "title": "现金贷平台决定风控和催收下限",
+                "note": "Easycash、AdaKami、Kredit Pintar 代表个人现金贷主流打法，重点看通过率、额度、复借、资金成本和逾期控制。",
+            },
+            {
+                "label": "第三层",
+                "title": "生产性融资决定监管友好度",
+                "note": "Amartha、Modalku 更接近 OJK 鼓励的生产性和 UMKM 融资方向，判断重点是借款人质量和机构资金协同。",
+            },
+        ],
         "competitors": [
-            {"name": "Lentera Dana Nusantara / SPinjam", "position": "Shopee 生态型平台", "signal": "嵌入 Shopee、ShopeePay，覆盖消费者、卖家和商户"},
-            {"name": "Easycash", "position": "独立消费现金贷平台", "signal": "累计放款 Rp98.27tn，2026 累计放款 Rp10.28tn"},
-            {"name": "AdaKami", "position": "FinVolution 背景个人无抵押现金贷款", "signal": "累计放款约 Rp73.86tn，最近单月放款约 Rp1.60tn"},
-            {"name": "Kredit Pintar", "position": "面向未充分服务人群的数字现金贷", "signal": "累计借款人 930 万，活跃借款人约 65 万"},
-            {"name": "Amartha", "position": "农村及基层女性微型企业融资", "signal": "累计服务超过 370 万 UMKM，覆盖逾 5 万个村庄"},
-            {"name": "Modalku", "position": "SME 营运资金、发票和订单融资", "signal": "累计放款约 Rp9.04tn，TKB90 99.20%"},
-            {"name": "JULO", "position": "数字循环额度和虚拟信用卡", "signal": "累计融资额超过 Rp27tn，覆盖约 328 万用户"},
+            {
+                "name": "Lentera Dana Nusantara / SPinjam",
+                "tier": "Shopee 生态型 P2P",
+                "scale": "嵌入 Shopee、ShopeePay，覆盖消费者、卖家和商户",
+                "position": "电商消费贷、卖家融资和生态内现金周转",
+                "edge": "平台交易数据、支付触点、商户关系和高频复借入口。",
+                "implication": "生态流量能显著降低获客成本；对标时应重点看场景闭环、用户留存和资产质量，而不是单纯注册量。",
+            },
+            {
+                "name": "Easycash",
+                "tier": "独立消费现金贷平台",
+                "scale": "累计放款 Rp98.27tn，2026 累计放款 Rp10.28tn",
+                "position": "个人现金贷和短期周转",
+                "edge": "大规模线上获客、快速审批和消费贷运营经验。",
+                "implication": "适合作为现金贷规模化样本；重点拆解资金成本、催收效率、复借率和监管费率上限下的利润空间。",
+            },
+            {
+                "name": "AdaKami",
+                "tier": "FinVolution 背景现金贷平台",
+                "scale": "累计放款约 Rp73.86tn，最近单月放款约 Rp1.60tn",
+                "position": "个人无抵押现金贷款",
+                "edge": "跨市场消费信贷经验、模型迭代和移动端放款能力。",
+                "implication": "对标重点是风控模型本地化、贷后投诉和监管声誉风险，不能只看放款增长。",
+            },
+            {
+                "name": "Kredit Pintar",
+                "tier": "未充分服务人群现金贷",
+                "scale": "累计借款人 930 万，活跃借款人约 65 万",
+                "position": "面向 underbanked 用户的数字现金贷",
+                "edge": "覆盖传统银行难服务客群，具备较大用户池和复借空间。",
+                "implication": "需要重点比较借款人收入验证、额度分层和逾期迁徙，避免以高风险客群换规模。",
+            },
+            {
+                "name": "Amartha",
+                "tier": "农村及女性 UMKM 融资",
+                "scale": "累计服务超过 370 万 UMKM，覆盖逾 5 万个村庄",
+                "position": "农村基层女性微型企业融资",
+                "edge": "线下社群、生产性融资定位和普惠金融叙事更强。",
+                "implication": "适合作为监管友好型生产性融资样本；核心是线下运营成本、借款人真实性和资金方稳定性。",
+            },
+            {
+                "name": "Modalku",
+                "tier": "SME 生产性融资平台",
+                "scale": "累计放款约 Rp9.04tn，TKB90 99.20%",
+                "position": "SME 营运资金、发票和订单融资",
+                "edge": "企业端场景、供应链数据和生产性融资定位。",
+                "implication": "若走企业端 P2P，应重点看应收账款真实性、核心企业关系和机构资金合作。",
+            },
+            {
+                "name": "JULO",
+                "tier": "数字循环额度和虚拟信用卡",
+                "scale": "累计融资额超过 Rp27tn，覆盖约 328 万用户",
+                "position": "循环额度、现金贷和虚拟信用卡",
+                "edge": "额度复用、App 触点和类信用卡产品体验。",
+                "implication": "可作为 P2P 向类信用账户演进的样本；重点看额度使用频率、账户生命周期和资金期限错配。",
+            },
         ],
         "latestRules": [
-            {"name": "Law No.4/2023", "note": "LPBBTI 上位法律基础，明确业务范围、法人形式、所有权、资本来源和许可。"},
-            {"name": "POJK No.40/2024", "note": "核心监管文件，覆盖股权、最低资本、净资产、融资限额、数据、催收和退出。"},
-            {"name": "SEOJK No.19/2025", "note": "借款人与资金方准入、信用评分、费用上限、合同、风险提示和资金流转。"},
-            {"name": "PADK No.38/2025", "note": "机构健康度监管，要求至少维持综合评级 3 级。"},
-            {"name": "POJK No.8/2026", "note": "融资交易日度数据报送及借款人信息查询机制。"},
+            {
+                "name": "Law No.4/2023",
+                "note": "LPBBTI 上位法律基础，明确业务范围、法人形式、所有权、资本来源和许可。",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/240203/uu-no-4-tahun-2023",
+            },
+            {
+                "name": "POJK No.40/2024",
+                "note": "核心监管文件，覆盖股权、最低资本、净资产、融资限额、数据、催收和退出。",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-40-tahun-2024",
+            },
+            {
+                "name": "SEOJK No.19/2025",
+                "note": "借款人与资金方准入、信用评分、费用上限、合同、风险提示和资金流转。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/SEOJK-19-SEOJK06-2025-Penyelenggaraan-LPBBTI.aspx",
+            },
+            {
+                "name": "PADK No.38/2025",
+                "note": "机构健康度监管，要求至少维持综合评级 3 级。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-38-PADK06-2025-Penilaian-Tingkat-Kesehatan-Penyelenggara-Layanan-Pendanaan-Bersama-Berbasis-Teknologi-Informasi.aspx",
+            },
+            {
+                "name": "POJK No.8/2026",
+                "note": "融资交易日度数据报送及借款人信息查询机制；当前使用可核验报道入口，待 OJK 原文页稳定后替换。",
+                "sourceUrl": "https://keuangan.kontan.co.id/news/ojk-terbitkan-pojk-82026-atur-pelaporan-data-transaksi-pendanaan-fintech-lending",
+            },
         ],
         "legalIndex": [
-            "Law No.4/2023 on Financial Sector Development and Strengthening",
-            "POJK No.40/2024 on LPBBTI",
-            "SEOJK No.19/2025 implementing provisions for LPBBTI",
-            "PADK No.38/2025 on LPBBTI health assessment",
-            "POJK No.8/2026 on transaction data reporting and borrower information mechanisms",
+            {
+                "name": "Law No.4/2023 on Financial Sector Development and Strengthening",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/240203/uu-no-4-tahun-2023",
+                "sourceLabel": "BPK / PDF",
+            },
+            {
+                "name": "POJK No.40/2024 on LPBBTI",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-40-tahun-2024",
+                "sourceLabel": "peraturan.go.id",
+                "sourceAltUrl": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/299_OJK_Regulation_Number_40_2024_concerning_Peer-to-Peer_Lending_Services_",
+                "sourceAltLabel": "OJK IRU",
+            },
+            {
+                "name": "SEOJK No.19/2025 implementing provisions for LPBBTI",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/SEOJK-19-SEOJK06-2025-Penyelenggaraan-LPBBTI.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "PADK No.38/2025 on LPBBTI health assessment",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-38-PADK06-2025-Penilaian-Tingkat-Kesehatan-Penyelenggara-Layanan-Pendanaan-Bersama-Berbasis-Teknologi-Informasi.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.8/2026 on transaction data reporting and borrower information mechanisms",
+                "sourceUrl": "https://keuangan.kontan.co.id/news/ojk-terbitkan-pojk-82026-atur-pelaporan-data-transaksi-pendanaan-fintech-lending",
+                "sourceLabel": "相关报道",
+            },
         ],
         "sourceDoc": "印尼P2P研究.pdf",
     },
@@ -750,6 +858,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "模块优化",
+        "title": "P2P 板块同步商业银行优化",
+        "summary": "P2P 详情页改为全宽竞品对比，并为最新监管规定和法规索引补充可核验链接。",
+        "changes": [
+            "竞争对手板块新增生态型平台、现金贷平台、生产性融资三层判断。",
+            "SPinjam、Easycash、AdaKami、Kredit Pintar、Amartha、Modalku 和 JULO 改为可横向比较的表格字段。",
+            "最新监管规定和法规索引补充 BPK、OJK、peraturan.go.id 或相关报道链接；POJK 8/2026 暂以可核验报道作为跟踪入口。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "模块优化",
@@ -2882,7 +3001,7 @@ html = f"""<!doctype html>
 
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
-      const wideCompetitorLayout = ["commercial-bank", "multi-finance"].includes(item.id);
+      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p"].includes(item.id);
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('home')">返回总览</button>
