@@ -1087,25 +1087,174 @@ licenses = [
             "原则上需在获得经营许可后三年内取得符合要求的信息安全管理国际标准认证。",
             "严重违规可能导致书面警告、暂停业务、最高 Rp1 billion 行政罚款、主要责任人不适格名单或撤销许可。",
         ],
+        "competitorLens": [
+            {
+                "label": "第一层",
+                "title": "综合金融超市看获客成本和交叉销售",
+                "note": "Cermati、CashCerdas、Pilih Kredit 的核心不是单一贷款产品，而是能否用比较入口沉淀用户并转化到多类金融产品。",
+            },
+            {
+                "label": "第二层",
+                "title": "按揭聚合看银行连接和申请完成率",
+                "note": "Ringkas、IDEAL 更接近高客单价贷款聚合，关键指标是合作银行数量、资料标准化、审批效率和放款转化率。",
+            },
+            {
+                "label": "第三层",
+                "title": "生态金融和存款聚合看场景控制力",
+                "note": "Yup、Komunal/DepositoBPR 不是纯贷款比较平台，但能说明支付、信用额度或 BPR 网络一旦绑定场景，聚合入口的议价能力会更强。",
+            },
+        ],
         "competitors": [
-            {"name": "Cermati", "position": "综合消费金融聚合平台", "signal": "信用卡、个人贷款、保险、投资、黄金和信用评分"},
-            {"name": "CashCerdas", "position": "纯线上贷款比较平台", "signal": "KTA、P2P、BPR 贷款和短期现金贷"},
-            {"name": "Pilih Kredit", "position": "贷款比较及申请导流", "signal": "消费贷、现金贷、教育贷和经营贷"},
-            {"name": "Ringkas", "position": "数字按揭基础设施", "signal": "连接 25 家以上银行，2025 年完成 USD 5.1m Pre-Series A"},
-            {"name": "IDEAL", "position": "一站式 KPR 平台", "signal": "新房、二手房、转按揭和多用途抵押贷款"},
-            {"name": "Yup", "position": "信用支付及消费金融生态", "signal": "信用额度、PayLater、Visa 信用卡和 QRIS 支付"},
-            {"name": "Komunal / DepositoBPR", "position": "BPR 存款聚合平台", "signal": "累计连接存款超过 Rp21 trillion，覆盖 350 家以上 BPR"},
+            {
+                "name": "Cermati",
+                "tier": "综合消费金融聚合平台",
+                "scale": "覆盖信用卡、个人贷款、保险、投资、黄金和信用评分，更接近全品类金融超市",
+                "position": "信用卡、个人贷款、保险、投资和信用评分",
+                "edge": "产品线最宽，能用流量入口做交叉销售和用户生命周期管理。",
+                "implication": "适合作为 PAJK/聚合平台上限样本；进入时要重点看获客成本、复购、交叉销售和金融机构合作深度。",
+            },
+            {
+                "name": "CashCerdas",
+                "tier": "线上贷款比较平台",
+                "scale": "垂直贷款导流平台，覆盖 KTA、P2P、BPR 贷款和短期现金贷",
+                "position": "个人无抵押贷款、P2P、BPR 贷款和短期现金需求",
+                "edge": "产品聚焦，用户意图明确，适合做贷款申请前端和 lead 分发。",
+                "implication": "对标重点是流量质量、申请表单完成率、合作贷款机构质量和合规披露，而不是单纯页面访问量。",
+            },
+            {
+                "name": "Pilih Kredit",
+                "tier": "贷款比较及申请导流",
+                "scale": "覆盖消费贷、现金贷、教育贷和经营贷等多类贷款需求",
+                "position": "多类型贷款比较、申请导流和借款人筛选",
+                "edge": "贷款品类覆盖较宽，能承接不同额度、期限和用途的借款需求。",
+                "implication": "如果做轻资产导流，关键是把合作金融机构、产品条件和借款人画像匹配得足够准确。",
+            },
+            {
+                "name": "Ringkas",
+                "tier": "数字按揭基础设施",
+                "scale": "连接 25 家以上银行，2025 年完成 USD 5.1m Pre-Series A",
+                "position": "KPR 按揭预审、银行连接、开发商/购房场景",
+                "edge": "把按揭申请资料、银行预审和房产交易场景连接起来，客单价高、链路长。",
+                "implication": "高价值贷款聚合应重点看审批链路数字化、银行覆盖和开发商/中介入口，而不是只看贷款产品数量。",
+            },
+            {
+                "name": "IDEAL",
+                "tier": "一站式 KPR 平台",
+                "scale": "覆盖新房、二手房、转按揭和多用途抵押贷款",
+                "position": "房贷、转按揭、抵押贷款和购房金融流程",
+                "edge": "围绕房产交易做端到端服务，能提升用户资料准备和贷款审批效率。",
+                "implication": "适合作为垂直场景聚合样本；判断重点是金融合作方、房源/开发商触点和实际放款转化。",
+            },
+            {
+                "name": "Yup",
+                "tier": "信用支付及消费金融生态",
+                "scale": "信用额度、PayLater、Visa 信用卡和 QRIS 支付组合",
+                "position": "消费信用、支付场景和循环额度",
+                "edge": "通过支付和信用额度提高日常使用频次，和纯导流平台相比更容易沉淀交易数据。",
+                "implication": "如果 Loan Aggregator 想提高留存，需要考虑是否只是导流，还是能接入支付、额度或会员场景。",
+            },
+            {
+                "name": "Komunal / DepositoBPR",
+                "tier": "BPR 网络聚合平台",
+                "scale": "累计连接存款超过 Rp21 trillion，覆盖 350 家以上 BPR",
+                "position": "BPR 存款聚合、BPR 网络连接和区域金融机构分发",
+                "edge": "掌握大量 BPR 合作关系，说明区域金融机构网络本身可以成为聚合入口。",
+                "implication": "虽然不是贷款聚合的直接同类，但对进入 BPR 贷款/存款生态有参考价值，重点看机构网络和合规合作协议。",
+            },
         ],
         "latestRules": [
-            {"name": "POJK 4/2025", "note": "PAJK 从旧注册和沙盒模式转向正式经营许可制度。"},
-            {"name": "过渡期要求", "note": "原已注册 Aggregator、Financing Agent、Funding Agent 和 Wealthtech 最迟于 2026-02-26 提交经营许可申请。"},
-            {"name": "PSE/ESO 登记", "note": "取得 PAJK 后仍需完成电子系统运营者登记，才能正式开展服务。"},
+            {
+                "name": "POJK No.4/2025",
+                "note": "PAJK 从旧注册和沙盒模式转向正式经营许可制度，明确金融服务聚合商的准入、资本、外资、合作金融机构、数据和信息安全要求。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-4-2025-Penyelenggara-Agregasi-Jasa-Keuangan.aspx",
+            },
+            {
+                "name": "POJK No.16/2025",
+                "note": "ITSK、数字金融资产和加密资产主要方适格性测试规则，影响 PAJK 控股股东、董事、监事和关键方的资格审查。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-16-Tahun-2025-Penilaian-Kemampuan-dan-Kepatutan-serta-Penilaian-Kembali-bagi-Pihak-Utama-di-Sektor-ITSK-AKD.aspx",
+            },
+            {
+                "name": "POJK No.30/2025",
+                "note": "ITSK 经营者治理和风险管理规则，自 2026-07-01 起生效，并替代/调整 POJK 4/2025 中部分治理和风险管理要求。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+            },
+            {
+                "name": "POJK No.3/2024",
+                "note": "ITSK 总框架，覆盖 sandbox、注册、许可、监测评估、消费者保护、个人数据保护和第三方支持活动。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-3-2024-Penyelenggaraan-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+            },
+            {
+                "name": "SEOJK No.4/SEOJK.07/2025",
+                "note": "已取得经营许可的 ITSK 经营者报告规则，PAJK 取得许可后需要关注定期报告、经营数据和监管留痕。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/SEOJK-4SEOJK072025-Pelaporan-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan-Yang-Memiliki-Izin-Usaha-di-OJK.aspx",
+            },
+            {
+                "name": "PSE/ESO 登记要求",
+                "note": "取得 PAJK 许可后，线上平台仍需完成电子系统运营者登记，并按 Komdigi 规则管理电子系统、数据和安全事件。",
+                "sourceUrl": "https://jdih.komdigi.go.id/produk_hukum/view/id/759/t/peraturan+menteri+komunikasi+dan+informatika+nomor+5+tahun+2020",
+            },
         ],
         "legalIndex": [
-            "POJK 4/2025 on Penyelenggara Agregasi Jasa Keuangan",
-            "PAJK cooperation agreement requirements",
-            "Personal data protection and electronic system operator registration requirements",
-            "OJK SPRINT licensing process",
+            {
+                "name": "POJK No.4/2025 on Penyelenggara Agregasi Jasa Keuangan",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-4-2025-Penyelenggara-Agregasi-Jasa-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/294_OJK_Regulation_Number_4_2025_concerning_Providers_of_Financial_Services_Aggregations",
+                "sourceAltLabel": "OJK IRU",
+            },
+            {
+                "name": "POJK No.16/2025 on Fit and Proper Test for ITSK Key Parties",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-16-Tahun-2025-Penilaian-Kemampuan-dan-Kepatutan-serta-Penilaian-Kembali-bagi-Pihak-Utama-di-Sektor-ITSK-AKD.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/943_POJK_Number_16_2025_concerning_Fit_and_Proper_Test_and_Reassessments_for_Key_Parties_in_Financial_Sector_Technological_Innovation%2C_Digital_Financial_Assets_and_Crypto_Assets",
+                "sourceAltLabel": "OJK IRU",
+            },
+            {
+                "name": "POJK No.30/2025 on Governance and Risk Management for ITSK Providers",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-Terbitkan-Aturan-Perkuat-Tata-Kelola-dan-Manajemen-Risiko-Inovasi-Teknologi-Sektor-Keuangan-Serta-Aset-Keuangan-Digital.aspx",
+                "sourceAltLabel": "OJK Press",
+            },
+            {
+                "name": "POJK No.3/2024 on Financial Sector Technology Innovation",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-3-2024-Penyelenggaraan-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/301678/peraturan-ojk-no-3-tahun-2024",
+                "sourceAltLabel": "BPK",
+            },
+            {
+                "name": "SEOJK No.4/SEOJK.07/2025 on Reporting for Licensed ITSK Providers",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/SEOJK-4SEOJK072025-Pelaporan-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan-Yang-Memiliki-Izin-Usaha-di-OJK.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "SEOJK No.7/SEOJK.07/2024 on Reporting for Registered ITSK Providers",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Pelaporan-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan-yang-Terdaftar-di-Otoritas-Jasa-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.22/2023 on Consumer and Public Protection",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Pelindungan-Konsumen-dan-Masyarakat-di-Sektor-Jasa-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/302699/peraturan-ojk-no-22-tahun-2023",
+                "sourceAltLabel": "BPK",
+            },
+            {
+                "name": "Law No.27/2022 on Personal Data Protection",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
+                "sourceLabel": "BPK / PDF",
+            },
+            {
+                "name": "Kominfo Regulation No.5/2020 on Private Electronic System Operators",
+                "sourceUrl": "https://jdih.komdigi.go.id/produk_hukum/view/id/759/t/peraturan+menteri+komunikasi+dan+informatika+nomor+5+tahun+2020",
+                "sourceLabel": "Komdigi JDIH",
+            },
+            {
+                "name": "OJK SPRINT licensing portal",
+                "sourceUrl": "https://sprint.ojk.go.id/",
+                "sourceLabel": "OJK SPRINT",
+            },
         ],
         "sourceDoc": "印尼Loan Aggregator研究_202607.pdf",
     },
@@ -1239,6 +1388,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "模块优化",
+        "title": "Loan Aggregator 板块同步横向对比和法规链接",
+        "summary": "Loan Aggregator/PAJK 详情页改为全宽竞品对比，并补充 PAJK、ITSK、PSE 和个人数据保护相关法规来源。",
+        "changes": [
+            "竞争对手板块新增综合金融超市、按揭聚合、生态金融和存款聚合三层判断。",
+            "Cermati、CashCerdas、Pilih Kredit、Ringkas、IDEAL、Yup 和 Komunal/DepositoBPR 改为可横向比较字段。",
+            "最新监管规定和法规索引补充 POJK 4/2025、POJK 16/2025、POJK 30/2025、POJK 3/2024、SEOJK 4/2025、PSE 登记和个人数据保护链接。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "模块优化",
@@ -3437,7 +3597,7 @@ html = f"""<!doctype html>
 
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
-      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp", "bpr", "ics"].includes(item.id);
+      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp", "bpr", "ics", "loan-aggregator"].includes(item.id);
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('home')">返回总览</button>
