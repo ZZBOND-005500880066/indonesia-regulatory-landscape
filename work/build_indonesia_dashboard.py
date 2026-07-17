@@ -576,11 +576,11 @@ developer_log = [
         "date": "2026-07-17",
         "type": "版式优化",
         "title": "商业银行竞争对手改为全宽对比",
-        "summary": "商业银行详情页将竞争对手横向对比表扩展到主内容全宽，并把最新监管规定、法规索引和来源文件移到下方，减少桌面端横向滚动。",
+        "summary": "商业银行详情页将竞争对手横向对比表扩展到主内容全宽，并把最新监管规定和法规索引移到下方，减少桌面端横向滚动。",
         "changes": [
             "商业银行详情页取消右侧栏占位，让竞争对手对比表获得完整页面宽度。",
             "最新监管规定和法规索引改为竞争对手板块下方的双列信息区。",
-            "移动端保留横向滚动兜底，避免五列表格被压缩到不可读。",
+            "页面只保留业务阅读所需信息，移动端保留横向滚动兜底，避免五列表格被压缩到不可读。",
         ],
     },
     {
@@ -847,6 +847,11 @@ embedded_history_snapshot = load_json_snapshot(
     fallback=embedded_update_snapshot,
 )
 embedded_history_snapshot = enrich_published_dates(embedded_history_snapshot)
+
+public_licenses = [
+    {key: value for key, value in item.items() if key != "sourceDoc"}
+    for item in licenses
+]
 
 
 html = f"""<!doctype html>
@@ -1796,10 +1801,6 @@ html = f"""<!doctype html>
       gap: 18px;
     }}
 
-    .reference-grid .source-box {{
-      grid-column: 1 / -1;
-    }}
-
     .aside-box {{
       padding: 15px;
       border: 1px solid var(--line);
@@ -2104,7 +2105,6 @@ html = f"""<!doctype html>
       .map-grid, .license-grid, .quick-metrics, .two-col, .competitor-grid, .briefing-grid, .source-list, .module-hub, .reference-grid {{
         grid-template-columns: 1fr;
       }}
-      .reference-grid .source-box {{ grid-column: auto; }}
       .detail-layout-wide .competitor-table {{ min-width: 900px; }}
       .home-dynamic-strip {{ grid-auto-columns: minmax(260px, 86vw); }}
       .regulator-summary {{ grid-template-columns: 1fr; }}
@@ -2247,7 +2247,7 @@ html = f"""<!doctype html>
   </div>
 
   <script>
-    const LICENSES = {json.dumps(licenses, ensure_ascii=False)};
+    const LICENSES = {json.dumps(public_licenses, ensure_ascii=False)};
     const REGULATORS = {json.dumps(regulator_map, ensure_ascii=False)};
     const SOURCES = {json.dumps(sources, ensure_ascii=False)};
     const BUILT_IN_BRIEFINGS = {json.dumps(regulatory_briefings, ensure_ascii=False)};
@@ -2591,10 +2591,6 @@ html = f"""<!doctype html>
           <div class="aside-box">
             <h3>法规索引</h3>
             ${{arrayList(item.legalIndex)}}
-          </div>
-          <div class="aside-box source-box">
-            <h3>来源文件</h3>
-            <p>${{esc(item.sourceDoc)}}</p>
           </div>
         </${{wrapperTag}}>
       `;
