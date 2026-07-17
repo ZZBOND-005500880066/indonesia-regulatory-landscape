@@ -2,6 +2,17 @@
   "entries": [
     {
       "date": "2026-07-17",
+      "type": "模块优化",
+      "title": "BPR 板块同步横向对比和法规链接",
+      "summary": "BPR 详情页改为全宽竞品对比，并补充 BPR/BPRS 最新监管规定和法规索引来源。",
+      "changes": [
+        "竞争对手板块新增 BPR+Fintech、传统头部 BPR、支付合作三层判断。",
+        "Komunal/DepositoBPR、Alami/Bank Hijra、Bank Eka、BPR Lestari、BPR BK Jateng 和 BPR Karyajatnika Sadaya 改为可横向比较字段。",
+        "最新监管规定和法规索引补充 POJK 7/2024、POJK 26/2024、POJK 23/2024、POJK 1/2024、POJK 23/2022 与 P2SK 修正法链接。"
+      ]
+    },
+    {
+      "date": "2026-07-17",
       "type": "文案修正",
       "title": "修正 PJP 业务范围展示口径",
       "summary": "将 PJP 详情页业务范围中的“活动包 1/2/3”改为更符合页面阅读习惯的“PJP 1/2/3”。",

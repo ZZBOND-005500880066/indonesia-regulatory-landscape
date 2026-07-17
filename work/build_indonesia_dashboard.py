@@ -749,24 +749,147 @@ licenses = [
             "关联方贷款不得超过资本金 10%，非关联方单一主体不得超过 20%，集团授信不得超过 30%。",
             "线下网点原则上须与总部在同一省内，大雅加达地区视作一个省份。",
         ],
+        "competitorLens": [
+            {
+                "label": "第一层",
+                "title": "BPR + Fintech 组合决定数字化上限",
+                "note": "Komunal 和 Alami/Bank Hijra 的重点不是单一 BPR 体量，而是把 BPR 存款、P2P/channeling 和线上获客组合起来。",
+            },
+            {
+                "label": "第二层",
+                "title": "传统头部 BPR 决定区域银行基本盘",
+                "note": "Bank Eka、BPR Lestari 更适合观察区域客户、存贷款产品、线下关系和移动端改造能力。",
+            },
+            {
+                "label": "第三层",
+                "title": "支付合作决定产品体验边界",
+                "note": "BPR 自身不能做支付，但 BPR BK Jateng、BPR Karyajatnika Sadaya 这类案例能观察第三方支付合作如何补齐体验。",
+            },
+        ],
         "competitors": [
-            {"name": "Komunal / DepositoBPR", "position": "本土 Fintech，拥有 BPR 与 P2P 牌照", "signal": "定期存款 marketplace，BPR 存款引流，P2P 项目 channeling"},
-            {"name": "Alami / Bank Hijra", "position": "数字化伊斯兰 BPR", "signal": "收购 BPRS Cempaka Al-Amin 后形成 Bank Hijra"},
-            {"name": "Bank Eka", "position": "传统头部 BPR 数字化", "signal": "Eka Mobile 和 Eka Pay，支付体验通过第三方持牌方合作"},
-            {"name": "BPR Lestari", "position": "本土 BPR", "signal": "存贷款手机服务，消费、经营、房产和车贷"},
-            {"name": "BPR BK Jateng", "position": "区域整合 BPR", "signal": "K-eris 支付体验由第三方 Spedcash 支持"},
-            {"name": "BPR Karyajatnika Sadaya", "position": "数字化 BPR", "signal": "材料显示 2025 年 1 月获 QRIS 支付功能"},
+            {
+                "name": "Komunal / DepositoBPR",
+                "tier": "BPR + P2P + 存款 marketplace",
+                "scale": "材料口径显示连接存款超过 Rp21tn，覆盖 350 家以上 BPR",
+                "position": "BPR 定期存款分发、BPR 存款引流、P2P 项目 channeling",
+                "edge": "把分散 BPR 存款和线上用户入口连接起来，弱化单家 BPR 网点半径限制。",
+                "implication": "若走 BPR 数字化路线，最值得研究的是存款 marketplace、BPR 资金成本和 channeling 资产质量。",
+            },
+            {
+                "name": "Alami / Bank Hijra",
+                "tier": "伊斯兰数字化 BPRS",
+                "scale": "收购 BPRS Cempaka Al-Amin 后形成 Bank Hijra",
+                "position": "伊斯兰小微融资、数字存款和 BPRS 线上化",
+                "edge": "伊斯兰金融品牌、数字化入口和 BPRS 牌照组合更清晰。",
+                "implication": "适合作为 BPR/BPRS 收购后重塑品牌和线上产品的样本；重点看宗教金融定位、客户获取和资产端承接。",
+            },
+            {
+                "name": "Bank Eka",
+                "tier": "传统头部 BPR 数字化",
+                "scale": "Eka Mobile 和 Eka Pay，支付体验通过第三方持牌方合作",
+                "position": "区域存贷款、移动端服务和第三方支付合作",
+                "edge": "传统 BPR 客户关系和移动端服务结合，产品更接近区域银行数字化。",
+                "implication": "对标重点是线下客户迁移、移动端活跃度和合作支付方带来的体验改善。",
+            },
+            {
+                "name": "BPR Lestari",
+                "tier": "本土区域型 BPR",
+                "scale": "提供存贷款手机服务，覆盖消费、经营、房产和车贷",
+                "position": "区域零售银行、消费贷、经营贷和抵押类贷款",
+                "edge": "区域品牌、线下关系和较完整的零售贷款产品组合。",
+                "implication": "更适合作为传统 BPR 收购后的业务基本盘样本；重点看存款稳定性、抵押品管理和区域集中度。",
+            },
+            {
+                "name": "BPR BK Jateng",
+                "tier": "区域整合 BPR",
+                "scale": "K-eris 支付体验由第三方 Spedcash 支持",
+                "position": "地方性 BPR 服务、区域整合和支付体验补齐",
+                "edge": "区域公共属性、整合资源和第三方支付合作空间。",
+                "implication": "适合观察 BPR 不能直接做支付时，如何通过合作方实现类钱包或缴费体验。",
+            },
+            {
+                "name": "BPR Karyajatnika Sadaya",
+                "tier": "数字化 BPR / QRIS 合作样本",
+                "scale": "材料显示 2025 年 1 月获 QRIS 支付功能",
+                "position": "BPR 存贷款与二维码支付体验结合",
+                "edge": "在 BPR 牌照边界内通过合作方式补齐支付触点。",
+                "implication": "应重点核查 QRIS 功能背后的持牌合作结构，确认 BPR 自身未越界经营支付业务。",
+            },
         ],
         "latestRules": [
-            {"name": "POJK 7/2024", "note": "规范 BPR 与 BPR Sharia，放宽股东定义，为外资通过印尼法律实体进入留下空间。"},
-            {"name": "POJK 23/2022", "note": "BPR/BPRS 信贷限额相关规则，材料附录包含 BMPK/BMPD 条文。"},
-            {"name": "Law No.4/2023", "note": "P2SK Law 中包含 BPR 可从事资金转化和同业存放等基础内容。"},
+            {
+                "name": "POJK No.7/2024",
+                "note": "BPR/BPRS 新基础规则，覆盖名称变更、设立、资本、股东、董事监事、高管、网点、合并收购和撤销许可。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-7-Tahun-2024-Bank-Perekonomian-Rakyat-dan-Bank-Perekonomian-Rakyat-Syariah.aspx",
+            },
+            {
+                "name": "POJK No.26/2024",
+                "note": "扩大银行业务活动，明确 BPR/BPRS 可对支持性机构进行一定范围的资本参与，并涉及债权转让等扩展事项。",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/323229/peraturan-ojk-no-26-tahun-2024",
+            },
+            {
+                "name": "POJK No.23/2024",
+                "note": "BPR/BPRS 通过 OJK 报告系统提交报告，并更新透明度和公开披露要求。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-23-Tahun-2024-Pelaporan-Melalui-Sistem-Pelaporan-OJK-dan-Transparansi-Kondisi-Keuangan-Bagi-BPR-dan-BPRS.aspx",
+            },
+            {
+                "name": "POJK No.1/2024",
+                "note": "BPR 资产质量规则，影响贷款分类、重组、拨备和资产质量监测。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Kualitas-Aset-Bank-Perekonomian-Rakyat.aspx",
+            },
+            {
+                "name": "POJK No.23/2022",
+                "note": "BPR/BPRS 信贷和资金投放限额规则，覆盖关联方、单一借款人、集团借款人和银行间资金放置。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Batas-Maksimum-Pemberian-Kredit-Bank-Perkreditan-Rakyat-dan-Batas-Maksimum-Penyaluran-Dana-Bank-Pembiayaan-Rakyat-Syariah.aspx",
+            },
+            {
+                "name": "Law No.4/2023 / Law No.4/2026",
+                "note": "P2SK 上位法及 2026 年修正法，构成 BPR/BPRS 新监管框架的法律基础。",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/350166/uu-no-4-tahun-2026",
+            },
         ],
         "legalIndex": [
-            "POJK 7 Tahun 2024 Bank Perekonomian Rakyat dan Bank Perekonomian Rakyat Syariah",
-            "Peraturan OJK No.62 Tahun 2020, old BPR/BPRS rule",
-            "POJK 23 Tahun 2022 on BMPK BPR and BMPD BPRS",
-            "Law No.4/2023 on Financial Sector Development and Strengthening",
+            {
+                "name": "POJK No.7/2024 on Bank Perekonomian Rakyat and Bank Perekonomian Rakyat Syariah",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-7-Tahun-2024-Bank-Perekonomian-Rakyat-dan-Bank-Perekonomian-Rakyat-Syariah.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/301695/peraturan-ojk-no-7-tahun-2024",
+                "sourceAltLabel": "BPK",
+            },
+            {
+                "name": "POJK No.26/2024 on Expansion of Banking Business Activities",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/323229/peraturan-ojk-no-26-tahun-2024",
+                "sourceLabel": "BPK / PDF",
+                "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-26-Tahun-2024-Perluasan-Kegiatan-Usaha-Perbankan.aspx",
+                "sourceAltLabel": "OJK",
+            },
+            {
+                "name": "POJK No.23/2024 on OJK Reporting System and Financial Transparency for BPR/BPRS",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-23-Tahun-2024-Pelaporan-Melalui-Sistem-Pelaporan-OJK-dan-Transparansi-Kondisi-Keuangan-Bagi-BPR-dan-BPRS.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.1/2024 on BPR Asset Quality",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Kualitas-Aset-Bank-Perekonomian-Rakyat.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.23/2022 on BMPK BPR and BMPD BPRS",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Batas-Maksimum-Pemberian-Kredit-Bank-Perkreditan-Rakyat-dan-Batas-Maksimum-Penyaluran-Dana-Bank-Pembiayaan-Rakyat-Syariah.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.62/POJK.03/2020 old BPR rule, revoked by POJK No.7/2024",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/227097/peraturan-ojk-no-",
+                "sourceLabel": "BPK / revoked",
+            },
+            {
+                "name": "Law No.4/2023 on Financial Sector Development and Strengthening",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/240203/uu-no-4-tahun-2023",
+                "sourceLabel": "BPK / PDF",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/350166/uu-no-4-tahun-2026",
+                "sourceAltLabel": "UU 4/2026 amendment",
+            },
         ],
         "sourceDoc": "印尼BPR（村镇银行）收购_202602_副本.pdf",
     },
@@ -1002,6 +1125,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "模块优化",
+        "title": "BPR 板块同步横向对比和法规链接",
+        "summary": "BPR 详情页改为全宽竞品对比，并补充 BPR/BPRS 最新监管规定和法规索引来源。",
+        "changes": [
+            "竞争对手板块新增 BPR+Fintech、传统头部 BPR、支付合作三层判断。",
+            "Komunal/DepositoBPR、Alami/Bank Hijra、Bank Eka、BPR Lestari、BPR BK Jateng 和 BPR Karyajatnika Sadaya 改为可横向比较字段。",
+            "最新监管规定和法规索引补充 POJK 7/2024、POJK 26/2024、POJK 23/2024、POJK 1/2024、POJK 23/2022 与 P2SK 修正法链接。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "文案修正",
@@ -3178,7 +3312,7 @@ html = f"""<!doctype html>
 
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
-      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp"].includes(item.id);
+      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp", "bpr"].includes(item.id);
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('home')">返回总览</button>
