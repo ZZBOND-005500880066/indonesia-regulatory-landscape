@@ -1390,6 +1390,17 @@ regulatory_briefings = [
 developer_log = [
     {
         "date": "2026-07-17",
+        "type": "模块精简",
+        "title": "删除横向对比模块",
+        "summary": "移除独立的横向对比模块，牌照之间的比较入口改为通过牌照库和各详情页阅读。",
+        "changes": [
+            "首页模块入口删除“横向对比”卡片。",
+            "移动端模块导航删除“横向对比”选项。",
+            "删除牌照横向对比页面和矩阵渲染逻辑，旧 compare 路由不再进入空白页。",
+        ],
+    },
+    {
+        "date": "2026-07-17",
         "type": "交互优化",
         "title": "牌照库模块统一命名和返回逻辑",
         "summary": "将牌照模块标题统一为“牌照库”，移除无实际筛选价值的分类按钮，并让牌照详情页返回牌照库。",
@@ -3136,10 +3147,6 @@ html = f"""<!doctype html>
                 <div><strong>牌照库</strong><p>从七类核心牌照进入子页面，查看资本、外资、业务范围和限制。</p></div>
                 <span class="tag">7 Licenses</span>
               </a>
-              <a class="module-card" href="#module/compare">
-                <div><strong>横向对比</strong><p>快速比较监管机构、最低资本、外资控制和玩家存量。</p></div>
-                <span class="tag">Matrix</span>
-              </a>
               <a class="module-card" href="#module/updates">
                 <div><strong>监管动态历史</strong><p>回看每日联网检索生成的监管动态简报和来源链接。</p></div>
                 <span class="tag">Daily</span>
@@ -3191,19 +3198,6 @@ html = f"""<!doctype html>
             </div>
           </div>
           <div class="license-grid" id="licenseGrid"></div>
-        </section>
-
-        <section id="module-compare" class="section module-page" data-module-page="compare">
-          <div class="module-kicker"><button class="btn" onclick="setRoute('home')">返回模块首页</button></div>
-          <div class="section-header">
-            <div>
-              <h3>牌照横向对比</h3>
-              <p>先从监管机构、资本、外资和存量数量判断进入路径，再进入各子页面看细项。</p>
-            </div>
-          </div>
-          <div class="matrix-wrap">
-            <table id="licenseMatrix"></table>
-          </div>
         </section>
 
         <section id="module-updates" class="section module-page" data-module-page="updates">
@@ -3274,10 +3268,11 @@ html = f"""<!doctype html>
     function currentRoute() {{
       const hash = decodeURIComponent(location.hash.replace(/^#/, ""));
       if (!hash || hash === "home") return {{ page: "home" }};
-      const legacyModules = {{ regulators: "regulators", licenses: "licenses", sources: "updates", developerLog: "developer-log", compare: "compare" }};
+      const validModules = new Set(["regulators", "licenses", "updates", "developer-log"]);
+      const legacyModules = {{ regulators: "regulators", licenses: "licenses", sources: "updates", developerLog: "developer-log" }};
       if (legacyModules[hash]) return {{ page: "module", id: legacyModules[hash] }};
       const moduleMatch = hash.match(/^module\\/(.+)$/);
-      if (moduleMatch) return {{ page: "module", id: moduleMatch[1] }};
+      if (moduleMatch && validModules.has(moduleMatch[1])) return {{ page: "module", id: moduleMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -3287,7 +3282,6 @@ html = f"""<!doctype html>
       const moduleOptions = [
         ["regulators", "监管结构"],
         ["licenses", "牌照库"],
-        ["compare", "横向对比"],
         ["updates", "监管动态"],
         ["developer-log", "开发者日志"],
       ];
@@ -3375,21 +3369,6 @@ html = f"""<!doctype html>
     function shortCapital(text) {{
       const match = String(text).match(/Rp[0-9.,\\s-]+(?:trillion|billion|million)?|IDR\\s?[0-9.,]+\\s?billion/i);
       return match ? match[0].replace(/\\s+/g, " ") : "资本见详情";
-    }}
-
-    function renderMatrix() {{
-      qs("#licenseMatrix").innerHTML = `
-        <thead><tr><th>牌照</th><th>监管机构</th><th>业务定位</th><th>最低资本</th><th>外资/控制</th><th>玩家存量</th></tr></thead>
-        <tbody>${{LICENSES.map(x => `
-          <tr>
-            <td><a href="#license/${{esc(x.id)}}"><strong>${{esc(x.name)}}</strong></a><br><span class="tag">${{esc(x.subtitle)}}</span></td>
-            <td>${{esc(x.regulator)}}</td>
-            <td>${{esc(x.oneLiner)}}</td>
-            <td>${{esc(x.minCapital)}}</td>
-            <td>${{esc(x.foreignOwnership)}}</td>
-            <td>${{esc(x.playerCount)}}</td>
-          </tr>`).join("")}}</tbody>
-      `;
     }}
 
     function renderSources() {{
@@ -3756,7 +3735,6 @@ html = f"""<!doctype html>
       renderNav();
       renderRegulators();
       renderLicenseGrid();
-      renderMatrix();
       renderSources();
       await loadExternalUpdates();
       await loadDeveloperLog();

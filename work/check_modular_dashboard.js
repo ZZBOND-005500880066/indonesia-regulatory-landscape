@@ -8,7 +8,6 @@ const required = [
   'id="homeHub"',
   'data-module-page="regulators"',
   'data-module-page="licenses"',
-  'data-module-page="compare"',
   'data-module-page="updates"',
   'data-module-page="developer-log"',
   '#module/licenses',
@@ -24,6 +23,10 @@ const removed = [
   'class="sidebar"',
   'id="sideLicenseNav"',
   'data-module-route="regulators"',
+  'data-module-page="compare"',
+  '<a class="module-card" href="#module/compare"',
+  'value="module:compare"',
+  'id="licenseMatrix"',
 ];
 
 for (const text of removed) {
