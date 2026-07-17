@@ -129,18 +129,76 @@ licenses = [
             },
         ],
         "legalIndex": [
-            "Law No.21/2008 on Sharia Banking",
-            "POJK No.12/POJK.03/2021 on Commercial Banks",
-            "POJK No.40/POJK.03/2019 on Commercial Bank Asset Quality",
-            "POJK No.18/POJK.03/2016 on Risk Management",
-            "POJK No.4/POJK.03/2016 on Bank Soundness Level",
-            "POJK No.17/2023 on Commercial Bank Governance",
-            "POJK No.50/POJK.03/2017 on NSFR",
-            "POJK No.37/POJK.03/2019 on Transparency and Disclosure",
-            "POJK No.11/POJK.03/2022 on IT Implementation",
-            "POJK No.22/2023 on Consumer and Public Protection",
-            "POJK No.8/2023 on AML/CFT/CPF",
-            "Banking Act No.7/1992 and amendments",
+            {
+                "name": "Law No.21/2008 on Sharia Banking",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/39655/uu-no-21-tahun-2008",
+                "sourceLabel": "BPK / PDF",
+            },
+            {
+                "name": "POJK No.12/POJK.03/2021 on Commercial Banks",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/227209/peraturan-ojk-no-12pojk032021-tahun-",
+                "sourceLabel": "BPK / PDF",
+                "sourceAltUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-12-pojk-03-2021-tahun-2021",
+                "sourceAltLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.40/POJK.03/2019 on Commercial Bank Asset Quality",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-40-pojk-03-2019-tahun-2019",
+                "sourceLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.18/POJK.03/2016 on Risk Management",
+                "sourceUrl": "https://peraturan.go.id/id/peraturan-ojk-no-18-pojk-03-2016-tahun-2016",
+                "sourceLabel": "peraturan.go.id",
+                "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-tentang-Penerapan-Manajemen-Resiko-bagi-Bank-Umum.aspx",
+                "sourceAltLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.4/POJK.03/2016 on Bank Soundness Level",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-4-pojk-03-2016-tahun-2016",
+                "sourceLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.17/2023 on Commercial Bank Governance",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-17-tahun-2023",
+                "sourceLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.50/POJK.03/2017 on NSFR",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-50-pojk-03-2017-tahun-2017",
+                "sourceLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.37/POJK.03/2019 on Transparency and Disclosure",
+                "sourceUrl": "https://peraturan.bpk.go.id/Home/Details/128445/peraturan-ojk-no-37pojk032019-tahun-2019",
+                "sourceLabel": "BPK / PDF",
+                "sourceAltUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-37-pojk-03-2019-tahun-2019",
+                "sourceAltLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.11/POJK.03/2022 on IT Implementation",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-11-pojk-03-2022-tahun-2022",
+                "sourceLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.22/2023 on Consumer and Public Protection",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-22-tahun-2023",
+                "sourceLabel": "peraturan.go.id",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/302699/peraturan-ojk-no-22-tahun-2023",
+                "sourceAltLabel": "BPK / PDF",
+            },
+            {
+                "name": "POJK No.8/2023 on AML/CFT/CPF",
+                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-8-tahun-2023",
+                "sourceLabel": "peraturan.go.id",
+            },
+            {
+                "name": "Banking Act No.7/1992 and amendments",
+                "sourceUrl": "https://peraturan.go.id/eng/uu-no-7-tahun-1992",
+                "sourceLabel": "UU 7/1992",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/45486/uu-",
+                "sourceAltLabel": "UU 10/1998 amendment",
+            },
         ],
         "sourceDoc": "印尼商业银行研究_202607.pdf",
     },
@@ -588,6 +646,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "\u5185\u5bb9\u8865\u5145",
+        "title": "\u5546\u4e1a\u94f6\u884c\u6cd5\u89c4\u7d22\u5f15\u8865\u5145\u5b98\u65b9\u94fe\u63a5",
+        "summary": "\u5546\u4e1a\u94f6\u884c\u8be6\u60c5\u9875\u7684\u6cd5\u89c4\u7d22\u5f15\u73b0\u5728\u4e3a\u6bcf\u6761\u6cd5\u89c4\u9644\u4e0a\u5b98\u65b9\u6cd5\u89c4\u5e93\u6216\u76f8\u5173 PDF \u9875\u9762\u94fe\u63a5\u3002",
+        "changes": [
+            "\u6cd5\u89c4\u7d22\u5f15\u7ec4\u4ef6\u65b0\u589e\u94fe\u63a5\u548c\u5907\u7528\u94fe\u63a5\u663e\u793a\uff0c\u672a\u914d\u7f6e\u94fe\u63a5\u7684\u6761\u76ee\u4ecd\u6309\u666e\u901a\u6587\u672c\u663e\u793a\u3002",
+            "\u5546\u4e1a\u94f6\u884c 12 \u6761\u6cd5\u89c4\u5747\u8865\u5145 BPK\u3001peraturan.go.id \u6216 OJK \u5b98\u65b9\u6765\u6e90\u3002",
+            "\u4f18\u5148\u4f7f\u7528\u5b98\u65b9\u6cd5\u89c4\u5e93\u8be6\u60c5\u9875\uff0c\u8ba9\u8bfb\u8005\u53ef\u5728\u9875\u9762\u5185\u7ee7\u7eed\u4e0b\u8f7d PDF \u6216\u6838\u5bf9\u6cd5\u89c4\u72b6\u6001\u3002",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "内容补充",
@@ -1662,6 +1731,50 @@ html = f"""<!doctype html>
       background: #1c6f69;
     }}
 
+    .legal-index-list {{
+      gap: 11px;
+    }}
+
+    .legal-link-row {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }}
+
+    .legal-link {{
+      color: #173d3a;
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 1px solid #9cb9b1;
+    }}
+
+    .legal-link:hover {{
+      color: #0d6b61;
+      border-color: #0d6b61;
+    }}
+
+    .legal-source-label, .legal-alt-link {{
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #f7f8f6;
+      color: #627181;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }}
+
+    .legal-alt-link:hover {{
+      border-color: #9cb9b1;
+      background: #eef6f2;
+      color: #173d3a;
+    }}
+
     .two-col {{
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
@@ -2554,6 +2667,25 @@ html = f"""<!doctype html>
       return `<ul class="list">${{items.map(item => `<li>${{esc(item)}}</li>`).join("")}}</ul>`;
     }}
 
+    function renderLegalIndex(items) {{
+      return `<ul class="list legal-index-list">${{(items || []).map(item => {{
+        if (!item || typeof item === "string") {{
+          return `<li>${{esc(item || "")}}</li>`;
+        }}
+        const name = esc(item.name || "");
+        const primary = item.sourceUrl
+          ? `<a class="legal-link" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{name}}</a>`
+          : name;
+        const sourceLabel = item.sourceLabel && item.sourceUrl
+          ? `<span class="legal-source-label">${{esc(item.sourceLabel)}}</span>`
+          : "";
+        const alt = item.sourceAltUrl
+          ? `<a class="legal-alt-link" href="${{esc(item.sourceAltUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceAltLabel || "备用链接")}}</a>`
+          : "";
+        return `<li><span class="legal-link-row">${{primary}}${{sourceLabel}}${{alt}}</span></li>`;
+      }}).join("")}}</ul>`;
+    }}
+
     function renderCompetitors(item) {{
       const hasComparison = (item.competitorLens || []).length || item.competitors.some(c => c.scale || c.edge || c.implication);
       if (!hasComparison) {{
@@ -2616,7 +2748,7 @@ html = f"""<!doctype html>
           </div>
           <div class="aside-box">
             <h3>法规索引</h3>
-            ${{arrayList(item.legalIndex)}}
+            ${{renderLegalIndex(item.legalIndex)}}
           </div>
         </${{wrapperTag}}>
       `;
