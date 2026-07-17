@@ -574,6 +574,17 @@ regulatory_briefings = [
 developer_log = [
     {
         "date": "2026-07-17",
+        "type": "版式优化",
+        "title": "商业银行竞争对手改为全宽对比",
+        "summary": "商业银行详情页将竞争对手横向对比表扩展到主内容全宽，并把最新监管规定、法规索引和来源文件移到下方，减少桌面端横向滚动。",
+        "changes": [
+            "商业银行详情页取消右侧栏占位，让竞争对手对比表获得完整页面宽度。",
+            "最新监管规定和法规索引改为竞争对手板块下方的双列信息区。",
+            "移动端保留横向滚动兜底，避免五列表格被压缩到不可读。",
+        ],
+    },
+    {
+        "date": "2026-07-17",
         "type": "数据管道",
         "title": "监管动态改为长期历史库",
         "summary": "将监管动态从单日快照升级为可持续累积的历史库：首页只展示最新几条，历史页保留网站创建以来收录过的监管简报。",
@@ -1576,6 +1587,10 @@ html = f"""<!doctype html>
       padding: 30px clamp(18px, 4vw, 54px);
     }}
 
+    .detail-layout-wide {{
+      grid-template-columns: minmax(0, 1fr);
+    }}
+
     .detail-main {{
       display: grid;
       gap: 24px;
@@ -1703,10 +1718,19 @@ html = f"""<!doctype html>
       min-width: 980px;
     }}
 
+    .detail-layout-wide .competitor-table {{
+      min-width: 0;
+      width: 100%;
+    }}
+
     .competitor-row {{
       display: grid;
       grid-template-columns: 1.1fr 1.05fr 1.1fr 1.25fr 1.35fr;
       border-top: 1px solid var(--line);
+    }}
+
+    .detail-layout-wide .competitor-row {{
+      grid-template-columns: 1fr .95fr 1fr 1.15fr 1.2fr;
     }}
 
     .competitor-row:first-child {{
@@ -1764,6 +1788,16 @@ html = f"""<!doctype html>
       align-self: start;
       display: grid;
       gap: 18px;
+    }}
+
+    .reference-grid {{
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }}
+
+    .reference-grid .source-box {{
+      grid-column: 1 / -1;
     }}
 
     .aside-box {{
@@ -2067,9 +2101,11 @@ html = f"""<!doctype html>
     @media (max-width: 720px) {{
       body {{ font-size: 14px; }}
       .hero {{ min-height: auto; padding-top: 26px; }}
-      .map-grid, .license-grid, .quick-metrics, .two-col, .competitor-grid, .briefing-grid, .source-list, .module-hub {{
+      .map-grid, .license-grid, .quick-metrics, .two-col, .competitor-grid, .briefing-grid, .source-list, .module-hub, .reference-grid {{
         grid-template-columns: 1fr;
       }}
+      .reference-grid .source-box {{ grid-column: auto; }}
+      .detail-layout-wide .competitor-table {{ min-width: 900px; }}
       .home-dynamic-strip {{ grid-auto-columns: minmax(260px, 86vw); }}
       .regulator-summary {{ grid-template-columns: 1fr; }}
       .regulator-watch {{ grid-template-columns: 1fr; }}
@@ -2543,8 +2579,30 @@ html = f"""<!doctype html>
       `;
     }}
 
+    function renderReferenceBoxes(item, rules, inline = false) {{
+      const wrapperTag = inline ? "section" : "aside";
+      const wrapperClass = inline ? "reference-grid" : "side-panel";
+      return `
+        <${{wrapperTag}} class="${{wrapperClass}}">
+          <div class="aside-box">
+            <h3>最新监管规定</h3>
+            ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong>${{r.publishedDate ? `<div class="briefing-meta"><span class="tag">发布：${{esc(r.publishedDate)}}</span></div>` : ""}}<p>${{esc(r.note || r.summary || "")}}</p></div>`).join("")}}
+          </div>
+          <div class="aside-box">
+            <h3>法规索引</h3>
+            ${{arrayList(item.legalIndex)}}
+          </div>
+          <div class="aside-box source-box">
+            <h3>来源文件</h3>
+            <p>${{esc(item.sourceDoc)}}</p>
+          </div>
+        </${{wrapperTag}}>
+      `;
+    }}
+
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
+      const wideCompetitorLayout = item.id === "commercial-bank";
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('home')">返回总览</button>
@@ -2567,7 +2625,7 @@ html = f"""<!doctype html>
           </div>
         </div>
 
-        <div class="detail-layout">
+        <div class="detail-layout ${{wideCompetitorLayout ? "detail-layout-wide" : ""}}">
           <div class="detail-main">
             <section class="info-band">
               <h3>允许开展的业务范围</h3>
@@ -2588,22 +2646,10 @@ html = f"""<!doctype html>
               <h3>竞争对手板块</h3>
               ${{renderCompetitors(item)}}
             </section>
+            ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
 
-          <aside class="side-panel">
-            <div class="aside-box">
-              <h3>最新监管规定</h3>
-              ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong>${{r.publishedDate ? `<div class="briefing-meta"><span class="tag">发布：${{esc(r.publishedDate)}}</span></div>` : ""}}<p>${{esc(r.note || r.summary || "")}}</p></div>`).join("")}}
-            </div>
-            <div class="aside-box">
-              <h3>法规索引</h3>
-              ${{arrayList(item.legalIndex)}}
-            </div>
-            <div class="aside-box">
-              <h3>来源文件</h3>
-              <p>${{esc(item.sourceDoc)}}</p>
-            </div>
-          </aside>
+          ${{wideCompetitorLayout ? "" : renderReferenceBoxes(item, rules)}}
         </div>
       `;
     }}
