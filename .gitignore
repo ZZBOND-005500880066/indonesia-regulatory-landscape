@@ -1,0 +1,12 @@
+.agents/
+.codex/
+publish-repo/
+data/
+outputs/
+work/cleaned/
+work/extracted/
+work/__pycache__/
+work/screenshots/
+*.pyc
+.DS_Store
+Thumbs.db

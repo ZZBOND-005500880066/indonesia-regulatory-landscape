@@ -1,0 +1,15 @@
+{
+  "name": "indonesia-regulatory-landscape",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Indonesia financial license regulatory landscape with daily online regulatory update monitoring.",
+  "scripts": {
+    "start": "node server.js",
+    "update-regulatory-data": "node work/update_regulatory_data.js manual",
+    "build:html": "python work/build_indonesia_dashboard.py",
+    "build:site": "node work/update_regulatory_data.js build && python work/build_indonesia_dashboard.py"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
