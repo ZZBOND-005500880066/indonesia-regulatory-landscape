@@ -107,10 +107,26 @@ licenses = [
             },
         ],
         "latestRules": [
-            {"name": "POJK No.12/POJK.03/2021", "note": "商业银行准入、机构形态、资本、股东和经营许可基础规则。"},
-            {"name": "POJK No.17/2023", "note": "商业银行公司治理，强化董事会、监事会、委员会、合规和反欺诈。"},
-            {"name": "POJK No.11/POJK.03/2022", "note": "商业银行 IT 实施、网络安全、业务连续性、外包和数据保护。"},
-            {"name": "POJK No.8/2023", "note": "金融服务领域 AML/CFT/CPF 义务。"},
+            {
+                "name": "POJK No.12/POJK.03/2021",
+                "note": "商业银行准入、机构形态、资本、股东和经营许可基础规则。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Bank-Umum.aspx",
+            },
+            {
+                "name": "POJK No.17/2023",
+                "note": "商业银行公司治理，强化董事会、监事会、委员会、合规和反欺诈。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Penerapan-Tata-Kelola-Bagi-Bank-Umum.aspx",
+            },
+            {
+                "name": "POJK No.11/POJK.03/2022",
+                "note": "商业银行 IT 实施、网络安全、业务连续性、外包和数据保护。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Penyelenggaraan-Teknologi-Informasi-oleh-Bank-Umum.aspx",
+            },
+            {
+                "name": "POJK No.8/2023",
+                "note": "金融服务领域 AML/CFT/CPF 义务。",
+                "sourceUrl": "https://ojk.go.id/apu-ppt/id/peraturan/pojk/Pages/POJK-8-2023-.aspx",
+            },
         ],
         "legalIndex": [
             "Law No.21/2008 on Sharia Banking",
@@ -572,6 +588,16 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "内容补充",
+        "title": "商业银行监管规定补充 OJK 链接",
+        "summary": "商业银行详情页的最新监管规定现在可直接点击到对应 OJK 官方法规页面。",
+        "changes": [
+            "POJK No.12/POJK.03/2021、POJK No.17/2023、POJK No.11/POJK.03/2022 和 POJK No.8/2023 均补充官方链接。",
+            "页面保留原有规则摘要，点击规则名称即可打开法规来源。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "版式优化",
