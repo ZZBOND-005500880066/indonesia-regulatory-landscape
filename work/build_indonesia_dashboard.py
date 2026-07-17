@@ -475,7 +475,7 @@ licenses = [
             {
                 "name": "POJK No.40/2024",
                 "note": "核心监管文件，覆盖股权、最低资本、净资产、融资限额、数据、催收和退出。",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-40-tahun-2024",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-40-Tahun-2024-Layanan-Pendanaan-Bersama-Berbasis-Teknologi-Informasi.aspx",
             },
             {
                 "name": "SEOJK No.19/2025",
@@ -501,10 +501,10 @@ licenses = [
             },
             {
                 "name": "POJK No.40/2024 on LPBBTI",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-40-tahun-2024",
-                "sourceLabel": "peraturan.go.id",
-                "sourceAltUrl": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/299_OJK_Regulation_Number_40_2024_concerning_Peer-to-Peer_Lending_Services_",
-                "sourceAltLabel": "OJK IRU",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-40-Tahun-2024-Layanan-Pendanaan-Bersama-Berbasis-Teknologi-Informasi.aspx",
+                "sourceLabel": "OJK",
+                "sourceAltUrl": "https://ojk.go.id/id/regulasi/Documents/Pages/POJK-40-Tahun-2024-Layanan-Pendanaan-Bersama-Berbasis-Teknologi-Informasi/POJK%2040%20Tahun%202024%20Layanan%20Pendanaan%20Bersama%20Berbasis%20Teknologi%20Informasi.pdf",
+                "sourceAltLabel": "PDF",
             },
             {
                 "name": "SEOJK No.19/2025 implementing provisions for LPBBTI",
@@ -858,6 +858,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "内容修正",
+        "title": "修正 POJK 40/2024 LPBBTI 法规索引链接",
+        "summary": "将 P2P 法规索引中的 POJK No.40/2024 从不稳定入口替换为 OJK 原文页面，并补充 PDF 直达链接。",
+        "changes": [
+            "P2P 最新监管规定中的 POJK No.40/2024 改用 OJK 监管页面。",
+            "法规索引中的 POJK No.40/2024 on LPBBTI 来源胶囊改为 OJK，并新增 PDF 胶囊。",
+            "Multi-Finance 现有法规索引同步检查，未发现同类截图问题。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "模块优化",
