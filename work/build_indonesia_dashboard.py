@@ -235,27 +235,129 @@ licenses = [
             "控股股东原则上需已运营至少 2 年，出资不能超过其自身 equity，且资金来源不得来自贷款或金融犯罪。",
             "外籍员工仅限董事、监事、专家或顾问等特定职位；外籍董事或监事存在时，至少 50% 董事和 50% 监事应为印尼公民。",
         ],
+        "competitorLens": [
+            {
+                "label": "第一层",
+                "title": "车辆和厂商金融决定传统基本盘",
+                "note": "FIFGROUP、Adira 和 Astra Credit Companies 代表摩托车、汽车和经销商渠道，核心看渠道绑定、资金成本和催收能力。",
+            },
+            {
+                "label": "第二层",
+                "title": "独立综合融资体现牌照弹性",
+                "note": "BFI Finance 更适合观察工作资本、投资融资和多用途融资的组合打法，判断牌照能否覆盖非单一车辆场景。",
+            },
+            {
+                "label": "第三层",
+                "title": "BNPL 和 App 分期决定数字化上限",
+                "note": "Home Credit、Kredivo 和 SPayLater 的重点不是牌照本身，而是商户网络、App 流量、额度管理和坏账控制。",
+            },
+        ],
         "competitors": [
-            {"name": "FIFGROUP", "position": "Astra 体系摩托车和消费金融强势玩家", "signal": "FIFASTRA、SPEKTRA、DANASTRA、FINATRA、AMITRA 覆盖多类融资"},
-            {"name": "Adira Finance", "position": "综合型车辆和非车辆融资公司", "signal": "摩托车、汽车、非汽车、多用途、重型设备和伊斯兰融资"},
-            {"name": "Astra Credit Companies", "position": "Astra 体系汽车金融平台", "signal": "新车、二手车、fleet、重型设备和多用途融资"},
-            {"name": "BFI Finance", "position": "独立综合型融资公司", "signal": "工作资本、投资和多用途融资组合较灵活"},
-            {"name": "Home Credit Indonesia", "position": "线下 POS 分期和 App 化消费金融", "signal": "18,842 个 POS，18m+ 注册用户"},
-            {"name": "Kredivo Finance Indonesia", "position": "App-based BNPL 和消费分期", "signal": "merchant network、Kredivo App 和两轮电动车融资"},
-            {"name": "PT Commerce Finance / SPayLater", "position": "Shopee 生态 paylater", "signal": "覆盖 Shopee 购物、账单票务、QRIS、Limit Xtra 和摩托车分期"},
+            {
+                "name": "FIFGROUP",
+                "tier": "Astra 体系摩托车金融",
+                "scale": "头部车辆金融玩家；材料披露覆盖 FIFASTRA、SPEKTRA、DANASTRA、FINATRA、AMITRA 多产品线",
+                "position": "摩托车、消费品、多用途和小微融资",
+                "edge": "Astra 生态、经销商触点、线下渠道和多品牌产品组合。",
+                "implication": "若进入车辆或消费场景，关键不是只拿牌照，而是能否绑定高频渠道并控制催收成本。",
+            },
+            {
+                "name": "Adira Finance",
+                "tier": "综合型车辆和非车辆融资公司",
+                "scale": "头部综合融资公司之一；覆盖摩托车、汽车、非汽车、多用途、重型设备和伊斯兰融资",
+                "position": "车辆金融、多用途融资和伊斯兰融资",
+                "edge": "产品覆盖面广，能用同一融资牌照承接多个资产场景。",
+                "implication": "适合作为综合型 Multi-Finance 对标，看资产组合、风险分层和渠道扩张能力。",
+            },
+            {
+                "name": "Astra Credit Companies",
+                "tier": "Astra 体系汽车金融平台",
+                "scale": "Astra 汽车生态核心融资平台；材料披露覆盖新车、二手车、fleet、重型设备和多用途融资",
+                "position": "汽车金融、车队融资和重型设备融资",
+                "edge": "厂商品牌、经销商网络和车辆资产处置能力形成闭环。",
+                "implication": "如果目标是汽车金融，牌照价值取决于能否接入车源、经销商和二手处置网络。",
+            },
+            {
+                "name": "BFI Finance",
+                "tier": "独立综合型融资公司",
+                "scale": "独立综合融资样本；工作资本、投资和多用途融资组合较灵活",
+                "position": "工作资本、投资融资和多用途融资",
+                "edge": "不完全依赖单一厂商生态，业务组合和资产选择更灵活。",
+                "implication": "适合作为收购或自建平台的运营样本，重点看风险定价、抵押品管理和资产质量。",
+            },
+            {
+                "name": "Home Credit Indonesia",
+                "tier": "POS 分期和 App 化消费金融",
+                "scale": "材料披露 18,842 个 POS、18m+ 注册用户",
+                "position": "线下零售 POS 分期、线上消费分期和 App 获客",
+                "edge": "线下商户覆盖、消费场景嵌入和用户规模。",
+                "implication": "数字消费金融不只看线上投放，更要看商户端转化、授信复用和逾期表现。",
+            },
+            {
+                "name": "Kredivo Finance Indonesia",
+                "tier": "App-based BNPL 和消费分期",
+                "scale": "平台型 BNPL 玩家；材料披露 merchant network、Kredivo App 和两轮电动车融资",
+                "position": "BNPL、消费分期、商户网络和电动车融资",
+                "edge": "App 触点、商户网络和额度复用能力。",
+                "implication": "对标重点是额度管理、商户质量、复借频率和资金成本，而不是单一放款规模。",
+            },
+            {
+                "name": "PT Commerce Finance / SPayLater",
+                "tier": "Shopee 生态 paylater",
+                "scale": "Shopee 内嵌式分期场景；覆盖购物、账单票务、QRIS、Limit Xtra 和摩托车分期",
+                "position": "电商生态 BNPL、账单支付和 QRIS 场景",
+                "edge": "强平台流量、交易数据和消费场景闭环。",
+                "implication": "平台型入口能显著降低获客成本，但需要重点评估流量质量、补贴依赖和坏账周期。",
+            },
         ],
         "latestRules": [
-            {"name": "POJK No.35/POJK.05/2018", "note": "融资公司业务经营基础规则。"},
-            {"name": "POJK No.47/POJK.05/2020", "note": "融资公司牌照和机构设立规则，包含最低资本、外资持股和组织架构。"},
-            {"name": "POJK No.46/2024", "note": "融资公司、基础设施融资公司和风险投资公司的发展与强化规则。"},
-            {"name": "POJK No.35/2025", "note": "修订 POJK 46/2024，涉及股权变更、证券发行推荐、机动车首付和资本比例调整。"},
+            {
+                "name": "POJK No.35/POJK.05/2018",
+                "note": "融资公司业务经营基础规则。",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Penyelenggaraan-Usaha-Perusahaan-Pembiayaan.aspx",
+            },
+            {
+                "name": "POJK No.47/POJK.05/2020",
+                "note": "融资公司牌照和机构设立规则，包含最低资本、外资持股和组织架构。",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/226935/peraturan-ojk-no-47pojk052020-tahun-2020",
+            },
+            {
+                "name": "POJK No.46/2024",
+                "note": "融资公司、基础设施融资公司和风险投资公司的发展与强化规则。",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/348711/peraturan-ojk-no-46-tahun-2024",
+            },
+            {
+                "name": "POJK No.35/2025",
+                "note": "修订 POJK 46/2024，涉及股权变更、证券发行推荐、机动车首付和资本比例调整。",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/347479/peraturan-ojk-no-35-tahun-2025",
+            },
         ],
         "legalIndex": [
-            "Law No.4/2023 on Financial Sector Development and Strengthening",
-            "POJK No.35/POJK.05/2018 on Financing Company Business Activities",
-            "POJK No.47/POJK.05/2020 on Financing Company Licensing and Institution",
-            "POJK No.46/2024 on Development and Strengthening of Financing Companies, Infrastructure Financing Companies and Venture Capital Companies",
-            "POJK No.35/2025 amending POJK No.46/2024",
+            {
+                "name": "Law No.4/2023 on Financial Sector Development and Strengthening",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/240203/uu-no-4-tahun-2023",
+                "sourceLabel": "BPK / PDF",
+            },
+            {
+                "name": "POJK No.35/POJK.05/2018 on Financing Company Business Activities",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Penyelenggaraan-Usaha-Perusahaan-Pembiayaan.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.47/POJK.05/2020 on Financing Company Licensing and Institution",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/226935/peraturan-ojk-no-47pojk052020-tahun-2020",
+                "sourceLabel": "BPK / PDF",
+            },
+            {
+                "name": "POJK No.46/2024 on Development and Strengthening of Financing Companies, Infrastructure Financing Companies and Venture Capital Companies",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/348711/peraturan-ojk-no-46-tahun-2024",
+                "sourceLabel": "BPK / PDF",
+            },
+            {
+                "name": "POJK No.35/2025 amending POJK No.46/2024",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/347479/peraturan-ojk-no-35-tahun-2025",
+                "sourceLabel": "BPK / PDF",
+            },
         ],
         "sourceDoc": "印尼Multi-Finance研究_202607.pdf",
     },
@@ -648,6 +750,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "模块优化",
+        "title": "Multi-Finance 板块同步商业银行优化",
+        "summary": "Multi-Finance 详情页改为全宽竞品对比，并为最新监管规定和法规索引补充官方链接。",
+        "changes": [
+            "竞争对手板块新增传统车辆/厂商金融、独立综合融资、线上消费分期/BNPL 三层判断。",
+            "FIFGROUP、Adira、ACC、BFI、Home Credit、Kredivo 和 SPayLater 改为可横向比较的表格字段。",
+            "最新监管规定和法规索引补充 OJK 或 BPK 官方页面，法规索引支持点击法规名称和来源胶囊。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "\u5185\u5bb9\u4fee\u6b63",
@@ -2769,7 +2882,7 @@ html = f"""<!doctype html>
 
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
-      const wideCompetitorLayout = item.id === "commercial-bank";
+      const wideCompetitorLayout = ["commercial-bank", "multi-finance"].includes(item.id);
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('home')">返回总览</button>

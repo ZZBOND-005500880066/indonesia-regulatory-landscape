@@ -2,6 +2,17 @@
   "entries": [
     {
       "date": "2026-07-17",
+      "type": "模块优化",
+      "title": "Multi-Finance 板块同步商业银行优化",
+      "summary": "Multi-Finance 详情页改为全宽竞品对比，并为最新监管规定和法规索引补充官方链接。",
+      "changes": [
+        "竞争对手板块新增传统车辆/厂商金融、独立综合融资、线上消费分期/BNPL 三层判断。",
+        "FIFGROUP、Adira、ACC、BFI、Home Credit、Kredivo 和 SPayLater 改为可横向比较的表格字段。",
+        "最新监管规定和法规索引补充 OJK 或 BPK 官方页面，法规索引支持点击法规名称和来源胶囊。"
+      ]
+    },
+    {
+      "date": "2026-07-17",
       "type": "内容修正",
       "title": "修正商业银行法规索引失效链接",
       "summary": "将商业银行法规索引中不稳定的 peraturan.go.id 猜测路径替换为已核验的 BPK 或 OJK 官方页面。",
