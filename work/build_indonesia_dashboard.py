@@ -45,12 +45,64 @@ licenses = [
             "单一借款人或相关借款集团授信上限不得超过银行资本的 30%；特定关联方上限不得超过银行资本的 10%。",
             "须满足 KPMM/CAR、LCR、NSFR、资产质量、RGEC 健康评级、IT、治理、消费者保护和 AML/CFT/CPF 要求。",
         ],
+        "competitorLens": [
+            {
+                "label": "第一层",
+                "title": "KBMI 4 大行决定行业上限",
+                "note": "BRI、Mandiri、BCA 体量远高于新进入者，核心看低成本资金、网点/企业关系和交易频次。",
+            },
+            {
+                "label": "第二层",
+                "title": "区域/外资银行代表入场路径",
+                "note": "CIMB、OCBC、UOB、Danamon 更能反映外资通过收购、合并或业务组合进入印尼银行业的打法。",
+            },
+            {
+                "label": "第三层",
+                "title": "数字银行更接近产品对标",
+                "note": "Jago、Superbank、Saqu 的看点不是绝对资产规模，而是生态获客、存款成本和亏损周期。",
+            },
+        ],
         "competitors": [
-            {"name": "BRI", "position": "国有大行，MSME、小微、农村金融和普惠金融", "signal": "2025 资产 Rp2,135tn，核心资本 Rp302tn，KBMI 4"},
-            {"name": "Bank Mandiri", "position": "国有大行，企业银行、批发金融、综合金融", "signal": "2025 资产 Rp2,830tn，核心资本 Rp304tn，KBMI 4"},
-            {"name": "BCA", "position": "本地财团/家族资本，零售银行、交易银行和低成本存款", "signal": "2025 资产 Rp1,587tn，核心资本 Rp258tn，KBMI 4"},
-            {"name": "CIMB Niaga / OCBC / UOB / Danamon", "position": "外资或区域金融集团背景银行", "signal": "近年以并购、合并和业务组合收购为主要扩张方式"},
-            {"name": "Bank Jago / Superbank / Bank Saqu", "position": "数字银行及生态型银行", "signal": "依托股东生态、App 获客和存款成本管理"},
+            {
+                "name": "BRI",
+                "tier": "国有 KBMI 4 大行",
+                "scale": "2025 资产 Rp2,135tn；核心资本 Rp302tn",
+                "position": "MSME、小微、农村金融和普惠金融",
+                "edge": "基层网点、代理网络、政府普惠金融定位和小微信贷数据沉淀。",
+                "implication": "不适合正面抢存贷款规模；更适合作为农村金融、普惠金融和小微风控的标杆。",
+            },
+            {
+                "name": "Bank Mandiri",
+                "tier": "国有 KBMI 4 大行",
+                "scale": "2025 资产 Rp2,830tn；核心资本 Rp304tn",
+                "position": "企业银行、批发金融、综合金融",
+                "edge": "企业客户、工资代发、集团金融和跨产品综合服务能力强。",
+                "implication": "商业银行牌照若走企业端，需要重点比较资金成本、企业关系和综合金融协同。",
+            },
+            {
+                "name": "BCA",
+                "tier": "本地财团 KBMI 4 大行",
+                "scale": "2025 资产 Rp1,587tn；核心资本 Rp258tn",
+                "position": "零售银行、交易银行和低成本存款",
+                "edge": "CASA、交易频次、支付体验和高质量零售客户构成核心护城河。",
+                "implication": "最值得研究的是低成本存款和交易入口，而不是单纯贷款扩张。",
+            },
+            {
+                "name": "CIMB Niaga / OCBC / UOB / Danamon",
+                "tier": "外资或区域集团银行",
+                "scale": "中大型银行群；材料未逐一拆分资产口径",
+                "position": "区域金融集团在印尼的综合银行平台",
+                "edge": "常通过并购、合并和业务组合收购扩张，具备区域客户、资金和管理体系。",
+                "implication": "更接近外资入场参考样本；应重点看收购审批、整合成本和存量业务质量。",
+            },
+            {
+                "name": "Bank Jago / Superbank / Bank Saqu",
+                "tier": "数字银行及生态型银行",
+                "scale": "资产体量低于 KBMI 4；竞争重点在用户、存款和生态转化",
+                "position": "App 获客、生态嵌入式金融和数字化存款",
+                "edge": "依托股东生态、App 触点和线上产品快速获客，但需控制存款补贴和亏损周期。",
+                "implication": "产品与获客最可对标；判断重点是生态流量质量、留存、存款成本和资本消耗。",
+            },
         ],
         "latestRules": [
             {"name": "POJK No.12/POJK.03/2021", "note": "商业银行准入、机构形态、资本、股东和经营许可基础规则。"},
@@ -518,6 +570,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "模块优化",
+        "title": "商业银行竞争对手改为横向对比",
+        "summary": "商业银行详情页的竞争对手板块从普通卡片改为分层格局和横向对比表，突出玩家体量、主战场和对进入策略的启示。",
+        "changes": [
+            "新增 KBMI 4 大行、区域/外资银行、数字银行三层竞争格局提示。",
+            "商业银行竞争对手表格新增行业体量、关键优势和策略启示字段。",
+            "其他牌照的竞争对手卡片保持原样，避免尚未补充字段时被强行表格化。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "信息架构",
@@ -1568,6 +1631,113 @@ html = f"""<!doctype html>
       color: var(--muted);
     }}
 
+    .competitor-compare {{
+      display: grid;
+      gap: 14px;
+    }}
+
+    .competitor-lens {{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }}
+
+    .lens-card {{
+      padding: 13px;
+      border: 1px solid #d8e5e1;
+      border-left: 4px solid #1c6f69;
+      border-radius: 8px;
+      background: #f8fbfa;
+    }}
+
+    .lens-card span {{
+      display: inline-flex;
+      margin-bottom: 6px;
+      color: #1c6f69;
+      font-size: 12px;
+      font-weight: 800;
+    }}
+
+    .lens-card strong {{
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 15px;
+    }}
+
+    .lens-card p {{
+      margin: 0;
+      color: #4d5b69;
+      font-size: 13px;
+      line-height: 1.55;
+    }}
+
+    .competitor-table-wrap {{
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }}
+
+    .competitor-table {{
+      min-width: 980px;
+    }}
+
+    .competitor-row {{
+      display: grid;
+      grid-template-columns: 1.1fr 1.05fr 1.1fr 1.25fr 1.35fr;
+      border-top: 1px solid var(--line);
+    }}
+
+    .competitor-row:first-child {{
+      border-top: 0;
+    }}
+
+    .competitor-row > div {{
+      padding: 13px 14px;
+      border-left: 1px solid var(--line);
+      line-height: 1.55;
+    }}
+
+    .competitor-row > div:first-child {{
+      border-left: 0;
+    }}
+
+    .competitor-head {{
+      background: #eef6f3;
+      color: #1d4f4c;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }}
+
+    .competitor-name strong {{
+      display: block;
+      color: var(--ink);
+      font-size: 16px;
+    }}
+
+    .competitor-name span {{
+      display: inline-flex;
+      margin-top: 7px;
+      padding: 3px 8px;
+      border: 1px solid #d7e4e0;
+      border-radius: 999px;
+      color: #526171;
+      font-size: 12px;
+      background: #f8fbfa;
+    }}
+
+    .competitor-scale {{
+      color: #15202d;
+      font-weight: 750;
+    }}
+
+    .competitor-cell-muted {{
+      color: #485665;
+    }}
+
     .side-panel {{
       position: sticky;
       top: 22px;
@@ -1871,6 +2041,7 @@ html = f"""<!doctype html>
       .detail-layout {{ grid-template-columns: 1fr; }}
       .side-panel {{ position: static; }}
       .license-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+      .competitor-lens {{ grid-template-columns: 1fr; }}
     }}
 
     @media (max-width: 720px) {{
@@ -2297,6 +2468,57 @@ html = f"""<!doctype html>
       return `<ul class="list">${{items.map(item => `<li>${{esc(item)}}</li>`).join("")}}</ul>`;
     }}
 
+    function renderCompetitors(item) {{
+      const hasComparison = (item.competitorLens || []).length || item.competitors.some(c => c.scale || c.edge || c.implication);
+      if (!hasComparison) {{
+        return `
+          <div class="competitor-grid">
+            ${{item.competitors.map(c => `
+              <article class="competitor">
+                <strong>${{esc(c.name)}}</strong>
+                <p>${{esc(c.position)}}</p>
+                <small>${{esc(c.signal)}}</small>
+              </article>
+            `).join("")}}
+          </div>
+        `;
+      }}
+
+      return `
+        <div class="competitor-compare">
+          <div class="competitor-lens">
+            ${{(item.competitorLens || []).map(lens => `
+              <article class="lens-card">
+                <span>${{esc(lens.label)}}</span>
+                <strong>${{esc(lens.title)}}</strong>
+                <p>${{esc(lens.note)}}</p>
+              </article>
+            `).join("")}}
+          </div>
+          <div class="competitor-table-wrap">
+            <div class="competitor-table">
+              <div class="competitor-row competitor-head">
+                <div>玩家 / 类型</div>
+                <div>行业体量</div>
+                <div>主战场</div>
+                <div>关键优势</div>
+                <div>对我们意味着什么</div>
+              </div>
+              ${{item.competitors.map(c => `
+                <div class="competitor-row">
+                  <div class="competitor-name"><strong>${{esc(c.name)}}</strong><span>${{esc(c.tier || "")}}</span></div>
+                  <div class="competitor-scale">${{esc(c.scale || c.signal || "")}}</div>
+                  <div class="competitor-cell-muted">${{esc(c.position || "")}}</div>
+                  <div class="competitor-cell-muted">${{esc(c.edge || c.signal || "")}}</div>
+                  <div class="competitor-cell-muted">${{esc(c.implication || "")}}</div>
+                </div>
+              `).join("")}}
+            </div>
+          </div>
+        </div>
+      `;
+    }}
+
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
       return `
@@ -2340,15 +2562,7 @@ html = f"""<!doctype html>
 
             <section class="info-band">
               <h3>竞争对手板块</h3>
-              <div class="competitor-grid">
-                ${{item.competitors.map(c => `
-                  <article class="competitor">
-                    <strong>${{esc(c.name)}}</strong>
-                    <p>${{esc(c.position)}}</p>
-                    <small>${{esc(c.signal)}}</small>
-                  </article>
-                `).join("")}}
-              </div>
+              ${{renderCompetitors(item)}}
             </section>
           </div>
 
