@@ -1322,7 +1322,8 @@ sources = []
 regulatory_briefings = [
     {
         "date": "2026",
-        "publishedDate": "2026-07-03",
+        "sourceDate": "2026-07-03",
+        "effectiveDate": "2026-06-30",
         "title": "BPR 最低资本与核心资本要求更新",
         "regulator": "OJK",
         "licenses": ["BPR"],
@@ -1339,7 +1340,8 @@ regulatory_briefings = [
     },
     {
         "date": "2026",
-        "publishedDate": "2026-01-06",
+        "sourceDate": "2026-01-06",
+        "effectiveDate": "2026-07-01",
         "title": "ITSK 经营者治理和风险管理规则落地",
         "regulator": "OJK",
         "licenses": ["ICS / PKA", "Loan Aggregator"],
@@ -1356,7 +1358,8 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
-        "publishedDate": "2026-01-19",
+        "sourceDate": "2026-01-19",
+        "effectiveDate": "2027-07-01",
         "title": "融资公司月度报告规则更新",
         "regulator": "OJK",
         "licenses": ["Multi-Finance"],
@@ -1371,7 +1374,8 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
-        "publishedDate": "2025-09-12",
+        "sourceDate": "2025-09-12",
+        "effectiveDate": "2027-01-01",
         "title": "投诉处理公开与投诉服务报告规则更新",
         "regulator": "OJK",
         "licenses": ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -1388,6 +1392,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "数据口径",
+        "title": "拆分监管动态官网日期和生效日期",
+        "summary": "修正监管动态日期口径，避免把 OJK 的 Tanggal Berlaku 生效日期误当成发布日期。",
+        "changes": [
+            "监管动态数据新增 sourceDate 和 effectiveDate，sourceDate 用于排序，effectiveDate 单独展示。",
+            "页面标签由“发布”改为“官网日期 / 生效日期”，降低误读风险。",
+            "每日更新器不再从任意日期文本推断发布日期，只在来源可核验时写入日期字段。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "数据质量",
@@ -1763,37 +1778,30 @@ def load_json_snapshot(*paths: Path, fallback: dict) -> dict:
     return fallback
 
 
-KNOWN_PUBLISHED_DATES = {
-    "SEOJK 23/SEOJK.06/2025": "2025-11-04",
-    "POJK 30/2025": "2026-01-06",
-    "POJK 7/2026": "2026-07-03",
-    "PADK 45/PADK.06/2025": "2026-01-19",
-    "SEOJK 20/SEOJK.08/2025": "2025-09-12",
-    "PADG 19/2026": "2026-06-30",
+KNOWN_DATE_METADATA = {
+    "SEOJK 23/SEOJK.06/2025": {"sourceDate": "2025-11-04", "effectiveDate": "2027-04-01"},
+    "POJK 30/2025": {"sourceDate": "2026-01-06", "effectiveDate": "2026-07-01"},
+    "POJK 7/2026": {"sourceDate": "2026-07-03", "effectiveDate": "2026-06-30"},
+    "PADK 45/PADK.06/2025": {"sourceDate": "2026-01-19", "effectiveDate": "2027-07-01"},
+    "SEOJK 20/SEOJK.08/2025": {"sourceDate": "2025-09-12", "effectiveDate": "2027-01-01"},
+    "PADG 19/2026": {"sourceDate": "2026-06-30"},
 }
 
 
-def enrich_published_dates(snapshot: dict) -> dict:
-    for item in snapshot.get("briefings", []) or []:
-        if item.get("publishedDate"):
-            continue
-        text = " ".join(
-            str(item.get(key, ""))
-            for key in ("title", "sourceUrl", "sourceOriginalTitle", "keywords")
-        )
-        for marker, published_date in KNOWN_PUBLISHED_DATES.items():
+def enrich_date_metadata(snapshot: dict) -> dict:
+    def enrich_item(item: dict, keys: tuple[str, ...]) -> None:
+        if item.get("publishedDate") and not item.get("sourceDate"):
+            item["sourceDate"] = item["publishedDate"]
+        text = " ".join(str(item.get(key, "")) for key in keys)
+        for marker, metadata in KNOWN_DATE_METADATA.items():
             if marker in text:
-                item["publishedDate"] = published_date
+                item.update({k: v for k, v in metadata.items() if v and not item.get(k)})
                 break
+    for item in snapshot.get("briefings", []) or []:
+        enrich_item(item, ("title", "sourceUrl", "sourceOriginalTitle", "keywords"))
     for updates in (snapshot.get("licenses") or {}).values():
         for item in updates:
-            if item.get("publishedDate"):
-                continue
-            text = " ".join(str(item.get(key, "")) for key in ("name", "note", "sourceUrl"))
-            for marker, published_date in KNOWN_PUBLISHED_DATES.items():
-                if marker in text:
-                    item["publishedDate"] = published_date
-                    break
+            enrich_item(item, ("name", "note", "sourceUrl"))
     return snapshot
 
 
@@ -1801,8 +1809,8 @@ def is_verified_briefing(item: dict) -> bool:
     return bool(
         item
         and item.get("sourceUrl")
-        and isinstance(item.get("publishedDate"), str)
-        and len(item.get("publishedDate")) == 10
+        and isinstance(item.get("sourceDate") or item.get("publishedDate"), str)
+        and len(item.get("sourceDate") or item.get("publishedDate")) == 10
     )
 
 
@@ -1821,8 +1829,8 @@ def filter_verified_snapshot(snapshot: dict) -> dict:
             item
             for item in (items or [])
             if item.get("sourceUrl")
-            and isinstance(item.get("publishedDate"), str)
-            and len(item.get("publishedDate")) == 10
+            and isinstance(item.get("sourceDate") or item.get("publishedDate"), str)
+            and len(item.get("sourceDate") or item.get("publishedDate")) == 10
         ]
         if kept:
             licenses[key] = kept
@@ -1841,14 +1849,14 @@ embedded_update_snapshot = load_json_snapshot(
         "sourcesChecked": [],
     },
 )
-embedded_update_snapshot = filter_verified_snapshot(enrich_published_dates(embedded_update_snapshot))
+embedded_update_snapshot = filter_verified_snapshot(enrich_date_metadata(embedded_update_snapshot))
 
 embedded_history_snapshot = load_json_snapshot(
     REGULATORY_HISTORY_PUBLIC,
     REGULATORY_HISTORY_DATA,
     fallback=embedded_update_snapshot,
 )
-embedded_history_snapshot = filter_verified_snapshot(enrich_published_dates(embedded_history_snapshot))
+embedded_history_snapshot = filter_verified_snapshot(enrich_date_metadata(embedded_history_snapshot))
 
 public_licenses = [
     {key: value for key, value in item.items() if key != "sourceDoc"}
@@ -3282,7 +3290,7 @@ html = f"""<!doctype html>
     const BUILT_IN_DEV_LOG = {json.dumps(developer_log, ensure_ascii=False)};
     const BUILT_IN_UPDATE_SNAPSHOT = {json.dumps(embedded_update_snapshot, ensure_ascii=False)};
     const BUILT_IN_HISTORY_SNAPSHOT = {json.dumps(embedded_history_snapshot, ensure_ascii=False)};
-    const KNOWN_PUBLISHED_DATES = {json.dumps(KNOWN_PUBLISHED_DATES, ensure_ascii=False)};
+    const KNOWN_DATE_METADATA = {json.dumps(KNOWN_DATE_METADATA, ensure_ascii=False)};
     const STATIC_HTML_MODE = window.location.protocol === "file:";
     let externalUpdates = null;
     let activeBriefings = Array.isArray(BUILT_IN_HISTORY_SNAPSHOT.briefings) && BUILT_IN_HISTORY_SNAPSHOT.briefings.length
@@ -3428,15 +3436,22 @@ html = f"""<!doctype html>
       `).join("");
     }}
 
-    function briefingDateLabel(item) {{
-      const published = item.publishedDate || item.issueDate || item.releaseDate || "";
-      if (published) return "发布：" + published;
-      if (String(item.date || "").length > 4) return "发布：" + item.date;
-      return "发布：未解析具体日";
+    function sourceDateFor(item) {{
+      return item?.sourceDate || item?.publishedDate || item?.issueDate || item?.releaseDate || "";
+    }}
+
+    function briefingDateTags(item) {{
+      const sourceDate = sourceDateFor(item);
+      const effectiveDate = item?.effectiveDate || "";
+      const tags = [];
+      if (sourceDate) tags.push(`<span class="tag">官网日期：${{esc(sourceDate)}}</span>`);
+      if (effectiveDate) tags.push(`<span class="tag">生效日期：${{esc(effectiveDate)}}</span>`);
+      if (!tags.length && String(item?.date || "").length > 4) tags.push(`<span class="tag">日期：${{esc(item.date)}}</span>`);
+      return tags.join("");
     }}
 
     function briefingSortValue(item) {{
-      const value = item.publishedDate || (String(item.date || "").length > 4 ? item.date : `${{item.date || "1900"}}-01-01`);
+      const value = sourceDateFor(item) || (String(item.date || "").length > 4 ? item.date : `${{item.date || "1900"}}-01-01`);
       const time = Date.parse(value);
       return Number.isFinite(time) ? time : 0;
     }}
@@ -3452,7 +3467,7 @@ html = f"""<!doctype html>
       target.innerHTML = items.length ? items.map(item => `
         <article class="home-dynamic-card">
           <div class="briefing-meta">
-            <span class="tag">${{esc(briefingDateLabel(item))}}</span>
+            ${{briefingDateTags(item)}}
             <span class="tag">${{esc(item.regulator)}}</span>
             <span class="tag">影响：${{esc(item.level)}}</span>
           </div>
@@ -3475,7 +3490,7 @@ html = f"""<!doctype html>
             <div>
               <h4>${{esc(item.title)}}</h4>
               <div class="briefing-meta">
-                <span class="tag">${{esc(briefingDateLabel(item))}}</span>
+                ${{briefingDateTags(item)}}
                 ${{item.firstSeenDate ? `<span class="tag">首次收录：${{esc(item.firstSeenDate)}}</span>` : ""}}
                 <span class="tag">${{esc(item.regulator)}}</span>
                 <span class="tag">影响：${{esc(item.level)}}</span>
@@ -3599,7 +3614,7 @@ html = f"""<!doctype html>
         <${{wrapperTag}} class="${{wrapperClass}}">
           <div class="aside-box">
             <h3>最新监管规定</h3>
-            ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong>${{r.publishedDate ? `<div class="briefing-meta"><span class="tag">发布：${{esc(r.publishedDate)}}</span></div>` : ""}}<p>${{esc(r.note || r.summary || "")}}</p></div>`).join("")}}
+            ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong><div class="briefing-meta">${{briefingDateTags(r)}}</div><p>${{esc(r.note || r.summary || "")}}</p></div>`).join("")}}
           </div>
           <div class="aside-box">
             <h3>法规索引</h3>
@@ -3700,13 +3715,15 @@ html = f"""<!doctype html>
     }}
 
     function enrichBriefingDate(item) {{
-      if (!item || item.publishedDate) return item;
+      if (!item) return item;
+      if (item.publishedDate && !item.sourceDate) item.sourceDate = item.publishedDate;
       const text = [item.title, item.name, item.sourceUrl, item.sourceOriginalTitle, item.keywords, item.note]
         .filter(Boolean)
         .join(" ");
-      for (const [marker, publishedDate] of Object.entries(KNOWN_PUBLISHED_DATES)) {{
+      for (const [marker, metadata] of Object.entries(KNOWN_DATE_METADATA)) {{
         if (text.includes(marker)) {{
-          item.publishedDate = publishedDate;
+          if (metadata.sourceDate && !item.sourceDate) item.sourceDate = metadata.sourceDate;
+          if (metadata.effectiveDate && !item.effectiveDate) item.effectiveDate = metadata.effectiveDate;
           break;
         }}
       }}
@@ -3714,7 +3731,7 @@ html = f"""<!doctype html>
     }}
 
     function isVerifiedBriefing(item) {{
-      return Boolean(item && item.sourceUrl && /^\\d{{4}}-\\d{{2}}-\\d{{2}}$/.test(String(item.publishedDate || "")));
+      return Boolean(item && item.sourceUrl && /^\\d{{4}}-\\d{{2}}-\\d{{2}}$/.test(String(sourceDateFor(item) || "")));
     }}
 
     function filterVerifiedSnapshot(data) {{

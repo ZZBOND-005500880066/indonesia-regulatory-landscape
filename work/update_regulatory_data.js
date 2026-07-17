@@ -104,19 +104,20 @@ const GENERAL_KEYWORDS = [
 
 const RULE_SIGNAL = /(pojk|seojk|padk|pbi|padg|peraturan|surat edaran|nomor|tahun|kewajiban|penerapan|ketentuan|laporan|publikasi)/i;
 
-const KNOWN_PUBLISHED_DATES = {
-  "SEOJK 23/SEOJK.06/2025": "2025-11-04",
-  "POJK 30/2025": "2026-01-06",
-  "POJK 7/2026": "2026-07-03",
-  "PADK 45/PADK.06/2025": "2026-01-19",
-  "SEOJK 20/SEOJK.08/2025": "2025-09-12",
-  "PADG 19/2026": "2026-06-30",
+const KNOWN_DATE_METADATA = {
+  "SEOJK 23/SEOJK.06/2025": { sourceDate: "2025-11-04", effectiveDate: "2027-04-01" },
+  "POJK 30/2025": { sourceDate: "2026-01-06", effectiveDate: "2026-07-01" },
+  "POJK 7/2026": { sourceDate: "2026-07-03", effectiveDate: "2026-06-30" },
+  "PADK 45/PADK.06/2025": { sourceDate: "2026-01-19", effectiveDate: "2027-07-01" },
+  "SEOJK 20/SEOJK.08/2025": { sourceDate: "2025-09-12", effectiveDate: "2027-01-01" },
+  "PADG 19/2026": { sourceDate: "2026-06-30" },
 };
 
 const SEED_BRIEFINGS = [
   {
     date: "2026",
-    publishedDate: "2026-07-03",
+    sourceDate: "2026-07-03",
+    effectiveDate: "2026-06-30",
     title: "BPR 最低资本与核心资本要求更新",
     regulator: "OJK",
     licenses: ["BPR"],
@@ -133,7 +134,8 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2026",
-    publishedDate: "2026-01-06",
+    sourceDate: "2026-01-06",
+    effectiveDate: "2026-07-01",
     title: "ITSK 经营者治理和风险管理规则落地",
     regulator: "OJK",
     licenses: ["ICS / PKA", "Loan Aggregator"],
@@ -150,7 +152,8 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
-    publishedDate: "2026-01-19",
+    sourceDate: "2026-01-19",
+    effectiveDate: "2027-07-01",
     title: "融资公司月度报告规则更新",
     regulator: "OJK",
     licenses: ["Multi-Finance"],
@@ -165,7 +168,8 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
-    publishedDate: "2025-09-12",
+    sourceDate: "2025-09-12",
+    effectiveDate: "2027-01-01",
     title: "投诉处理公开与投诉服务报告规则更新",
     regulator: "OJK",
     licenses: ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -251,7 +255,7 @@ function isoDate(year, month, day) {
   return `${year}-${pad2(month)}-${pad2(day)}`;
 }
 
-function extractPublishedDate(...parts) {
+function extractDate(...parts) {
   const text = parts.filter(Boolean).join(" ");
   let match = text.match(/\b(20[2-4][0-9])[-/.](0?[1-9]|1[0-2])[-/.](0?[1-9]|[12][0-9]|3[01])\b/);
   if (match) return isoDate(Number(match[1]), Number(match[2]), Number(match[3]));
@@ -277,20 +281,49 @@ function extractPublishedDate(...parts) {
   return null;
 }
 
-function knownPublishedDateForText(...parts) {
+function parseSlashDate(value) {
+  const match = String(value || "").match(/\b(0?[1-9]|1[0-2])\/(0?[1-9]|[12][0-9]|3[01])\/(20[2-4][0-9])\b/);
+  if (!match) return null;
+  return isoDate(Number(match[3]), Number(match[1]), Number(match[2]));
+}
+
+function knownDateMetadataForText(...parts) {
   const text = parts.filter(Boolean).join(" ");
-  for (const [marker, publishedDate] of Object.entries(KNOWN_PUBLISHED_DATES)) {
-    if (text.includes(marker)) return publishedDate;
+  for (const [marker, metadata] of Object.entries(KNOWN_DATE_METADATA)) {
+    if (text.includes(marker)) return { ...metadata };
   }
+  return {};
+}
+
+function extractOjkListDates(...parts) {
+  const text = cleanText(parts.filter(Boolean).join(" "));
+  const match = text.match(/\bApproved\s+(\d{1,2}\/\d{1,2}\/20[2-4][0-9])\s+Yes\s+(\d{1,2}\/\d{1,2}\/20[2-4][0-9])\b/i);
+  if (!match) return {};
+  return {
+    effectiveDate: parseSlashDate(match[1]),
+    sourceDate: parseSlashDate(match[2]),
+  };
+}
+
+function extractEffectiveDate(...parts) {
+  const text = cleanText(parts.filter(Boolean).join(" "));
+  const labelMatch = text.match(/Tanggal\s+Berlaku\s*:?\s*([0-9]{1,2}\/[0-9]{1,2}\/20[2-4][0-9])/i);
+  if (labelMatch) return parseSlashDate(labelMatch[1]);
+  const mulaiMatch = text.match(/mulai\s+berlaku[^.]{0,120}?(\d{1,2}\s+(?:Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)\s+20[2-4][0-9])/i);
+  if (mulaiMatch) return extractDate(mulaiMatch[1]);
   return null;
 }
 
-function hasVerifiedPublishedDate(item) {
-  return Boolean(item && /^\d{4}-\d{2}-\d{2}$/.test(String(item.publishedDate || "")));
+function sourceDateFor(item) {
+  return item && (item.sourceDate || item.publishedDate || item.issueDate || item.releaseDate || "");
+}
+
+function hasVerifiedSourceDate(item) {
+  return Boolean(item && /^\d{4}-\d{2}-\d{2}$/.test(String(sourceDateFor(item) || "")));
 }
 
 function filterDisplayableBriefings(briefings) {
-  return (briefings || []).filter((item) => item.sourceUrl && hasVerifiedPublishedDate(item));
+  return (briefings || []).filter((item) => item.sourceUrl && hasVerifiedSourceDate(item));
 }
 
 function includesAny(text, keywords) {
@@ -335,7 +368,8 @@ function extractAnchors(html, baseUrl) {
       title,
       url,
       context,
-      publishedDate: knownPublishedDateForText(title, url, context) || extractPublishedDate(title, url, context),
+      ...extractOjkListDates(context),
+      ...knownDateMetadataForText(title, url, context),
     });
   }
   return anchors;
@@ -516,13 +550,17 @@ function makeBriefing(candidate, nowIso) {
   const level = labels.length >= 2 || /modal|manajemen risiko|tata kelola|perlindungan konsumen|qris|pembayaran/i.test(entry.title)
     ? "高"
     : "中";
+  const metadata = {
+    ...extractOjkListDates(entry.context),
+    ...knownDateMetadataForText(entry.title, entry.url, entry.context, entry.sourceOriginalTitle),
+  };
+  const sourceDate = metadata.sourceDate || entry.sourceDate || entry.publishedDate || null;
+  const effectiveDate = metadata.effectiveDate || entry.effectiveDate || null;
 
   return {
     date: extractYear(`${entry.title} ${entry.url}`),
-    publishedDate:
-      knownPublishedDateForText(entry.title, entry.url, entry.context, entry.sourceOriginalTitle) ||
-      entry.publishedDate ||
-      extractPublishedDate(entry.title, entry.url, entry.context),
+    sourceDate,
+    effectiveDate,
     title: titleForBriefing(localized.title),
     regulator: source.regulator,
     licenses: labels,
@@ -535,7 +573,7 @@ function makeBriefing(candidate, nowIso) {
     sourceLabel: source.name,
     sourceUrl: entry.url,
     sourceOriginalTitle: entry.title,
-    sourceStatus: `每日更新器于 ${nowIso} 核验原文链接；HTTP ${entry.sourceVerifiedStatus || 200}，发布日期已确认。`,
+    sourceStatus: `每日更新器于 ${nowIso} 核验原文链接；HTTP ${entry.sourceVerifiedStatus || 200}，官网日期与生效日期分开记录。`,
   };
 }
 
@@ -543,7 +581,7 @@ function mergeWithSeeds(briefings, nowIso) {
   const seen = new Set(briefings.map((item) => item.sourceUrl || item.title));
   const merged = [...briefings];
   for (const seed of SEED_BRIEFINGS) {
-    if (!seed.sourceUrl || !hasVerifiedPublishedDate(seed)) continue;
+    if (!seed.sourceUrl || !hasVerifiedSourceDate(seed)) continue;
     if (seen.has(seed.sourceUrl)) continue;
     merged.push({
       ...seed,
@@ -555,7 +593,7 @@ function mergeWithSeeds(briefings, nowIso) {
 }
 
 function briefingSortValue(item) {
-  const value = item.publishedDate || (String(item.date || "").length > 4 ? item.date : `${item.date || "1900"}-01-01`);
+  const value = sourceDateFor(item) || (String(item.date || "").length > 4 ? item.date : `${item.date || "1900"}-01-01`);
   const time = Date.parse(value);
   return Number.isFinite(time) ? time : 0;
 }
@@ -575,7 +613,7 @@ function briefingKey(item) {
   return `briefing:${[
     item.regulator || "",
     item.title || "",
-    item.publishedDate || item.date || "",
+    sourceDateFor(item) || item.date || "",
   ].join("|").toLowerCase()}`;
 }
 
@@ -589,7 +627,8 @@ function buildLicenseUpdates(briefings, options = {}) {
       if (!updates[id]) updates[id] = [];
       updates[id].push({
         name: item.title,
-        publishedDate: item.publishedDate,
+        sourceDate: sourceDateFor(item),
+        effectiveDate: item.effectiveDate,
         firstSeenDate: item.firstSeenDate,
         note: `${item.summary} ${item.impact}`,
         sourceUrl: item.sourceUrl,
@@ -694,28 +733,30 @@ async function fetchSource(source) {
 
 async function validateEntrySource(entry) {
   if (!entry || !entry.url) {
-    return { ok: false, status: "NO_URL", publishedDate: null };
+    return { ok: false, status: "NO_URL", sourceDate: null };
   }
   try {
     const result = await fetchSource({ url: entry.url });
     if (!result.ok) {
-      return { ok: false, status: result.status, finalUrl: result.finalUrl, publishedDate: null };
+      return { ok: false, status: result.status, finalUrl: result.finalUrl, sourceDate: null };
     }
     const pageText = cleanText(result.text || "");
-    const publishedDate =
-      knownPublishedDateForText(entry.title, entry.url, result.finalUrl, entry.context, pageText) ||
-      entry.publishedDate ||
-      extractPublishedDate(entry.title, entry.url, entry.context, pageText);
-    if (!publishedDate) {
-      return { ok: false, status: "NO_VERIFIED_DATE", finalUrl: result.finalUrl, publishedDate: null };
+    const metadata = {
+      ...extractOjkListDates(entry.context),
+      ...knownDateMetadataForText(entry.title, entry.url, result.finalUrl, entry.context, pageText),
+    };
+    const sourceDate = metadata.sourceDate || entry.sourceDate || null;
+    const effectiveDate = metadata.effectiveDate || entry.effectiveDate || extractEffectiveDate(entry.context, pageText);
+    if (!sourceDate) {
+      return { ok: false, status: "NO_VERIFIED_SOURCE_DATE", finalUrl: result.finalUrl, sourceDate: null };
     }
-    return { ok: true, status: result.status, finalUrl: result.finalUrl, publishedDate };
+    return { ok: true, status: result.status, finalUrl: result.finalUrl, sourceDate, effectiveDate };
   } catch (error) {
     return {
       ok: false,
       status: "FETCH_ERROR",
       error: error && error.message ? error.message : String(error),
-      publishedDate: null,
+      sourceDate: null,
     };
   }
 }
@@ -783,14 +824,15 @@ async function buildSnapshot({ reason = "manual" } = {}) {
   for (const candidate of uniqueCandidates) {
     if (verifiedCandidates.length >= 6) break;
     const validation = await validateEntrySource(candidate.entry);
-    if (!validation.ok || !validation.publishedDate) {
+    if (!validation.ok || !validation.sourceDate) {
       discardedUnverified += 1;
       continue;
     }
     candidate.entry = {
       ...candidate.entry,
       url: validation.finalUrl || candidate.entry.url,
-      publishedDate: validation.publishedDate,
+      sourceDate: validation.sourceDate,
+      effectiveDate: validation.effectiveDate,
       sourceVerifiedStatus: validation.status,
     };
     verifiedCandidates.push(candidate);
