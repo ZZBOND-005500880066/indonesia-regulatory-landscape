@@ -922,23 +922,137 @@ licenses = [
             "数据中心和灾备中心必须设在印尼境内的独立地点。",
             "至少 2 名董事、1 名监事；至少 1 名董事具备信用评级、IT 或金融服务经验。",
         ],
+        "competitorLens": [
+            {
+                "label": "第一层",
+                "title": "合规牌照和数据边界决定能否长期经营",
+                "note": "PKA 的核心不是单纯建模，而是在 POJK 29/2024 下证明数据来源、授权、模型解释和禁用金融信用数据的边界。",
+            },
+            {
+                "label": "第二层",
+                "title": "征信协同决定收入上限",
+                "note": "Advance AI/BPS 与 CBI 协同的价值在于把另类评分、反欺诈、eKYC 和传统信用信息服务组合销售。",
+            },
+            {
+                "label": "第三层",
+                "title": "风控工具链决定客户粘性",
+                "note": "TrustDecision、iziDATA、Prime Analytics、AIForesee 和 Cloudun AI 竞争的重点是数据维度、反欺诈、多头和模型本地化。",
+            },
+        ],
         "competitors": [
-            {"name": "Advance AI / BPS", "position": "市场领先者，拥有 ICS 与 CBI 征信协同", "signal": "信用评分、多头、欺诈、eKYC，数据含电商、支付网关、电信等"},
-            {"name": "TrustDecision", "position": "同盾科技印尼主体", "signal": "FINScore、eKYC、欺诈检测和全球风险画像"},
-            {"name": "iziDATA", "position": "中国数据公司印信科技投资", "signal": "信用评分、社交媒体号码检测、eKYC"},
-            {"name": "Prime Analytics", "position": "CTOS Digital 印尼业务", "signal": "电信评分、地址核验、位置评分、收入评分"},
-            {"name": "AIForesee", "position": "原 Investree 信用平台，后由韩国 PFC Technologies 收购", "signal": "eKYC、收入就业、税务、社保、法律风险和多头查询"},
-            {"name": "Cloudun AI", "position": "中国和新加坡背景", "signal": "Credit insights、Digital lending 咨询和 AI 反欺诈"},
+            {
+                "name": "Advance AI / BPS",
+                "tier": "头部 PKA + CBI 协同",
+                "scale": "材料估算 ICS 年收入约 USD 2m，合并 CBI 征信约 USD 3.5m",
+                "position": "信用评分、多头、反欺诈、eKYC 和传统信用信息协同",
+                "edge": "同时覆盖另类数据、欺诈识别、eKYC、信用评分和 CBI 征信协同，客户交叉销售空间最大。",
+                "implication": "最适合作为市场上限样本；进入时要重点对比数据合法性、产品组合、金融机构客户覆盖和调用量。",
+            },
+            {
+                "name": "TrustDecision",
+                "tier": "中国风控技术输出型 PKA",
+                "scale": "二梯队玩家，材料估计年收入约 USD 500k-600k 区间",
+                "position": "FINScore、eKYC、反欺诈检测和全球风险画像",
+                "edge": "跨市场反欺诈、设备/行为/关系网络能力和模型迭代经验。",
+                "implication": "适合观察中国风控能力在印尼本地化时的合规改造；重点看数据授权、解释性和本地金融机构采纳率。",
+            },
+            {
+                "name": "iziDATA",
+                "tier": "数据维度和评分工具型 PKA",
+                "scale": "二梯队玩家，材料估计年收入约 USD 500k-600k 区间",
+                "position": "信用评分、社交媒体号码检测、eKYC 和辅助风控",
+                "edge": "产品轻、调用成本低，适合围绕手机号、社交信号和身份校验做风控补充。",
+                "implication": "对标重点是单次调用成本、数据源稳定性和是否能从单点工具扩展到完整评分服务。",
+            },
+            {
+                "name": "Prime Analytics",
+                "tier": "CTOS 背景数据评分平台",
+                "scale": "依托 CTOS Digital 区域信用信息和数据分析经验",
+                "position": "电信评分、地址核验、位置评分、收入评分",
+                "edge": "区域信用信息经验和较多非金融数据维度，适合做补充评分和身份校验。",
+                "implication": "适合作为区域数据公司进入印尼的样本；重点看本地数据合作、模型迁移和监管接受度。",
+            },
+            {
+                "name": "AIForesee",
+                "tier": "原 P2P 风控平台转型",
+                "scale": "原 Investree 信用平台，后由韩国 PFC Technologies 收购",
+                "position": "eKYC、收入就业、税务、社保、法律风险和多头查询",
+                "edge": "P2P 场景理解、收入/就业/税务等数据维度和贷前风控经验。",
+                "implication": "如果目标客户是 P2P 或现金贷机构，应重点看其场景适配和数据闭环；也要评估 Investree 历史关联的声誉影响。",
+            },
+            {
+                "name": "Cloudun AI",
+                "tier": "AI 风控和咨询型玩家",
+                "scale": "中国和新加坡背景，材料显示提供 credit insights、digital lending 咨询和 AI 反欺诈",
+                "position": "Credit insights、Digital lending 咨询、AI 反欺诈和风控系统",
+                "edge": "更偏系统和咨询能力，可围绕建模、策略、反欺诈和数字贷款流程提供组合服务。",
+                "implication": "适合作为轻资产进入样本；重点看是否具备 PKA 持续合规能力，而不是只做技术外包。",
+            },
         ],
         "latestRules": [
-            {"name": "POJK 3/2024", "note": "ITSK 金融科技创新统领性规则。"},
-            {"name": "POJK 29/2024", "note": "正式定义 PKA/ICS 牌照，明确资本、外资、数据来源、治理和系统要求。"},
-            {"name": "POJK 5/2022", "note": "Credit Bureau / LPIP 对照规则，区别于 PKA 的 SLIK 金融信用数据通道。"},
+            {
+                "name": "POJK No.30/2025",
+                "note": "ITSK 经营者治理和风险管理规则，要求董事会/监事会、内控、风险管理、数据保护、系统安全和持续经营能力落地。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+            },
+            {
+                "name": "POJK No.29/2024",
+                "note": "正式定义 PKA/ICS 牌照，明确资本、外资、数据来源、治理、系统要求和另类信用评分边界。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-29-2024-Pemeringkat-Kredit-Alternatif-PKA.aspx",
+            },
+            {
+                "name": "POJK No.3/2024",
+                "note": "ITSK 总框架，覆盖 sandbox、注册、许可、监测评估、消费者保护、个人数据保护和第三方支持活动。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-3-2024-Penyelenggaraan-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+            },
+            {
+                "name": "SEOJK No.4/SEOJK.07/2025",
+                "note": "已取得经营许可的 ITSK 经营者报告规则，影响 PKA 持续报送、经营数据和监管留痕。",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/SEOJK-4SEOJK072025-Pelaporan-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan-Yang-Memiliki-Izin-Usaha-di-OJK.aspx",
+            },
+            {
+                "name": "POJK No.5/POJK.03/2022",
+                "note": "LPIP/Credit Bureau 规则，用于区分传统金融信用数据通道和 PKA 只能使用另类非金融数据的边界。",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/227354/peraturan-ojk-no-5pojk032022-tahun-2022",
+            },
         ],
         "legalIndex": [
-            "POJK 3 Tahun 2024 on Financial Sector Technology Innovation",
-            "POJK 29 Tahun 2024 on Pemeringkat Kredit Alternatif",
-            "POJK 5 Tahun 2022 on Credit Bureau / LPIP",
+            {
+                "name": "POJK No.30/2025 on Governance and Risk Management for ITSK Providers",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-Terbitkan-Aturan-Perkuat-Tata-Kelola-dan-Manajemen-Risiko-Inovasi-Teknologi-Sektor-Keuangan-Serta-Aset-Keuangan-Digital.aspx",
+                "sourceAltLabel": "OJK Press",
+            },
+            {
+                "name": "POJK No.29/2024 on Pemeringkat Kredit Alternatif",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-29-2024-Pemeringkat-Kredit-Alternatif-PKA.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-29-tahun-2024",
+                "sourceAltLabel": "peraturan.go.id",
+            },
+            {
+                "name": "POJK No.3/2024 on Financial Sector Technology Innovation",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-3-2024-Penyelenggaraan-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/301678/peraturan-ojk-no-3-tahun-2024",
+                "sourceAltLabel": "BPK",
+            },
+            {
+                "name": "SEOJK No.4/SEOJK.07/2025 on Reporting for Licensed ITSK Providers",
+                "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/SEOJK-4SEOJK072025-Pelaporan-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan-Yang-Memiliki-Izin-Usaha-di-OJK.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "SEOJK No.7/SEOJK.07/2024 on Reporting for Registered ITSK Providers",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Pelaporan-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan-yang-Terdaftar-di-Otoritas-Jasa-Keuangan.aspx",
+                "sourceLabel": "OJK / PDF",
+            },
+            {
+                "name": "POJK No.5/POJK.03/2022 on Credit Bureau / LPIP",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/227354/peraturan-ojk-no-5pojk032022-tahun-2022",
+                "sourceLabel": "BPK / PDF",
+            },
         ],
         "sourceDoc": "印尼ICS+(另类征信)监管规定与投入路径讨论决策_202605_副本.pdf",
     },
@@ -1125,6 +1239,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "模块优化",
+        "title": "ICS/PKA 板块同步横向对比和法规链接",
+        "summary": "ICS/PKA 详情页改为全宽竞品对比，并补充 PKA/ITSK 最新监管规定和法规索引来源。",
+        "changes": [
+            "竞争对手板块新增合规牌照和数据边界、征信协同、风控工具链三层判断。",
+            "Advance AI/BPS、TrustDecision、iziDATA、Prime Analytics、AIForesee 和 Cloudun AI 改为可横向比较字段。",
+            "最新监管规定和法规索引补充 POJK 30/2025、POJK 29/2024、POJK 3/2024、SEOJK 4/2025、SEOJK 7/2024 与 POJK 5/2022 链接。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "模块优化",
@@ -3312,7 +3437,7 @@ html = f"""<!doctype html>
 
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
-      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp", "bpr"].includes(item.id);
+      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp", "bpr", "ics"].includes(item.id);
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('home')">返回总览</button>

@@ -3,6 +3,17 @@
     {
       "date": "2026-07-17",
       "type": "模块优化",
+      "title": "ICS/PKA 板块同步横向对比和法规链接",
+      "summary": "ICS/PKA 详情页改为全宽竞品对比，并补充 PKA/ITSK 最新监管规定和法规索引来源。",
+      "changes": [
+        "竞争对手板块新增合规牌照和数据边界、征信协同、风控工具链三层判断。",
+        "Advance AI/BPS、TrustDecision、iziDATA、Prime Analytics、AIForesee 和 Cloudun AI 改为可横向比较字段。",
+        "最新监管规定和法规索引补充 POJK 30/2025、POJK 29/2024、POJK 3/2024、SEOJK 4/2025、SEOJK 7/2024 与 POJK 5/2022 链接。"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "type": "模块优化",
       "title": "BPR 板块同步横向对比和法规链接",
       "summary": "BPR 详情页改为全宽竞品对比，并补充 BPR/BPRS 最新监管规定和法规索引来源。",
       "changes": [
