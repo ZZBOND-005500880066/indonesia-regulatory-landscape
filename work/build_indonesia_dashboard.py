@@ -136,67 +136,69 @@ licenses = [
             },
             {
                 "name": "POJK No.12/POJK.03/2021 on Commercial Banks",
-                "sourceUrl": "https://peraturan.bpk.go.id/Details/227209/peraturan-ojk-no-12pojk032021-tahun-",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/227209/peraturan-ojk-no-12pojk032021-tahun-2021",
                 "sourceLabel": "BPK / PDF",
-                "sourceAltUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-12-pojk-03-2021-tahun-2021",
-                "sourceAltLabel": "peraturan.go.id",
+                "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/Pages/Bank-Umum.aspx",
+                "sourceAltLabel": "OJK",
             },
             {
                 "name": "POJK No.40/POJK.03/2019 on Commercial Bank Asset Quality",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-40-pojk-03-2019-tahun-2019",
-                "sourceLabel": "peraturan.go.id",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/128448/peraturan-ojk-no-40pojk032019-tahun-2019",
+                "sourceLabel": "BPK / PDF",
+                "sourceAltUrl": "https://ojk.go.id/id/regulasi/Pages/Penilaian-Kualitas-Aset-Bank-Umum.aspx",
+                "sourceAltLabel": "OJK",
             },
             {
                 "name": "POJK No.18/POJK.03/2016 on Risk Management",
-                "sourceUrl": "https://peraturan.go.id/id/peraturan-ojk-no-18-pojk-03-2016-tahun-2016",
-                "sourceLabel": "peraturan.go.id",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/128407/peraturan-ojk-no-18pojk032016-tahun-2016",
+                "sourceLabel": "BPK / PDF",
                 "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-tentang-Penerapan-Manajemen-Resiko-bagi-Bank-Umum.aspx",
-                "sourceAltLabel": "OJK / PDF",
+                "sourceAltLabel": "OJK",
             },
             {
                 "name": "POJK No.4/POJK.03/2016 on Bank Soundness Level",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-4-pojk-03-2016-tahun-2016",
-                "sourceLabel": "peraturan.go.id",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/128351/peraturan-ojk-no-4pojk032016-tahun-2016",
+                "sourceLabel": "BPK / PDF",
             },
             {
                 "name": "POJK No.17/2023 on Commercial Bank Governance",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-17-tahun-2023",
-                "sourceLabel": "peraturan.go.id",
+                "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/Penerapan-Tata-Kelola-Bagi-Bank-Umum.aspx",
+                "sourceLabel": "OJK / PDF",
             },
             {
                 "name": "POJK No.50/POJK.03/2017 on NSFR",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-50-pojk-03-2017-tahun-2017",
-                "sourceLabel": "peraturan.go.id",
+                "sourceUrl": "https://ojk.go.id/id/kanal/perbankan/regulasi/peraturan-ojk/Pages/POJK-tentang-Kewajiban-Pemenuhan-Rasio-Pendanaan-Stabil-Bersih-%28Net-Stable-Funding-Ratio%29-bagi-Bank-Umum.aspx",
+                "sourceLabel": "OJK / PDF",
             },
             {
                 "name": "POJK No.37/POJK.03/2019 on Transparency and Disclosure",
-                "sourceUrl": "https://peraturan.bpk.go.id/Home/Details/128445/peraturan-ojk-no-37pojk032019-tahun-2019",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/128445/peraturan-ojk-no-37pojk032019-tahun-2019",
                 "sourceLabel": "BPK / PDF",
-                "sourceAltUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-37-pojk-03-2019-tahun-2019",
-                "sourceAltLabel": "peraturan.go.id",
             },
             {
                 "name": "POJK No.11/POJK.03/2022 on IT Implementation",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-11-pojk-03-2022-tahun-2022",
-                "sourceLabel": "peraturan.go.id",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/227376/peraturan-ojk-no-11pojk032022-tahun-2022",
+                "sourceLabel": "BPK / PDF",
+                "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/Pages/Penyelenggaraan-Teknologi-Informasi-oleh-Bank-Umum.aspx",
+                "sourceAltLabel": "OJK",
             },
             {
                 "name": "POJK No.22/2023 on Consumer and Public Protection",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-22-tahun-2023",
-                "sourceLabel": "peraturan.go.id",
-                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/302699/peraturan-ojk-no-22-tahun-2023",
-                "sourceAltLabel": "BPK / PDF",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/302699/peraturan-ojk-no-22-tahun-2023",
+                "sourceLabel": "BPK / PDF",
+                "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/Pages/Pelindungan-Konsumen-dan-Masyarakat-di-Sektor-Jasa-Keuangan.aspx",
+                "sourceAltLabel": "OJK",
             },
             {
                 "name": "POJK No.8/2023 on AML/CFT/CPF",
-                "sourceUrl": "https://www.peraturan.go.id/id/peraturan-ojk-no-8-tahun-2023",
-                "sourceLabel": "peraturan.go.id",
+                "sourceUrl": "https://ojk.go.id/apu-ppt/id/peraturan/pojk/Pages/POJK-8-2023-.aspx",
+                "sourceLabel": "OJK / PDF",
             },
             {
                 "name": "Banking Act No.7/1992 and amendments",
-                "sourceUrl": "https://peraturan.go.id/eng/uu-no-7-tahun-1992",
-                "sourceLabel": "UU 7/1992",
-                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/45486/uu-",
+                "sourceUrl": "https://peraturan.bpk.go.id/Details/46599/uu-no-7-tahun-1992",
+                "sourceLabel": "UU 7/1992 / PDF",
+                "sourceAltUrl": "https://peraturan.bpk.go.id/Details/45486/uu-no-10-tahun-1998",
                 "sourceAltLabel": "UU 10/1998 amendment",
             },
         ],
@@ -646,6 +648,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "\u5185\u5bb9\u4fee\u6b63",
+        "title": "\u4fee\u6b63\u5546\u4e1a\u94f6\u884c\u6cd5\u89c4\u7d22\u5f15\u5931\u6548\u94fe\u63a5",
+        "summary": "\u5c06\u5546\u4e1a\u94f6\u884c\u6cd5\u89c4\u7d22\u5f15\u4e2d\u4e0d\u7a33\u5b9a\u7684 peraturan.go.id \u731c\u6d4b\u8def\u5f84\u66ff\u6362\u4e3a\u5df2\u6838\u9a8c\u7684 BPK \u6216 OJK \u5b98\u65b9\u9875\u9762\u3002",
+        "changes": [
+            "\u622a\u56fe\u4e2d\u7684 POJK 40/2019\u3001POJK 18/2016\u3001POJK 4/2016\u3001POJK 11/2022\u3001POJK 22/2023 \u7b49\u6539\u7528 BPK Details \u9875\u9762\uff0c\u9875\u9762\u5185\u53ef\u7ee7\u7eed\u4e0b\u8f7d PDF\u3002",
+            "POJK 17/2023\u3001POJK 50/2017\u3001POJK 8/2023 \u6539\u7528 OJK \u5b98\u65b9\u6cd5\u89c4\u9875\u9762\u3002",
+            "\u6cd5\u89c4\u540d\u79f0\u548c\u6765\u6e90\u80f6\u56ca\u90fd\u6539\u4e3a\u53ef\u70b9\u51fb\u94fe\u63a5\uff0c\u51cf\u5c11\u8bef\u70b9\u4e0d\u54cd\u5e94\u7684\u60c5\u51b5\u3002",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "\u5185\u5bb9\u8865\u5145",
@@ -1769,7 +1782,7 @@ html = f"""<!doctype html>
       white-space: nowrap;
     }}
 
-    .legal-alt-link:hover {{
+    .legal-source-label:hover, .legal-alt-link:hover {{
       border-color: #9cb9b1;
       background: #eef6f2;
       color: #173d3a;
@@ -2677,7 +2690,7 @@ html = f"""<!doctype html>
           ? `<a class="legal-link" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{name}}</a>`
           : name;
         const sourceLabel = item.sourceLabel && item.sourceUrl
-          ? `<span class="legal-source-label">${{esc(item.sourceLabel)}}</span>`
+          ? `<a class="legal-source-label" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel)}}</a>`
           : "";
         const alt = item.sourceAltUrl
           ? `<a class="legal-alt-link" href="${{esc(item.sourceAltUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceAltLabel || "备用链接")}}</a>`
