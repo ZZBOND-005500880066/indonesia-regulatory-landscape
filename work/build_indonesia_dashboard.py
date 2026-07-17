@@ -13,6 +13,8 @@ DEVLOG_PUBLIC = ROOT / "public" / "developer-log.json"
 DEVLOG_DATA = ROOT / "data" / "developer-log.json"
 REGULATORY_PUBLIC = ROOT / "public" / "regulatory-updates.json"
 REGULATORY_DATA = ROOT / "data" / "regulatory-updates.json"
+REGULATORY_HISTORY_PUBLIC = ROOT / "public" / "regulatory-history.json"
+REGULATORY_HISTORY_DATA = ROOT / "data" / "regulatory-history.json"
 
 
 licenses = [
@@ -572,6 +574,17 @@ regulatory_briefings = [
 developer_log = [
     {
         "date": "2026-07-17",
+        "type": "数据管道",
+        "title": "监管动态改为长期历史库",
+        "summary": "将监管动态从单日快照升级为可持续累积的历史库：首页只展示最新几条，历史页保留网站创建以来收录过的监管简报。",
+        "changes": [
+            "新增 regulatory-history.json，保存历史简报、首次收录日期、最近出现日期和出现次数。",
+            "每日联网检索仍生成最新快照 regulatory-updates.json，但会同步合并进历史库。",
+            "GitHub Actions 定时任务会把历史库写回仓库，避免下一次部署覆盖旧简报。",
+        ],
+    },
+    {
+        "date": "2026-07-17",
         "type": "模块优化",
         "title": "商业银行竞争对手改为横向对比",
         "summary": "商业银行详情页的竞争对手板块从普通卡片改为分层格局和横向对比表，突出玩家体量、主战场和对进入策略的启示。",
@@ -816,6 +829,13 @@ embedded_update_snapshot = load_json_snapshot(
     },
 )
 embedded_update_snapshot = enrich_published_dates(embedded_update_snapshot)
+
+embedded_history_snapshot = load_json_snapshot(
+    REGULATORY_HISTORY_PUBLIC,
+    REGULATORY_HISTORY_DATA,
+    fallback=embedded_update_snapshot,
+)
+embedded_history_snapshot = enrich_published_dates(embedded_history_snapshot)
 
 
 html = f"""<!doctype html>
@@ -2165,10 +2185,10 @@ html = f"""<!doctype html>
           <div class="section-header">
             <div>
               <h3>监管动态历史</h3>
-              <p>基于本轮外部渠道核验生成，只纳入能打开并与牌照相关的监管条目；没有可靠来源的类别不硬生成。</p>
+              <p>保留网站创建以来每日联网检索收录过的监管简报；首页只展示最新几条，完整记录在这里回看。</p>
             </div>
           </div>
-          <div class="update-note" id="updateStatus">当前显示静态 HTML 内置监管快照；如果通过 server.js 运行，页面会优先读取每日联网检索生成的 regulatory-updates.json。</div>
+          <div class="update-note" id="updateStatus">当前显示静态 HTML 内置监管动态历史；部署到网站后，页面会优先读取每日联网检索累积生成的 regulatory-history.json。</div>
           <div class="briefing-grid" id="briefingGrid"></div>
         </section>
 
@@ -2197,11 +2217,14 @@ html = f"""<!doctype html>
     const BUILT_IN_BRIEFINGS = {json.dumps(regulatory_briefings, ensure_ascii=False)};
     const BUILT_IN_DEV_LOG = {json.dumps(developer_log, ensure_ascii=False)};
     const BUILT_IN_UPDATE_SNAPSHOT = {json.dumps(embedded_update_snapshot, ensure_ascii=False)};
+    const BUILT_IN_HISTORY_SNAPSHOT = {json.dumps(embedded_history_snapshot, ensure_ascii=False)};
     const KNOWN_PUBLISHED_DATES = {json.dumps(KNOWN_PUBLISHED_DATES, ensure_ascii=False)};
     const STATIC_HTML_MODE = window.location.protocol === "file:";
     let activeFilter = "全部";
     let externalUpdates = null;
-    let activeBriefings = BUILT_IN_BRIEFINGS;
+    let activeBriefings = Array.isArray(BUILT_IN_HISTORY_SNAPSHOT.briefings) && BUILT_IN_HISTORY_SNAPSHOT.briefings.length
+      ? BUILT_IN_HISTORY_SNAPSHOT.briefings
+      : BUILT_IN_BRIEFINGS;
     let activeDeveloperLog = BUILT_IN_DEV_LOG;
 
     const qs = (sel, root = document) => root.querySelector(sel);
@@ -2423,6 +2446,7 @@ html = f"""<!doctype html>
               <h4>${{esc(item.title)}}</h4>
               <div class="briefing-meta">
                 <span class="tag">${{esc(briefingDateLabel(item))}}</span>
+                ${{item.firstSeenDate ? `<span class="tag">首次收录：${{esc(item.firstSeenDate)}}</span>` : ""}}
                 <span class="tag">${{esc(item.regulator)}}</span>
                 <span class="tag">影响：${{esc(item.level)}}</span>
               </div>
@@ -2649,23 +2673,35 @@ html = f"""<!doctype html>
       const checked = Array.isArray(data.sourcesChecked) ? data.sourcesChecked.filter(s => s.ok).length : 0;
       const sourceText = checked ? "，本次成功检查 " + checked + " 个官方入口" : "";
       const generatedAt = data.generatedAt || data.generatedDate || "时间未记录";
-      const status = mode === "external"
-        ? "已加载网站每日联网检索快照：" + generatedAt + sourceText + "。首页监管动态和子页面监管动态已使用外部更新数据。"
-        : "当前显示静态 HTML 内置监管快照：" + generatedAt + sourceText + "。此文件可直接打开和转发；每日联网更新需要重新运行更新器或部署服务端。";
+      const total = Array.isArray(data.briefings) ? data.briefings.length : 0;
+      const status = mode === "history"
+        ? "已加载网站监管动态历史库：" + generatedAt + "，累计 " + total + " 条简报" + sourceText + "。首页展示最新几条，历史页保留全部收录记录。"
+        : mode === "external"
+          ? "未读取到历史库，已加载网站每日联网检索快照：" + generatedAt + sourceText + "。历史页暂时显示本次快照。"
+          : "当前显示静态 HTML 内置监管动态历史：" + generatedAt + "，累计 " + total + " 条简报" + sourceText + "。部署后会优先读取 regulatory-history.json。";
       qs("#updateStatus").textContent = status;
       return true;
     }}
 
     async function loadExternalUpdates() {{
-      const hasEmbeddedSnapshot = applyUpdateSnapshot(BUILT_IN_UPDATE_SNAPSHOT, "static");
+      const hasEmbeddedHistory = applyUpdateSnapshot(BUILT_IN_HISTORY_SNAPSHOT, "static-history");
       if (STATIC_HTML_MODE) return;
+      try {{
+        const res = await fetch("regulatory-history.json?d=" + new Date().toISOString().slice(0, 10), {{ cache: "no-store" }});
+        if (!res.ok) return;
+        const data = await res.json();
+        applyUpdateSnapshot(data, "history");
+        return;
+      }} catch (err) {{
+        // Fall back to the latest snapshot below.
+      }}
       try {{
         const res = await fetch("regulatory-updates.json?d=" + new Date().toISOString().slice(0, 10), {{ cache: "no-store" }});
         if (!res.ok) return;
         const data = await res.json();
         applyUpdateSnapshot(data, "external");
       }} catch (err) {{
-        if (!hasEmbeddedSnapshot) externalUpdates = null;
+        if (!hasEmbeddedHistory) externalUpdates = null;
       }}
     }}
 

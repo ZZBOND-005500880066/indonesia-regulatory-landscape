@@ -6,6 +6,9 @@ const DATA_DIR = path.join(ROOT, "data");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const DATA_SNAPSHOT = path.join(DATA_DIR, "regulatory-updates.json");
 const PUBLIC_SNAPSHOT = path.join(PUBLIC_DIR, "regulatory-updates.json");
+const DATA_HISTORY = path.join(DATA_DIR, "regulatory-history.json");
+const PUBLIC_HISTORY = path.join(PUBLIC_DIR, "regulatory-history.json");
+const HISTORY_LIMIT = Number(process.env.REGULATORY_HISTORY_LIMIT || 500);
 
 const OFFICIAL_SOURCES = [
   {
@@ -522,21 +525,122 @@ function mergeWithSeeds(briefings, nowIso) {
   return merged;
 }
 
-function buildLicenseUpdates(briefings) {
+function briefingSortValue(item) {
+  const value = item.publishedDate || (String(item.date || "").length > 4 ? item.date : `${item.date || "1900"}-01-01`);
+  const time = Date.parse(value);
+  return Number.isFinite(time) ? time : 0;
+}
+
+function canonicalUrl(value) {
+  try {
+    const url = new URL(value);
+    url.hash = "";
+    return url.href.toLowerCase();
+  } catch {
+    return String(value || "").trim().toLowerCase();
+  }
+}
+
+function briefingKey(item) {
+  if (item.sourceUrl) return `url:${canonicalUrl(item.sourceUrl)}`;
+  return `briefing:${[
+    item.regulator || "",
+    item.title || "",
+    item.publishedDate || item.date || "",
+  ].join("|").toLowerCase()}`;
+}
+
+function buildLicenseUpdates(briefings, options = {}) {
+  const limitPerLicense = options.limitPerLicense || null;
   const updates = {};
-  for (const item of briefings) {
+  const sorted = [...briefings].sort((a, b) => briefingSortValue(b) - briefingSortValue(a));
+  for (const item of sorted) {
     const ids = item.licenseIds || [];
     for (const id of ids) {
       if (!updates[id]) updates[id] = [];
       updates[id].push({
         name: item.title,
         publishedDate: item.publishedDate,
+        firstSeenDate: item.firstSeenDate,
         note: `${item.summary} ${item.impact}`,
         sourceUrl: item.sourceUrl,
       });
     }
   }
+  if (limitPerLicense) {
+    for (const id of Object.keys(updates)) {
+      updates[id] = updates[id].slice(0, limitPerLicense);
+    }
+  }
   return updates;
+}
+
+async function readJsonIfExists(filePath) {
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+async function readExistingHistory() {
+  return (
+    await readJsonIfExists(DATA_HISTORY) ||
+    await readJsonIfExists(PUBLIC_HISTORY) ||
+    await readJsonIfExists(DATA_SNAPSHOT) ||
+    await readJsonIfExists(PUBLIC_SNAPSHOT) ||
+    { briefings: [] }
+  );
+}
+
+function mergeHistory(currentSnapshot, previousHistory) {
+  const generatedDate = currentSnapshot.generatedDate || localDateStamp();
+  const previousBriefings = Array.isArray(previousHistory.briefings) ? previousHistory.briefings : [];
+  const currentBriefings = Array.isArray(currentSnapshot.briefings) ? currentSnapshot.briefings : [];
+  const byKey = new Map();
+
+  for (const item of previousBriefings) {
+    byKey.set(briefingKey(item), { ...item });
+  }
+
+  let addedBriefings = 0;
+  for (const item of currentBriefings) {
+    const key = briefingKey(item);
+    const existing = byKey.get(key);
+    if (!existing) addedBriefings += 1;
+    byKey.set(key, {
+      ...(existing || {}),
+      ...item,
+      firstSeenDate: existing?.firstSeenDate || generatedDate,
+      lastSeenDate: generatedDate,
+      seenCount: (existing?.seenCount || 0) + 1,
+    });
+  }
+
+  const briefings = [...byKey.values()]
+    .sort((a, b) => briefingSortValue(b) - briefingSortValue(a))
+    .slice(0, HISTORY_LIMIT);
+
+  return {
+    generatedAt: currentSnapshot.generatedAt,
+    generatedDate,
+    mode: "accumulated-history",
+    reason: currentSnapshot.reason || "daily-history-merge",
+    siteHistoryStartDate: previousHistory.siteHistoryStartDate || generatedDate,
+    latestSnapshotGeneratedAt: currentSnapshot.generatedAt,
+    sourcesChecked: currentSnapshot.sourcesChecked || [],
+    briefings,
+    licenses: buildLicenseUpdates(briefings, { limitPerLicense: 8 }),
+    diagnostics: {
+      ...(currentSnapshot.diagnostics || {}),
+      currentBriefings: currentBriefings.length,
+      previousBriefings: previousBriefings.length,
+      addedBriefings,
+      totalBriefings: briefings.length,
+      historyLimit: HISTORY_LIMIT,
+    },
+  };
 }
 
 async function fetchSource(source) {
@@ -644,9 +748,21 @@ async function writeSnapshot(snapshot) {
   await fs.writeFile(PUBLIC_SNAPSHOT, body, "utf8");
 }
 
+async function writeHistory(history) {
+  await fs.mkdir(DATA_DIR, { recursive: true });
+  await fs.mkdir(PUBLIC_DIR, { recursive: true });
+  const body = `${JSON.stringify(history, null, 2)}\n`;
+  await fs.writeFile(DATA_HISTORY, body, "utf8");
+  await fs.writeFile(PUBLIC_HISTORY, body, "utf8");
+}
+
 async function refreshRegulatoryData(options = {}) {
   const snapshot = await buildSnapshot(options);
+  snapshot.reason = options.reason || snapshot.reason || "manual";
+  const previousHistory = await readExistingHistory();
+  const history = mergeHistory(snapshot, previousHistory);
   await writeSnapshot(snapshot);
+  await writeHistory(history);
   return snapshot;
 }
 
@@ -656,6 +772,7 @@ if (require.main === module) {
       const okCount = snapshot.sourcesChecked.filter((source) => source.ok).length;
       console.log(`Updated regulatory snapshot: ${snapshot.briefings.length} briefings, ${okCount}/${snapshot.sourcesChecked.length} sources ok`);
       console.log(PUBLIC_SNAPSHOT);
+      console.log(PUBLIC_HISTORY);
     })
     .catch((error) => {
       console.error(error);
@@ -669,5 +786,7 @@ module.exports = {
   paths: {
     dataSnapshot: DATA_SNAPSHOT,
     publicSnapshot: PUBLIC_SNAPSHOT,
+    dataHistory: DATA_HISTORY,
+    publicHistory: PUBLIC_HISTORY,
   },
 };

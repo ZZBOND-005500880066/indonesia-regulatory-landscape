@@ -99,9 +99,10 @@ function send(res, status, body, type = "text/plain; charset=utf-8") {
 async function sendFile(res, filePath) {
   try {
     const body = await fsp.readFile(filePath);
+    const name = path.basename(filePath);
     res.writeHead(200, {
       "content-type": contentType(filePath),
-      "cache-control": path.basename(filePath) === "regulatory-updates.json" ? "no-store" : "public, max-age=60",
+      "cache-control": name === "regulatory-updates.json" || name === "regulatory-history.json" ? "no-store" : "public, max-age=60",
     });
     res.end(body);
   } catch {
@@ -121,6 +122,18 @@ async function handleUpdates(res) {
   await sendFile(res, paths.publicSnapshot);
 }
 
+async function handleHistory(res) {
+  try {
+    await ensureFreshSnapshot();
+  } catch (error) {
+    if (!fs.existsSync(paths.publicHistory)) {
+      send(res, 502, JSON.stringify({ error: "Unable to refresh regulatory history", detail: String(error) }), "application/json; charset=utf-8");
+      return;
+    }
+  }
+  await sendFile(res, paths.publicHistory);
+}
+
 async function handleRefresh(res) {
   try {
     const snapshot = await triggerRefresh("manual-api");
@@ -134,6 +147,10 @@ const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || "localhost"}`);
   if (url.pathname === "/regulatory-updates.json" || url.pathname === "/api/regulatory-updates") {
     await handleUpdates(res);
+    return;
+  }
+  if (url.pathname === "/regulatory-history.json" || url.pathname === "/api/regulatory-history") {
+    await handleHistory(res);
     return;
   }
   if (url.pathname === "/api/refresh-regulatory-updates") {

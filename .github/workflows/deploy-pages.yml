@@ -11,7 +11,7 @@ on:
       - master
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -39,6 +39,19 @@ jobs:
 
       - name: Refresh regulatory snapshot
         run: node work/update_regulatory_data.js github-actions
+
+      - name: Persist regulatory history
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/regulatory-updates.json data/regulatory-history.json
+          if git diff --cached --quiet; then
+            echo "No regulatory history changes to commit."
+          else
+            git commit -m "Update regulatory history [skip ci]"
+            git push
+          fi
 
       - name: Build static site
         run: python work/build_indonesia_dashboard.py

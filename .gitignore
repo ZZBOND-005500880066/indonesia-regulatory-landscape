@@ -1,7 +1,9 @@
 .agents/
 .codex/
 publish-repo/
-data/
+data/*
+!data/regulatory-updates.json
+!data/regulatory-history.json
 outputs/
 work/cleaned/
 work/extracted/
