@@ -1390,6 +1390,17 @@ regulatory_briefings = [
 developer_log = [
     {
         "date": "2026-07-17",
+        "type": "交互优化",
+        "title": "牌照库模块统一命名和返回逻辑",
+        "summary": "将牌照模块标题统一为“牌照库”，移除无实际筛选价值的分类按钮，并让牌照详情页返回牌照库。",
+        "changes": [
+            "牌照模块标题由“研究牌照”改为“牌照库”。",
+            "删除牌照库右侧分类筛选按钮，页面默认展示全部牌照。",
+            "牌照详情页左上角按钮由“返回总览”改为“返回牌照库”，点击后回到牌照库模块。",
+        ],
+    },
+    {
+        "date": "2026-07-17",
         "type": "模块优化",
         "title": "Loan Aggregator 板块同步横向对比和法规链接",
         "summary": "Loan Aggregator/PAJK 详情页改为全宽竞品对比，并补充 PAJK、ITSK、PSE 和个人数据保护相关法规来源。",
@@ -3175,10 +3186,9 @@ html = f"""<!doctype html>
           <div class="module-kicker"><button class="btn" onclick="setRoute('home')">返回模块首页</button></div>
           <div class="section-header">
             <div>
-              <h3>研究牌照</h3>
+              <h3>牌照库</h3>
               <p>每张牌照进入后可阅读业务范围、资本门槛、外资控制、玩家存量、限制、竞品和法规索引。</p>
             </div>
-            <div class="controls" id="categoryFilters"></div>
           </div>
           <div class="license-grid" id="licenseGrid"></div>
         </section>
@@ -3236,7 +3246,6 @@ html = f"""<!doctype html>
     const BUILT_IN_HISTORY_SNAPSHOT = {json.dumps(embedded_history_snapshot, ensure_ascii=False)};
     const KNOWN_PUBLISHED_DATES = {json.dumps(KNOWN_PUBLISHED_DATES, ensure_ascii=False)};
     const STATIC_HTML_MODE = window.location.protocol === "file:";
-    let activeFilter = "全部";
     let externalUpdates = null;
     let activeBriefings = Array.isArray(BUILT_IN_HISTORY_SNAPSHOT.briefings) && BUILT_IN_HISTORY_SNAPSHOT.briefings.length
       ? BUILT_IN_HISTORY_SNAPSHOT.briefings
@@ -3343,26 +3352,8 @@ html = f"""<!doctype html>
       `).join("");
     }}
 
-    function categories() {{
-      return ["全部", ...new Set(LICENSES.map(x => x.category))];
-    }}
-
-    function renderFilters() {{
-      const el = qs("#categoryFilters");
-      el.innerHTML = categories().map(c => `<button class="seg ${{c === activeFilter ? "active" : ""}}" data-filter="${{esc(c)}}">${{esc(c)}}</button>`).join("");
-      qsa("[data-filter]", el).forEach(btn => btn.addEventListener("click", () => {{
-        activeFilter = btn.dataset.filter;
-        renderFilters();
-        renderLicenseGrid();
-      }}));
-    }}
-
-    function visibleLicenses() {{
-      return activeFilter === "全部" ? LICENSES : LICENSES.filter(x => x.category === activeFilter);
-    }}
-
     function renderLicenseGrid() {{
-      qs("#licenseGrid").innerHTML = visibleLicenses().map(item => `
+      qs("#licenseGrid").innerHTML = LICENSES.map(item => `
         <a class="license-card" data-tone="${{esc(item.tone)}}" href="#license/${{esc(item.id)}}">
           <div class="card-top">
             <div class="accent"></div>
@@ -3600,7 +3591,7 @@ html = f"""<!doctype html>
       const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp", "bpr", "ics", "loan-aggregator"].includes(item.id);
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
-          <button class="btn" onclick="setRoute('home')">返回总览</button>
+          <button class="btn" onclick="setModule('licenses')">返回牌照库</button>
           <div class="detail-title">
             <div>
               <h2>${{esc(item.name)}}</h2>
@@ -3764,7 +3755,6 @@ html = f"""<!doctype html>
     async function init() {{
       renderNav();
       renderRegulators();
-      renderFilters();
       renderLicenseGrid();
       renderMatrix();
       renderSources();
