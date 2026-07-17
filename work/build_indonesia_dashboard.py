@@ -1322,7 +1322,7 @@ sources = []
 regulatory_briefings = [
     {
         "date": "2026",
-        "publishedDate": "2026-01-06",
+        "publishedDate": "2026-07-03",
         "title": "BPR 最低资本与核心资本要求更新",
         "regulator": "OJK",
         "licenses": ["BPR"],
@@ -1339,7 +1339,7 @@ regulatory_briefings = [
     },
     {
         "date": "2026",
-        "publishedDate": "2025-12-26",
+        "publishedDate": "2026-01-06",
         "title": "ITSK 经营者治理和风险管理规则落地",
         "regulator": "OJK",
         "licenses": ["ICS / PKA", "Loan Aggregator"],
@@ -1356,7 +1356,7 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
-        "publishedDate": "2025-11-24",
+        "publishedDate": "2026-01-19",
         "title": "融资公司月度报告规则更新",
         "regulator": "OJK",
         "licenses": ["Multi-Finance"],
@@ -1371,7 +1371,7 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
-        "publishedDate": "2025-10-23",
+        "publishedDate": "2025-09-12",
         "title": "投诉处理公开与投诉服务报告规则更新",
         "regulator": "OJK",
         "licenses": ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -1388,6 +1388,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "数据质量",
+        "title": "监管动态只保留可核验链接和日期",
+        "summary": "收紧监管动态入库规则，链接打不开或无法确认具体发布日期的简报不再展示，也不会进入历史库。",
+        "changes": [
+            "每日更新器新增原文链接二次核验，候选法规必须打开原文链接后才会生成简报。",
+            "监管动态和历史库过滤缺少 sourceUrl 或 YYYY-MM-DD 日期的条目。",
+            "移除当前无法确认具体发布日期的 PADK 4/2026 简报，并修正现有简报的 OJK 可核验日期。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "模块精简",
@@ -1753,11 +1764,11 @@ def load_json_snapshot(*paths: Path, fallback: dict) -> dict:
 
 
 KNOWN_PUBLISHED_DATES = {
-    "SEOJK 23/SEOJK.06/2025": "2025-05-27",
-    "POJK 30/2025": "2025-12-26",
-    "POJK 7/2026": "2026-01-06",
-    "PADK 45/PADK.06/2025": "2025-11-24",
-    "SEOJK 20/SEOJK.08/2025": "2025-10-23",
+    "SEOJK 23/SEOJK.06/2025": "2025-11-04",
+    "POJK 30/2025": "2026-01-06",
+    "POJK 7/2026": "2026-07-03",
+    "PADK 45/PADK.06/2025": "2026-01-19",
+    "SEOJK 20/SEOJK.08/2025": "2025-09-12",
     "PADG 19/2026": "2026-06-30",
 }
 
@@ -1786,6 +1797,39 @@ def enrich_published_dates(snapshot: dict) -> dict:
     return snapshot
 
 
+def is_verified_briefing(item: dict) -> bool:
+    return bool(
+        item
+        and item.get("sourceUrl")
+        and isinstance(item.get("publishedDate"), str)
+        and len(item.get("publishedDate")) == 10
+    )
+
+
+def filter_verified_snapshot(snapshot: dict) -> dict:
+    filtered = dict(snapshot or {})
+    briefings = [
+        item
+        for item in (filtered.get("briefings") or [])
+        if is_verified_briefing(item)
+    ]
+    filtered["briefings"] = briefings
+
+    licenses = {}
+    for key, items in (filtered.get("licenses") or {}).items():
+        kept = [
+            item
+            for item in (items or [])
+            if item.get("sourceUrl")
+            and isinstance(item.get("publishedDate"), str)
+            and len(item.get("publishedDate")) == 10
+        ]
+        if kept:
+            licenses[key] = kept
+    filtered["licenses"] = licenses
+    return filtered
+
+
 embedded_update_snapshot = load_json_snapshot(
     REGULATORY_PUBLIC,
     REGULATORY_DATA,
@@ -1797,14 +1841,14 @@ embedded_update_snapshot = load_json_snapshot(
         "sourcesChecked": [],
     },
 )
-embedded_update_snapshot = enrich_published_dates(embedded_update_snapshot)
+embedded_update_snapshot = filter_verified_snapshot(enrich_published_dates(embedded_update_snapshot))
 
 embedded_history_snapshot = load_json_snapshot(
     REGULATORY_HISTORY_PUBLIC,
     REGULATORY_HISTORY_DATA,
     fallback=embedded_update_snapshot,
 )
-embedded_history_snapshot = enrich_published_dates(embedded_history_snapshot)
+embedded_history_snapshot = filter_verified_snapshot(enrich_published_dates(embedded_history_snapshot))
 
 public_licenses = [
     {key: value for key, value in item.items() if key != "sourceDoc"}
@@ -3669,11 +3713,27 @@ html = f"""<!doctype html>
       return item;
     }}
 
+    function isVerifiedBriefing(item) {{
+      return Boolean(item && item.sourceUrl && /^\\d{{4}}-\\d{{2}}-\\d{{2}}$/.test(String(item.publishedDate || "")));
+    }}
+
+    function filterVerifiedSnapshot(data) {{
+      if (!data || typeof data !== "object") return data;
+      data.briefings = Array.isArray(data.briefings) ? data.briefings.filter(isVerifiedBriefing) : [];
+      const licenses = {{}};
+      Object.entries(data.licenses || {{}}).forEach(([key, items]) => {{
+        const kept = (items || []).filter(isVerifiedBriefing);
+        if (kept.length) licenses[key] = kept;
+      }});
+      data.licenses = licenses;
+      return data;
+    }}
+
     function normalizeUpdateSnapshot(data) {{
       if (!data || typeof data !== "object") return data;
       if (Array.isArray(data.briefings)) data.briefings.forEach(enrichBriefingDate);
       Object.values(data.licenses || {{}}).forEach(items => (items || []).forEach(enrichBriefingDate));
-      return data;
+      return filterVerifiedSnapshot(data);
     }}
 
     function applyUpdateSnapshot(data, mode) {{

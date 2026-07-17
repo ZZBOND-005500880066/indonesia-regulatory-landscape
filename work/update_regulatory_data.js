@@ -104,10 +104,19 @@ const GENERAL_KEYWORDS = [
 
 const RULE_SIGNAL = /(pojk|seojk|padk|pbi|padg|peraturan|surat edaran|nomor|tahun|kewajiban|penerapan|ketentuan|laporan|publikasi)/i;
 
+const KNOWN_PUBLISHED_DATES = {
+  "SEOJK 23/SEOJK.06/2025": "2025-11-04",
+  "POJK 30/2025": "2026-01-06",
+  "POJK 7/2026": "2026-07-03",
+  "PADK 45/PADK.06/2025": "2026-01-19",
+  "SEOJK 20/SEOJK.08/2025": "2025-09-12",
+  "PADG 19/2026": "2026-06-30",
+};
+
 const SEED_BRIEFINGS = [
   {
     date: "2026",
-    publishedDate: "2026-01-06",
+    publishedDate: "2026-07-03",
     title: "BPR 最低资本与核心资本要求更新",
     regulator: "OJK",
     licenses: ["BPR"],
@@ -124,7 +133,7 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2026",
-    publishedDate: "2025-12-26",
+    publishedDate: "2026-01-06",
     title: "ITSK 经营者治理和风险管理规则落地",
     regulator: "OJK",
     licenses: ["ICS / PKA", "Loan Aggregator"],
@@ -141,7 +150,7 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
-    publishedDate: "2025-11-24",
+    publishedDate: "2026-01-19",
     title: "融资公司月度报告规则更新",
     regulator: "OJK",
     licenses: ["Multi-Finance"],
@@ -156,7 +165,7 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
-    publishedDate: "2025-10-23",
+    publishedDate: "2025-09-12",
     title: "投诉处理公开与投诉服务报告规则更新",
     regulator: "OJK",
     licenses: ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -268,6 +277,22 @@ function extractPublishedDate(...parts) {
   return null;
 }
 
+function knownPublishedDateForText(...parts) {
+  const text = parts.filter(Boolean).join(" ");
+  for (const [marker, publishedDate] of Object.entries(KNOWN_PUBLISHED_DATES)) {
+    if (text.includes(marker)) return publishedDate;
+  }
+  return null;
+}
+
+function hasVerifiedPublishedDate(item) {
+  return Boolean(item && /^\d{4}-\d{2}-\d{2}$/.test(String(item.publishedDate || "")));
+}
+
+function filterDisplayableBriefings(briefings) {
+  return (briefings || []).filter((item) => item.sourceUrl && hasVerifiedPublishedDate(item));
+}
+
 function includesAny(text, keywords) {
   const lower = text.toLowerCase();
   return keywords.filter((keyword) => lower.includes(keyword.toLowerCase()));
@@ -310,7 +335,7 @@ function extractAnchors(html, baseUrl) {
       title,
       url,
       context,
-      publishedDate: extractPublishedDate(title, url, context),
+      publishedDate: knownPublishedDateForText(title, url, context) || extractPublishedDate(title, url, context),
     });
   }
   return anchors;
@@ -494,7 +519,10 @@ function makeBriefing(candidate, nowIso) {
 
   return {
     date: extractYear(`${entry.title} ${entry.url}`),
-    publishedDate: entry.publishedDate || extractPublishedDate(entry.title, entry.url, entry.context),
+    publishedDate:
+      knownPublishedDateForText(entry.title, entry.url, entry.context, entry.sourceOriginalTitle) ||
+      entry.publishedDate ||
+      extractPublishedDate(entry.title, entry.url, entry.context),
     title: titleForBriefing(localized.title),
     regulator: source.regulator,
     licenses: labels,
@@ -507,7 +535,7 @@ function makeBriefing(candidate, nowIso) {
     sourceLabel: source.name,
     sourceUrl: entry.url,
     sourceOriginalTitle: entry.title,
-    sourceStatus: `每日更新器于 ${nowIso} 联网抓取；来源入口 HTTP 200。`,
+    sourceStatus: `每日更新器于 ${nowIso} 核验原文链接；HTTP ${entry.sourceVerifiedStatus || 200}，发布日期已确认。`,
   };
 }
 
@@ -515,10 +543,11 @@ function mergeWithSeeds(briefings, nowIso) {
   const seen = new Set(briefings.map((item) => item.sourceUrl || item.title));
   const merged = [...briefings];
   for (const seed of SEED_BRIEFINGS) {
+    if (!seed.sourceUrl || !hasVerifiedPublishedDate(seed)) continue;
     if (seen.has(seed.sourceUrl)) continue;
     merged.push({
       ...seed,
-      sourceStatus: `基准快照保留；每日更新器于 ${nowIso} 运行后未发现可替代的更新条目。`,
+      sourceStatus: `人工核验基准快照保留；每日更新器于 ${nowIso} 运行后未发现可替代的更新条目。`,
     });
     if (merged.length >= 8) break;
   }
@@ -553,7 +582,7 @@ function briefingKey(item) {
 function buildLicenseUpdates(briefings, options = {}) {
   const limitPerLicense = options.limitPerLicense || null;
   const updates = {};
-  const sorted = [...briefings].sort((a, b) => briefingSortValue(b) - briefingSortValue(a));
+  const sorted = filterDisplayableBriefings(briefings).sort((a, b) => briefingSortValue(b) - briefingSortValue(a));
   for (const item of sorted) {
     const ids = item.licenseIds || [];
     for (const id of ids) {
@@ -596,8 +625,8 @@ async function readExistingHistory() {
 
 function mergeHistory(currentSnapshot, previousHistory) {
   const generatedDate = currentSnapshot.generatedDate || localDateStamp();
-  const previousBriefings = Array.isArray(previousHistory.briefings) ? previousHistory.briefings : [];
-  const currentBriefings = Array.isArray(currentSnapshot.briefings) ? currentSnapshot.briefings : [];
+  const previousBriefings = filterDisplayableBriefings(Array.isArray(previousHistory.briefings) ? previousHistory.briefings : []);
+  const currentBriefings = filterDisplayableBriefings(Array.isArray(currentSnapshot.briefings) ? currentSnapshot.briefings : []);
   const byKey = new Map();
 
   for (const item of previousBriefings) {
@@ -663,6 +692,34 @@ async function fetchSource(source) {
   }
 }
 
+async function validateEntrySource(entry) {
+  if (!entry || !entry.url) {
+    return { ok: false, status: "NO_URL", publishedDate: null };
+  }
+  try {
+    const result = await fetchSource({ url: entry.url });
+    if (!result.ok) {
+      return { ok: false, status: result.status, finalUrl: result.finalUrl, publishedDate: null };
+    }
+    const pageText = cleanText(result.text || "");
+    const publishedDate =
+      knownPublishedDateForText(entry.title, entry.url, result.finalUrl, entry.context, pageText) ||
+      entry.publishedDate ||
+      extractPublishedDate(entry.title, entry.url, entry.context, pageText);
+    if (!publishedDate) {
+      return { ok: false, status: "NO_VERIFIED_DATE", finalUrl: result.finalUrl, publishedDate: null };
+    }
+    return { ok: true, status: result.status, finalUrl: result.finalUrl, publishedDate };
+  } catch (error) {
+    return {
+      ok: false,
+      status: "FETCH_ERROR",
+      error: error && error.message ? error.message : String(error),
+      publishedDate: null,
+    };
+  }
+}
+
 async function buildSnapshot({ reason = "manual" } = {}) {
   const nowIso = new Date().toISOString();
   const candidates = [];
@@ -712,18 +769,36 @@ async function buildSnapshot({ reason = "manual" } = {}) {
   }
 
   const seen = new Set();
-  const briefings = candidates
+  const uniqueCandidates = candidates
     .sort((a, b) => b.score - a.score)
     .filter((candidate) => {
       const key = candidate.entry.url || candidate.entry.title;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
-    })
-    .slice(0, 6)
-    .map((candidate) => makeBriefing(candidate, nowIso));
+    });
 
-  const finalBriefings = mergeWithSeeds(briefings, nowIso);
+  const verifiedCandidates = [];
+  let discardedUnverified = 0;
+  for (const candidate of uniqueCandidates) {
+    if (verifiedCandidates.length >= 6) break;
+    const validation = await validateEntrySource(candidate.entry);
+    if (!validation.ok || !validation.publishedDate) {
+      discardedUnverified += 1;
+      continue;
+    }
+    candidate.entry = {
+      ...candidate.entry,
+      url: validation.finalUrl || candidate.entry.url,
+      publishedDate: validation.publishedDate,
+      sourceVerifiedStatus: validation.status,
+    };
+    verifiedCandidates.push(candidate);
+  }
+
+  const briefings = verifiedCandidates.map((candidate) => makeBriefing(candidate, nowIso));
+
+  const finalBriefings = filterDisplayableBriefings(mergeWithSeeds(briefings, nowIso));
   return {
     generatedAt: nowIso,
     generatedDate: localDateStamp(),
@@ -734,6 +809,8 @@ async function buildSnapshot({ reason = "manual" } = {}) {
     licenses: buildLicenseUpdates(finalBriefings),
     diagnostics: {
       candidates: candidates.length,
+      validatedBriefings: verifiedCandidates.length,
+      discardedUnverified,
       generatedBriefings: briefings.length,
       fallbackBriefings: finalBriefings.length - briefings.length,
     },

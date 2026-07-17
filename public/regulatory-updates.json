@@ -44,46 +44,6 @@
   ],
   "briefings": [
     {
-      "date": "2025",
-      "title": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
-      "regulator": "OJK",
-      "licenses": [
-        "Multi-Finance"
-      ],
-      "licenseIds": [
-        "multi-finance"
-      ],
-      "level": "高",
-      "summary": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。",
-      "impact": "这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
-      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明。",
-      "keywords": "seojk, surat edaran, laporan, Multi-Finance",
-      "sourceLabel": "OJK Regulasi",
-      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
-      "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-07-17T02:23:08.731Z 联网抓取；来源入口 HTTP 200。"
-    },
-    {
-      "date": "2025",
-      "title": "POJK 30/2025：金融科技创新经营者治理和风险管理",
-      "regulator": "OJK",
-      "licenses": [
-        "ICS / PKA"
-      ],
-      "licenseIds": [
-        "ics"
-      ],
-      "level": "高",
-      "summary": "OJK 发布了 POJK 30/2025，规则主题是金融科技创新经营者治理和风险管理。",
-      "impact": "这项规则把 ITSK 经营者的治理、风险管理、内控和系统责任放到更明确的监管框架里，ICS/PAJK 等主体都需要纳入准入后合规清单。",
-      "action": "申牌或收购材料中补齐董事会职责、风险管理制度、信息安全职责、外包管理和持续合规机制。",
-      "keywords": "pojk, manajemen risiko, tata kelola, ICS / PKA",
-      "sourceLabel": "OJK Regulasi",
-      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
-      "sourceOriginalTitle": "Penerapan Tata Kelola dan Manajemen Risiko Bagi Penyelenggara Inovasi Teknologi Sektor Keuangan",
-      "sourceStatus": "每日更新器于 2026-07-17T02:23:08.731Z 联网抓取；来源入口 HTTP 200。"
-    },
-    {
       "date": "2026",
       "title": "POJK 7/2026：BPR 最低资本充足与最低核心资本",
       "regulator": "OJK",
@@ -101,7 +61,8 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceOriginalTitle": "Kewajiban Penyediaan Modal Minimum dan Pemenuhan Modal Inti Minimum Bank Perekonomian Rakyat",
-      "sourceStatus": "每日更新器于 2026-07-17T02:23:08.731Z 联网抓取；来源入口 HTTP 200。"
+      "sourceStatus": "?????????????????????",
+      "publishedDate": "2026-07-03"
     },
     {
       "date": "2025",
@@ -121,7 +82,50 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
       "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-07-17T02:23:08.731Z 联网抓取；来源入口 HTTP 200。"
+      "sourceStatus": "?????????????????????",
+      "publishedDate": "2026-01-19"
+    },
+    {
+      "date": "2025",
+      "title": "POJK 30/2025：金融科技创新经营者治理和风险管理",
+      "regulator": "OJK",
+      "licenses": [
+        "ICS / PKA"
+      ],
+      "licenseIds": [
+        "ics"
+      ],
+      "level": "高",
+      "summary": "OJK 发布了 POJK 30/2025，规则主题是金融科技创新经营者治理和风险管理。",
+      "impact": "这项规则把 ITSK 经营者的治理、风险管理、内控和系统责任放到更明确的监管框架里，ICS/PAJK 等主体都需要纳入准入后合规清单。",
+      "action": "申牌或收购材料中补齐董事会职责、风险管理制度、信息安全职责、外包管理和持续合规机制。",
+      "keywords": "pojk, manajemen risiko, tata kelola, ICS / PKA",
+      "sourceLabel": "OJK Regulasi",
+      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
+      "sourceOriginalTitle": "Penerapan Tata Kelola dan Manajemen Risiko Bagi Penyelenggara Inovasi Teknologi Sektor Keuangan",
+      "sourceStatus": "?????????????????????",
+      "publishedDate": "2026-01-06"
+    },
+    {
+      "date": "2025",
+      "title": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
+      "regulator": "OJK",
+      "licenses": [
+        "Multi-Finance"
+      ],
+      "licenseIds": [
+        "multi-finance"
+      ],
+      "level": "高",
+      "summary": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。",
+      "impact": "这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
+      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明。",
+      "keywords": "seojk, surat edaran, laporan, Multi-Finance",
+      "sourceLabel": "OJK Regulasi",
+      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
+      "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
+      "sourceStatus": "?????????????????????",
+      "publishedDate": "2025-11-04"
     },
     {
       "date": "2025",
@@ -139,58 +143,47 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
       "sourceOriginalTitle": "Publikasi Penanganan Pengaduan dan Laporan Layanan Pengaduan",
-      "sourceStatus": "每日更新器于 2026-07-17T02:23:08.731Z 联网抓取；来源入口 HTTP 200。"
-    },
-    {
-      "date": "2026",
-      "title": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
-      "regulator": "OJK",
-      "licenses": [
-        "跨牌照"
-      ],
-      "licenseIds": [],
-      "level": "中",
-      "summary": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。",
-      "impact": "这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
-      "action": "把原文加入对应牌照法规索引，并在准入、收购、产品上线和持续合规清单中复核影响。",
-      "keywords": "padk, anti pencucian uang, 跨牌照",
-      "sourceLabel": "OJK Regulasi",
-      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx",
-      "sourceOriginalTitle": "Pedoman Penerapan Program Anti Pencucian Uang, Pencegahan Pendanaan Terorisme, dan Pencegahan Pendanaan Proliferasi Senjata Pemusnah Massal Bagi Wali Amanat",
-      "sourceStatus": "每日更新器于 2026-07-17T02:23:08.731Z 联网抓取；来源入口 HTTP 200。"
+      "sourceStatus": "?????????????????????",
+      "publishedDate": "2025-09-12"
     }
   ],
   "licenses": {
+    "bpr": [
+      {
+        "name": "POJK 7/2026：BPR 最低资本充足与最低核心资本",
+        "publishedDate": "2026-07-03",
+        "note": "OJK 发布了 POJK 7/2026，规则主题是BPR 最低资本充足与最低核心资本。 这项规则直接影响 BPR 资本缺口测算，收购估值不能只看壳价，还要把补资和核心资本压力算进去。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx"
+      }
+    ],
     "multi-finance": [
       {
-        "name": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
-        "note": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。 这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx"
-      },
-      {
         "name": "PADK 45/PADK.06/2025：融资公司及伊斯兰融资公司月度报告",
+        "publishedDate": "2026-01-19",
         "note": "OJK 发布了 PADK 45/PADK.06/2025，规则主题是融资公司及伊斯兰融资公司月度报告。 这项规则会影响融资公司月报的字段、频率和口径一致性，收购或申牌时要重点看历史报送质量。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx"
+      },
+      {
+        "name": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
+        "publishedDate": "2025-11-04",
+        "note": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。 这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx"
       }
     ],
     "ics": [
       {
         "name": "POJK 30/2025：金融科技创新经营者治理和风险管理",
+        "publishedDate": "2026-01-06",
         "note": "OJK 发布了 POJK 30/2025，规则主题是金融科技创新经营者治理和风险管理。 这项规则把 ITSK 经营者的治理、风险管理、内控和系统责任放到更明确的监管框架里，ICS/PAJK 等主体都需要纳入准入后合规清单。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
-      }
-    ],
-    "bpr": [
-      {
-        "name": "POJK 7/2026：BPR 最低资本充足与最低核心资本",
-        "note": "OJK 发布了 POJK 7/2026，规则主题是BPR 最低资本充足与最低核心资本。 这项规则直接影响 BPR 资本缺口测算，收购估值不能只看壳价，还要把补资和核心资本压力算进去。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx"
       }
     ]
   },
   "diagnostics": {
     "candidates": 8,
-    "generatedBriefings": 6,
-    "fallbackBriefings": 0
+    "generatedBriefings": 5,
+    "fallbackBriefings": 0,
+    "filteredUnverifiedBriefings": 1,
+    "retainedVerifiedBriefings": 5
   }
 }
