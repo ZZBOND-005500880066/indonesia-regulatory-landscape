@@ -452,6 +452,7 @@ sources = []
 regulatory_briefings = [
     {
         "date": "2026",
+        "publishedDate": "2026-01-06",
         "title": "BPR 最低资本与核心资本要求更新",
         "regulator": "OJK",
         "licenses": ["BPR"],
@@ -468,6 +469,7 @@ regulatory_briefings = [
     },
     {
         "date": "2026",
+        "publishedDate": "2025-12-26",
         "title": "ITSK 经营者治理和风险管理规则落地",
         "regulator": "OJK",
         "licenses": ["ICS / PKA", "Loan Aggregator"],
@@ -484,6 +486,7 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
+        "publishedDate": "2025-11-24",
         "title": "融资公司月度报告规则更新",
         "regulator": "OJK",
         "licenses": ["Multi-Finance"],
@@ -498,6 +501,7 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
+        "publishedDate": "2025-10-23",
         "title": "投诉处理公开与投诉服务报告规则更新",
         "regulator": "OJK",
         "licenses": ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -514,6 +518,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "信息架构",
+        "title": "首页新增监管动态滚动区",
+        "summary": "将“监管更新”统一改名为“监管动态”，首页直接展示最新几条动态，完整历史仍保留在独立模块。",
+        "changes": [
+            "首页新增横向滚动的最新监管动态预览，并提供“查看历史”入口。",
+            "监管动态卡片新增“发布日期”标签，优先展示官方列表或页面解析出的具体日期。",
+            "牌照子页面的最新监管规定同步显示发布日期，便于判断法规新旧。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "\u90e8\u7f72\u81ea\u52a8\u5316",
@@ -692,6 +707,40 @@ def load_json_snapshot(*paths: Path, fallback: dict) -> dict:
     return fallback
 
 
+KNOWN_PUBLISHED_DATES = {
+    "SEOJK 23/SEOJK.06/2025": "2025-05-27",
+    "POJK 30/2025": "2025-12-26",
+    "POJK 7/2026": "2026-01-06",
+    "PADK 45/PADK.06/2025": "2025-11-24",
+    "SEOJK 20/SEOJK.08/2025": "2025-10-23",
+    "PADG 19/2026": "2026-06-30",
+}
+
+
+def enrich_published_dates(snapshot: dict) -> dict:
+    for item in snapshot.get("briefings", []) or []:
+        if item.get("publishedDate"):
+            continue
+        text = " ".join(
+            str(item.get(key, ""))
+            for key in ("title", "sourceUrl", "sourceOriginalTitle", "keywords")
+        )
+        for marker, published_date in KNOWN_PUBLISHED_DATES.items():
+            if marker in text:
+                item["publishedDate"] = published_date
+                break
+    for updates in (snapshot.get("licenses") or {}).values():
+        for item in updates:
+            if item.get("publishedDate"):
+                continue
+            text = " ".join(str(item.get(key, "")) for key in ("name", "note", "sourceUrl"))
+            for marker, published_date in KNOWN_PUBLISHED_DATES.items():
+                if marker in text:
+                    item["publishedDate"] = published_date
+                    break
+    return snapshot
+
+
 embedded_update_snapshot = load_json_snapshot(
     REGULATORY_PUBLIC,
     REGULATORY_DATA,
@@ -703,6 +752,7 @@ embedded_update_snapshot = load_json_snapshot(
         "sourcesChecked": [],
     },
 )
+embedded_update_snapshot = enrich_published_dates(embedded_update_snapshot)
 
 
 html = f"""<!doctype html>
@@ -885,6 +935,54 @@ html = f"""<!doctype html>
       margin: 0;
       color: #536170;
       line-height: 1.55;
+    }}
+
+    .home-dynamics {{
+      padding: 28px clamp(18px, 4vw, 54px) 34px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfb;
+    }}
+
+    .home-dynamics.hidden {{
+      display: none;
+    }}
+
+    .home-dynamics .section-header {{
+      margin-bottom: 12px;
+    }}
+
+    .home-dynamic-strip {{
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(300px, 420px);
+      gap: 12px;
+      overflow-x: auto;
+      padding: 2px 2px 12px;
+      scroll-snap-type: x mandatory;
+    }}
+
+    .home-dynamic-card {{
+      scroll-snap-align: start;
+      min-height: 204px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      box-shadow: 0 8px 20px rgba(21, 33, 47, .04);
+    }}
+
+    .home-dynamic-card h4 {{
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.3;
+    }}
+
+    .home-dynamic-card p {{
+      margin: 0;
+      color: #4c5968;
     }}
 
     .module-page {{
@@ -1497,6 +1595,10 @@ html = f"""<!doctype html>
       margin-bottom: 4px;
     }}
 
+    .rule .briefing-meta {{
+      margin: 4px 0 6px;
+    }}
+
     .rule p {{
       margin: 0;
       color: #566270;
@@ -1777,6 +1879,7 @@ html = f"""<!doctype html>
       .map-grid, .license-grid, .quick-metrics, .two-col, .competitor-grid, .briefing-grid, .source-list, .module-hub {{
         grid-template-columns: 1fr;
       }}
+      .home-dynamic-strip {{ grid-auto-columns: minmax(260px, 86vw); }}
       .regulator-summary {{ grid-template-columns: 1fr; }}
       .regulator-watch {{ grid-template-columns: 1fr; }}
       .devlog-entry {{ grid-template-columns: 1fr; gap: 10px; }}
@@ -1803,7 +1906,7 @@ html = f"""<!doctype html>
               <div class="hero-actions">
                 <a class="btn primary" href="#module/licenses">牌照库</a>
                 <a class="btn" href="#module/regulators">监管结构</a>
-                <a class="btn" href="#module/updates">监管变更</a>
+                <a class="btn" href="#module/updates">监管动态</a>
               </div>
             </div>
             <div class="module-hub" aria-label="模块入口">
@@ -1820,7 +1923,7 @@ html = f"""<!doctype html>
                 <span class="tag">Matrix</span>
               </a>
               <a class="module-card" href="#module/updates">
-                <div><strong>监管更新</strong><p>阅读每日联网检索生成的监管变更简报和来源链接。</p></div>
+                <div><strong>监管动态历史</strong><p>回看每日联网检索生成的监管动态简报和来源链接。</p></div>
                 <span class="tag">Daily</span>
               </a>
               <a class="module-card" href="#module/developer-log">
@@ -1835,6 +1938,20 @@ html = f"""<!doctype html>
             </div>
           </div>
         </div>
+
+        <section id="homeDynamics" class="home-dynamics">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Regulatory Watch</span>
+              <h3>监管动态</h3>
+              <p>首页先展示最新几条监管动态；需要回看更早条目时，进入历史列表。</p>
+            </div>
+            <div class="controls">
+              <a class="btn" href="#module/updates">查看历史</a>
+            </div>
+          </div>
+          <div class="home-dynamic-strip" id="homeDynamicList" aria-label="最新监管动态"></div>
+        </section>
 
         <section id="module-regulators" class="section module-page" data-module-page="regulators">
           <div class="module-kicker"><button class="btn" onclick="setRoute('home')">返回模块首页</button></div>
@@ -1876,7 +1993,7 @@ html = f"""<!doctype html>
           <div class="module-kicker"><button class="btn" onclick="setRoute('home')">返回模块首页</button></div>
           <div class="section-header">
             <div>
-              <h3>最新监管变更摘要</h3>
+              <h3>监管动态历史</h3>
               <p>基于本轮外部渠道核验生成，只纳入能打开并与牌照相关的监管条目；没有可靠来源的类别不硬生成。</p>
             </div>
           </div>
@@ -1909,6 +2026,7 @@ html = f"""<!doctype html>
     const BUILT_IN_BRIEFINGS = {json.dumps(regulatory_briefings, ensure_ascii=False)};
     const BUILT_IN_DEV_LOG = {json.dumps(developer_log, ensure_ascii=False)};
     const BUILT_IN_UPDATE_SNAPSHOT = {json.dumps(embedded_update_snapshot, ensure_ascii=False)};
+    const KNOWN_PUBLISHED_DATES = {json.dumps(KNOWN_PUBLISHED_DATES, ensure_ascii=False)};
     const STATIC_HTML_MODE = window.location.protocol === "file:";
     let activeFilter = "全部";
     let externalUpdates = null;
@@ -1951,7 +2069,7 @@ html = f"""<!doctype html>
         ["regulators", "监管结构"],
         ["licenses", "牌照库"],
         ["compare", "横向对比"],
-        ["updates", "监管更新"],
+        ["updates", "监管动态"],
         ["developer-log", "开发者日志"],
       ];
       const mobile = qs("#mobileNav");
@@ -2086,14 +2204,54 @@ html = f"""<!doctype html>
       `).join("");
     }}
 
+    function briefingDateLabel(item) {{
+      const published = item.publishedDate || item.issueDate || item.releaseDate || "";
+      if (published) return "发布：" + published;
+      if (String(item.date || "").length > 4) return "发布：" + item.date;
+      return "发布：未解析具体日";
+    }}
+
+    function briefingSortValue(item) {{
+      const value = item.publishedDate || (String(item.date || "").length > 4 ? item.date : `${{item.date || "1900"}}-01-01`);
+      const time = Date.parse(value);
+      return Number.isFinite(time) ? time : 0;
+    }}
+
+    function sortedBriefings() {{
+      return [...activeBriefings].sort((a, b) => briefingSortValue(b) - briefingSortValue(a));
+    }}
+
+    function renderHomeDynamics() {{
+      const target = qs("#homeDynamicList");
+      if (!target) return;
+      const items = sortedBriefings().slice(0, 4);
+      target.innerHTML = items.length ? items.map(item => `
+        <article class="home-dynamic-card">
+          <div class="briefing-meta">
+            <span class="tag">${{esc(briefingDateLabel(item))}}</span>
+            <span class="tag">${{esc(item.regulator)}}</span>
+            <span class="tag">影响：${{esc(item.level)}}</span>
+          </div>
+          <h4>${{esc(item.title)}}</h4>
+          <div class="briefing-meta">
+            ${{(item.licenses || []).slice(0, 3).map(x => `<span class="tag">${{esc(x)}}</span>`).join("")}}
+          </div>
+          <p><strong>摘要：</strong>${{esc(item.summary)}}</p>
+          <div class="briefing-source-row">
+            ${{item.sourceUrl ? `<a class="briefing-source" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel || "查看来源")}}</a>` : ""}}
+          </div>
+        </article>
+      `).join("") : `<div class="update-note">暂无可展示的监管动态。</div>`;
+    }}
+
     function renderBriefings() {{
-      qs("#briefingGrid").innerHTML = activeBriefings.map(item => `
+      qs("#briefingGrid").innerHTML = sortedBriefings().map(item => `
         <article class="briefing-card">
           <div class="briefing-top">
             <div>
               <h4>${{esc(item.title)}}</h4>
               <div class="briefing-meta">
-                <span class="tag">${{esc(item.date)}}</span>
+                <span class="tag">${{esc(briefingDateLabel(item))}}</span>
                 <span class="tag">${{esc(item.regulator)}}</span>
                 <span class="tag">影响：${{esc(item.level)}}</span>
               </div>
@@ -2197,7 +2355,7 @@ html = f"""<!doctype html>
           <aside class="side-panel">
             <div class="aside-box">
               <h3>最新监管规定</h3>
-              ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong><p>${{esc(r.note || r.summary || "")}}</p></div>`).join("")}}
+              ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong>${{r.publishedDate ? `<div class="briefing-meta"><span class="tag">发布：${{esc(r.publishedDate)}}</span></div>` : ""}}<p>${{esc(r.note || r.summary || "")}}</p></div>`).join("")}}
             </div>
             <div class="aside-box">
               <h3>法规索引</h3>
@@ -2214,6 +2372,7 @@ html = f"""<!doctype html>
 
     function showModule(moduleId) {{
       qs("#homeHub")?.classList.toggle("hidden", Boolean(moduleId));
+      qs("#homeDynamics")?.classList.toggle("hidden", Boolean(moduleId));
       qsa("[data-module-page]").forEach(section => {{
         section.classList.toggle("active", section.dataset.modulePage === moduleId);
       }});
@@ -2247,7 +2406,29 @@ html = f"""<!doctype html>
       }}
     }}
 
+    function enrichBriefingDate(item) {{
+      if (!item || item.publishedDate) return item;
+      const text = [item.title, item.name, item.sourceUrl, item.sourceOriginalTitle, item.keywords, item.note]
+        .filter(Boolean)
+        .join(" ");
+      for (const [marker, publishedDate] of Object.entries(KNOWN_PUBLISHED_DATES)) {{
+        if (text.includes(marker)) {{
+          item.publishedDate = publishedDate;
+          break;
+        }}
+      }}
+      return item;
+    }}
+
+    function normalizeUpdateSnapshot(data) {{
+      if (!data || typeof data !== "object") return data;
+      if (Array.isArray(data.briefings)) data.briefings.forEach(enrichBriefingDate);
+      Object.values(data.licenses || {{}}).forEach(items => (items || []).forEach(enrichBriefingDate));
+      return data;
+    }}
+
     function applyUpdateSnapshot(data, mode) {{
+      data = normalizeUpdateSnapshot(data);
       if (!data || typeof data !== "object") return false;
       externalUpdates = data.licenses || null;
       if (Array.isArray(data.briefings) && data.briefings.length) activeBriefings = data.briefings;
@@ -2255,7 +2436,7 @@ html = f"""<!doctype html>
       const sourceText = checked ? "，本次成功检查 " + checked + " 个官方入口" : "";
       const generatedAt = data.generatedAt || data.generatedDate || "时间未记录";
       const status = mode === "external"
-        ? "已加载网站每日联网检索快照：" + generatedAt + sourceText + "。首页简报和子页面监管动态已使用外部更新数据。"
+        ? "已加载网站每日联网检索快照：" + generatedAt + sourceText + "。首页监管动态和子页面监管动态已使用外部更新数据。"
         : "当前显示静态 HTML 内置监管快照：" + generatedAt + sourceText + "。此文件可直接打开和转发；每日联网更新需要重新运行更新器或部署服务端。";
       qs("#updateStatus").textContent = status;
       return true;
@@ -2298,6 +2479,7 @@ html = f"""<!doctype html>
       renderSources();
       await loadExternalUpdates();
       await loadDeveloperLog();
+      renderHomeDynamics();
       renderBriefings();
       renderDeveloperLog();
       renderRoute();

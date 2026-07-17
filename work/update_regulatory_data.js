@@ -104,6 +104,7 @@ const RULE_SIGNAL = /(pojk|seojk|padk|pbi|padg|peraturan|surat edaran|nomor|tahu
 const SEED_BRIEFINGS = [
   {
     date: "2026",
+    publishedDate: "2026-01-06",
     title: "BPR 最低资本与核心资本要求更新",
     regulator: "OJK",
     licenses: ["BPR"],
@@ -120,6 +121,7 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2026",
+    publishedDate: "2025-12-26",
     title: "ITSK 经营者治理和风险管理规则落地",
     regulator: "OJK",
     licenses: ["ICS / PKA", "Loan Aggregator"],
@@ -136,6 +138,7 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
+    publishedDate: "2025-11-24",
     title: "融资公司月度报告规则更新",
     regulator: "OJK",
     licenses: ["Multi-Finance"],
@@ -150,6 +153,7 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
+    publishedDate: "2025-10-23",
     title: "投诉处理公开与投诉服务报告规则更新",
     regulator: "OJK",
     licenses: ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -190,6 +194,77 @@ function cleanText(value) {
     .trim();
 }
 
+const MONTHS = {
+  januari: 1,
+  january: 1,
+  jan: 1,
+  februari: 2,
+  february: 2,
+  feb: 2,
+  maret: 3,
+  march: 3,
+  mar: 3,
+  april: 4,
+  apr: 4,
+  mei: 5,
+  may: 5,
+  juni: 6,
+  june: 6,
+  jun: 6,
+  juli: 7,
+  july: 7,
+  jul: 7,
+  agustus: 8,
+  august: 8,
+  aug: 8,
+  september: 9,
+  sep: 9,
+  oktober: 10,
+  october: 10,
+  oct: 10,
+  november: 11,
+  nov: 11,
+  desember: 12,
+  december: 12,
+  dec: 12,
+};
+
+function pad2(value) {
+  return String(value).padStart(2, "0");
+}
+
+function isoDate(year, month, day) {
+  if (!year || !month || !day) return null;
+  if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+  return `${year}-${pad2(month)}-${pad2(day)}`;
+}
+
+function extractPublishedDate(...parts) {
+  const text = parts.filter(Boolean).join(" ");
+  let match = text.match(/\b(20[2-4][0-9])[-/.](0?[1-9]|1[0-2])[-/.](0?[1-9]|[12][0-9]|3[01])\b/);
+  if (match) return isoDate(Number(match[1]), Number(match[2]), Number(match[3]));
+
+  match = text.match(/\b(0?[1-9]|[12][0-9]|3[01])\s+([A-Za-z]+|Januari|Februari|Maret|Mei|Juni|Juli|Agustus|Oktober|Desember)\s+(20[2-4][0-9])\b/i);
+  if (match) {
+    const month = MONTHS[match[2].toLowerCase()];
+    if (month) return isoDate(Number(match[3]), month, Number(match[1]));
+  }
+
+  match = text.match(/\b([A-Za-z]+|Januari|Februari|Maret|Mei|Juni|Juli|Agustus|Oktober|Desember)\s+(0?[1-9]|[12][0-9]|3[01]),?\s+(20[2-4][0-9])\b/i);
+  if (match) {
+    const month = MONTHS[match[1].toLowerCase()];
+    if (month) return isoDate(Number(match[3]), month, Number(match[2]));
+  }
+
+  match = text.match(/\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](20[2-4][0-9])\b/);
+  if (match) return isoDate(Number(match[3]), Number(match[1]), Number(match[2]));
+
+  match = text.match(/\b(0?[1-9]|[12][0-9]|3[01])[/-](0?[1-9]|1[0-2])[/-](20[2-4][0-9])\b/);
+  if (match) return isoDate(Number(match[3]), Number(match[2]), Number(match[1]));
+
+  return null;
+}
+
 function includesAny(text, keywords) {
   const lower = text.toLowerCase();
   return keywords.filter((keyword) => lower.includes(keyword.toLowerCase()));
@@ -225,7 +300,15 @@ function extractAnchors(html, baseUrl) {
     } catch {
       continue;
     }
-    anchors.push({ title, url });
+    const contextStart = Math.max(0, match.index - 500);
+    const contextEnd = Math.min(html.length, match.index + match[0].length + 900);
+    const context = cleanText(html.slice(contextStart, contextEnd));
+    anchors.push({
+      title,
+      url,
+      context,
+      publishedDate: extractPublishedDate(title, url, context),
+    });
   }
   return anchors;
 }
@@ -408,6 +491,7 @@ function makeBriefing(candidate, nowIso) {
 
   return {
     date: extractYear(`${entry.title} ${entry.url}`),
+    publishedDate: entry.publishedDate || extractPublishedDate(entry.title, entry.url, entry.context),
     title: titleForBriefing(localized.title),
     regulator: source.regulator,
     licenses: labels,
@@ -446,6 +530,7 @@ function buildLicenseUpdates(briefings) {
       if (!updates[id]) updates[id] = [];
       updates[id].push({
         name: item.title,
+        publishedDate: item.publishedDate,
         note: `${item.summary} ${item.impact}`,
         sourceUrl: item.sourceUrl,
       });
