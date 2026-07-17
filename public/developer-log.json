@@ -2,6 +2,17 @@
   "entries": [
     {
       "date": "2026-07-17",
+      "type": "模块优化",
+      "title": "PJP 板块同步横向对比和法规链接",
+      "summary": "PJP 详情页改为全宽竞品对比，并将最新监管规定更新到 BI 2025/2026 支付系统新规口径。",
+      "changes": [
+        "竞争对手板块新增生态钱包、支付网关、收购路径三层判断。",
+        "GoPay、OVO、DANA、ShopeePay、Xendit、DOKU、Payfazz、Finture/YUP、Airwallex 和潜在收购标的改为可横向比较字段。",
+        "最新监管规定和法规索引补充 BI PBI 10/2025、PADG 32/2025、PADG 3/2025、PBI 23/6/2021 等官方链接。"
+      ]
+    },
+    {
+      "date": "2026-07-17",
       "type": "内容修正",
       "title": "修正 POJK 40/2024 LPBBTI 法规索引链接",
       "summary": "将 P2P 法规索引中的 POJK No.40/2024 从不稳定入口替换为 OJK 原文页面，并补充 PDF 直达链接。",

@@ -531,12 +531,12 @@ licenses = [
         "regulator": "Bank Indonesia",
         "category": "支付",
         "tone": "payment",
-        "oneLiner": "印尼核心电子支付牌照体系，PJP1 可覆盖电子钱包、账户信息、支付发起与收单、汇款，并可叠加 QRIS。",
-        "type": "Bank Indonesia 支付服务提供商许可，分 PJP 1、PJP 2、PJP 3；QRIS 是叠加在 PJP/PIP 上的国家二维码支付处理资质。",
+        "oneLiner": "印尼核心电子支付牌照体系，覆盖账户/电子货币、支付发起与收单、汇款，并可叠加 QRIS。",
+        "type": "Bank Indonesia 支付服务提供商许可。2026 年起新规则以 PSP、PJP 活动包 1/2/3、TIKMI 评分和 PSP 分类承接旧 PJP1/PJP2/PJP3 口径；QRIS 是叠加在 PJP/PIP 上的国家二维码支付处理资质。",
         "businessScope": [
-            "PJP 1：资金来源管理，包括电子货币和钱包；资金信息提供；支付发起与收单；汇款。",
-            "PJP 2：资金信息提供服务，以及支付发起与收单。",
-            "PJP 3：汇款服务。",
+            "活动包 1：账户/资金来源管理、电子货币或支付账户、支付交易转发、收单和数字/非数字汇款；其中 1A 仅适用于 PSP utama。",
+            "活动包 2：支付交易转发、支付指令转发、收单或相关转账服务，但不完整承接资金来源账户管理。",
+            "活动包 3：非数字汇款或非数字转账指令转发。",
             "QRIS：在印尼国家二维码支付标准下作为发行方或收单方处理二维码支付交易。",
         ],
         "minCapital": "PJP 1 最低资本金 Rp15 billion，约 USD 900k；PJP 2 为 Rp5 billion；PJP 3 为 Rp0.5-1 billion。非银行 PJP 还需按风险加权交易额计提持续资本，基础比例 10%。",
@@ -553,24 +553,168 @@ licenses = [
             "境内交易的发起、授权、清算、结算原则上须在印尼境内处理；主数据中心和灾备应设在印尼，除非 BI 特批。",
             "2025 年 QRIS/PJP 更新后，信贷支持成为合法资金来源，但产品重大功能变更仍需提交产品和技术方案并获批。",
         ],
+        "competitorLens": [
+            {
+                "label": "第一层",
+                "title": "生态钱包决定用户和商户触点",
+                "note": "GoPay、OVO、DANA、ShopeePay 的优势来自高频 App、商户覆盖和支付场景闭环，牌照价值被生态放大。",
+            },
+            {
+                "label": "第二层",
+                "title": "支付网关决定企业商户接入能力",
+                "note": "Xendit、DOKU 更接近企业收单和 API 基础设施，核心看商户质量、成功率、风控和结算体验。",
+            },
+            {
+                "label": "第三层",
+                "title": "收购路径决定外资入场速度",
+                "note": "Finture/YUP、Airwallex 和低活跃 PJP1 标的说明，收购壳的关键不是价格，而是功能补齐、QRIS 审批和存量合规瑕疵。",
+            },
+        ],
         "competitors": [
-            {"name": "GoPay / OVO / DANA / ShopeePay", "position": "头部钱包和生态支付玩家", "signal": "PJP1 及 QRIS 生态核心参与者"},
-            {"name": "Xendit / DOKU", "position": "支付网关和商户收单", "signal": "服务线上商户和企业收单需求"},
-            {"name": "Payfazz", "position": "SME 支付和信贷公司", "signal": "材料显示 2025 年 1 月获 QRIS 功能"},
-            {"name": "Finture / YUP", "position": "收购 PJP1 PT Indo Sukses Mandiri", "signal": "约 1 年内获批 QRIS"},
-            {"name": "Airwallex", "position": "收购 PJP1 PT Skye Sab Indonesia", "signal": "材料显示尚不支持 QRIS"},
-            {"name": "潜在收购标的", "position": "PT Hensel Davest Indonesia、PT Reformasi Uang Pembayaran Indonesia、PT Anadana Kode Nontunai 等", "signal": "低活跃或无公开产品痕迹的非银 PJP1"},
+            {
+                "name": "GoPay",
+                "tier": "超级 App 钱包 / PJP1 生态",
+                "scale": "GoTo 生态核心支付入口，覆盖打车、外卖、商户和金融服务",
+                "position": "钱包、QRIS、商户支付和生态金融入口",
+                "edge": "高频消费场景、商户触点和 GoTo 生态内交叉销售。",
+                "implication": "新进入者很难正面复制规模；更适合作为生态闭环和钱包留存的上限参考。",
+            },
+            {
+                "name": "OVO",
+                "tier": "零售和商户钱包",
+                "scale": "与大型零售、商户和金融生态合作，长期处在头部钱包阵营",
+                "position": "电子钱包、商户支付、消费者促活",
+                "edge": "线下零售触点、用户激励和合作伙伴网络。",
+                "implication": "适合观察钱包补贴退坡后的留存能力，以及商户网络能否转化为低成本交易量。",
+            },
+            {
+                "name": "DANA",
+                "tier": "开放型数字钱包",
+                "scale": "大型钱包玩家，强调开放支付、账单支付和线上线下 QRIS 使用",
+                "position": "钱包、账单、QRIS 和开放支付平台",
+                "edge": "产品覆盖广，线上线下使用场景较均衡。",
+                "implication": "对标重点是支付频次、功能覆盖和合规运营，而不是单一下载量。",
+            },
+            {
+                "name": "ShopeePay",
+                "tier": "电商生态钱包",
+                "scale": "依托 Shopee 电商和线下商户网络，连接支付、促销和金融产品",
+                "position": "电商支付、QRIS、商户优惠和场景金融",
+                "edge": "电商订单、商户促销和金融产品分发场景天然绑定。",
+                "implication": "若没有同等级生态流量，直接做钱包难度较高；更现实的是找垂直场景或收单切入。",
+            },
+            {
+                "name": "Xendit",
+                "tier": "支付网关 / 企业收单",
+                "scale": "面向线上商户和企业客户的 API 支付基础设施玩家",
+                "position": "支付网关、收单、虚拟账户、结算和商户工具",
+                "edge": "开发者体验、API 接入、企业客户和多支付方式聚合。",
+                "implication": "支付网关路径的关键是技术稳定性和商户质量，牌照只是企业收单能力的入口。",
+            },
+            {
+                "name": "DOKU",
+                "tier": "老牌支付网关和商户收单",
+                "scale": "印尼较早期支付网关平台，服务线上商户、企业和多支付方式接入",
+                "position": "网关、收单、商户支付和企业支付管理",
+                "edge": "本地商户关系、支付方式覆盖和多年合规运营经验。",
+                "implication": "适合作为企业支付能力样本；重点看行业客户结构、结算体验和拒付/欺诈控制。",
+            },
+            {
+                "name": "Payfazz",
+                "tier": "SME 支付和代理网络",
+                "scale": "材料显示 2025 年 1 月获 QRIS 功能",
+                "position": "中小商户、代理网络、支付和金融服务分发",
+                "edge": "小微商户和代理触点，适合下沉市场支付与金融服务组合。",
+                "implication": "若目标是 UMKM 支付，关键是代理/商户活跃度和服务成本，而不是单纯拿到 QRIS。",
+            },
+            {
+                "name": "Finture / YUP",
+                "tier": "收购 PJP1 后叠加信用支付",
+                "scale": "收购 PT Indo Sukses Mandiri 后推进 PJP1 与 QRIS 能力",
+                "position": "信用支付、PayLater、银行卡和 QRIS 场景",
+                "edge": "以收购方式缩短入场周期，再把支付能力与信用产品绑定。",
+                "implication": "适合作为外资通过存量 PJP1 进入的样本；重点看收购审批、QRIS 补批和支付+信贷边界。",
+            },
+            {
+                "name": "Airwallex",
+                "tier": "跨境支付背景 PJP1 收购路径",
+                "scale": "材料显示收购 PT Skye Sab Indonesia，QRIS 能力仍需单独确认",
+                "position": "跨境收付款、企业支付和本地支付接入",
+                "edge": "跨境企业客户、全球支付网络和本地 PJP 入口的组合。",
+                "implication": "跨境玩家进入 PJP 后，监管重点会落在本地处理、外汇路径、数据和产品审批。",
+            },
+            {
+                "name": "潜在收购标的",
+                "tier": "低活跃非银 PJP1",
+                "scale": "PT Hensel Davest Indonesia、PT Reformasi Uang Pembayaran Indonesia、PT Anadana Kode Nontunai 等",
+                "position": "存量牌照入口，部分公开产品痕迹较弱",
+                "edge": "可能缩短申请时间，但功能、系统、审计和历史合规状态需要逐项核查。",
+                "implication": "壳牌照不是低风险捷径；尽调重点是股东变更、系统可用性、BI 报告、未决处罚和 QRIS/产品权限。",
+            },
         ],
         "latestRules": [
-            {"name": "BI 支付系统总则", "note": "PJP、PIP、Peserta、数据本地化、系统安全和支付基础设施参与规则。"},
-            {"name": "2025 年 PJP/QRIS 更新", "note": "信贷支持 fasilitas kredit 被纳入 QRIS 资金来源之一，使银行授信额度和 BNPL 获得法理支持。"},
-            {"name": "BI QRIS 标准", "note": "所有使用 QR Code Pembayaran 的 PJP 均须实施 QRIS。"},
+            {
+                "name": "PBI No.10/2025",
+                "note": "支付系统行业新总则，2026-03-31 生效；引入 TIKMI、PSP 分类、PJP 活动包、SBP/RBSP、数据和退出监管。",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PBI_102025.aspx",
+            },
+            {
+                "name": "PADG No.32/2025",
+                "note": "PBI 10/2025 的实施细则，细化 PJP/PIP 准入、活动包变更、产品/合作审批、TIKMI、报告和过渡期安排。",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PADG_322025.aspx",
+            },
+            {
+                "name": "PADG No.3/2025",
+                "note": "QRIS 第三次修订，把 fasilitas kredit 纳入 QRIS 资金来源，并扩展 QRIS 对非接触和 messaging 技术的覆盖。",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PADG_032025.aspx",
+            },
+            {
+                "name": "PBI No.23/6/PBI/2021",
+                "note": "PJP 旧基础规则，仍是理解 PJP 许可分类、活动、资本和存量牌照转换的重要参照。",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PBI_230621.aspx",
+            },
         ],
         "legalIndex": [
-            "Bank Indonesia payment system regulations on PJP/PIP/Peserta",
-            "BI QRIS regulations and implementation standards",
-            "BI licensed institution dataset for PJP, PIP, QRIS and payment infrastructure participants",
-            "PBI on payment system operation and local processing requirements",
+            {
+                "name": "PBI No.10/2025 on Payment System Industry Regulation",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PBI_102025.aspx",
+                "sourceLabel": "BI / PDF",
+            },
+            {
+                "name": "PADG No.32/2025 on Payment System Industry Regulation",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PADG_322025.aspx",
+                "sourceLabel": "BI / PDF",
+            },
+            {
+                "name": "PBI No.22/23/PBI/2020 on Payment Systems",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PBI_222320.aspx",
+                "sourceLabel": "BI / PDF",
+            },
+            {
+                "name": "PBI No.23/6/PBI/2021 on Payment Service Providers",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PBI_230621.aspx",
+                "sourceLabel": "BI / PDF",
+            },
+            {
+                "name": "PBI No.23/7/PBI/2021 on Payment System Infrastructure Providers",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PBI_230721.aspx",
+                "sourceLabel": "BI / PDF",
+            },
+            {
+                "name": "PADG No.3/2025 amending QRIS national standard implementation",
+                "sourceUrl": "https://www.bi.go.id/id/publikasi/peraturan/Pages/PADG_032025.aspx",
+                "sourceLabel": "BI / PDF",
+            },
+            {
+                "name": "Bank Indonesia QRIS official channel and implementation rules",
+                "sourceUrl": "https://www.bi.go.id/id/fungsi-utama/sistem-pembayaran/ritel/kanal-layanan/qris/default.aspx",
+                "sourceLabel": "BI QRIS",
+            },
+            {
+                "name": "BI licensed institution dataset for PJP, PIP and QRIS",
+                "sourceUrl": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                "sourceLabel": "BI Dataset",
+            },
         ],
         "sourceDoc": "印尼支付牌照与QRIS情况梳理_20260420_副本.pdf",
     },
@@ -858,6 +1002,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-17",
+        "type": "模块优化",
+        "title": "PJP 板块同步横向对比和法规链接",
+        "summary": "PJP 详情页改为全宽竞品对比，并将最新监管规定更新到 BI 2025/2026 支付系统新规口径。",
+        "changes": [
+            "竞争对手板块新增生态钱包、支付网关、收购路径三层判断。",
+            "GoPay、OVO、DANA、ShopeePay、Xendit、DOKU、Payfazz、Finture/YUP、Airwallex 和潜在收购标的改为可横向比较字段。",
+            "最新监管规定和法规索引补充 BI PBI 10/2025、PADG 32/2025、PADG 3/2025、PBI 23/6/2021 等官方链接。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "内容修正",
@@ -3012,7 +3167,7 @@ html = f"""<!doctype html>
 
     function detailPage(item) {{
       const rules = externalUpdates?.[item.id]?.length ? externalUpdates[item.id] : item.latestRules;
-      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p"].includes(item.id);
+      const wideCompetitorLayout = ["commercial-bank", "multi-finance", "p2p", "pjp"].includes(item.id);
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('home')">返回总览</button>
