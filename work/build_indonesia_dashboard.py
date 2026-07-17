@@ -1394,6 +1394,17 @@ regulatory_briefings = [
 developer_log = [
     {
         "date": "2026-07-17",
+        "type": "维护",
+        "title": "网页自检并升级 GitHub Actions",
+        "summary": "完成一次全站构建和数据字段自检，并升级部署 workflow，处理 GitHub Actions Node.js 20 deprecation warning。",
+        "changes": [
+            "GitHub Actions 部署链路升级到 Node 24 兼容版本，避免 checkout、setup-node、setup-python、configure-pages、upload-pages-artifact、deploy-pages 继续触发 Node 20 warning。",
+            "本地重新生成 public/index.html、developer-log.json 和静态输出文件。",
+            "复核监管动态 JSON，确认 sourceDate/effectiveDate 字段完整，且不再写入 publishedDate。",
+        ],
+    },
+    {
+        "date": "2026-07-17",
         "type": "数据口径",
         "title": "拆分监管动态官网日期和生效日期",
         "summary": "修正监管动态日期口径，避免把 OJK 的 Tanggal Berlaku 生效日期误当成发布日期。",
