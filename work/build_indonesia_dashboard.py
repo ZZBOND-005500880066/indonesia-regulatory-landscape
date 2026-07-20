@@ -1857,7 +1857,7 @@ def classify_commit(subject: str, files: list[str], author: str) -> str:
 
 
 def build_automatic_developer_log(fallback: list[dict]) -> list[dict]:
-    raw_log = run_git(["log", "--date=short", "--pretty=format:%H%x1f%ad%x1f%an%x1f%s", "-n", "80"])
+    raw_log = run_git(["log", "--date=short", "--pretty=format:%H%x1f%ad%x1f%an%x1f%s"])
     if not raw_log:
         return fallback
 

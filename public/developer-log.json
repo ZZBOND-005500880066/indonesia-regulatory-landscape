@@ -2,6 +2,20 @@
   "entries": [
     {
       "date": "2026-07-20",
+      "type": "部署维护",
+      "title": "Automate developer log from commits",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Automate developer log from commits",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面、自动部署配置",
+        "主要文件：.github/workflows/deploy-pages.yml、public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "94ba8bf",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/94ba8bf286d4988539a0f471067af35b53af4490"
+    },
+    {
+      "date": "2026-07-20",
       "type": "协作记录",
       "title": "Localize regulatory date labels",
       "summary": "zhuangzihao 于 2026-07-20 提交：Localize regulatory date labels",
