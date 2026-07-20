@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 from textwrap import dedent
 
@@ -1796,6 +1797,105 @@ developer_log = [
 ]
 
 
+def run_git(args: list[str]) -> str:
+    try:
+        result = subprocess.run(
+            ["git", *args],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            check=False,
+        )
+    except (OSError, ValueError):
+        return ""
+    return result.stdout.strip() if result.returncode == 0 else ""
+
+
+def repository_web_url() -> str:
+    remote = run_git(["config", "--get", "remote.origin.url"])
+    if remote.startswith("https://github.com/"):
+        return remote.removesuffix(".git")
+    if remote.startswith("git@github.com:"):
+        return f"https://github.com/{remote[len('git@github.com:'):].removesuffix('.git')}"
+    return ""
+
+
+def summarize_changed_files(files: list[str]) -> str:
+    labels = []
+    if any(name.startswith("work/") or name.startswith("work\\") for name in files):
+        labels.append("生成器与更新脚本")
+    if any(name.startswith("data/") or name.startswith("data\\") for name in files):
+        labels.append("数据快照")
+    if any(name.startswith("public/") or name.startswith("public\\") for name in files):
+        labels.append("发布页面")
+    if any(name.startswith(".github/") or name.startswith(".github\\") for name in files):
+        labels.append("自动部署配置")
+    if not labels and files:
+        labels.append("其他文件")
+    return "、".join(dict.fromkeys(labels)) or "未列出文件"
+
+
+def classify_commit(subject: str, files: list[str], author: str) -> str:
+    subject_lower = subject.lower()
+    changed = " ".join(files).lower()
+    author_lower = author.lower()
+    if "github-actions[bot]" in author_lower or "[skip ci]" in subject_lower:
+        return "自动更新"
+    if ".github/" in changed or ".github\\" in changed or "workflow" in subject_lower:
+        return "部署维护"
+    if "developer" in subject_lower or "devlog" in subject_lower or "developer-log" in changed:
+        return "协作记录"
+    if "regulatory" in subject_lower or "监管" in subject or "data/" in changed:
+        return "监管数据"
+    if "link" in subject_lower or "链接" in subject:
+        return "内容修正"
+    if "layout" in subject_lower or "module" in subject_lower or "页面" in subject or "模块" in subject:
+        return "界面优化"
+    return "网站修改"
+
+
+def build_automatic_developer_log(fallback: list[dict]) -> list[dict]:
+    raw_log = run_git(["log", "--date=short", "--pretty=format:%H%x1f%ad%x1f%an%x1f%s", "-n", "80"])
+    if not raw_log:
+        return fallback
+
+    repo_url = repository_web_url()
+    entries = []
+    for line in raw_log.splitlines():
+        parts = line.split("\x1f", 3)
+        if len(parts) != 4:
+            continue
+        commit, date, author, subject = parts
+        files_raw = run_git(["show", "--name-only", "--format=", "--no-renames", commit])
+        files = [item.strip().replace("\\", "/") for item in files_raw.splitlines() if item.strip()]
+        short_commit = commit[:7]
+        changes = [
+            f"提交人：{author}",
+            f"涉及范围：{summarize_changed_files(files)}",
+        ]
+        if files:
+            visible_files = "、".join(files[:6])
+            suffix = " 等" if len(files) > 6 else ""
+            changes.append(f"主要文件：{visible_files}{suffix}")
+
+        entry = {
+            "date": date,
+            "type": classify_commit(subject, files, author),
+            "title": subject or f"提交 {short_commit}",
+            "summary": f"{author} 于 {date} 提交：{subject or short_commit}",
+            "changes": changes,
+            "author": author,
+            "commit": short_commit,
+        }
+        if repo_url:
+            entry["commitUrl"] = f"{repo_url}/commit/{commit}"
+        entries.append(entry)
+
+    return entries or fallback
+
+
 def load_json_snapshot(*paths: Path, fallback: dict) -> dict:
     for path in paths:
         try:
@@ -1891,6 +1991,8 @@ public_licenses = [
     {key: value for key, value in item.items() if key != "sourceDoc"}
     for item in licenses
 ]
+
+developer_log = build_automatic_developer_log(developer_log)
 
 
 html = f"""<!doctype html>
@@ -2426,6 +2528,16 @@ html = f"""<!doctype html>
       color: #4b5663;
       font-size: 12px;
       white-space: nowrap;
+    }}
+
+    a.tag {{
+      text-decoration: none;
+    }}
+
+    a.tag:hover {{
+      border-color: #9cb9b1;
+      background: #eef6f2;
+      color: #173d3a;
     }}
 
     .section {{
@@ -3549,21 +3661,28 @@ html = f"""<!doctype html>
     function renderDeveloperLog() {{
       const target = qs("#developerLogList");
       if (!target) return;
-      target.innerHTML = activeDeveloperLog.map(entry => `
-        <article class="devlog-entry">
-          <div>
-            <div class="devlog-date">${{esc(entry.date)}}</div>
-            <div class="devlog-type">${{esc(entry.type || "更新")}}</div>
-          </div>
-          <div class="devlog-body">
-            <div class="devlog-title">${{esc(entry.title)}}</div>
-            <p>${{esc(entry.summary || "")}}</p>
-            <ul class="devlog-list">
-              ${{(entry.changes || []).map(change => `<li>${{esc(change)}}</li>`).join("")}}
-            </ul>
-          </div>
-        </article>
-      `).join("");
+      target.innerHTML = activeDeveloperLog.map(entry => {{
+        const authorTag = entry.author ? `<span class="tag">提交人：${{esc(entry.author)}}</span>` : "";
+        const commitTag = entry.commitUrl
+          ? `<a class="tag" href="${{esc(entry.commitUrl)}}" target="_blank" rel="noreferrer">提交：${{esc(entry.commit || "查看")}}</a>`
+          : (entry.commit ? `<span class="tag">提交：${{esc(entry.commit)}}</span>` : "");
+        return `
+          <article class="devlog-entry">
+            <div>
+              <div class="devlog-date">${{esc(entry.date)}}</div>
+              <div class="devlog-type">${{esc(entry.type || "更新")}}</div>
+            </div>
+            <div class="devlog-body">
+              <div class="devlog-title">${{esc(entry.title)}}</div>
+              <div class="mini-tags">${{authorTag}}${{commitTag}}</div>
+              <p>${{esc(entry.summary || "")}}</p>
+              <ul class="devlog-list">
+                ${{(entry.changes || []).map(change => `<li>${{esc(change)}}</li>`).join("")}}
+              </ul>
+            </div>
+          </article>
+        `;
+      }}).join("");
     }}
 
     function arrayList(items) {{

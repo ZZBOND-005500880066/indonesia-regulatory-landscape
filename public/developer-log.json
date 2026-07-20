@@ -2,398 +2,367 @@
   "entries": [
     {
       "date": "2026-07-20",
-      "type": "数据口径",
-      "title": "监管动态按印尼语官网字段识别日期",
-      "summary": "优化监管动态日期解析，直接对应 OJK/BI 页面里的制定日期、公布日期和生效日期，避免把发布日期、生效日和列表页日期混在一起。",
+      "type": "协作记录",
+      "title": "Localize regulatory date labels",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Localize regulatory date labels",
       "changes": [
-        "监管动态新增 enactedDate 和 promulgatedDate 字段，sourceDate 只作为排序和历史去重口径。",
-        "动态卡片日期标签改为制定日期、公布日期、生效日期；缺少正文日期时才显示 OJK/BI 列表日期。",
-        "每日联网更新器新增印尼语日期解析规则，打开原文页后优先读取官方正文里的日期字段。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、数据快照、发布页面",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json、public/developer-log.json、public/index.html、public/regulatory-history.json、public/regulatory-updates.json 等"
+      ],
+      "author": "zhuangzihao",
+      "commit": "0ff0b1c",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/0ff0b1c45f08783e7d13ed53cdd6a53faef57608"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "协作记录",
+      "title": "Parse Indonesian regulatory date fields",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Parse Indonesian regulatory date fields",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、数据快照、发布页面",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json、public/developer-log.json、public/index.html、public/regulatory-history.json、public/regulatory-updates.json 等"
+      ],
+      "author": "zhuangzihao",
+      "commit": "cc4ac72",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/cc4ac72002eea8d3ad938a74d519bfd5a0b18b1f"
+    },
+    {
+      "date": "2026-07-19",
+      "type": "自动更新",
+      "title": "Update regulatory history [skip ci]",
+      "summary": "github-actions[bot] 于 2026-07-19 提交：Update regulatory history [skip ci]",
+      "changes": [
+        "提交人：github-actions[bot]",
+        "涉及范围：数据快照",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json"
+      ],
+      "author": "github-actions[bot]",
+      "commit": "d931175",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/d931175ce9e1ada01a2a94548c2e0e6ef5aa7ba2"
+    },
+    {
+      "date": "2026-07-18",
+      "type": "自动更新",
+      "title": "Update regulatory history [skip ci]",
+      "summary": "github-actions[bot] 于 2026-07-18 提交：Update regulatory history [skip ci]",
+      "changes": [
+        "提交人：github-actions[bot]",
+        "涉及范围：数据快照",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json"
+      ],
+      "author": "github-actions[bot]",
+      "commit": "c8560f5",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/c8560f57bdd37afd5f21d339787702fa71b2cd07"
     },
     {
       "date": "2026-07-17",
-      "type": "维护",
-      "title": "网页自检并升级 GitHub Actions",
-      "summary": "完成一次全站构建和数据字段自检，并升级部署 workflow，处理 GitHub Actions Node.js 20 deprecation warning。",
+      "type": "部署维护",
+      "title": "Upgrade actions and record site self-check",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Upgrade actions and record site self-check",
       "changes": [
-        "GitHub Actions 部署链路升级到 Node 24 兼容版本，避免 checkout、setup-node、setup-python、configure-pages、upload-pages-artifact、deploy-pages 继续触发 Node 20 warning。",
-        "本地重新生成 public/index.html、developer-log.json 和静态输出文件。",
-        "复核监管动态 JSON，确认 sourceDate/effectiveDate 字段完整，且不再写入 publishedDate。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面、自动部署配置",
+        "主要文件：.github/workflows/deploy-pages.yml、public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "6fa75f6",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/6fa75f6dd151b93f429c821bc6d87c37c9488d83"
     },
     {
       "date": "2026-07-17",
-      "type": "数据口径",
-      "title": "拆分监管动态官网日期和生效日期",
-      "summary": "修正监管动态日期口径，避免把 OJK 的生效日期误当成发布日期。",
+      "type": "协作记录",
+      "title": "Separate regulatory source and effective dates",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Separate regulatory source and effective dates",
       "changes": [
-        "监管动态数据新增 sourceDate 和 effectiveDate，sourceDate 用于排序，effectiveDate 单独展示。",
-        "页面标签由“发布”改为“官网日期 / 生效日期”，降低误读风险。",
-        "每日更新器不再从任意日期文本推断发布日期，只在来源可核验时写入日期字段。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、数据快照、发布页面",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json、public/developer-log.json、public/index.html、public/regulatory-history.json、public/regulatory-updates.json 等"
+      ],
+      "author": "zhuangzihao",
+      "commit": "cd1888c",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/cd1888c0788db6d534d8c0af001773996578075a"
     },
     {
       "date": "2026-07-17",
-      "type": "数据质量",
-      "title": "监管动态只保留可核验链接和日期",
-      "summary": "收紧监管动态入库规则，链接打不开或无法确认具体发布日期的简报不再展示，也不会进入历史库。",
+      "type": "协作记录",
+      "title": "Tighten regulatory briefing verification",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Tighten regulatory briefing verification",
       "changes": [
-        "每日更新器新增原文链接二次核验，候选法规必须打开原文链接后才会生成简报。",
-        "监管动态和历史库过滤缺少 sourceUrl 或 YYYY-MM-DD 日期的条目。",
-        "移除当前无法确认具体发布日期的 PADK 4/2026 简报，并修正现有简报的 OJK 可核验日期。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、数据快照、发布页面",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json、public/developer-log.json、public/index.html、public/regulatory-history.json、public/regulatory-updates.json 等"
+      ],
+      "author": "zhuangzihao",
+      "commit": "3928dd4",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/3928dd4bfb6d3b3b7a0f7f7208dd36a4f4a90d66"
     },
     {
       "date": "2026-07-17",
-      "type": "模块精简",
-      "title": "删除横向对比模块",
-      "summary": "移除独立的横向对比模块，牌照之间的比较入口改为通过牌照库和各详情页阅读。",
+      "type": "协作记录",
+      "title": "Remove comparison module",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Remove comparison module",
       "changes": [
-        "首页模块入口删除“横向对比”卡片。",
-        "移动端模块导航删除“横向对比”选项。",
-        "删除牌照横向对比页面和矩阵渲染逻辑，旧 compare 路由不再进入空白页。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "6eaca3a",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/6eaca3a9999a33e368fdda857543d43d42ef696a"
     },
     {
       "date": "2026-07-17",
-      "type": "交互优化",
-      "title": "牌照库模块统一命名和返回逻辑",
-      "summary": "将牌照模块标题统一为“牌照库”，移除无实际筛选价值的分类按钮，并让牌照详情页返回牌照库。",
+      "type": "协作记录",
+      "title": "Refine license library navigation",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Refine license library navigation",
       "changes": [
-        "牌照模块标题由“研究牌照”改为“牌照库”。",
-        "删除牌照库右侧分类筛选按钮，页面默认展示全部牌照。",
-        "牌照详情页左上角按钮由“返回总览”改为“返回牌照库”，点击后回到牌照库模块。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "833068a",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/833068a740cef621a99cebf644a79cb871519209"
     },
     {
       "date": "2026-07-17",
-      "type": "模块优化",
-      "title": "Loan Aggregator 板块同步横向对比和法规链接",
-      "summary": "Loan Aggregator/PAJK 详情页改为全宽竞品对比，并补充 PAJK、ITSK、PSE 和个人数据保护相关法规来源。",
+      "type": "协作记录",
+      "title": "Optimize loan aggregator detail page",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Optimize loan aggregator detail page",
       "changes": [
-        "竞争对手板块新增综合金融超市、按揭聚合、生态金融和存款聚合三层判断。",
-        "Cermati、CashCerdas、Pilih Kredit、Ringkas、IDEAL、Yup 和 Komunal/DepositoBPR 改为可横向比较字段。",
-        "最新监管规定和法规索引补充 POJK 4/2025、POJK 16/2025、POJK 30/2025、POJK 3/2024、SEOJK 4/2025、PSE 登记和个人数据保护链接。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "3e428d4",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/3e428d4b178d8c483a508016df8852f674c862f9"
     },
     {
       "date": "2026-07-17",
-      "type": "模块优化",
-      "title": "ICS/PKA 板块同步横向对比和法规链接",
-      "summary": "ICS/PKA 详情页改为全宽竞品对比，并补充 PKA/ITSK 最新监管规定和法规索引来源。",
+      "type": "协作记录",
+      "title": "Optimize ics detail page",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Optimize ics detail page",
       "changes": [
-        "竞争对手板块新增合规牌照和数据边界、征信协同、风控工具链三层判断。",
-        "Advance AI/BPS、TrustDecision、iziDATA、Prime Analytics、AIForesee 和 Cloudun AI 改为可横向比较字段。",
-        "最新监管规定和法规索引补充 POJK 30/2025、POJK 29/2024、POJK 3/2024、SEOJK 4/2025、SEOJK 7/2024 与 POJK 5/2022 链接。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "e20017a",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/e20017ad39e1b2900686edf32c30bddc922c1546"
     },
     {
       "date": "2026-07-17",
-      "type": "模块优化",
-      "title": "BPR 板块同步横向对比和法规链接",
-      "summary": "BPR 详情页改为全宽竞品对比，并补充 BPR/BPRS 最新监管规定和法规索引来源。",
+      "type": "协作记录",
+      "title": "Optimize bpr detail page",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Optimize bpr detail page",
       "changes": [
-        "竞争对手板块新增 BPR+Fintech、传统头部 BPR、支付合作三层判断。",
-        "Komunal/DepositoBPR、Alami/Bank Hijra、Bank Eka、BPR Lestari、BPR BK Jateng 和 BPR Karyajatnika Sadaya 改为可横向比较字段。",
-        "最新监管规定和法规索引补充 POJK 7/2024、POJK 26/2024、POJK 23/2024、POJK 1/2024、POJK 23/2022 与 P2SK 修正法链接。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "08e76f1",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/08e76f1236e284912b5afe6e0a044fb95e077518"
     },
     {
       "date": "2026-07-17",
-      "type": "文案修正",
-      "title": "修正 PJP 业务范围展示口径",
-      "summary": "将 PJP 详情页业务范围中的“活动包 1/2/3”改为更符合页面阅读习惯的“PJP 1/2/3”。",
+      "type": "协作记录",
+      "title": "Fix pjp business scope labels",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Fix pjp business scope labels",
       "changes": [
-        "PJP 类型说明中的 PJP 活动包 1/2/3 改为 PJP 1/2/3。",
-        "业务范围三条标题分别改为 PJP 1、PJP 2、PJP 3。",
-        "法规摘要中的“活动包/活动变更”保留，用于对应 BI 新规原始监管概念。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "c11c18c",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/c11c18ca685f83f23747d8a9ad5dfb6f94a388f1"
     },
     {
       "date": "2026-07-17",
-      "type": "模块优化",
-      "title": "PJP 板块同步横向对比和法规链接",
-      "summary": "PJP 详情页改为全宽竞品对比，并将最新监管规定更新到 BI 2025/2026 支付系统新规口径。",
+      "type": "协作记录",
+      "title": "Optimize pjp detail page",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Optimize pjp detail page",
       "changes": [
-        "竞争对手板块新增生态钱包、支付网关、收购路径三层判断。",
-        "GoPay、OVO、DANA、ShopeePay、Xendit、DOKU、Payfazz、Finture/YUP、Airwallex 和潜在收购标的改为可横向比较字段。",
-        "最新监管规定和法规索引补充 BI PBI 10/2025、PADG 32/2025、PADG 3/2025、PBI 23/6/2021 等官方链接。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "50f4b39",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/50f4b39c71089f28ef56888a7ff7b641509c497c"
     },
     {
       "date": "2026-07-17",
-      "type": "内容修正",
-      "title": "修正 POJK 40/2024 LPBBTI 法规索引链接",
-      "summary": "将 P2P 法规索引中的 POJK No.40/2024 从不稳定入口替换为 OJK 原文页面，并补充 PDF 直达链接。",
+      "type": "协作记录",
+      "title": "Fix lpbbti poJK 40 source link",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Fix lpbbti poJK 40 source link",
       "changes": [
-        "P2P 最新监管规定中的 POJK No.40/2024 改用 OJK 监管页面。",
-        "法规索引中的 POJK No.40/2024 on LPBBTI 来源胶囊改为 OJK，并新增 PDF 胶囊。",
-        "Multi-Finance 现有法规索引同步检查，未发现同类截图问题。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "43c8d34",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/43c8d345be8cdb895e8ee7ae7c7bec3581cb83fa"
     },
     {
       "date": "2026-07-17",
-      "type": "模块优化",
-      "title": "P2P 板块同步商业银行优化",
-      "summary": "P2P 详情页改为全宽竞品对比，并为最新监管规定和法规索引补充可核验链接。",
+      "type": "协作记录",
+      "title": "Optimize p2p detail page",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Optimize p2p detail page",
       "changes": [
-        "竞争对手板块新增生态型平台、现金贷平台、生产性融资三层判断。",
-        "SPinjam、Easycash、AdaKami、Kredit Pintar、Amartha、Modalku 和 JULO 改为可横向比较的表格字段。",
-        "最新监管规定和法规索引补充 BPK、OJK、peraturan.go.id 或相关报道链接；POJK 8/2026 暂以可核验报道作为跟踪入口。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "7fde0e3",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/7fde0e39c6aaa0bd5185805f4f2eb79c6f3e7f8b"
     },
     {
       "date": "2026-07-17",
-      "type": "模块优化",
-      "title": "Multi-Finance 板块同步商业银行优化",
-      "summary": "Multi-Finance 详情页改为全宽竞品对比，并为最新监管规定和法规索引补充官方链接。",
+      "type": "协作记录",
+      "title": "Optimize multi-finance detail page",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Optimize multi-finance detail page",
       "changes": [
-        "竞争对手板块新增传统车辆/厂商金融、独立综合融资、线上消费分期/BNPL 三层判断。",
-        "FIFGROUP、Adira、ACC、BFI、Home Credit、Kredivo 和 SPayLater 改为可横向比较的表格字段。",
-        "最新监管规定和法规索引补充 OJK 或 BPK 官方页面，法规索引支持点击法规名称和来源胶囊。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "6519dc8",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/6519dc838fd873dcb193746f188bea060dc72ede"
     },
     {
       "date": "2026-07-17",
-      "type": "内容修正",
-      "title": "修正商业银行法规索引失效链接",
-      "summary": "将商业银行法规索引中不稳定的 peraturan.go.id 猜测路径替换为已核验的 BPK 或 OJK 官方页面。",
+      "type": "协作记录",
+      "title": "Fix commercial bank legal index links",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Fix commercial bank legal index links",
       "changes": [
-        "截图中的 POJK 40/2019、POJK 18/2016、POJK 4/2016、POJK 11/2022、POJK 22/2023 等改用 BPK Details 页面，页面内可继续下载 PDF。",
-        "POJK 17/2023、POJK 50/2017、POJK 8/2023 改用 OJK 官方法规页面。",
-        "法规名称和来源胶囊都改为可点击链接，减少误点不响应的情况。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "45ee968",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/45ee9688cf7a71b5cf62bb2f72e257b97ae24a9e"
     },
     {
       "date": "2026-07-17",
-      "type": "内容补充",
-      "title": "商业银行法规索引补充官方链接",
-      "summary": "商业银行详情页的法规索引现在为每条法规附上官方法规库或相关 PDF 页面链接。",
+      "type": "协作记录",
+      "title": "Add links to commercial bank legal index",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Add links to commercial bank legal index",
       "changes": [
-        "法规索引组件新增链接和备用链接显示，未配置链接的条目仍按普通文本显示。",
-        "商业银行 12 条法规均补充 BPK、peraturan.go.id 或 OJK 官方来源。",
-        "优先使用官方法规库详情页，让读者可在页面内继续下载 PDF 或核对法规状态。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "e037047",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/e03704791b4666cc212130f4468fc44990790cea"
     },
     {
       "date": "2026-07-17",
-      "type": "内容补充",
-      "title": "商业银行监管规定补充 OJK 链接",
-      "summary": "商业银行详情页的最新监管规定现在可直接点击到对应 OJK 官方法规页面。",
+      "type": "协作记录",
+      "title": "Add OJK links to commercial bank rules",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Add OJK links to commercial bank rules",
       "changes": [
-        "POJK No.12/POJK.03/2021、POJK No.17/2023、POJK No.11/POJK.03/2022 和 POJK No.8/2023 均补充官方链接。",
-        "页面保留原有规则摘要，点击规则名称即可打开法规来源。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "c7c0c9c",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/c7c0c9c1f3553f91ab6ccd79ae8dc3ac57e603c4"
     },
     {
       "date": "2026-07-17",
-      "type": "版式优化",
-      "title": "商业银行竞争对手改为全宽对比",
-      "summary": "商业银行详情页将竞争对手横向对比表扩展到主内容全宽，并把最新监管规定和法规索引移到下方，减少桌面端横向滚动。",
+      "type": "协作记录",
+      "title": "Remove source document labels from detail pages",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Remove source document labels from detail pages",
       "changes": [
-        "商业银行详情页取消右侧栏占位，让竞争对手对比表获得完整页面宽度。",
-        "最新监管规定和法规索引改为竞争对手板块下方的双列信息区。",
-        "页面只保留业务阅读所需信息，移动端保留横向滚动兜底，避免五列表格被压缩到不可读。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "9c03904",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/9c03904b51a9c95bb53b973319c89f6164d542a6"
     },
     {
       "date": "2026-07-17",
-      "type": "数据管道",
-      "title": "监管动态改为长期历史库",
-      "summary": "将监管动态从单日快照升级为可持续累积的历史库：首页只展示最新几条，历史页保留网站创建以来收录过的监管简报。",
+      "type": "协作记录",
+      "title": "Make commercial bank competitor comparison full width",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Make commercial bank competitor comparison full width",
       "changes": [
-        "新增 regulatory-history.json，保存历史简报、首次收录日期、最近出现日期和出现次数。",
-        "每日联网检索仍生成最新快照 regulatory-updates.json，但会同步合并进历史库。",
-        "GitHub Actions 定时任务会把历史库写回仓库，避免下一次部署覆盖旧简报。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "2882301",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/2882301033cd89809a30340a1884f0c259aef866"
     },
     {
       "date": "2026-07-17",
-      "type": "模块优化",
-      "title": "商业银行竞争对手改为横向对比",
-      "summary": "商业银行详情页的竞争对手板块从普通卡片改为分层格局和横向对比表，突出玩家体量、主战场和对进入策略的启示。",
+      "type": "部署维护",
+      "title": "Persist regulatory update history",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Persist regulatory update history",
       "changes": [
-        "新增 KBMI 4 大行、区域/外资银行、数字银行三层竞争格局提示。",
-        "商业银行竞争对手表格新增行业体量、关键优势和策略启示字段。",
-        "其他牌照的竞争对手卡片保持原样，避免尚未补充字段时被强行表格化。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、数据快照、发布页面、自动部署配置",
+        "主要文件：.github/workflows/deploy-pages.yml、.gitignore、data/regulatory-history.json、data/regulatory-updates.json、public/developer-log.json、public/index.html 等"
+      ],
+      "author": "zhuangzihao",
+      "commit": "378b542",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/378b5421758ddbe50347366e6e3bee8741e8240d"
     },
     {
       "date": "2026-07-17",
-      "type": "信息架构",
-      "title": "首页新增监管动态滚动区",
-      "summary": "将“监管更新”统一改名为“监管动态”，首页直接展示最新几条动态，完整历史仍保留在独立模块。",
+      "type": "协作记录",
+      "title": "Improve commercial bank competitor comparison",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Improve commercial bank competitor comparison",
       "changes": [
-        "首页新增横向滚动的最新监管动态预览，并提供“查看历史”入口。",
-        "监管动态卡片新增“发布日期”标签，优先展示官方列表或页面解析出的具体日期。",
-        "牌照子页面的最新监管规定同步显示发布日期，便于判断法规新旧。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "00fff72",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/00fff723ca8add58d7421450098522cec1f5b484"
     },
     {
       "date": "2026-07-17",
-      "type": "部署自动化",
-      "title": "支持 GitHub Pages 每日自动部署",
-      "summary": "新增 GitHub Actions 工作流，让其他人可通过固定网站链接访问，同时保留每日联网更新能力。",
+      "type": "协作记录",
+      "title": "Update regulatory dynamics homepage",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Update regulatory dynamics homepage",
       "changes": [
-        "新增 .github/workflows/deploy-pages.yml，支持定时、手动和 push 触发部署。",
-        "将生成器中的本机绝对路径改为项目相对路径，适配 GitHub Actions 运行环境。",
-        "发布目录固定为 public/，部署时自动带上最新监管快照和开发者日志。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/update_regulatory_data.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "7f327c1",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/7f327c1e89e1c0ededb997d3405c7e2261135e19"
     },
     {
       "date": "2026-07-17",
-      "type": "静态交付",
-      "title": "生成可单独分发的静态 HTML",
-      "summary": "将监管简报快照和开发者日志内嵌到 HTML，便于离开本机服务后直接打开页面。",
+      "type": "部署维护",
+      "title": "Initial Indonesia regulatory landscape site",
+      "summary": "zhuangzihao 于 2026-07-17 提交：Initial Indonesia regulatory landscape site",
       "changes": [
-        "新增 outputs/indonesia_financial_regulatory_landscape_static.html 作为静态交付文件。",
-        "页面在 file:// 打开时跳过外部 JSON 请求，直接使用内置快照。",
-        "保留本地网站模式：通过 server.js 运行时仍可读取每日更新 JSON。"
-      ]
-    },
-    {
-      "date": "2026-07-17",
-      "type": "视觉试验",
-      "title": "监管结构三组判断改为 Mindmap",
-      "summary": "监管结构中三个判断区已改为 mindmap。",
-      "changes": [
-        "保留原有监管信息。",
-        "三条分支分别展示边界、排除事项和触发场景。",
-        "移动端改为纵向列表。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "模块精简",
-      "title": "监管结构移除跨部门说明",
-      "summary": "删除监管结构里信息密度偏低的跨部门说明段落，保留职责、边界、触发场景和监管抓手。",
-      "changes": [
-        "不再在监管结构卡片中展示跨部门说明。",
-        "字段完整性检查同步移除该字段的必渲染要求。",
-        "监管结构页面保留职责、研究意义、决定事项、不负责事项、触发场景和监管抓手。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "质量保护",
-      "title": "监管结构排版增加信息完整性保护",
-      "summary": "在调整监管结构版式后，补充字段合并和回归检查，确保排版优化不会导致原有监管信息被漏掉。",
-      "changes": [
-        "将“触发场景”和原有“关注事项”合并去重后展示。",
-        "模块检查脚本新增监管结构字段引用检查。",
-        "保留每个部门的职责、意义、边界、触发场景和监管抓手信息。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "视觉优化",
-      "title": "监管结构模块排版整理",
-      "summary": "将监管结构从密集信息块改为更清爽的部门档案版式，减少边框堆叠和表单感。",
-      "changes": [
-        "每个部门改为左侧身份区、右侧职责摘要和下方三栏信息区。",
-        "列表从密集边框格子改成轻量 bullet，降低视觉噪音。",
-        "监管抓手从重复区块中分离出来，阅读顺序更清晰。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "模块优化",
-      "title": "监管结构补充边界和触发场景",
-      "summary": "在每个监管部门下新增非重复信息，重点解释它具体决定什么、不负责什么，以及何时会影响项目。",
-      "changes": [
-        "OJK、BI、LPS、Komdigi 均新增“它具体决定什么”和“它不负责什么”。",
-        "将原来的“阅读时重点关注”升级为更项目化的“什么时候需要重点看它”。",
-        "新增监管边界说明，帮助判断每个部门负责与不负责的事项。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "模块优化",
-      "title": "监管结构模块改为部门独立篇幅",
-      "summary": "去掉监管结构中卡片和表格的重复展示，改为 OJK、BI、LPS、Komdigi 各自独立的阅读篇幅。",
-      "changes": [
-        "每个监管部门单独展示核心职责、覆盖牌照、监管抓手和对牌照策略的意义。",
-        "新增“阅读时重点关注”清单，帮助快速判断尽调和申牌时要看什么。",
-        "删除原有监管机构卡片 + 表格的重复结构。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "界面简化",
-      "title": "移除左侧栏，减少与模块入口重复",
-      "summary": "模块化首页已经承担主要导航功能，因此移除左侧固定侧栏，页面改为全宽展示，并保留顶部下拉作为轻量辅助导航。",
-      "changes": [
-        "删除左侧栏的品牌区、模块按钮和牌照按钮。",
-        "页面主内容从左右分栏改为全宽布局。",
-        "顶部下拉继续支持模块和牌照详情跳转，避免导航功能丢失。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "信息架构",
-      "title": "首页拆分为可点击的信息模块",
-      "summary": "把原来的长页面滚动结构改成模块入口式网站，用户通过点击进入监管结构、牌照库、横向对比、监管更新和开发者日志。",
-      "changes": [
-        "首页只保留主题说明和模块卡片，不再默认铺开所有长内容。",
-        "新增 module 路由，支持 #module/regulators、#module/licenses、#module/compare、#module/updates、#module/developer-log。",
-        "侧边栏和移动端选择器同步支持模块跳转，牌照详情页仍保持独立点击进入。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "文案优化",
-      "title": "监管简报摘要本地化与去模板化",
-      "summary": "把每日联网检索生成的简报摘要从机械抓取模板改成中文法规摘要，减少原始印尼语标题直接堆进正文的问题。",
-      "changes": [
-        "新增法规标题本地化规则，把 PADG、POJK、SEOJK、PADK 等标题转成中文阅读格式。",
-        "摘要改为说明监管机构、法规编号和规则主题，不再使用“官方入口抓取到监管条目”的模板句。",
-        "影响和建议动作按外汇、月报、治理风控、资本、投诉、AML 等主题分别生成更自然的表述。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "功能新增",
-      "title": "新增开发者日志时间线",
-      "summary": "把网站改动从页面正文说明中拆出来，形成独立的开发者日志模块，方便其他人看到网站本身做过哪些改动。",
-      "changes": [
-        "新增 public/developer-log.json 作为可持续维护的日志数据源。",
-        "首页新增开发者日志时间线，按日期展示功能、数据和维护动作。",
-        "页面会优先读取外部 developer-log.json，读取失败时使用内置日志快照。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "架构升级",
-      "title": "从静态 HTML 升级为本地网站服务",
-      "summary": "新增 Node 网站服务，让监管简报可以由服务端联网刷新，而不是只依赖静态页面内置快照。",
-      "changes": [
-        "新增 server.js，提供首页、监管更新 JSON、手动刷新 API。",
-        "网站启动时会先刷新监管快照，运行期间每天 08:30 自动刷新。",
-        "已创建 Codex 本地每日自动任务，每天约 08:45 运行更新器。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "数据管道",
-      "title": "新增每日联网监管检索器",
-      "summary": "新增 OJK、BI、JDIH BI 官方入口检索器，生成页面读取的 regulatory-updates.json。",
-      "changes": [
-        "只从官方入口抓取法规页，保留 sourcesChecked 诊断信息。",
-        "收紧筛选规则，排除导航、目录、地址表和机构介绍页。",
-        "如果某个来源超时或失败，只记录诊断，不生成不存在或不相关的简报。"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "type": "内容修正",
-      "title": "修正监管简报链接与来源呈现",
-      "summary": "把此前无法访问或与内容无关的链接替换为可核验的官方来源，并补充备用入口。",
-      "changes": [
-        "BPR 和 ITSK 简报增加 OJK 原文页与 OJK 站内检索备用链接。",
-        "简报卡片显示来源状态，区分实时抓取和基准快照保留。",
-        "未获取到稳定可核验来源的类别不硬生成监管变更。"
-      ]
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面、自动部署配置",
+        "主要文件：.github/workflows/deploy-pages.yml、.gitignore、README.md、package.json、public/.nojekyll、public/developer-log.json 等"
+      ],
+      "author": "zhuangzihao",
+      "commit": "d2220c9",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/d2220c96f0394ea389e67bf5f386ab00ba383ece"
     }
   ]
 }

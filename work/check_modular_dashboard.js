@@ -36,8 +36,19 @@ for (const text of removed) {
 }
 
 const devLog = JSON.parse(fs.readFileSync("public/developer-log.json", "utf8"));
-if (!Array.isArray(devLog.entries) || !devLog.entries.some((entry) => entry.title.includes("信息模块"))) {
-  throw new Error("Developer log does not include the modularization entry");
+if (!Array.isArray(devLog.entries) || devLog.entries.length === 0) {
+  throw new Error("Developer log is empty");
+}
+
+const invalidDevLogEntry = devLog.entries.find(
+  (entry) => !entry.date || !entry.title || !entry.author || !entry.commit
+);
+if (invalidDevLogEntry) {
+  throw new Error("Developer log entry is missing automatic commit metadata");
+}
+
+if (!devLog.entries.some((entry) => entry.commitUrl && entry.commitUrl.includes("/commit/"))) {
+  throw new Error("Developer log does not include commit links");
 }
 
 const regulatorFieldReferences = [
