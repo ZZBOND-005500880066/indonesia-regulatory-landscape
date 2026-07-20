@@ -48,7 +48,9 @@ const formattingMarkers = [
   'class="metric-value"',
   'class="usd-equiv"',
   'class="bank-shape-pill"',
+  'class="bank-shape-pill player-shape-pill"',
   'class="bank-row-action"',
+  'class="bank-detail-grid player-detail-grid"',
   "约 USD",
 ];
 
@@ -90,6 +92,23 @@ for (const text of commercialBankMarkers) {
   }
 }
 
+const multiFinanceMarkers = [
+  "Multi-Finance 玩家目录",
+  "function renderMultiFinanceDirectory",
+  "function multiFinancePlayerPage",
+  'href="#license/${esc(item.id)}/${esc(multiFinancePlayerSlug(player))}"',
+  'hash.match(/^license\\/multi-finance\\/([^/]+)$/)',
+  "Mandiri Utama Finance",
+  "WOM Finance",
+  "Akulaku Finance Indonesia",
+];
+
+for (const text of multiFinanceMarkers) {
+  if (!html.includes(text)) {
+    throw new Error(`Missing multi-finance player marker: ${text}`);
+  }
+}
+
 const licensesMatch = html.match(/const LICENSES = (\[.*?\]);/s);
 if (!licensesMatch) {
   throw new Error("Cannot find generated license data");
@@ -97,9 +116,21 @@ if (!licensesMatch) {
 
 const licenses = JSON.parse(licensesMatch[1]);
 const commercialBank = licenses.find((item) => item.id === "commercial-bank");
+const multiFinance = licenses.find((item) => item.id === "multi-finance");
 const commercialBanks = (commercialBank.bankDirectory || []).flatMap((group) => group.banks || []);
 if (commercialBanks.length < 40) {
   throw new Error("Commercial bank directory lost bank rows");
+}
+
+const multiFinanceCompetitors = multiFinance?.competitors || [];
+if (multiFinanceCompetitors.length < 10) {
+  throw new Error("Multi-Finance player directory lost competitor rows");
+}
+
+for (const name of ["Mandiri Utama Finance", "WOM Finance", "Akulaku Finance Indonesia"]) {
+  if (!multiFinanceCompetitors.some((player) => player.name === name)) {
+    throw new Error(`Multi-Finance player missing: ${name}`);
+  }
 }
 
 const banksWithoutSources = commercialBanks.filter(

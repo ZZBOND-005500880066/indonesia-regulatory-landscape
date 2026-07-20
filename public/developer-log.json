@@ -3,6 +3,20 @@
     {
       "date": "2026-07-20",
       "type": "协作记录",
+      "title": "Polish commercial bank directory cards",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Polish commercial bank directory cards",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "1343a2c",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/1343a2c4f44001787698ab6ef4268dda2f6014f6"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "协作记录",
       "title": "Simplify commercial bank directory",
       "summary": "zhuangzihao 于 2026-07-20 提交：Simplify commercial bank directory",
       "changes": [

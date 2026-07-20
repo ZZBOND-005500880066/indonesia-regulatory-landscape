@@ -351,6 +351,22 @@ licenses = [
                 "implication": "如果目标是汽车金融，牌照价值取决于能否接入车源、经销商和二手处置网络。",
             },
             {
+                "name": "Mandiri Utama Finance",
+                "tier": "银行集团系综合车辆金融公司",
+                "scale": "报告列示应收/净融资约 Rp15.57 trillion；融资资产占比约 94.71%",
+                "position": "汽车、摩托车、多用途和商业车辆融资",
+                "edge": "Mandiri 银行集团资金与客户基础叠加经销商网络，融资成本和渠道稳定性较强。",
+                "implication": "银行系玩家能用资金成本与交叉销售形成优势；对标时应看集团协同和资产定价能力。",
+            },
+            {
+                "name": "WOM Finance",
+                "tier": "摩托车与多用途融资上市公司",
+                "scale": "报告列示 2025 年放款约 Rp5.94 trillion，融资资产约 Rp7.37 trillion",
+                "position": "摩托车融资、多用途融资和二手车相关场景",
+                "edge": "专注轻资产消费场景，债券和银行借款支持放款节奏。",
+                "implication": "适合作为中型车辆/消费金融样本，重点看融资来源、逾期控制和区域渠道深度。",
+            },
+            {
                 "name": "BFI Finance",
                 "tier": "独立综合型融资公司",
                 "scale": "独立综合融资样本；工作资本、投资和多用途融资组合较灵活",
@@ -381,6 +397,14 @@ licenses = [
                 "position": "电商生态 BNPL、账单支付和 QRIS 场景",
                 "edge": "强平台流量、交易数据和消费场景闭环。",
                 "implication": "平台型入口能显著降低获客成本，但需要重点评估流量质量、补贴依赖和坏账周期。",
+            },
+            {
+                "name": "Akulaku Finance Indonesia",
+                "tier": "数字消费金融与 BNPL 玩家",
+                "scale": "报告列示 90,000+ 商户、1,000+ 平台合作方、10m+ 用户；2025 年放款约 Rp7.44 trillion",
+                "position": "电商消费分期、BNPL、现金/商品相关数字融资",
+                "edge": "商户网络、平台合作、App 流量和循环额度使用形成获客入口。",
+                "implication": "数字玩家的核心变量是获客质量、授信复用、资金来源和坏账曲线。",
             },
         ],
         "latestRules": [
@@ -3616,6 +3640,10 @@ html = f"""<!doctype html>
       white-space: nowrap;
     }}
 
+    .player-shape-pill {{
+      max-width: 150px;
+    }}
+
     .bank-row-action {{
       grid-area: action;
       align-self: end;
@@ -3625,6 +3653,14 @@ html = f"""<!doctype html>
       font-size: 13px;
       font-weight: 900;
       text-align: left;
+    }}
+
+    .bank-detail-grid.player-detail-grid {{
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }}
+
+    .player-detail-grid .bank-detail-card {{
+      min-height: 150px;
     }}
 
     .bank-detail-grid {{
@@ -4017,6 +4053,7 @@ html = f"""<!doctype html>
       .detail-layout-wide .competitor-table {{ min-width: 900px; }}
       .detail-layout-wide .bank-table {{ min-width: 0; }}
       .bank-detail-grid {{ grid-template-columns: 1fr; }}
+      .bank-detail-grid.player-detail-grid {{ grid-template-columns: 1fr; }}
       .bank-group-title {{ display: block; }}
       .home-dynamic-strip {{ grid-auto-columns: minmax(260px, 86vw); }}
       .regulator-summary {{ grid-template-columns: 1fr; }}
@@ -4239,6 +4276,8 @@ html = f"""<!doctype html>
       if (moduleMatch && validModules.has(moduleMatch[1])) return {{ page: "module", id: moduleMatch[1] }};
       const bankMatch = hash.match(/^license\\/commercial-bank\\/([^/]+)$/);
       if (bankMatch) return {{ page: "bank", licenseId: "commercial-bank", bankId: bankMatch[1] }};
+      const multiFinanceMatch = hash.match(/^license\\/multi-finance\\/([^/]+)$/);
+      if (multiFinanceMatch) return {{ page: "finance-player", licenseId: "multi-finance", playerId: multiFinanceMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -4578,6 +4617,131 @@ html = f"""<!doctype html>
       `;
     }}
 
+    function slugify(value) {{
+      return String(value || "")
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }}
+
+    function multiFinancePlayerSlug(player) {{
+      return player.id || slugify(player.name);
+    }}
+
+    function multiFinancePlayerGroups(item) {{
+      const players = item.competitors || [];
+      const groups = [
+        {{
+          category: "车辆/OEM 与经销商金融",
+          badge: "车辆/OEM",
+          description: "车辆、摩托车、厂商生态、经销商网络和银行集团协同是这一类玩家的核心抓手。",
+          names: ["FIFGROUP", "Adira Finance", "Astra Credit Companies", "Mandiri Utama Finance", "WOM Finance"],
+        }},
+        {{
+          category: "综合融资与抵押/营运资金",
+          badge: "综合融资",
+          description: "更能体现 Multi-Finance 牌照业务弹性的综合型玩家，重点看资产选择和风险定价。",
+          names: ["BFI Finance"],
+        }},
+        {{
+          category: "数字消费金融与 BNPL",
+          badge: "数字/BNPL",
+          description: "POS、App、商户网络、电商场景和 PayLater 玩家，重点看获客、授信复用和坏账曲线。",
+          names: ["Home Credit Indonesia", "Kredivo Finance Indonesia", "PT Commerce Finance / SPayLater", "Akulaku Finance Indonesia"],
+        }},
+      ];
+      const byName = new Map(players.map(player => [player.name, player]));
+      const groupedNames = new Set();
+      const result = groups.map(group => {{
+        const groupPlayers = group.names.map(name => byName.get(name)).filter(Boolean);
+        groupPlayers.forEach(player => groupedNames.add(player.name));
+        return {{ ...group, players: groupPlayers }};
+      }}).filter(group => group.players.length);
+      const remaining = players.filter(player => !groupedNames.has(player.name));
+      if (remaining.length) {{
+        result.push({{
+          category: "其他报告列示玩家",
+          badge: "其他",
+          description: "报告中列示但暂未归入前三类的 Multi-Finance 玩家。",
+          players: remaining,
+        }});
+      }}
+      return result;
+    }}
+
+    function findMultiFinancePlayer(playerId) {{
+      const item = LICENSES.find(item => item.id === "multi-finance");
+      return (item?.competitors || []).find(player => multiFinancePlayerSlug(player) === playerId);
+    }}
+
+    function renderMultiFinanceDirectory(item) {{
+      const groups = multiFinancePlayerGroups(item);
+      const total = groups.reduce((sum, group) => sum + (group.players || []).length, 0);
+      return `
+        <div class="bank-directory">
+          <div class="bank-directory-summary">
+            已按研究报告中的玩家类型整理 ${{total}} 家 Multi-Finance 对标玩家。一级页保留玩家分类和定位，点击任一玩家进入二级页面，集中查看行业体量、主要战场、关键优势和对我们的含义。
+          </div>
+          ${{groups.map(group => `
+            <section class="bank-group">
+              <div class="bank-group-title">
+                <div>
+                  <h4>${{esc(group.category)}}</h4>
+                  <p>${{esc(group.description || "")}}</p>
+                </div>
+                <span class="tag">${{(group.players || []).length}} 家</span>
+              </div>
+              <div class="bank-table-wrap">
+                <div class="bank-table">
+                  ${{(group.players || []).map(player => `
+                    <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(multiFinancePlayerSlug(player))}}">
+                      <div class="bank-name-cell"><strong>${{esc(player.name)}}</strong><span>${{esc(player.position || group.category)}}</span></div>
+                      <div class="bank-shape-pill player-shape-pill">${{esc(group.badge || player.tier || "")}}</div>
+                      <div class="bank-row-action">查看玩家详情</div>
+                    </a>
+                  `).join("")}}
+                </div>
+              </div>
+            </section>
+          `).join("")}}
+        </div>
+      `;
+    }}
+
+    function multiFinancePlayerPage(item, player) {{
+      if (!player) return detailPage(item);
+      const cards = [
+        ["玩家类型", player.tier || "未披露"],
+        ["行业体量", player.scale || "未披露"],
+        ["主要战场", player.position || "未披露"],
+        ["关键优势", player.edge || "未披露"],
+        ["对我们意味着什么", player.implication || "未披露"],
+      ];
+      return `
+        <div class="detail-hero" data-tone="${{esc(item.tone)}}">
+          <button class="btn" onclick="setRoute('multi-finance')">返回 Multi-Finance</button>
+          <div class="detail-title">
+            <div>
+              <h2>${{esc(player.name)}}</h2>
+              <p>Multi-Finance 玩家详情</p>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="bank-detail-grid player-detail-grid">
+            ${{cards.map(card => `
+              <article class="bank-detail-card">
+                <span>${{esc(card[0])}}</span>
+                <strong>${{moneyText(card[1])}}</strong>
+              </article>
+            `).join("")}}
+          </div>
+          <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
+        </section>
+      `;
+    }}
+
     function bankDetailPage(item, bank) {{
       if (!bank) return detailPage(item);
       const cards = [
@@ -4691,8 +4855,8 @@ html = f"""<!doctype html>
             </section>
 
             <section class="info-band">
-              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : "竞争对手板块"}}</h3>
-              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : renderCompetitors(item)}}
+              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : "竞争对手板块"}}</h3>
+              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : renderCompetitors(item)}}
             </section>
             ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
@@ -4722,6 +4886,15 @@ html = f"""<!doctype html>
         detail.classList.add("active");
         showModule(null);
         detail.innerHTML = bankDetailPage(item, bank);
+        qs("#mobileNav").value = item.id;
+        window.scrollTo({{ top: 0, behavior: "instant" }});
+      }} else if (route.page === "finance-player") {{
+        const item = LICENSES.find(x => x.id === route.licenseId) || LICENSES[0];
+        const player = findMultiFinancePlayer(route.playerId);
+        home.classList.remove("active");
+        detail.classList.add("active");
+        showModule(null);
+        detail.innerHTML = multiFinancePlayerPage(item, player);
         qs("#mobileNav").value = item.id;
         window.scrollTo({{ top: 0, behavior: "instant" }});
       }} else if (route.page === "license") {{
