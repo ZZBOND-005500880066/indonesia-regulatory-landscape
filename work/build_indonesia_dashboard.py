@@ -107,6 +107,78 @@ licenses = [
                 "implication": "产品与获客最可对标；判断重点是生态流量质量、留存、存款成本和资本消耗。",
             },
         ],
+        "bankDirectory": [
+            {
+                "category": "国有大行",
+                "description": "报告口径下由 4 家 Bank Umum Persero 构成，均为中央国资背景。",
+                "banks": [
+                    {"id": "bri", "name": "BRI", "controllingShareholder": "中央国资", "assets": "Rp2,135 trillion", "coreCapital": "Rp302 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 4"},
+                    {"id": "bank-mandiri", "name": "Bank Mandiri", "controllingShareholder": "中央国资", "assets": "Rp2,830 trillion", "coreCapital": "Rp304 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 4"},
+                    {"id": "bni", "name": "BNI", "controllingShareholder": "中央国资", "assets": "Rp1,362 trillion", "coreCapital": "Rp161 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 4"},
+                    {"id": "btn", "name": "BTN", "controllingShareholder": "中央国资", "assets": "Rp528 trillion", "coreCapital": "Rp35 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                ],
+            },
+            {
+                "category": "私人银行和本地财团银行",
+                "description": "报告聚焦本地私人资本和财团背景银行，代表机构包括 BCA、Bank Mega、Panin Bank、Bank Sinarmas 和 Bank Mayapada。",
+                "banks": [
+                    {"id": "bca", "name": "BCA", "controllingShareholder": "本地财团/家族资本背景", "assets": "Rp1,587 trillion", "coreCapital": "Rp258 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 4"},
+                    {"id": "bank-mega", "name": "Bank Mega", "controllingShareholder": "本地财团背景", "assets": "Rp141 trillion", "coreCapital": "Rp24 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "panin-bank", "name": "Panin Bank", "controllingShareholder": "本地财团/家族背景", "assets": "Rp237 trillion", "coreCapital": "Rp47 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "bank-sinarmas", "name": "Bank Sinarmas", "controllingShareholder": "本地财团背景", "assets": "Rp58 trillion", "coreCapital": "Rp8 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 2"},
+                    {"id": "bank-mayapada", "name": "Bank Mayapada", "controllingShareholder": "本地财团背景", "assets": "Rp164 trillion", "coreCapital": "Rp13 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 2"},
+                ],
+            },
+            {
+                "category": "KCBLN 外国银行分行",
+                "description": "报告将外资/区域金融集团背景银行拆成两类理解，其中一类是 KCBLN 外国银行分行。",
+                "banks": [
+                    {"id": "citi", "name": "Citi", "controllingShareholder": "Citi / 外国银行分行", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KCBLN"},
+                    {"id": "jpmorgan", "name": "JPMorgan", "controllingShareholder": "JPMorgan / 外国银行分行", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KCBLN"},
+                    {"id": "bank-of-america", "name": "Bank of America", "controllingShareholder": "Bank of America / 外国银行分行", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KCBLN"},
+                    {"id": "mufg-branch", "name": "MUFG", "controllingShareholder": "MUFG / 外国银行分行", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KCBLN"},
+                    {"id": "standard-chartered", "name": "Standard Chartered", "controllingShareholder": "Standard Chartered / 外国银行分行", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KCBLN"},
+                    {"id": "deutsche-bank", "name": "Deutsche Bank", "controllingShareholder": "Deutsche Bank / 外国银行分行", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KCBLN"},
+                    {"id": "bank-of-china-hk-jakarta-branch", "name": "Bank of China HK Jakarta Branch", "controllingShareholder": "Bank of China HK / 外国银行分行", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KCBLN"},
+                ],
+            },
+            {
+                "category": "外资/区域金融集团控股或参股银行",
+                "description": "报告列举由外资或区域金融集团控股/参股的印尼法人商业银行，常见扩张路径是收购、合并和资产组合收购。",
+                "banks": [
+                    {"id": "cimb-niaga", "name": "CIMB Niaga", "controllingShareholder": "CIMB Group", "assets": "Rp373 trillion", "coreCapital": "Rp56 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "maybank-indonesia", "name": "Maybank Indonesia", "controllingShareholder": "Maybank Group", "assets": "Rp194 trillion", "coreCapital": "Rp31 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "ocbc-indonesia", "name": "OCBC Indonesia", "controllingShareholder": "OCBC Group", "assets": "Rp308 trillion", "coreCapital": "Rp44 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "uob-indonesia", "name": "UOB Indonesia", "controllingShareholder": "UOB Group", "assets": "Rp170 trillion", "coreCapital": "Rp19 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "bank-danamon", "name": "Bank Danamon", "controllingShareholder": "MUFG 体系", "assets": "Rp276 trillion", "coreCapital": "Rp50 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "smbc-indonesia", "name": "SMBC Indonesia", "controllingShareholder": "SMBC Group", "assets": "Rp246 trillion", "coreCapital": "Rp50 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "permata-bank", "name": "Permata Bank", "controllingShareholder": "Bangkok Bank", "assets": "Rp268 trillion", "coreCapital": "Rp55 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 3"},
+                    {"id": "kb-bank-indonesia", "name": "KB Bank Indonesia", "controllingShareholder": "KB Financial Group", "assets": "Rp90 trillion", "coreCapital": "Rp8 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 2"},
+                    {"id": "keb-hana-bank-indonesia", "name": "KEB Hana Bank Indonesia", "controllingShareholder": "Hana Financial Group", "assets": "Rp53 trillion", "coreCapital": "Rp10 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 2"},
+                    {"id": "bank-woori-saudara", "name": "Bank Woori Saudara", "controllingShareholder": "Woori Financial Group", "assets": "Rp60 trillion", "coreCapital": "Rp10 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 2"},
+                    {"id": "bank-shinhan-indonesia", "name": "Bank Shinhan Indonesia", "controllingShareholder": "Shinhan Financial Group", "assets": "Rp27 trillion", "coreCapital": "Rp5 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 1"},
+                    {"id": "ccb-indonesia", "name": "CCB Indonesia", "controllingShareholder": "中国建设银行体系", "assets": "Rp38 trillion", "coreCapital": "Rp6 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "KBMI 2"},
+                ],
+            },
+            {
+                "category": "数字银行/数字银行产品",
+                "description": "报告指出数字银行不是独立于商业银行之外的新牌照，而是 Bank BHI 的一种数字化经营形态，既包括独立数字银行，也包括传统银行旗下数字产品。",
+                "banks": [
+                    {"id": "bank-jago", "name": "Bank Jago", "controllingShareholder": "MEI 29.79%、WTT 11.68%、GIC 9.02%、GoTo 约 21.4%", "assets": "Rp36.5 trillion", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行"},
+                    {"id": "seabank-indonesia", "name": "SeaBank Indonesia", "controllingShareholder": "Sea Group", "assets": "Rp44.439 trillion", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行"},
+                    {"id": "bank-neo-commerce", "name": "Bank Neo Commerce", "controllingShareholder": "Akulaku 相关股东", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行"},
+                    {"id": "superbank", "name": "Superbank", "controllingShareholder": "Emtek、Grab、Singtel、KakaoBank 等", "assets": "约 Rp24 trillion（2026 年 4 月）", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行"},
+                    {"id": "krom-bank", "name": "Krom Bank", "controllingShareholder": "Kredivo / FinAccel 相关", "assets": "Rp6.65 trillion（2024）", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行"},
+                    {"id": "bank-aladin-syariah", "name": "Bank Aladin Syariah", "controllingShareholder": "Sharia digital bank 相关投资者", "assets": "Rp14.4 trillion", "coreCapital": "Rp3.2 trillion", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字伊斯兰银行"},
+                    {"id": "bank-saqu", "name": "Bank Saqu", "controllingShareholder": "Astra Financial 与 WeLab 相关", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行"},
+                    {"id": "bank-nano-syariah", "name": "Bank Nano Syariah", "controllingShareholder": "Bank Sinarmas 51%、Sinar Mas Multiartha 25%、Asuransi Sinarmas 24%", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "原则批准 2023-02-14；OJK 营业许可 2023-08-23", "kbmi": "伊斯兰商业银行"},
+                    {"id": "jenius", "name": "Jenius", "controllingShareholder": "传统银行旗下数字产品，报告未逐一列明", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行产品"},
+                    {"id": "tmrw", "name": "TMRW", "controllingShareholder": "传统银行旗下数字产品，报告未逐一列明", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行产品"},
+                    {"id": "digibank", "name": "Digibank", "controllingShareholder": "传统银行旗下数字产品，报告未逐一列明", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行产品"},
+                    {"id": "line-bank", "name": "LINE Bank", "controllingShareholder": "KEB Hana Bank Indonesia 相关数字零售产品", "assets": "报告未列明", "coreCapital": "报告未列明", "marketCap": "报告未列明", "licenseApprovalTime": "报告未列明", "kbmi": "数字银行产品"},
+                ],
+            },
+        ],
         "latestRules": [
             {
                 "name": "POJK No.12/POJK.03/2021",
@@ -2982,6 +3054,138 @@ html = f"""<!doctype html>
       color: #485665;
     }}
 
+    .bank-directory {{
+      display: grid;
+      gap: 18px;
+    }}
+
+    .bank-directory-summary {{
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7faf8;
+      color: #405060;
+      font-size: 14px;
+    }}
+
+    .bank-group {{
+      display: grid;
+      gap: 10px;
+    }}
+
+    .bank-group-title {{
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: end;
+    }}
+
+    .bank-group-title h4 {{
+      margin: 0;
+      color: var(--ink);
+      font-size: 20px;
+    }}
+
+    .bank-group-title p {{
+      margin: 4px 0 0;
+      max-width: 880px;
+      color: #596777;
+      font-size: 14px;
+    }}
+
+    .bank-table-wrap {{
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }}
+
+    .bank-table {{
+      min-width: 920px;
+    }}
+
+    .detail-layout-wide .bank-table {{
+      min-width: 0;
+      width: 100%;
+    }}
+
+    .bank-row {{
+      display: grid;
+      grid-template-columns: 1.1fr 1.35fr .9fr .9fr .8fr;
+      color: inherit;
+      text-decoration: none;
+      border-top: 1px solid var(--line);
+    }}
+
+    .bank-row:first-child {{
+      border-top: 0;
+    }}
+
+    .bank-row > div {{
+      padding: 12px 13px;
+      border-left: 1px solid var(--line);
+      line-height: 1.45;
+    }}
+
+    .bank-row > div:first-child {{
+      border-left: 0;
+    }}
+
+    .bank-row:not(.bank-head):hover {{
+      background: #f7faf8;
+    }}
+
+    .bank-head {{
+      background: #f2f6f4;
+      color: #344150;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }}
+
+    .bank-name-cell strong {{
+      display: block;
+      color: #173d3a;
+      font-size: 15px;
+      font-weight: 900;
+    }}
+
+    .bank-name-cell span {{
+      display: block;
+      margin-top: 4px;
+      color: #697584;
+      font-size: 12px;
+    }}
+
+    .bank-detail-grid {{
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }}
+
+    .bank-detail-card {{
+      min-height: 132px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }}
+
+    .bank-detail-card span {{
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }}
+
+    .bank-detail-card strong {{
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.4;
+    }}
+
     .side-panel {{
       position: sticky;
       top: 22px;
@@ -3292,6 +3496,7 @@ html = f"""<!doctype html>
       .side-panel {{ position: static; }}
       .license-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
       .competitor-lens {{ grid-template-columns: 1fr; }}
+      .bank-detail-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
     }}
 
     @media (max-width: 720px) {{
@@ -3301,6 +3506,9 @@ html = f"""<!doctype html>
         grid-template-columns: 1fr;
       }}
       .detail-layout-wide .competitor-table {{ min-width: 900px; }}
+      .detail-layout-wide .bank-table {{ min-width: 900px; }}
+      .bank-detail-grid {{ grid-template-columns: 1fr; }}
+      .bank-group-title {{ display: block; }}
       .home-dynamic-strip {{ grid-auto-columns: minmax(260px, 86vw); }}
       .regulator-summary {{ grid-template-columns: 1fr; }}
       .regulator-watch {{ grid-template-columns: 1fr; }}
@@ -3466,6 +3674,8 @@ html = f"""<!doctype html>
       if (legacyModules[hash]) return {{ page: "module", id: legacyModules[hash] }};
       const moduleMatch = hash.match(/^module\\/(.+)$/);
       if (moduleMatch && validModules.has(moduleMatch[1])) return {{ page: "module", id: moduleMatch[1] }};
+      const bankMatch = hash.match(/^license\\/commercial-bank\\/([^/]+)$/);
+      if (bankMatch) return {{ page: "bank", licenseId: "commercial-bank", bankId: bankMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -3759,6 +3969,92 @@ html = f"""<!doctype html>
       `;
     }}
 
+    function commercialBankGroups(item) {{
+      return item.bankDirectory || [];
+    }}
+
+    function findCommercialBank(bankId) {{
+      const commercialBank = LICENSES.find(item => item.id === "commercial-bank");
+      const banks = commercialBankGroups(commercialBank).flatMap(group =>
+        (group.banks || []).map(bank => ({{ ...bank, category: group.category }}))
+      );
+      return banks.find(bank => bank.id === bankId);
+    }}
+
+    function renderBankDirectory(item) {{
+      const groups = commercialBankGroups(item);
+      const total = groups.reduce((sum, group) => sum + (group.banks || []).length, 0);
+      return `
+        <div class="bank-directory">
+          <div class="bank-directory-summary">
+            已按研究报告类别整理 ${{total}} 个银行、外国银行分行或数字银行产品条目。点击任一银行进入二级页面，仅查看资产、核心资本、市值、背后控股股东和牌照获批时间。
+          </div>
+          ${{groups.map(group => `
+            <section class="bank-group">
+              <div class="bank-group-title">
+                <div>
+                  <h4>${{esc(group.category)}}</h4>
+                  <p>${{esc(group.description || "")}}</p>
+                </div>
+                <span class="tag">${{(group.banks || []).length}} 项</span>
+              </div>
+              <div class="bank-table-wrap">
+                <div class="bank-table">
+                  <div class="bank-row bank-head">
+                    <div>银行 / 形态</div>
+                    <div>背后控股股东</div>
+                    <div>资产</div>
+                    <div>核心资本</div>
+                    <div>KBMI / 类别</div>
+                  </div>
+                  ${{(group.banks || []).map(bank => `
+                    <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(bank.id)}}">
+                      <div class="bank-name-cell"><strong>${{esc(bank.name)}}</strong><span>${{esc(group.category)}}</span></div>
+                      <div>${{esc(bank.controllingShareholder)}}</div>
+                      <div>${{esc(bank.assets)}}</div>
+                      <div>${{esc(bank.coreCapital)}}</div>
+                      <div>${{esc(bank.kbmi || "")}}</div>
+                    </a>
+                  `).join("")}}
+                </div>
+              </div>
+            </section>
+          `).join("")}}
+        </div>
+      `;
+    }}
+
+    function bankDetailPage(item, bank) {{
+      if (!bank) return detailPage(item);
+      const cards = [
+        ["资产", bank.assets],
+        ["核心资本", bank.coreCapital],
+        ["市值", bank.marketCap],
+        ["背后控股股东", bank.controllingShareholder],
+        ["牌照获批时间", bank.licenseApprovalTime],
+      ];
+      return `
+        <div class="detail-hero" data-tone="${{esc(item.tone)}}">
+          <button class="btn" onclick="setRoute('commercial-bank')">返回商业银行</button>
+          <div class="detail-title">
+            <div>
+              <h2>${{esc(bank.name)}}</h2>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="bank-detail-grid">
+            ${{cards.map(card => `
+              <article class="bank-detail-card">
+                <span>${{esc(card[0])}}</span>
+                <strong>${{esc(card[1])}}</strong>
+              </article>
+            `).join("")}}
+          </div>
+        </section>
+      `;
+    }}
+
     function renderReferenceBoxes(item, rules, inline = false) {{
       const wrapperTag = inline ? "section" : "aside";
       const wrapperClass = inline ? "reference-grid" : "side-panel";
@@ -3819,8 +4115,8 @@ html = f"""<!doctype html>
             </section>
 
             <section class="info-band">
-              <h3>竞争对手板块</h3>
-              ${{renderCompetitors(item)}}
+              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : "竞争对手板块"}}</h3>
+              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : renderCompetitors(item)}}
             </section>
             ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
@@ -3843,7 +4139,16 @@ html = f"""<!doctype html>
       const home = qs("#homePage");
       const detail = qs("#detailPage");
 
-      if (route.page === "license") {{
+      if (route.page === "bank") {{
+        const item = LICENSES.find(x => x.id === route.licenseId) || LICENSES[0];
+        const bank = findCommercialBank(route.bankId);
+        home.classList.remove("active");
+        detail.classList.add("active");
+        showModule(null);
+        detail.innerHTML = bankDetailPage(item, bank);
+        qs("#mobileNav").value = item.id;
+        window.scrollTo({{ top: 0, behavior: "instant" }});
+      }} else if (route.page === "license") {{
         const item = LICENSES.find(x => x.id === route.id) || LICENSES[0];
         home.classList.remove("active");
         detail.classList.add("active");

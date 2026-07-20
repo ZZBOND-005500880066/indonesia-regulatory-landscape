@@ -51,6 +51,22 @@ if (!devLog.entries.some((entry) => entry.commitUrl && entry.commitUrl.includes(
   throw new Error("Developer log does not include commit links");
 }
 
+const commercialBankMarkers = [
+  '"bankDirectory"',
+  "商业银行玩家库",
+  'href="#license/${esc(item.id)}/${esc(bank.id)}"',
+  'hash.match(/^license\\/commercial-bank\\/([^/]+)$/)',
+  "function bankDetailPage",
+  "Bank Nano Syariah",
+  "牌照获批时间",
+];
+
+for (const text of commercialBankMarkers) {
+  if (!html.includes(text)) {
+    throw new Error(`Missing commercial bank directory marker: ${text}`);
+  }
+}
+
 const regulatorFieldReferences = [
   "r.name",
   "r.full",

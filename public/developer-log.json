@@ -2,6 +2,20 @@
   "entries": [
     {
       "date": "2026-07-20",
+      "type": "协作记录",
+      "title": "Include full history in developer log",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Include full history in developer log",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "e4ab460",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/e4ab46048d63babb28f4ff7948ac24ddb0664e8b"
+    },
+    {
+      "date": "2026-07-20",
       "type": "部署维护",
       "title": "Automate developer log from commits",
       "summary": "zhuangzihao 于 2026-07-20 提交：Automate developer log from commits",
