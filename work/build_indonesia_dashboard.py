@@ -3220,14 +3220,19 @@ html = f"""<!doctype html>
       display: block;
       color: var(--muted);
       font-size: 12px;
-      font-weight: 700;
       margin-bottom: 6px;
     }}
 
-    .metric strong {{
+    .metric-value {{
       display: block;
       font-size: 14px;
-      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.45;
+    }}
+
+    .key-data {{
+      color: var(--ink);
+      font-weight: 800;
     }}
 
     .detail-layout {{
@@ -3469,7 +3474,6 @@ html = f"""<!doctype html>
 
     .competitor-scale {{
       color: #15202d;
-      font-weight: 750;
     }}
 
     .competitor-cell-muted {{
@@ -3597,11 +3601,10 @@ html = f"""<!doctype html>
       display: block;
       color: var(--muted);
       font-size: 12px;
-      font-weight: 800;
       margin-bottom: 8px;
     }}
 
-    .bank-detail-card strong {{
+    .bank-detail-value {{
       display: block;
       color: var(--ink);
       font-size: 18px;
@@ -3742,6 +3745,10 @@ html = f"""<!doctype html>
     .briefing-card p {{
       margin: 0;
       color: #4c5968;
+    }}
+
+    .field-label {{
+      color: #6a7684;
     }}
 
     .briefing-meta {{
@@ -4112,6 +4119,11 @@ html = f"""<!doctype html>
     const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
     const esc = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({{ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }}[char]));
     const uniq = (items) => [...new Set((items || []).filter(Boolean))];
+    const keyDataPattern = /(Rp\\s?[0-9][0-9.,]*(?:\\s?-\\s?Rp\\s?[0-9][0-9.,]*)?\\s?(?:trillion|billion|million|tn)?|USD\\s?[0-9][0-9.,]*\\s?(?:m|bn|million|billion)?|[0-9][0-9.,]*\\s?%|[0-9][0-9.,]*\\s?(?:家|项|条|万|个月|年|日|次)|[0-9]{{4}}(?:-[0-9]{{2}}(?:-[0-9]{{2}})?)?|Q[1-4]\\s?[0-9]{{4}}|KBMI\\s?[1-4]|≤\\s?Rp\\s?[0-9][0-9.,]*\\s?(?:trillion|billion|million)?)/gi;
+
+    function keyData(value) {{
+      return esc(value).replace(keyDataPattern, match => `<strong class="key-data">${{match}}</strong>`);
+    }}
 
     function setRoute(route) {{
       if (route === "home") {{
@@ -4291,7 +4303,7 @@ html = f"""<!doctype html>
           <div class="briefing-meta">
             ${{(item.licenses || []).slice(0, 3).map(x => `<span class="tag">${{esc(x)}}</span>`).join("")}}
           </div>
-          <p><strong>摘要：</strong>${{esc(item.summary)}}</p>
+          <p><span class="field-label">摘要：</span>${{esc(item.summary)}}</p>
           <div class="briefing-source-row">
             ${{item.sourceUrl ? `<a class="briefing-source" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel || "查看来源")}}</a>` : ""}}
           </div>
@@ -4316,9 +4328,9 @@ html = f"""<!doctype html>
           <div class="briefing-meta">
             ${{(item.licenses || []).map(x => `<span class="tag">${{esc(x)}}</span>`).join("")}}
           </div>
-          <p><strong>摘要：</strong>${{esc(item.summary)}}</p>
-          <p><strong>影响：</strong>${{esc(item.impact)}}</p>
-          <div class="briefing-action"><strong>建议动作：</strong>${{esc(item.action)}}</div>
+          <p><span class="field-label">摘要：</span>${{esc(item.summary)}}</p>
+          <p><span class="field-label">影响：</span>${{esc(item.impact)}}</p>
+          <div class="briefing-action"><span class="field-label">建议动作：</span>${{esc(item.action)}}</div>
           <div class="briefing-search">法规关键词：${{esc(item.keywords)}}</div>
           <div class="briefing-source-row">
             ${{item.sourceUrl ? `<a class="briefing-source" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel || "查看来源")}}</a>` : ""}}
@@ -4418,7 +4430,7 @@ html = f"""<!doctype html>
               ${{item.competitors.map(c => `
                 <div class="competitor-row">
                   <div class="competitor-name"><strong>${{esc(c.name)}}</strong><span>${{esc(c.tier || "")}}</span></div>
-                  <div class="competitor-scale">${{esc(c.scale || c.signal || "")}}</div>
+                  <div class="competitor-scale">${{keyData(c.scale || c.signal || "")}}</div>
                   <div class="competitor-cell-muted">${{esc(c.position || "")}}</div>
                   <div class="competitor-cell-muted">${{esc(c.edge || c.signal || "")}}</div>
                   <div class="competitor-cell-muted">${{esc(c.implication || "")}}</div>
@@ -4448,7 +4460,7 @@ html = f"""<!doctype html>
       return `
         <div class="bank-directory">
           <div class="bank-directory-summary">
-            已按研究报告类别整理 ${{total}} 个银行、外国银行分行或数字银行产品条目。点击任一银行进入二级页面，仅查看资产、核心资本、市值、背后控股股东和股权变更时间。
+            已按研究报告类别整理 <strong class="key-data">${{total}}</strong> 个银行、外国银行分行或数字银行产品条目。点击任一银行进入二级页面，仅查看资产、核心资本、市值、背后控股股东和股权变更时间。
           </div>
           ${{groups.map(group => `
             <section class="bank-group">
@@ -4472,9 +4484,9 @@ html = f"""<!doctype html>
                     <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(bank.id)}}">
                       <div class="bank-name-cell"><strong>${{esc(bank.name)}}</strong><span>${{esc(group.category)}}</span></div>
                       <div>${{esc(bank.controllingShareholder)}}</div>
-                      <div>${{esc(bank.assets)}}</div>
-                      <div>${{esc(bank.coreCapital)}}</div>
-                      <div>${{esc(bank.kbmi || "")}}</div>
+                      <div>${{keyData(bank.assets)}}</div>
+                      <div>${{keyData(bank.coreCapital)}}</div>
+                      <div>${{keyData(bank.kbmi || "")}}</div>
                     </a>
                   `).join("")}}
                 </div>
@@ -4514,7 +4526,7 @@ html = f"""<!doctype html>
             ${{cards.map(card => `
               <article class="bank-detail-card">
                 <span>${{esc(card[0])}}</span>
-                <strong>${{esc(card[1])}}</strong>
+                <span class="bank-detail-value">${{keyData(card[1])}}</span>
               </article>
             `).join("")}}
           </div>
@@ -4571,10 +4583,10 @@ html = f"""<!doctype html>
             </div>
           </div>
           <div class="quick-metrics">
-            <div class="metric"><span>牌照类型</span><strong>${{esc(item.type)}}</strong></div>
-            <div class="metric"><span>最低资本金</span><strong>${{esc(item.minCapital)}}</strong></div>
-            <div class="metric"><span>外资控股</span><strong>${{esc(item.foreignOwnership)}}</strong></div>
-            <div class="metric"><span>玩家存量</span><strong>${{esc(item.playerCount)}}</strong></div>
+            <div class="metric"><span>牌照类型</span><div class="metric-value">${{keyData(item.type)}}</div></div>
+            <div class="metric"><span>最低资本金</span><div class="metric-value">${{keyData(item.minCapital)}}</div></div>
+            <div class="metric"><span>外资控股</span><div class="metric-value">${{keyData(item.foreignOwnership)}}</div></div>
+            <div class="metric"><span>玩家存量</span><div class="metric-value">${{keyData(item.playerCount)}}</div></div>
           </div>
         </div>
 

@@ -3,6 +3,20 @@
     {
       "date": "2026-07-20",
       "type": "协作记录",
+      "title": "Use control change dates for commercial banks",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Use control change dates for commercial banks",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "7fe534b",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/7fe534b70422efe7d5e8757c1754e73aed9edbe4"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "协作记录",
       "title": "Add sourced commercial bank data",
       "summary": "zhuangzihao 于 2026-07-20 提交：Add sourced commercial bank data",
       "changes": [

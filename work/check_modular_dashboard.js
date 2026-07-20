@@ -27,11 +27,31 @@ const removed = [
   '<a class="module-card" href="#module/compare"',
   'value="module:compare"',
   'id="licenseMatrix"',
+  '<strong>摘要：',
+  '<strong>影响：',
+  '<strong>建议动作：',
+  '.metric strong',
+  '.bank-detail-card strong',
 ];
 
 for (const text of removed) {
   if (html.includes(text)) {
-    throw new Error(`Unexpected legacy sidebar marker remains: ${text}`);
+    throw new Error(`Unexpected removed marker remains: ${text}`);
+  }
+}
+
+const formattingMarkers = [
+  "function keyData",
+  "keyDataPattern",
+  'class="key-data"',
+  'class="field-label"',
+  'class="metric-value"',
+  'class="bank-detail-value"',
+];
+
+for (const text of formattingMarkers) {
+  if (!html.includes(text)) {
+    throw new Error(`Missing formatting marker: ${text}`);
   }
 }
 
