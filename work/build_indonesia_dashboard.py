@@ -333,6 +333,15 @@ licenses = [
                 "position": "摩托车、消费品、多用途和小微融资",
                 "edge": "Astra 生态、经销商触点、线下渠道和多品牌产品组合。",
                 "implication": "若进入车辆或消费场景，关键不是只拿牌照，而是能否绑定高频渠道并控制催收成本。",
+                "assets": "公开快照显示 2025 年总资产约 Rp51.88 trillion；研究报告另列示 2025 年融资发放 Rp49.45 trillion",
+                "equityCapital": "报告未稳定列示 2025 年权益；公开快照显示 2024 年权益约 Rp12.18 trillion",
+                "marketCap": "不适用（未单独上市，Astra International 体系子公司）",
+                "controllingShareholder": "PT Astra International Tbk / Astra Financial 体系",
+                "controlChangeTime": "1989：PT Federal International Finance 成立并长期处于 Astra 体系内，未发现现控股方重大切换。",
+                "sources": [
+                    {"label": "FIFGROUP 官网", "url": "https://www.fifgroup.co.id/"},
+                    {"label": "Astra Financial 公司组合", "url": "https://www.astrafinancial.co.id/"},
+                ],
             },
             {
                 "name": "Adira Finance",
@@ -341,6 +350,16 @@ licenses = [
                 "position": "车辆金融、多用途融资和伊斯兰融资",
                 "edge": "产品覆盖面广，能用同一融资牌照承接多个资产场景。",
                 "implication": "适合作为综合型 Multi-Finance 对标，看资产组合、风险分层和渠道扩张能力。",
+                "assets": "Rp38.53 trillion（2025-12-31）",
+                "equityCapital": "Rp15.03 trillion（2025-12-31，shareholders' equity）",
+                "marketCap": "Rp10.18 trillion（StockAnalysis，2026-07-17/20 行情口径）",
+                "controllingShareholder": "PT Bank Danamon Indonesia Tbk / MUFG Group",
+                "controlChangeTime": "2004：Adira Finance 上市后被 Bank Danamon 收购；2025-10-01 Mandala Finance 并入后，Danamon 仍为控股股东。",
+                "sources": [
+                    {"label": "Adira 公司历史", "url": "https://www.adira.co.id/corporate"},
+                    {"label": "ADMF 市值与公司资料", "url": "https://stockanalysis.com/quote/idx/ADMF/"},
+                    {"label": "ADMF 资产负债表", "url": "https://stockanalysis.com/quote/idx/ADMF/financials/balance-sheet/"},
+                ],
             },
             {
                 "name": "Astra Credit Companies",
@@ -349,6 +368,15 @@ licenses = [
                 "position": "汽车金融、车队融资和重型设备融资",
                 "edge": "厂商品牌、经销商网络和车辆资产处置能力形成闭环。",
                 "implication": "如果目标是汽车金融，牌照价值取决于能否接入车源、经销商和二手处置网络。",
+                "assets": "报告未稳定列示 ACC 合并资产；研究报告仅列示 2025 年债券发行 Rp5.5 trillion 及 shelf registration Rp5.1 trillion",
+                "equityCapital": "公开官网与研究摘录未稳定披露",
+                "marketCap": "不适用（未单独上市，Astra Financial 体系平台）",
+                "controllingShareholder": "PT Astra International Tbk / Astra Financial 体系",
+                "controlChangeTime": "1980s：ACC/Astra Sedaya Finance 作为 Astra 汽车金融体系发展，未发现现控股方重大切换。",
+                "sources": [
+                    {"label": "Astra Financial 公司组合", "url": "https://www.astrafinancial.co.id/"},
+                    {"label": "Astra Credit Companies 官网", "url": "https://www.acc.co.id/"},
+                ],
             },
             {
                 "name": "Mandiri Utama Finance",
@@ -357,6 +385,15 @@ licenses = [
                 "position": "汽车、摩托车、多用途和商业车辆融资",
                 "edge": "Mandiri 银行集团资金与客户基础叠加经销商网络，融资成本和渠道稳定性较强。",
                 "implication": "银行系玩家能用资金成本与交叉销售形成优势；对标时应看集团协同和资产定价能力。",
+                "assets": "报告列示应收/净融资约 Rp15.57 trillion；未稳定披露总资产口径",
+                "equityCapital": "公开官网与研究摘录未稳定披露",
+                "marketCap": "不适用（未单独上市，Bank Mandiri 体系子公司）",
+                "controllingShareholder": "PT Bank Mandiri (Persero) Tbk",
+                "controlChangeTime": "2015：Mandiri Utama Finance 设立并获得 OJK 许可，作为 Bank Mandiri 体系融资公司运营。",
+                "sources": [
+                    {"label": "MUF 公司资料", "url": "https://www.muf.co.id/"},
+                    {"label": "MUF 财务信息入口", "url": "https://www.muf.co.id/all-keuangan/"},
+                ],
             },
             {
                 "name": "WOM Finance",
@@ -365,6 +402,16 @@ licenses = [
                 "position": "摩托车融资、多用途融资和二手车相关场景",
                 "edge": "专注轻资产消费场景，债券和银行借款支持放款节奏。",
                 "implication": "适合作为中型车辆/消费金融样本，重点看融资来源、逾期控制和区域渠道深度。",
+                "assets": "Rp7.37 trillion（2025-12-31）",
+                "equityCapital": "Rp1.98 trillion（2025-12-31，shareholders' equity）",
+                "marketCap": "Rp821.63 billion（StockAnalysis，2026-07-03 行情口径）",
+                "controllingShareholder": "PT Bank Maybank Indonesia Tbk / Maybank Group",
+                "controlChangeTime": "Maybank/BII 体系成为控股股东后延续控制；当前页面先按现有控股结构列示，具体首次控股日期待二次核验。",
+                "sources": [
+                    {"label": "WOMF 市值与公司资料", "url": "https://stockanalysis.com/quote/idx/WOMF/"},
+                    {"label": "WOMF 资产负债表", "url": "https://stockanalysis.com/quote/idx/WOMF/financials/balance-sheet/"},
+                    {"label": "KSEI WOMF 证券资料", "url": "https://web.ksei.co.id/services/registered-securities/shares/lc/WOMF"},
+                ],
             },
             {
                 "name": "BFI Finance",
@@ -373,6 +420,16 @@ licenses = [
                 "position": "工作资本、投资融资和多用途融资",
                 "edge": "不完全依赖单一厂商生态，业务组合和资产选择更灵活。",
                 "implication": "适合作为收购或自建平台的运营样本，重点看风险定价、抵押品管理和资产质量。",
+                "assets": "Rp25.47 trillion（2025-12-31）",
+                "equityCapital": "Rp10.65 trillion（2025-12-31，equity）",
+                "marketCap": "Rp11.80 trillion（StockAnalysis，2026-07-13 行情口径）",
+                "controllingShareholder": "Trinugraha Capital & Co SCA 及公众股东结构",
+                "controlChangeTime": "2022：Trinugraha Capital & Co SCA 发起/完成公开要约后成为主要控制方之一；具体最终控制链建议继续以公司股权结构页复核。",
+                "sources": [
+                    {"label": "BFI 财务摘要", "url": "https://www.bfi.co.id/id/corporate/hubungan-investor/ikhtisar-laporan-keuangan"},
+                    {"label": "BFI 股权结构", "url": "https://www.bfi.co.id/id/corporate/tentang-kami/struktur-informasi-pemegang-saham"},
+                    {"label": "BFIN 市值", "url": "https://stockanalysis.com/quote/idx/BFIN/"},
+                ],
             },
             {
                 "name": "Home Credit Indonesia",
@@ -381,6 +438,15 @@ licenses = [
                 "position": "线下零售 POS 分期、线上消费分期和 App 获客",
                 "edge": "线下商户覆盖、消费场景嵌入和用户规模。",
                 "implication": "数字消费金融不只看线上投放，更要看商户端转化、授信复用和逾期表现。",
+                "assets": "公开官网与研究摘录未稳定披露总资产；报告列示 18,842 个 POS、18m+ 注册用户",
+                "equityCapital": "公开官网与研究摘录未稳定披露",
+                "marketCap": "不适用（未单独上市）",
+                "controllingShareholder": "MUFG/Danamon 金融集团体系",
+                "controlChangeTime": "2023：MUFG 完成收购 PT Home Credit Indonesia；2026-06-24 公开披露由 Adira 向 Danamon 转让股份以配合 MUFG 印尼金融集团重组。",
+                "sources": [
+                    {"label": "Home Credit 股东变更公告", "url": "https://www.homecredit.co.id/tentang-perusahaan/siaran-pers/Home-Credit-Indonesia-completes-change-in-shareholder"},
+                    {"label": "Danamon / MUFG 金融集团披露", "url": "https://www.danamon.co.id/en/news/2025/07/25/Danamon-Terima-Persetujuan-OJK-sebagai-Perusahaan-Induk"},
+                ],
             },
             {
                 "name": "Kredivo Finance Indonesia",
@@ -389,6 +455,15 @@ licenses = [
                 "position": "BNPL、消费分期、商户网络和电动车融资",
                 "edge": "App 触点、商户网络和额度复用能力。",
                 "implication": "对标重点是额度管理、商户质量、复借频率和资金成本，而不是单一放款规模。",
+                "assets": "Rp1.49 trillion（2025，研究报告口径）",
+                "equityCapital": "Rp414.49 billion（2025，研究报告口径）",
+                "marketCap": "不适用（未单独上市）",
+                "controllingShareholder": "Kredivo / FinAccel 体系",
+                "controlChangeTime": "现控股结构形成时间未在研究报告与公开官网中稳定披露，需二次核验。",
+                "sources": [
+                    {"label": "Kredivo 官网", "url": "https://www.kredivo.com/"},
+                    {"label": "OJK 金融服务机构查询入口", "url": "https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/direktori/Default.aspx"},
+                ],
             },
             {
                 "name": "PT Commerce Finance / SPayLater",
@@ -397,6 +472,15 @@ licenses = [
                 "position": "电商生态 BNPL、账单支付和 QRIS 场景",
                 "edge": "强平台流量、交易数据和消费场景闭环。",
                 "implication": "平台型入口能显著降低获客成本，但需要重点评估流量质量、补贴依赖和坏账周期。",
+                "assets": "公开官网与研究摘录未稳定披露；报告主要列示 Shopee 场景与产品覆盖",
+                "equityCapital": "公开官网与研究摘录未稳定披露",
+                "marketCap": "不适用（未单独上市，Shopee/Sea 生态关联主体）",
+                "controllingShareholder": "Sea/Shopee 生态关联主体（PT Commerce Finance 运营 SPayLater）",
+                "controlChangeTime": "现控股结构形成时间未在研究报告与公开官网中稳定披露，需二次核验。",
+                "sources": [
+                    {"label": "Shopee SPayLater 说明", "url": "https://help.shopee.co.id/portal/article/72939"},
+                    {"label": "OJK 金融服务机构查询入口", "url": "https://www.ojk.go.id/id/kanal/iknb/data-dan-statistik/direktori/Default.aspx"},
+                ],
             },
             {
                 "name": "Akulaku Finance Indonesia",
@@ -405,6 +489,15 @@ licenses = [
                 "position": "电商消费分期、BNPL、现金/商品相关数字融资",
                 "edge": "商户网络、平台合作、App 流量和循环额度使用形成获客入口。",
                 "implication": "数字玩家的核心变量是获客质量、授信复用、资金来源和坏账曲线。",
+                "assets": "报告列示 managed loan receivables 约 Rp2.5 trillion；未稳定披露总资产口径",
+                "equityCapital": "公开官网与研究摘录未稳定披露",
+                "marketCap": "不适用（未单独上市）",
+                "controllingShareholder": "Akulaku / Silvrr Technology 体系",
+                "controlChangeTime": "现控股结构形成时间未在研究报告与公开官网中稳定披露；MUFG 对 Akulaku 的投资披露可作为股东背景参考。",
+                "sources": [
+                    {"label": "Akulaku 官网", "url": "https://www.akulaku.com/"},
+                    {"label": "MUFG 年报披露 Akulaku 投资", "url": "https://www.sec.gov/Archives/edgar/data/67088/000006708825000011/mufg-20250331.htm"},
+                ],
             },
         ],
         "latestRules": [
@@ -4681,7 +4774,7 @@ html = f"""<!doctype html>
       return `
         <div class="bank-directory">
           <div class="bank-directory-summary">
-            已按研究报告中的玩家类型整理 ${{total}} 家 Multi-Finance 对标玩家。一级页保留玩家分类和定位，点击任一玩家进入二级页面，集中查看行业体量、主要战场、关键优势和对我们的含义。
+            已按研究报告中的玩家类型整理 ${{total}} 家 Multi-Finance 对标玩家。一级页保留玩家分类和定位，点击任一玩家进入二级页面，集中查看资产、权益/资本、市值、背后控股股东和股权变更时间。
           </div>
           ${{groups.map(group => `
             <section class="bank-group">
@@ -4712,19 +4805,25 @@ html = f"""<!doctype html>
     function multiFinancePlayerPage(item, player) {{
       if (!player) return detailPage(item);
       const cards = [
-        ["玩家类型", player.tier || "未披露"],
-        ["行业体量", player.scale || "未披露"],
-        ["主要战场", player.position || "未披露"],
-        ["关键优势", player.edge || "未披露"],
-        ["对我们意味着什么", player.implication || "未披露"],
+        ["资产", player.assets || "未公开披露"],
+        ["权益/资本", player.equityCapital || player.coreCapital || "未公开披露"],
+        ["市值", player.marketCap || "不适用或未公开披露"],
+        ["背后控股股东", player.controllingShareholder || "未公开披露"],
+        ["股权变更时间", player.controlChangeTime || "未公开披露"],
       ];
+      const playerSources = [];
+      (player.sources || []).forEach(source => {{
+        if (!source || !source.url) return;
+        if (playerSources.some(item => item.url === source.url && item.label === source.label)) return;
+        playerSources.push(source);
+      }});
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('multi-finance')">返回 Multi-Finance</button>
           <div class="detail-title">
             <div>
               <h2>${{esc(player.name)}}</h2>
-              <p>Multi-Finance 玩家详情</p>
+              <p>Multi-Finance 玩家二级信息</p>
             </div>
           </div>
         </div>
@@ -4739,6 +4838,20 @@ html = f"""<!doctype html>
           </div>
           <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
         </section>
+        ${{playerSources.length ? `
+          <section class="section source-section">
+            <h3>数据来源</h3>
+            <p class="source-note">Multi-Finance 玩家二级页仅保留资产、权益/资本、市值、背后控股股东和股权变更时间。未公开或暂未核到的项目会明确标注，不用推测值替代。</p>
+            <div class="source-list">
+              ${{playerSources.map(source => `
+                <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
+                  <strong>${{esc(source.label || "来源")}}</strong>
+                  <span>${{esc(source.url)}}</span>
+                </a>
+              `).join("")}}
+            </div>
+          </section>
+        ` : ""}}
       `;
     }}
 

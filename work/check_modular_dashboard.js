@@ -98,6 +98,10 @@ const multiFinanceMarkers = [
   "function multiFinancePlayerPage",
   'href="#license/${esc(item.id)}/${esc(multiFinancePlayerSlug(player))}"',
   'hash.match(/^license\\/multi-finance\\/([^/]+)$/)',
+  "Multi-Finance 玩家二级信息",
+  "权益/资本",
+  "背后控股股东",
+  "股权变更时间",
   "Mandiri Utama Finance",
   "WOM Finance",
   "Akulaku Finance Indonesia",
@@ -131,6 +135,28 @@ for (const name of ["Mandiri Utama Finance", "WOM Finance", "Akulaku Finance Ind
   if (!multiFinanceCompetitors.some((player) => player.name === name)) {
     throw new Error(`Multi-Finance player missing: ${name}`);
   }
+}
+
+const multiFinanceRowsMissingDetailFields = multiFinanceCompetitors.filter((player) =>
+  ["assets", "equityCapital", "marketCap", "controllingShareholder", "controlChangeTime"].some((field) => !player[field])
+);
+if (multiFinanceRowsMissingDetailFields.length > 0) {
+  throw new Error(
+    `Multi-Finance players missing second-level detail fields: ${multiFinanceRowsMissingDetailFields
+      .map((player) => player.name)
+      .join(", ")}`
+  );
+}
+
+const multiFinanceRowsWithoutSources = multiFinanceCompetitors.filter(
+  (player) => !Array.isArray(player.sources) || player.sources.length === 0
+);
+if (multiFinanceRowsWithoutSources.length > 0) {
+  throw new Error(
+    `Multi-Finance players missing sources: ${multiFinanceRowsWithoutSources
+      .map((player) => player.name)
+      .join(", ")}`
+  );
 }
 
 const banksWithoutSources = commercialBanks.filter(
