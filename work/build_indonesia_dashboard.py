@@ -606,6 +606,21 @@ licenses = [
                 "position": "电商消费贷、卖家融资和生态内现金周转",
                 "edge": "平台交易数据、支付触点、商户关系和高频复借入口。",
                 "implication": "生态流量能显著降低获客成本；对标时应重点看场景闭环、用户留存和资产质量，而不是单纯注册量。",
+                "assets": "未公开；公开口径主要披露产品、许可和融资限额。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未单独上市，暂无独立市值。",
+                "controllingShareholder": "PT Lentera Dana Nusantara，业务嵌入 Shopee / ShopeePay 场景。",
+                "controlChangeTime": "未公开股权变更完成日；当前按 Shopee 帮助中心披露的产品运营主体口径记录。",
+                "sources": [
+                    {
+                        "label": "Shopee SPinjam RIPLAY",
+                        "url": "https://help.shopee.co.id/portal/4/article/201121-Ringkasan-Informasi-Produk-dan-Layanan-%28RIPLAY%29-SPinjam-untuk-Penjual",
+                    },
+                    {
+                        "label": "LDN 官方 FAQ",
+                        "url": "https://www.lenteradana.co.id/lender/faq",
+                    },
+                ],
             },
             {
                 "name": "Easycash",
@@ -614,6 +629,21 @@ licenses = [
                 "position": "个人现金贷和短期周转",
                 "edge": "大规模线上获客、快速审批和消费贷运营经验。",
                 "implication": "适合作为现金贷规模化样本；重点拆解资金成本、催收效率、复借率和监管费率上限下的利润空间。",
+                "assets": "未公开；官网提供 2025 审计财报入口，运营规模口径为累计放款 Rp98.27tn、在贷 Rp6.94tn。",
+                "equityCapital": "Rp169 billion（2025 年审计口径）。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Mitou Hongkong Limited 85%；Freddy Karyadi 15%。",
+                "controlChangeTime": "未公开股权变更完成日；官网仅披露当前股东结构，Mitou Hongkong Limited 注册于 2015-07-24。",
+                "sources": [
+                    {
+                        "label": "Easycash 官方公司与股东披露",
+                        "url": "https://easycash.id/about/us/company-team",
+                    },
+                    {
+                        "label": "Kontan 2026-05-20：Easycash 2025 年权益",
+                        "url": "https://keuangan.kontan.co.id/news/easycash-pastikan-dana-ekuitas-di-atas-ketentuan-ojk-tembus-rp-169-miliar-pada-2025",
+                    },
+                ],
             },
             {
                 "name": "AdaKami",
@@ -622,6 +652,21 @@ licenses = [
                 "position": "个人无抵押现金贷款",
                 "edge": "跨市场消费信贷经验、模型迭代和移动端放款能力。",
                 "implication": "对标重点是风控模型本地化、贷后投诉和监管声誉风险，不能只看放款增长。",
+                "assets": "未找到 2025/2026 官方文本化资产披露；公开资料曾披露 2022 年总资产 Rp617 billion。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "AdaKami 未单独上市；母公司 FinVolution Group 为 NYSE: FINV。",
+                "controllingShareholder": "FinVolution 80%；PT Paraduta Satya Wahana 20%（公开媒体披露）。",
+                "controlChangeTime": "2019 年取得 OJK 许可并形成 FinVolution 背景；未公开后续控制权变更完成日。",
+                "sources": [
+                    {
+                        "label": "FinVolution / AdaKami 融资合作披露",
+                        "url": "https://www.prnewswire.com/news-releases/finvolution-subsidiary-adakami-enters-into-strategic-funding-agreement-with-pt-super-bank-indonesia-302289490.html",
+                    },
+                    {
+                        "label": "Kontan：AdaKami 股东比例",
+                        "url": "https://keuangan.kontan.co.id/news/adakami-sebut-porsi-pemegang-saham-perusahaan-tak-berubah-tahun-depan",
+                    },
+                ],
             },
             {
                 "name": "Kredit Pintar",
@@ -630,6 +675,21 @@ licenses = [
                 "position": "面向 underbanked 用户的数字现金贷",
                 "edge": "覆盖传统银行难服务客群，具备较大用户池和复借空间。",
                 "implication": "需要重点比较借款人收入验证、额度分层和逾期迁徙，避免以高风险客群换规模。",
+                "assets": "Rp765.52 billion（2025-12-31）。",
+                "equityCapital": "Rp328.72 billion（2025-12-31）。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Neuroncredit Pte. Ltd.（受 Advance Intelligence Group Limited 控制）及 PT Karya Widura Utama。",
+                "controlChangeTime": "未公开股权变更完成日；当前股东结构按官网 2026 披露。",
+                "sources": [
+                    {
+                        "label": "Kredit Pintar 官方股东与经营数据",
+                        "url": "https://www.kreditpintar.com/about-us",
+                    },
+                    {
+                        "label": "Kredit Pintar 2025 审计财报 PDF",
+                        "url": "https://www.kreditpintar.com/Publikasi%20Laporan%20Keuangan%20Audited%20Tahun%202025.pdf",
+                    },
+                ],
             },
             {
                 "name": "Amartha",
@@ -638,6 +698,21 @@ licenses = [
                 "position": "农村基层女性微型企业融资",
                 "edge": "线下社群、生产性融资定位和普惠金融叙事更强。",
                 "implication": "适合作为监管友好型生产性融资样本；核心是线下运营成本、借款人真实性和资金方稳定性。",
+                "assets": "官网披露 2025 年审计财报入口，但网页以图片呈现，暂不录入推测数。",
+                "equityCapital": "未公开文本化数值；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Amartha Financial Group 与 PT Amartha Starling Ventura。",
+                "controlChangeTime": "未公开股权变更完成日；当前股东结构按 Amartha Financial 官网披露。",
+                "sources": [
+                    {
+                        "label": "Amartha Financial 官方股东与经营数据",
+                        "url": "https://amarthafinancial.id/tentang-kami/",
+                    },
+                    {
+                        "label": "Amartha 2025 年审计财报入口",
+                        "url": "https://amartha.com/blog/tentang-amartha/laporan-keuangan-amartha-2025",
+                    },
+                ],
             },
             {
                 "name": "Modalku",
@@ -646,6 +721,25 @@ licenses = [
                 "position": "SME 营运资金、发票和订单融资",
                 "edge": "企业端场景、供应链数据和生产性融资定位。",
                 "implication": "若走企业端 P2P，应重点看应收账款真实性、核心企业关系和机构资金合作。",
+                "assets": "未公开；公开口径主要披露累计放款、借款人和 TKB。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Funding Asia Group Pte Ltd（Funding Societies / Modalku 集团）。",
+                "controlChangeTime": "未公开股权变更完成日；PT Mitrausaha Indonesia Grup 于 2016 年在印尼开展 Modalku 业务，2019-09-30 获 OJK 许可。",
+                "sources": [
+                    {
+                        "label": "Modalku 官方关于我们",
+                        "url": "https://modalku.co.id/tentang-kami",
+                    },
+                    {
+                        "label": "UN Global Compact：Modalku 母公司",
+                        "url": "https://unglobalcompact.org/what-is-gc/participants/150949-PT-Mitrausaha-Indonesia-Grup-Modalku-",
+                    },
+                    {
+                        "label": "Modalku 10 年经营披露",
+                        "url": "https://blog.modalku.co.id/apa-kabar-modalku/modalku-rayakan-10-tahun-perjalanan-hadir-sebagai-platform-pinjaman-daring-yang-stabil-aman-dan-terpercaya/",
+                    },
+                ],
             },
             {
                 "name": "JULO",
@@ -654,6 +748,21 @@ licenses = [
                 "position": "循环额度、现金贷和虚拟信用卡",
                 "edge": "额度复用、App 触点和类信用卡产品体验。",
                 "implication": "可作为 P2P 向类信用账户演进的样本；重点看额度使用频率、账户生命周期和资金期限错配。",
+                "assets": "官网披露 2025 年审计财报入口，但网页未文本化展示资产表；暂不录入推测数。",
+                "equityCapital": "官网披露 2025 年审计财报入口，但网页未文本化展示权益表；暂不录入推测数。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Julo Teknologi Perdana、Julo Holdings Pte. Ltd.、PT Adi Citra Indonesia。",
+                "controlChangeTime": "未公开股权变更完成日；官网披露 Julo Holdings Pte. Ltd. 于 2018-03-20 设立，PT Adi Citra Indonesia 于 2019-05-17 设立。",
+                "sources": [
+                    {
+                        "label": "JULO 官方关于我们与股东披露",
+                        "url": "https://www.julo.co.id/about",
+                    },
+                    {
+                        "label": "JULO 2025 财务披露入口",
+                        "url": "https://www.julo.co.id/financial-statementr1eiTnsbIRQSljpJaoDanfsDu587QVWvSq7FapNTXqOqwpkEyGzRuLDDMKDXxDdgpgj1k6sxQfLSyCpv27GJs025qkaCIPU8VSxN.html",
+                    },
+                ],
             },
             {
                 "name": "Rupiah Cepat",
@@ -662,6 +771,17 @@ licenses = [
                 "position": "个人线上现金贷和短期周转",
                 "edge": "标准化线上获客、自动审批、复借管理和贷后催收。",
                 "implication": "适合作为现金贷赛道的补充样本；判断重点是获客成本、审批通过率和逾期迁徙。",
+                "assets": "未公开；公开口径主要披露许可、产品和业务统计。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Green Mobile Limited 85%；PT Teknologi Tropis Indonesia 15%。",
+                "controlChangeTime": "未公开股权变更完成日；官网披露 PT Teknologi Tropis Indonesia 于 2024 年成立并持有 15%。",
+                "sources": [
+                    {
+                        "label": "Rupiah Cepat 官方关于我们与股东披露",
+                        "url": "https://www.rupiahcepat.co.id/about/index.html",
+                    },
+                ],
             },
             {
                 "name": "Asetku",
@@ -670,6 +790,21 @@ licenses = [
                 "position": "生态内现金贷、消费金融和用户额度分发",
                 "edge": "可依托既有 App、交易场景和消费数据降低获客成本。",
                 "implication": "生态型平台的关键不只是牌照，而是能否稳定使用交易数据并把额度嵌入高频场景。",
+                "assets": "未公开；公开口径主要披露许可和集团生态关系。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未单独上市，暂无独立市值。",
+                "controllingShareholder": "PT Pintar Inovasi Digital，隶属 Akulaku / Akulaku PayLater 生态。",
+                "controlChangeTime": "未公开股权变更完成日；当前按 Akulaku 与公开牌照主体信息记录。",
+                "sources": [
+                    {
+                        "label": "Asetku 官方网站",
+                        "url": "https://www.asetku.co.id/",
+                    },
+                    {
+                        "label": "Akulaku 官方集团介绍",
+                        "url": "https://www.akulaku.com/",
+                    },
+                ],
             },
             {
                 "name": "KrediFazz",
@@ -678,6 +813,21 @@ licenses = [
                 "position": "线上消费信贷和生态流量转化",
                 "edge": "以线上流量、App 触点和交叉销售承接借款需求。",
                 "implication": "可作为生态型轻量获客样本；需要重点看流量质量、合规披露和贷后表现。",
+                "assets": "未公开；公开口径主要披露许可、产品和集团背景。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未单独上市，暂无独立市值。",
+                "controllingShareholder": "Kredivo Group（原 FinAccel）相关主体；平台运营主体为 PT KrediFazz Digital Indonesia。",
+                "controlChangeTime": "2025-10：Kredivo Group 披露 KrediFazz 取得 OJK P2P Lending License；具体股权变更完成日未公开。",
+                "sources": [
+                    {
+                        "label": "KrediFazz 官方网站",
+                        "url": "https://kredifazz.id/",
+                    },
+                    {
+                        "label": "Kredivo Group 官方关于 KrediFazz",
+                        "url": "https://kredivocorp.com/about/",
+                    },
+                ],
             },
             {
                 "name": "AwanTunai",
@@ -686,6 +836,17 @@ licenses = [
                 "position": "小商户、供应链和营运资金融资",
                 "edge": "更依赖行业/供应链数据、商户经营真实性和线下服务网络。",
                 "implication": "如果走生产性融资，关键是产业数据和真实贸易背景，而不是单纯放款速度。",
+                "assets": "未公开；公开口径主要披露小商户和供应链融资业务。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Windy Hill Pte. Ltd. 与 Rama Notowidigdo。",
+                "controlChangeTime": "未公开股权变更完成日；官网披露 PT Simplefi Teknologi Indonesia 于 2017 年成立，Windy Hill Pte. Ltd. 为股东之一。",
+                "sources": [
+                    {
+                        "label": "AFPI：AwanTunai 会员资料",
+                        "url": "https://afpi.or.id/profilemember/AwanTunai",
+                    },
+                ],
             },
             {
                 "name": "BATUMBU",
@@ -694,6 +855,21 @@ licenses = [
                 "position": "企业、供应商和中小企业经营融资",
                 "edge": "企业风险评估、机构资金合作和经营场景连接能力。",
                 "implication": "适合作为企业端 P2P 的补充观察样本；重点看资金方合作和资产真实性。",
+                "assets": "未公开；公开口径主要披露企业与供应链融资业务。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Berdayakan Usaha Indonesia；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "未公开股权变更完成日；当前按 BATUMBU 官网及 OJK 许可主体口径记录。",
+                "sources": [
+                    {
+                        "label": "BATUMBU 官方网站",
+                        "url": "https://batumbu.id/",
+                    },
+                    {
+                        "label": "BATUMBU 官方关于我们",
+                        "url": "https://batumbu.id/about",
+                    },
+                ],
             },
             {
                 "name": "Akseleran",
@@ -702,6 +878,21 @@ licenses = [
                 "position": "SME、发票、订单和营运资金融资",
                 "edge": "围绕企业现金流、应收账款和订单场景组织资产。",
                 "implication": "对标时应重点拆解企业资料核验、核心企业关系和机构资金可持续性。",
+                "assets": "未公开；公开口径主要披露累计放款和 TKB。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Akseleran Keuangan Inklusif Indonesia；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "未公开股权变更完成日；当前按 Akseleran 官网及 OJK 许可主体口径记录。",
+                "sources": [
+                    {
+                        "label": "Akseleran 官方网站",
+                        "url": "https://www.akseleran.co.id/",
+                    },
+                    {
+                        "label": "Akseleran 官方财务披露入口",
+                        "url": "https://www.akseleran.co.id/tentang-kami/info-lainnya/keuangan",
+                    },
+                ],
             },
             {
                 "name": "Alami",
@@ -710,6 +901,21 @@ licenses = [
                 "position": "符合伊斯兰金融原则的个人或企业融资结构",
                 "edge": "Sharia 产品设计、DPS/伊斯兰监事会治理和特定客群信任。",
                 "implication": "如果进入 Sharia P2P，应优先验证产品结构、监管沟通和目标客群转化。",
+                "assets": "未公开；公开口径主要披露 Sharia 融资产品和集团生态。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "ALAMI Group / PT Alami Fintek Sharia；集团于 2021 年收购 BPRS Cempaka Al-Amin 并发展 Bank Hijra。",
+                "controlChangeTime": "2021 年完成 BPRS Cempaka Al-Amin 收购形成 Bank Hijra 生态；P2P 主体具体股权变更完成日未公开。",
+                "sources": [
+                    {
+                        "label": "ALAMI 官方网站",
+                        "url": "https://alamisharia.co.id/",
+                    },
+                    {
+                        "label": "Kontan：ALAMI 收购 BPRS 进展",
+                        "url": "https://keuangan.kontan.co.id/news/akuisisi-bprs-di-jakarta-ini-strategi-fintech-alami/",
+                    },
+                ],
             },
             {
                 "name": "Ammana",
@@ -718,6 +924,17 @@ licenses = [
                 "position": "伊斯兰原则下的个人或企业融资",
                 "edge": "Sharia 合规定位和特定社区客群信任。",
                 "implication": "可作为 Sharia 垂直平台样本；关键是合规治理和真实融资用途。",
+                "assets": "未公开；公开口径主要披露 Sharia 融资产品。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Ammana Fintek Syariah；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "未公开股权变更完成日；当前按公司官网及 OJK 许可主体口径记录。",
+                "sources": [
+                    {
+                        "label": "AFPI：Ammana 会员资料",
+                        "url": "https://afpi.or.id/profilemember/Ammana-",
+                    },
+                ],
             },
             {
                 "name": "Dana Syariah",
@@ -726,6 +943,17 @@ licenses = [
                 "position": "伊斯兰原则下的专项融资服务",
                 "edge": "产品设计与 Sharia 合规叙事更集中。",
                 "implication": "适合观察宗教合规标签是否能带来差异化获客和资金方信任。",
+                "assets": "未公开；公开口径主要披露 Sharia 项目融资产品。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Dana Syariah Indonesia；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "未公开股权变更完成日；当前按公司官网及 OJK 许可主体口径记录。",
+                "sources": [
+                    {
+                        "label": "AFPI：Dana Syariah 会员资料",
+                        "url": "https://afpi.or.id/profilemember/Danasyariah.id",
+                    },
+                ],
             },
             {
                 "name": "Duha Syariah",
@@ -734,6 +962,17 @@ licenses = [
                 "position": "Sharia 消费或企业融资",
                 "edge": "面向特定客群的 Sharia 产品与信任机制。",
                 "implication": "判断重点是客群深度、产品标准化和 Sharia 治理成本。",
+                "assets": "未公开；公开口径主要披露 Sharia 消费和企业融资产品。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Black Swan Capital Indonesia 73.97%；PT Satrio Investa Indonesia 24.35%；Hot Asi 0.84%；Ir. Chairul Aslam 0.84%。",
+                "controlChangeTime": "未公开股权变更完成日；官网披露当前股东结构，并列示 2022-2024 年审计财报入口。",
+                "sources": [
+                    {
+                        "label": "Duha Syariah 官方关于我们与股东披露",
+                        "url": "https://duhasyariah.id/tentang-kami",
+                    },
+                ],
             },
             {
                 "name": "Qazwa",
@@ -742,6 +981,17 @@ licenses = [
                 "position": "Sharia 企业或生产性融资",
                 "edge": "围绕 Sharia 资产和企业融资需求形成差异化。",
                 "implication": "可作为 Sharia 与生产性融资结合的观察样本。",
+                "assets": "未公开；公开口径主要披露 Sharia 企业融资产品。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Qazwa Mitra Hasanah；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "未公开股权变更完成日；当前按公司官网及 OJK 许可主体口径记录。",
+                "sources": [
+                    {
+                        "label": "AFPI：Qazwa 会员资料",
+                        "url": "https://www.afpi.or.id/profilemember/Qazwa",
+                    },
+                ],
             },
             {
                 "name": "Papitupi Syariah",
@@ -750,6 +1000,21 @@ licenses = [
                 "position": "Sharia 个人或企业融资",
                 "edge": "伊斯兰金融原则、特定客群信任和垂直产品设计。",
                 "implication": "对标时应看其是否能在小众定位下维持足够放款规模和资金方供给。",
+                "assets": "未公开；公开口径主要披露 Sharia 融资产品。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Piranti Alphabet Perkasa；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "未公开股权变更完成日；当前按公司官网及 OJK 许可主体口径记录。",
+                "sources": [
+                    {
+                        "label": "Papitupi Syariah 官方公司资料",
+                        "url": "https://www.papitupisyariah.com/tentang-kami/profil-perusahaan/",
+                    },
+                    {
+                        "label": "Papitupi Syariah 官方信息披露",
+                        "url": "https://www.papitupisyariah.com/informasi/",
+                    },
+                ],
             },
             {
                 "name": "Ethis",
@@ -758,6 +1023,21 @@ licenses = [
                 "position": "Sharia 融资和相关投资型场景",
                 "edge": "区域 Sharia 金融品牌与特定资金方信任。",
                 "implication": "适合观察跨区域 Sharia 金融品牌在印尼本地化的可行性。",
+                "assets": "未公开；公开口径主要披露 Sharia 众筹与融资产品。",
+                "equityCapital": "未公开；监管最低净资产要求为 Rp12.5 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Ethis Group / PT Ethis Fintek Indonesia；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "未公开股权变更完成日；当前按 Ethis 官网及 OJK 许可主体口径记录。",
+                "sources": [
+                    {
+                        "label": "Ethis 官方网站",
+                        "url": "https://ethis.co.id/",
+                    },
+                    {
+                        "label": "Ethis Group 官方网站",
+                        "url": "https://ethis.co/",
+                    },
+                ],
             },
         ],
         "latestRules": [
@@ -5023,7 +5303,7 @@ html = f"""<!doctype html>
       return `
         <div class="bank-directory">
           <div class="bank-directory-summary">
-            已按研究报告的竞争类型整理 ${{total}} 家 P2P 代表玩家。一级页只保留分类、定位和对标入口；点击任一平台进入二级摘要页，查看运营背景、公开规模、竞争抓手和对我们的意义。
+            已按研究报告的竞争类型整理 ${{total}} 家 P2P 代表玩家。一级页只保留分类、定位和入口；点击任一平台进入二级信息页，查看资产、资本/权益、市值、背后控股股东和股权变更时间。
           </div>
           ${{groups.map(group => `
             <section class="bank-group">
@@ -5040,7 +5320,7 @@ html = f"""<!doctype html>
                     <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(p2pPlayerSlug(player))}}">
                       <div class="bank-name-cell"><strong>${{esc(player.name)}}</strong><span>${{esc(player.position || group.category)}}</span></div>
                       <div class="bank-shape-pill player-shape-pill">${{esc(group.badge || player.tier || "")}}</div>
-                      <div class="bank-row-action">查看玩家摘要</div>
+                      <div class="bank-row-action">查看二级信息</div>
                     </a>
                   `).join("")}}
                 </div>
@@ -5054,19 +5334,31 @@ html = f"""<!doctype html>
     function p2pPlayerPage(item, player) {{
       if (!player) return detailPage(item);
       const cards = [
-        ["运营主体/背景", player.entity || player.tier || "报告未展开披露"],
-        ["主要定位", player.position || "报告未展开披露"],
-        ["公开规模", player.scale || "报告未展开披露"],
-        ["竞争抓手", player.edge || "报告未展开披露"],
-        ["对我们意味着什么", player.implication || "报告未展开披露"],
+        ["资产", player.assets || "未公开"],
+        ["资本/权益", player.equityCapital || "未公开"],
+        ["市值", player.marketCap || "未公开"],
+        ["背后控股股东", player.controllingShareholder || "未公开"],
+        ["股权变更时间", player.controlChangeTime || "未公开"],
       ];
+      const playerSources = [];
+      (player.sources || []).forEach(source => {{
+        if (!source || !source.url) return;
+        if (playerSources.some(item => item.url === source.url && item.label === source.label)) return;
+        playerSources.push(source);
+      }});
+      if (!playerSources.some(source => source.url === "https://ojk.go.id/id/regulasi/Pages/POJK-40-Tahun-2024-Layanan-Pendanaan-Bersama-Berbasis-Teknologi-Informasi.aspx")) {{
+        playerSources.push({{
+          label: "OJK POJK 40/2024：LPBBTI 净资产监管要求",
+          url: "https://ojk.go.id/id/regulasi/Pages/POJK-40-Tahun-2024-Layanan-Pendanaan-Bersama-Berbasis-Teknologi-Informasi.aspx",
+        }});
+      }}
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('p2p')">返回 P2P</button>
           <div class="detail-title">
             <div>
               <h2>${{esc(player.name)}}</h2>
-              <p>P2P 竞争对手摘要</p>
+              <p>P2P 玩家二级信息</p>
             </div>
           </div>
         </div>
@@ -5081,6 +5373,20 @@ html = f"""<!doctype html>
           </div>
           <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
         </section>
+        ${{playerSources.length ? `
+          <section class="section source-section">
+            <h3>数据来源</h3>
+            <p class="source-note">P2P 玩家二级页只保留资产、资本/权益、市值、背后控股股东和股权变更时间。私营非上市平台没有独立市值；资产和权益没有可靠公开文本时，明确标为未公开，不用累计放款或业务规模替代。</p>
+            <div class="source-list">
+              ${{playerSources.map(source => `
+                <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
+                  <strong>${{esc(source.label || "来源")}}</strong>
+                  <span>${{esc(source.url)}}</span>
+                </a>
+              `).join("")}}
+            </div>
+          </section>
+        ` : ""}}
       `;
     }}
 

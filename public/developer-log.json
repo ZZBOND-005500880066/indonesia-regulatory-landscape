@@ -3,6 +3,20 @@
     {
       "date": "2026-07-20",
       "type": "协作记录",
+      "title": "Optimize P2P competitor directory",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Optimize P2P competitor directory",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "1bbef88",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/1bbef889e5210699bdb332ec17f2b1598f17f8b8"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "协作记录",
       "title": "Align multi-finance player detail pages",
       "summary": "zhuangzihao 于 2026-07-20 提交：Align multi-finance player detail pages",
       "changes": [

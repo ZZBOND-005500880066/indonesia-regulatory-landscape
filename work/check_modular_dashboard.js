@@ -119,7 +119,11 @@ const p2pMarkers = [
   "function p2pPlayerPage",
   'href="#license/${esc(item.id)}/${esc(p2pPlayerSlug(player))}"',
   'hash.match(/^license\\/p2p\\/([^/]+)$/)',
-  "P2P 竞争对手摘要",
+  "P2P 玩家二级信息",
+  "查看二级信息",
+  "资本/权益",
+  "背后控股股东",
+  "股权变更时间",
   "独立消费信贷平台",
   "互联网生态型平台",
   "生产性及 UMKM 融资平台",
@@ -192,6 +196,28 @@ for (const name of ["Rupiah Cepat", "Asetku", "KrediFazz", "AwanTunai", "BATUMBU
   if (!p2pCompetitors.some((player) => player.name === name)) {
     throw new Error(`P2P representative player missing: ${name}`);
   }
+}
+
+const p2pRowsMissingDetailFields = p2pCompetitors.filter((player) =>
+  ["assets", "equityCapital", "marketCap", "controllingShareholder", "controlChangeTime"].some((field) => !player[field])
+);
+if (p2pRowsMissingDetailFields.length > 0) {
+  throw new Error(
+    `P2P players missing second-level detail fields: ${p2pRowsMissingDetailFields
+      .map((player) => player.name)
+      .join(", ")}`
+  );
+}
+
+const p2pRowsWithoutSources = p2pCompetitors.filter(
+  (player) => !Array.isArray(player.sources) || player.sources.length === 0
+);
+if (p2pRowsWithoutSources.length > 0) {
+  throw new Error(
+    `P2P players missing sources: ${p2pRowsWithoutSources
+      .map((player) => player.name)
+      .join(", ")}`
+  );
 }
 
 const banksWithoutSources = commercialBanks.filter(
