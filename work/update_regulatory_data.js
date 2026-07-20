@@ -103,21 +103,24 @@ const GENERAL_KEYWORDS = [
 ];
 
 const RULE_SIGNAL = /(pojk|seojk|padk|pbi|padg|peraturan|surat edaran|nomor|tahun|kewajiban|penerapan|ketentuan|laporan|publikasi)/i;
+const CROSS_SCOPE_SIGNAL = /(pengaduan|perlindungan konsumen|pelindungan konsumen|anti pencucian uang|pencucian uang|apu|ppt|cft|cpf|manajemen risiko|tata kelola|teknologi informasi|data pribadi|pelindungan data|sistem pembayaran|qris|modal minimum|perizinan|rasio pendanaan luar negeri|devisa hasil ekspor)/i;
 
 const KNOWN_DATE_METADATA = {
-  "SEOJK 23/SEOJK.06/2025": { sourceDate: "2025-11-04", effectiveDate: "2027-04-01" },
-  "POJK 30/2025": { sourceDate: "2026-01-06", effectiveDate: "2026-07-01" },
-  "POJK 7/2026": { sourceDate: "2026-07-03", effectiveDate: "2026-06-30" },
-  "PADK 45/PADK.06/2025": { sourceDate: "2026-01-19", effectiveDate: "2027-07-01" },
-  "SEOJK 20/SEOJK.08/2025": { sourceDate: "2025-09-12", effectiveDate: "2027-01-01" },
+  "SEOJK 23/SEOJK.06/2025": { sourceDate: "2025-10-22", effectiveDate: "2027-04-01", enactedDate: "2025-10-22" },
+  "POJK 30/2025": { sourceDate: "2025-12-02", effectiveDate: "2026-07-01", enactedDate: "2025-11-21", promulgatedDate: "2025-12-02" },
+  "POJK 7/2026": { sourceDate: "2026-06-12", effectiveDate: "2026-06-30", enactedDate: "2026-06-04", promulgatedDate: "2026-06-12" },
+  "PADK 45/PADK.06/2025": { sourceDate: "2025-12-23", effectiveDate: "2027-07-01", enactedDate: "2025-12-23" },
+  "SEOJK 20/SEOJK.08/2025": { sourceDate: "2025-09-08", effectiveDate: "2027-01-01", enactedDate: "2025-09-08" },
   "PADG 19/2026": { sourceDate: "2026-06-30" },
 };
 
 const SEED_BRIEFINGS = [
   {
     date: "2026",
-    sourceDate: "2026-07-03",
+    sourceDate: "2026-06-12",
     effectiveDate: "2026-06-30",
+    enactedDate: "2026-06-04",
+    promulgatedDate: "2026-06-12",
     title: "BPR 最低资本与核心资本要求更新",
     regulator: "OJK",
     licenses: ["BPR"],
@@ -134,8 +137,10 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2026",
-    sourceDate: "2026-01-06",
+    sourceDate: "2025-12-02",
     effectiveDate: "2026-07-01",
+    enactedDate: "2025-11-21",
+    promulgatedDate: "2025-12-02",
     title: "ITSK 经营者治理和风险管理规则落地",
     regulator: "OJK",
     licenses: ["ICS / PKA", "Loan Aggregator"],
@@ -152,8 +157,9 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
-    sourceDate: "2026-01-19",
+    sourceDate: "2025-12-23",
     effectiveDate: "2027-07-01",
+    enactedDate: "2025-12-23",
     title: "融资公司月度报告规则更新",
     regulator: "OJK",
     licenses: ["Multi-Finance"],
@@ -168,8 +174,9 @@ const SEED_BRIEFINGS = [
   },
   {
     date: "2025",
-    sourceDate: "2025-09-12",
+    sourceDate: "2025-09-08",
     effectiveDate: "2027-01-01",
+    enactedDate: "2025-09-08",
     title: "投诉处理公开与投诉服务报告规则更新",
     regulator: "OJK",
     licenses: ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -305,6 +312,46 @@ function extractOjkListDates(...parts) {
   };
 }
 
+const ID_MONTH_PATTERN = "(?:Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)";
+const ID_DATE_PATTERN = `(?:\\d{1,2}\\/\\d{1,2}\\/20[2-4][0-9]|\\d{1,2}\\s+${ID_MONTH_PATTERN}\\s+20[2-4][0-9])`;
+
+function parseIndonesianDateValue(value) {
+  if (!value) return null;
+  if (String(value).includes("/")) return parseSlashDate(value);
+  return extractDate(value);
+}
+
+function extractDateNearLabel(text, labelPatterns) {
+  const source = cleanText(text);
+  const patterns = Array.isArray(labelPatterns) ? labelPatterns : [labelPatterns];
+  for (const pattern of patterns) {
+    const match = source.match(new RegExp(`${pattern}[^0-9]{0,180}(${ID_DATE_PATTERN})`, "i"));
+    if (match) return parseIndonesianDateValue(match[1]);
+  }
+  return null;
+}
+
+function extractIndonesianDateMetadata(...parts) {
+  const text = cleanText(parts.filter(Boolean).join(" "));
+  const effectiveDate = extractEffectiveDate(text);
+  const enactedDate = extractDateNearLabel(text, [
+    "tanggal\\s+ditetapkan",
+    "ditetapkan\\s+di\\s+[^.]{0,100}\\s+pada\\s+tanggal",
+    "ditetapkan\\s+pada\\s+tanggal",
+  ]);
+  const promulgatedDate = extractDateNearLabel(text, [
+    "tanggal\\s+diundangkan",
+    "diundangkan\\s+di\\s+[^.]{0,100}\\s+pada\\s+tanggal",
+    "diundangkan\\s+pada\\s+tanggal",
+  ]);
+  const metadata = {};
+  if (effectiveDate) metadata.effectiveDate = effectiveDate;
+  if (enactedDate) metadata.enactedDate = enactedDate;
+  if (promulgatedDate) metadata.promulgatedDate = promulgatedDate;
+  if (promulgatedDate || enactedDate) metadata.sourceDate = promulgatedDate || enactedDate;
+  return metadata;
+}
+
 function extractEffectiveDate(...parts) {
   const text = cleanText(parts.filter(Boolean).join(" "));
   const labelMatch = text.match(/Tanggal\s+Berlaku\s*:?\s*([0-9]{1,2}\/[0-9]{1,2}\/20[2-4][0-9])/i);
@@ -322,8 +369,23 @@ function hasVerifiedSourceDate(item) {
   return Boolean(item && /^\d{4}-\d{2}-\d{2}$/.test(String(sourceDateFor(item) || "")));
 }
 
+function isInResearchScope(item) {
+  const ids = item?.licenseIds || [];
+  if (Array.isArray(ids) && ids.length) return true;
+  const text = [
+    item?.title,
+    item?.name,
+    item?.keywords,
+    item?.summary,
+    item?.impact,
+    item?.note,
+    item?.sourceUrl,
+  ].filter(Boolean).join(" ");
+  return classify(text).ids.length > 0 || CROSS_SCOPE_SIGNAL.test(text);
+}
+
 function filterDisplayableBriefings(briefings) {
-  return (briefings || []).filter((item) => item.sourceUrl && hasVerifiedSourceDate(item));
+  return (briefings || []).filter((item) => item.sourceUrl && hasVerifiedSourceDate(item) && isInResearchScope(item));
 }
 
 function includesAny(text, keywords) {
@@ -344,6 +406,22 @@ function classify(text) {
     }
   }
   return { labels: [...new Set(matched)], ids: [...new Set(ids)], impacts };
+}
+
+function inferCrossLicenseScope(text) {
+  if (/pengaduan|perlindungan konsumen|pelindungan konsumen|layanan pengaduan/i.test(text)) {
+    return {
+      labels: ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
+      ids: ["commercial-bank", "bpr", "multi-finance", "p2p", "ics", "loan-aggregator"],
+    };
+  }
+  if (/anti pencucian uang|pencucian uang|apu|ppt|cft|cpf|data pribadi|pelindungan data|teknologi informasi/i.test(text)) {
+    return {
+      labels: ["商业银行", "BPR", "Multi-Finance", "P2P", "PJP", "ICS / PKA", "Loan Aggregator"],
+      ids: ["commercial-bank", "bpr", "multi-finance", "p2p", "pjp", "ics", "loan-aggregator"],
+    };
+  }
+  return null;
 }
 
 function extractAnchors(html, baseUrl) {
@@ -369,6 +447,7 @@ function extractAnchors(html, baseUrl) {
       url,
       context,
       ...extractOjkListDates(context),
+      ...extractIndonesianDateMetadata(context),
       ...knownDateMetadataForText(title, url, context),
     });
   }
@@ -387,6 +466,9 @@ function scoreCandidate(entry, source) {
   }
   const generalHits = includesAny(combined, GENERAL_KEYWORDS);
   const classified = classify(combined);
+  if (!classified.ids.length && !CROSS_SCOPE_SIGNAL.test(combined)) {
+    return { score: -100, generalHits, classified };
+  }
   const year = Number(extractYear(combined).slice(0, 4));
   let score = generalHits.length * 2 + classified.labels.length * 6;
   if (/\/regulasi\//i.test(entry.url) || /peraturan/i.test(entry.url)) score += 2;
@@ -539,8 +621,9 @@ function polishedAction(entry) {
 
 function makeBriefing(candidate, nowIso) {
   const { entry, source, scoreInfo } = candidate;
-  const labels = scoreInfo.classified.labels.length ? scoreInfo.classified.labels : ["跨牌照"];
-  const ids = scoreInfo.classified.ids;
+  const inferredScope = inferCrossLicenseScope(`${entry.title} ${entry.url} ${entry.context || ""}`);
+  const labels = scoreInfo.classified.labels.length ? scoreInfo.classified.labels : (inferredScope?.labels || ["跨牌照"]);
+  const ids = scoreInfo.classified.ids.length ? scoreInfo.classified.ids : (inferredScope?.ids || []);
   const keywords = [...new Set([...scoreInfo.generalHits, ...labels])].join(", ");
   const fallbackImpact = scoreInfo.classified.impacts.length
     ? scoreInfo.classified.impacts.join(" ")
@@ -552,15 +635,20 @@ function makeBriefing(candidate, nowIso) {
     : "中";
   const metadata = {
     ...extractOjkListDates(entry.context),
+    ...extractIndonesianDateMetadata(entry.context),
     ...knownDateMetadataForText(entry.title, entry.url, entry.context, entry.sourceOriginalTitle),
   };
-  const sourceDate = metadata.sourceDate || entry.sourceDate || entry.publishedDate || null;
+  const enactedDate = metadata.enactedDate || entry.enactedDate || null;
+  const promulgatedDate = metadata.promulgatedDate || entry.promulgatedDate || null;
+  const sourceDate = metadata.sourceDate || promulgatedDate || enactedDate || entry.sourceDate || entry.publishedDate || null;
   const effectiveDate = metadata.effectiveDate || entry.effectiveDate || null;
 
   return {
     date: extractYear(`${entry.title} ${entry.url}`),
     sourceDate,
     effectiveDate,
+    enactedDate,
+    promulgatedDate,
     title: titleForBriefing(localized.title),
     regulator: source.regulator,
     licenses: labels,
@@ -573,7 +661,7 @@ function makeBriefing(candidate, nowIso) {
     sourceLabel: source.name,
     sourceUrl: entry.url,
     sourceOriginalTitle: entry.title,
-    sourceStatus: `每日更新器于 ${nowIso} 核验原文链接；HTTP ${entry.sourceVerifiedStatus || 200}，官网日期与生效日期分开记录。`,
+    sourceStatus: `每日更新器于 ${nowIso} 核验原文链接；HTTP ${entry.sourceVerifiedStatus || 200}，已按 OJK/BI 印尼语字段拆分 Ditetapkan、Diundangkan 与 Tanggal Berlaku。`,
   };
 }
 
@@ -629,6 +717,8 @@ function buildLicenseUpdates(briefings, options = {}) {
         name: item.title,
         sourceDate: sourceDateFor(item),
         effectiveDate: item.effectiveDate,
+        enactedDate: item.enactedDate,
+        promulgatedDate: item.promulgatedDate,
         firstSeenDate: item.firstSeenDate,
         note: `${item.summary} ${item.impact}`,
         sourceUrl: item.sourceUrl,
@@ -743,14 +833,17 @@ async function validateEntrySource(entry) {
     const pageText = cleanText(result.text || "");
     const metadata = {
       ...extractOjkListDates(entry.context),
+      ...extractIndonesianDateMetadata(entry.context, pageText),
       ...knownDateMetadataForText(entry.title, entry.url, result.finalUrl, entry.context, pageText),
     };
-    const sourceDate = metadata.sourceDate || entry.sourceDate || null;
+    const enactedDate = metadata.enactedDate || entry.enactedDate || null;
+    const promulgatedDate = metadata.promulgatedDate || entry.promulgatedDate || null;
+    const sourceDate = metadata.sourceDate || promulgatedDate || enactedDate || entry.sourceDate || null;
     const effectiveDate = metadata.effectiveDate || entry.effectiveDate || extractEffectiveDate(entry.context, pageText);
     if (!sourceDate) {
       return { ok: false, status: "NO_VERIFIED_SOURCE_DATE", finalUrl: result.finalUrl, sourceDate: null };
     }
-    return { ok: true, status: result.status, finalUrl: result.finalUrl, sourceDate, effectiveDate };
+    return { ok: true, status: result.status, finalUrl: result.finalUrl, sourceDate, effectiveDate, enactedDate, promulgatedDate };
   } catch (error) {
     return {
       ok: false,
@@ -833,6 +926,8 @@ async function buildSnapshot({ reason = "manual" } = {}) {
       url: validation.finalUrl || candidate.entry.url,
       sourceDate: validation.sourceDate,
       effectiveDate: validation.effectiveDate,
+      enactedDate: validation.enactedDate,
+      promulgatedDate: validation.promulgatedDate,
       sourceVerifiedStatus: validation.status,
     };
     verifiedCandidates.push(candidate);

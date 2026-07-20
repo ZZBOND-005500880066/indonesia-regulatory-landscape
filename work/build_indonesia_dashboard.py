@@ -1322,8 +1322,10 @@ sources = []
 regulatory_briefings = [
     {
         "date": "2026",
-        "sourceDate": "2026-07-03",
+        "sourceDate": "2026-06-12",
         "effectiveDate": "2026-06-30",
+        "enactedDate": "2026-06-04",
+        "promulgatedDate": "2026-06-12",
         "title": "BPR 最低资本与核心资本要求更新",
         "regulator": "OJK",
         "licenses": ["BPR"],
@@ -1340,8 +1342,10 @@ regulatory_briefings = [
     },
     {
         "date": "2026",
-        "sourceDate": "2026-01-06",
+        "sourceDate": "2025-12-02",
         "effectiveDate": "2026-07-01",
+        "enactedDate": "2025-11-21",
+        "promulgatedDate": "2025-12-02",
         "title": "ITSK 经营者治理和风险管理规则落地",
         "regulator": "OJK",
         "licenses": ["ICS / PKA", "Loan Aggregator"],
@@ -1358,8 +1362,9 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
-        "sourceDate": "2026-01-19",
+        "sourceDate": "2025-12-23",
         "effectiveDate": "2027-07-01",
+        "enactedDate": "2025-12-23",
         "title": "融资公司月度报告规则更新",
         "regulator": "OJK",
         "licenses": ["Multi-Finance"],
@@ -1374,8 +1379,9 @@ regulatory_briefings = [
     },
     {
         "date": "2025",
-        "sourceDate": "2025-09-12",
+        "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
+        "enactedDate": "2025-09-08",
         "title": "投诉处理公开与投诉服务报告规则更新",
         "regulator": "OJK",
         "licenses": ["商业银行", "BPR", "Multi-Finance", "P2P", "ICS / PKA", "Loan Aggregator"],
@@ -1392,6 +1398,17 @@ regulatory_briefings = [
 
 
 developer_log = [
+    {
+        "date": "2026-07-20",
+        "type": "数据口径",
+        "title": "监管动态按印尼语官网字段识别日期",
+        "summary": "优化监管动态日期解析，直接对应 OJK/BI 页面里的 Ditetapkan、Diundangkan 和 Tanggal Berlaku，避免把发布日期、生效日和列表页日期混在一起。",
+        "changes": [
+            "监管动态新增 enactedDate 和 promulgatedDate 字段，sourceDate 只作为排序和历史去重口径。",
+            "动态卡片日期标签改为 Ditetapkan、Diundangkan、Tanggal Berlaku；缺少正文日期时才显示 OJK/BI 列表日期。",
+            "每日联网更新器新增印尼语日期解析规则，打开原文页后优先读取官方正文里的日期字段。",
+        ],
+    },
     {
         "date": "2026-07-17",
         "type": "维护",
@@ -1790,11 +1807,11 @@ def load_json_snapshot(*paths: Path, fallback: dict) -> dict:
 
 
 KNOWN_DATE_METADATA = {
-    "SEOJK 23/SEOJK.06/2025": {"sourceDate": "2025-11-04", "effectiveDate": "2027-04-01"},
-    "POJK 30/2025": {"sourceDate": "2026-01-06", "effectiveDate": "2026-07-01"},
-    "POJK 7/2026": {"sourceDate": "2026-07-03", "effectiveDate": "2026-06-30"},
-    "PADK 45/PADK.06/2025": {"sourceDate": "2026-01-19", "effectiveDate": "2027-07-01"},
-    "SEOJK 20/SEOJK.08/2025": {"sourceDate": "2025-09-12", "effectiveDate": "2027-01-01"},
+    "SEOJK 23/SEOJK.06/2025": {"sourceDate": "2025-10-22", "effectiveDate": "2027-04-01", "enactedDate": "2025-10-22"},
+    "POJK 30/2025": {"sourceDate": "2025-12-02", "effectiveDate": "2026-07-01", "enactedDate": "2025-11-21", "promulgatedDate": "2025-12-02"},
+    "POJK 7/2026": {"sourceDate": "2026-06-12", "effectiveDate": "2026-06-30", "enactedDate": "2026-06-04", "promulgatedDate": "2026-06-12"},
+    "PADK 45/PADK.06/2025": {"sourceDate": "2025-12-23", "effectiveDate": "2027-07-01", "enactedDate": "2025-12-23"},
+    "SEOJK 20/SEOJK.08/2025": {"sourceDate": "2025-09-08", "effectiveDate": "2027-01-01", "enactedDate": "2025-09-08"},
     "PADG 19/2026": {"sourceDate": "2026-06-30"},
 }
 
@@ -1806,7 +1823,8 @@ def enrich_date_metadata(snapshot: dict) -> dict:
         text = " ".join(str(item.get(key, "")) for key in keys)
         for marker, metadata in KNOWN_DATE_METADATA.items():
             if marker in text:
-                item.update({k: v for k, v in metadata.items() if v and not item.get(k)})
+                item.update({k: v for k, v in metadata.items() if v})
+                item["sourceDate"] = item.get("sourceDate") or item.get("promulgatedDate") or item.get("enactedDate")
                 break
     for item in snapshot.get("briefings", []) or []:
         enrich_item(item, ("title", "sourceUrl", "sourceOriginalTitle", "keywords"))
@@ -3454,9 +3472,13 @@ html = f"""<!doctype html>
     function briefingDateTags(item) {{
       const sourceDate = sourceDateFor(item);
       const effectiveDate = item?.effectiveDate || "";
+      const enactedDate = item?.enactedDate || "";
+      const promulgatedDate = item?.promulgatedDate || "";
       const tags = [];
-      if (sourceDate) tags.push(`<span class="tag">官网日期：${{esc(sourceDate)}}</span>`);
-      if (effectiveDate) tags.push(`<span class="tag">生效日期：${{esc(effectiveDate)}}</span>`);
+      if (enactedDate) tags.push(`<span class="tag">Ditetapkan：${{esc(enactedDate)}}</span>`);
+      if (promulgatedDate) tags.push(`<span class="tag">Diundangkan：${{esc(promulgatedDate)}}</span>`);
+      if (sourceDate && !enactedDate && !promulgatedDate) tags.push(`<span class="tag">OJK/BI 列表日期：${{esc(sourceDate)}}</span>`);
+      if (effectiveDate) tags.push(`<span class="tag">Tanggal Berlaku：${{esc(effectiveDate)}}</span>`);
       if (!tags.length && String(item?.date || "").length > 4) tags.push(`<span class="tag">日期：${{esc(item.date)}}</span>`);
       return tags.join("");
     }}
@@ -3733,8 +3755,11 @@ html = f"""<!doctype html>
         .join(" ");
       for (const [marker, metadata] of Object.entries(KNOWN_DATE_METADATA)) {{
         if (text.includes(marker)) {{
-          if (metadata.sourceDate && !item.sourceDate) item.sourceDate = metadata.sourceDate;
-          if (metadata.effectiveDate && !item.effectiveDate) item.effectiveDate = metadata.effectiveDate;
+          if (metadata.sourceDate) item.sourceDate = metadata.sourceDate;
+          if (metadata.effectiveDate) item.effectiveDate = metadata.effectiveDate;
+          if (metadata.enactedDate) item.enactedDate = metadata.enactedDate;
+          if (metadata.promulgatedDate) item.promulgatedDate = metadata.promulgatedDate;
+          item.sourceDate = item.sourceDate || item.promulgatedDate || item.enactedDate || "";
           break;
         }}
       }}

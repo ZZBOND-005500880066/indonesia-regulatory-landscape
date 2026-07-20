@@ -1,6 +1,17 @@
 {
   "entries": [
     {
+      "date": "2026-07-20",
+      "type": "数据口径",
+      "title": "监管动态按印尼语官网字段识别日期",
+      "summary": "优化监管动态日期解析，直接对应 OJK/BI 页面里的 Ditetapkan、Diundangkan 和 Tanggal Berlaku，避免把发布日期、生效日和列表页日期混在一起。",
+      "changes": [
+        "监管动态新增 enactedDate 和 promulgatedDate 字段，sourceDate 只作为排序和历史去重口径。",
+        "动态卡片日期标签改为 Ditetapkan、Diundangkan、Tanggal Berlaku；缺少正文日期时才显示 OJK/BI 列表日期。",
+        "每日联网更新器新增印尼语日期解析规则，打开原文页后优先读取官方正文里的日期字段。"
+      ]
+    },
+    {
       "date": "2026-07-17",
       "type": "维护",
       "title": "网页自检并升级 GitHub Actions",
