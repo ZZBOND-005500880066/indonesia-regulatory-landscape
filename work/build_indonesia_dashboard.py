@@ -655,6 +655,110 @@ licenses = [
                 "edge": "额度复用、App 触点和类信用卡产品体验。",
                 "implication": "可作为 P2P 向类信用账户演进的样本；重点看额度使用频率、账户生命周期和资金期限错配。",
             },
+            {
+                "name": "Rupiah Cepat",
+                "tier": "独立消费信贷平台",
+                "scale": "报告作为独立消费信贷代表平台列示；未在重点平台表中披露具体放款规模",
+                "position": "个人线上现金贷和短期周转",
+                "edge": "标准化线上获客、自动审批、复借管理和贷后催收。",
+                "implication": "适合作为现金贷赛道的补充样本；判断重点是获客成本、审批通过率和逾期迁徙。",
+            },
+            {
+                "name": "Asetku",
+                "tier": "互联网生态型 P2P",
+                "scale": "报告作为 Akulaku 数字金融生态相关平台列示；未在重点平台表中披露具体放款规模",
+                "position": "生态内现金贷、消费金融和用户额度分发",
+                "edge": "可依托既有 App、交易场景和消费数据降低获客成本。",
+                "implication": "生态型平台的关键不只是牌照，而是能否稳定使用交易数据并把额度嵌入高频场景。",
+            },
+            {
+                "name": "KrediFazz",
+                "tier": "互联网生态型 P2P",
+                "scale": "报告作为互联网生态型代表平台列示；未在重点平台表中披露具体放款规模",
+                "position": "线上消费信贷和生态流量转化",
+                "edge": "以线上流量、App 触点和交叉销售承接借款需求。",
+                "implication": "可作为生态型轻量获客样本；需要重点看流量质量、合规披露和贷后表现。",
+            },
+            {
+                "name": "AwanTunai",
+                "tier": "生产性及 UMKM 融资平台",
+                "scale": "报告作为生产性及 UMKM 融资代表平台列示",
+                "position": "小商户、供应链和营运资金融资",
+                "edge": "更依赖行业/供应链数据、商户经营真实性和线下服务网络。",
+                "implication": "如果走生产性融资，关键是产业数据和真实贸易背景，而不是单纯放款速度。",
+            },
+            {
+                "name": "BATUMBU",
+                "tier": "生产性及 UMKM 融资平台",
+                "scale": "报告作为生产性及 UMKM 融资代表平台列示",
+                "position": "企业、供应商和中小企业经营融资",
+                "edge": "企业风险评估、机构资金合作和经营场景连接能力。",
+                "implication": "适合作为企业端 P2P 的补充观察样本；重点看资金方合作和资产真实性。",
+            },
+            {
+                "name": "Akseleran",
+                "tier": "生产性及 UMKM 融资平台",
+                "scale": "报告作为生产性及 UMKM 融资代表平台列示",
+                "position": "SME、发票、订单和营运资金融资",
+                "edge": "围绕企业现金流、应收账款和订单场景组织资产。",
+                "implication": "对标时应重点拆解企业资料核验、核心企业关系和机构资金可持续性。",
+            },
+            {
+                "name": "Alami",
+                "tier": "Sharia 专业平台",
+                "scale": "报告作为 Sharia 专业平台代表列示",
+                "position": "符合伊斯兰金融原则的个人或企业融资结构",
+                "edge": "Sharia 产品设计、DPS/伊斯兰监事会治理和特定客群信任。",
+                "implication": "如果进入 Sharia P2P，应优先验证产品结构、监管沟通和目标客群转化。",
+            },
+            {
+                "name": "Ammana",
+                "tier": "Sharia 专业平台",
+                "scale": "报告作为 Sharia 专业平台代表列示",
+                "position": "伊斯兰原则下的个人或企业融资",
+                "edge": "Sharia 合规定位和特定社区客群信任。",
+                "implication": "可作为 Sharia 垂直平台样本；关键是合规治理和真实融资用途。",
+            },
+            {
+                "name": "Dana Syariah",
+                "tier": "Sharia 专业平台",
+                "scale": "报告作为 Sharia 专业平台代表列示",
+                "position": "伊斯兰原则下的专项融资服务",
+                "edge": "产品设计与 Sharia 合规叙事更集中。",
+                "implication": "适合观察宗教合规标签是否能带来差异化获客和资金方信任。",
+            },
+            {
+                "name": "Duha Syariah",
+                "tier": "Sharia 专业平台",
+                "scale": "报告作为 Sharia 专业平台代表列示",
+                "position": "Sharia 消费或企业融资",
+                "edge": "面向特定客群的 Sharia 产品与信任机制。",
+                "implication": "判断重点是客群深度、产品标准化和 Sharia 治理成本。",
+            },
+            {
+                "name": "Qazwa",
+                "tier": "Sharia 专业平台",
+                "scale": "报告作为 Sharia 专业平台代表列示",
+                "position": "Sharia 企业或生产性融资",
+                "edge": "围绕 Sharia 资产和企业融资需求形成差异化。",
+                "implication": "可作为 Sharia 与生产性融资结合的观察样本。",
+            },
+            {
+                "name": "Papitupi Syariah",
+                "tier": "Sharia 专业平台",
+                "scale": "报告作为 Sharia 专业平台代表列示",
+                "position": "Sharia 个人或企业融资",
+                "edge": "伊斯兰金融原则、特定客群信任和垂直产品设计。",
+                "implication": "对标时应看其是否能在小众定位下维持足够放款规模和资金方供给。",
+            },
+            {
+                "name": "Ethis",
+                "tier": "Sharia 专业平台",
+                "scale": "报告作为 Sharia 专业平台代表列示",
+                "position": "Sharia 融资和相关投资型场景",
+                "edge": "区域 Sharia 金融品牌与特定资金方信任。",
+                "implication": "适合观察跨区域 Sharia 金融品牌在印尼本地化的可行性。",
+            },
         ],
         "latestRules": [
             {
@@ -4371,6 +4475,8 @@ html = f"""<!doctype html>
       if (bankMatch) return {{ page: "bank", licenseId: "commercial-bank", bankId: bankMatch[1] }};
       const multiFinanceMatch = hash.match(/^license\\/multi-finance\\/([^/]+)$/);
       if (multiFinanceMatch) return {{ page: "finance-player", licenseId: "multi-finance", playerId: multiFinanceMatch[1] }};
+      const p2pMatch = hash.match(/^license\\/p2p\\/([^/]+)$/);
+      if (p2pMatch) return {{ page: "p2p-player", licenseId: "p2p", playerId: p2pMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -4855,6 +4961,129 @@ html = f"""<!doctype html>
       `;
     }}
 
+    function p2pPlayerSlug(player) {{
+      return player.id || slugify(player.name);
+    }}
+
+    function p2pPlayerGroups(item) {{
+      const players = item.competitors || [];
+      const groups = [
+        {{
+          category: "独立消费信贷平台",
+          badge: "现金贷",
+          description: "以线上现金贷、循环额度、快速审批和复借运营为核心，规模化能力来自获客、风控和催收效率。",
+          names: ["Easycash", "AdaKami", "Kredit Pintar", "Rupiah Cepat", "JULO"],
+        }},
+        {{
+          category: "互联网生态型平台",
+          badge: "生态流量",
+          description: "嵌入电商、支付或数字金融生态，利用既有用户、交易数据和商户关系降低获客成本。",
+          names: ["Lentera Dana Nusantara / SPinjam", "Asetku", "KrediFazz"],
+        }},
+        {{
+          category: "生产性及 UMKM 融资平台",
+          badge: "UMKM",
+          description: "面向微型企业、农村经营者、供应商和中小企业，重点看真实贸易背景、线下触达和机构资金合作。",
+          names: ["Amartha", "Modalku", "AwanTunai", "BATUMBU", "Akseleran"],
+        }},
+        {{
+          category: "Sharia 专业平台",
+          badge: "Sharia",
+          description: "采用符合伊斯兰金融原则的融资结构，竞争力来自产品设计、DPS 治理和特定客群信任。",
+          names: ["Alami", "Ammana", "Dana Syariah", "Duha Syariah", "Qazwa", "Papitupi Syariah", "Ethis"],
+        }},
+      ];
+      const byName = new Map(players.map(player => [player.name, player]));
+      const groupedNames = new Set();
+      const result = groups.map(group => {{
+        const groupPlayers = group.names.map(name => byName.get(name)).filter(Boolean);
+        groupPlayers.forEach(player => groupedNames.add(player.name));
+        return {{ ...group, players: groupPlayers }};
+      }}).filter(group => group.players.length);
+      const remaining = players.filter(player => !groupedNames.has(player.name));
+      if (remaining.length) {{
+        result.push({{
+          category: "其他报告列示玩家",
+          badge: "其他",
+          description: "报告中列示但暂未归入四类的 P2P 玩家。",
+          players: remaining,
+        }});
+      }}
+      return result;
+    }}
+
+    function findP2PPlayer(playerId) {{
+      const item = LICENSES.find(item => item.id === "p2p");
+      return (item?.competitors || []).find(player => p2pPlayerSlug(player) === playerId);
+    }}
+
+    function renderP2PDirectory(item) {{
+      const groups = p2pPlayerGroups(item);
+      const total = groups.reduce((sum, group) => sum + (group.players || []).length, 0);
+      return `
+        <div class="bank-directory">
+          <div class="bank-directory-summary">
+            已按研究报告的竞争类型整理 ${{total}} 家 P2P 代表玩家。一级页只保留分类、定位和对标入口；点击任一平台进入二级摘要页，查看运营背景、公开规模、竞争抓手和对我们的意义。
+          </div>
+          ${{groups.map(group => `
+            <section class="bank-group">
+              <div class="bank-group-title">
+                <div>
+                  <h4>${{esc(group.category)}}</h4>
+                  <p>${{esc(group.description || "")}}</p>
+                </div>
+                <span class="tag">${{(group.players || []).length}} 家</span>
+              </div>
+              <div class="bank-table-wrap">
+                <div class="bank-table">
+                  ${{(group.players || []).map(player => `
+                    <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(p2pPlayerSlug(player))}}">
+                      <div class="bank-name-cell"><strong>${{esc(player.name)}}</strong><span>${{esc(player.position || group.category)}}</span></div>
+                      <div class="bank-shape-pill player-shape-pill">${{esc(group.badge || player.tier || "")}}</div>
+                      <div class="bank-row-action">查看玩家摘要</div>
+                    </a>
+                  `).join("")}}
+                </div>
+              </div>
+            </section>
+          `).join("")}}
+        </div>
+      `;
+    }}
+
+    function p2pPlayerPage(item, player) {{
+      if (!player) return detailPage(item);
+      const cards = [
+        ["运营主体/背景", player.entity || player.tier || "报告未展开披露"],
+        ["主要定位", player.position || "报告未展开披露"],
+        ["公开规模", player.scale || "报告未展开披露"],
+        ["竞争抓手", player.edge || "报告未展开披露"],
+        ["对我们意味着什么", player.implication || "报告未展开披露"],
+      ];
+      return `
+        <div class="detail-hero" data-tone="${{esc(item.tone)}}">
+          <button class="btn" onclick="setRoute('p2p')">返回 P2P</button>
+          <div class="detail-title">
+            <div>
+              <h2>${{esc(player.name)}}</h2>
+              <p>P2P 竞争对手摘要</p>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="bank-detail-grid player-detail-grid">
+            ${{cards.map(card => `
+              <article class="bank-detail-card">
+                <span>${{esc(card[0])}}</span>
+                <strong>${{moneyText(card[1])}}</strong>
+              </article>
+            `).join("")}}
+          </div>
+          <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
+        </section>
+      `;
+    }}
+
     function bankDetailPage(item, bank) {{
       if (!bank) return detailPage(item);
       const cards = [
@@ -4968,8 +5197,8 @@ html = f"""<!doctype html>
             </section>
 
             <section class="info-band">
-              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : "竞争对手板块"}}</h3>
-              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : renderCompetitors(item)}}
+              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : "竞争对手板块"}}</h3>
+              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : renderCompetitors(item)}}
             </section>
             ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
@@ -5008,6 +5237,15 @@ html = f"""<!doctype html>
         detail.classList.add("active");
         showModule(null);
         detail.innerHTML = multiFinancePlayerPage(item, player);
+        qs("#mobileNav").value = item.id;
+        window.scrollTo({{ top: 0, behavior: "instant" }});
+      }} else if (route.page === "p2p-player") {{
+        const item = LICENSES.find(x => x.id === route.licenseId) || LICENSES[0];
+        const player = findP2PPlayer(route.playerId);
+        home.classList.remove("active");
+        detail.classList.add("active");
+        showModule(null);
+        detail.innerHTML = p2pPlayerPage(item, player);
         qs("#mobileNav").value = item.id;
         window.scrollTo({{ top: 0, behavior: "instant" }});
       }} else if (route.page === "license") {{

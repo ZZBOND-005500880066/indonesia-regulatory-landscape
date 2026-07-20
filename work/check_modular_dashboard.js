@@ -113,6 +113,29 @@ for (const text of multiFinanceMarkers) {
   }
 }
 
+const p2pMarkers = [
+  "P2P 竞争对手目录",
+  "function renderP2PDirectory",
+  "function p2pPlayerPage",
+  'href="#license/${esc(item.id)}/${esc(p2pPlayerSlug(player))}"',
+  'hash.match(/^license\\/p2p\\/([^/]+)$/)',
+  "P2P 竞争对手摘要",
+  "独立消费信贷平台",
+  "互联网生态型平台",
+  "生产性及 UMKM 融资平台",
+  "Sharia 专业平台",
+  "Rupiah Cepat",
+  "Asetku",
+  "Akseleran",
+  "Alami",
+];
+
+for (const text of p2pMarkers) {
+  if (!html.includes(text)) {
+    throw new Error(`Missing P2P competitor marker: ${text}`);
+  }
+}
+
 const licensesMatch = html.match(/const LICENSES = (\[.*?\]);/s);
 if (!licensesMatch) {
   throw new Error("Cannot find generated license data");
@@ -121,6 +144,7 @@ if (!licensesMatch) {
 const licenses = JSON.parse(licensesMatch[1]);
 const commercialBank = licenses.find((item) => item.id === "commercial-bank");
 const multiFinance = licenses.find((item) => item.id === "multi-finance");
+const p2p = licenses.find((item) => item.id === "p2p");
 const commercialBanks = (commercialBank.bankDirectory || []).flatMap((group) => group.banks || []);
 if (commercialBanks.length < 40) {
   throw new Error("Commercial bank directory lost bank rows");
@@ -157,6 +181,17 @@ if (multiFinanceRowsWithoutSources.length > 0) {
       .map((player) => player.name)
       .join(", ")}`
   );
+}
+
+const p2pCompetitors = p2p?.competitors || [];
+if (p2pCompetitors.length < 20) {
+  throw new Error("P2P competitor directory lost representative players");
+}
+
+for (const name of ["Rupiah Cepat", "Asetku", "KrediFazz", "AwanTunai", "BATUMBU", "Akseleran", "Alami", "Ethis"]) {
+  if (!p2pCompetitors.some((player) => player.name === name)) {
+    throw new Error(`P2P representative player missing: ${name}`);
+  }
 }
 
 const banksWithoutSources = commercialBanks.filter(
