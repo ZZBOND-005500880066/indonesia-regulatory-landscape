@@ -1398,18 +1398,18 @@ COMMERCIAL_BANK_OJK_FINANCIAL_SOURCE = {
 }
 
 COMMERCIAL_BANK_RULE_SOURCE = {
-    "label": "POJK 12/2021：商业银行和 KBMI 口径",
-    "url": "https://peraturan.bpk.go.id/Details/227209/peraturan-ojk-no-12pojk032021-tahun-2021",
+    "label": "OJK：POJK 12/2021 商业银行规则入口",
+    "url": "https://www.ojk.go.id/id/regulasi/Pages/Bank-Umum.aspx",
 }
 
 COMMERCIAL_BANK_MARKET_LARGE_SOURCE = {
-    "label": "市值快照：Simply Wall St 印尼大型银行列表（2026-07-19）",
-    "url": "https://simplywall.st/stocks/id/banks/market-cap-large",
+    "label": "市值复核入口：CompaniesMarketCap 印尼上市公司列表",
+    "url": "https://companiesmarketcap.com/indonesia/largest-companies-in-indonesia-by-market-cap/",
 }
 
 COMMERCIAL_BANK_MARKET_SMALL_SOURCE = {
-    "label": "市值快照：Simply Wall St 印尼小型银行列表（2026-07-19）",
-    "url": "https://simplywall.st/stocks/id/banks/market-cap-small",
+    "label": "市值复核入口：CompaniesMarketCap 印尼上市公司列表",
+    "url": "https://companiesmarketcap.com/indonesia/largest-companies-in-indonesia-by-market-cap/",
 }
 
 COMMERCIAL_BANK_KBMI_MEDIA_SOURCE = {
@@ -1449,10 +1449,9 @@ COMMERCIAL_BANK_PUBLIC_FILL = {
         "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
         "sources": [
             {
-                "label": "Bank Jago：2025 业绩新闻稿",
-                "url": "https://www.jago.com/en/media-center/press-release/consistent-growth-continues-in-2025-as-bank-jago-delivers-tangible-benefits-for-customer",
+                "label": "Kontan：Bank Jago 2025 业绩与资产报道",
+                "url": "https://keuangan.kontan.co.id/news/bank-jago-arto-catatkan-laba-bersih-rp-136-miliar-per-juni-2025",
             },
-            {"label": "Bank Jago：年报入口", "url": "https://www.jago.com/en/transparency/hubungan-investor/annual-reports/15"},
             COMMERCIAL_BANK_KBMI_MEDIA_SOURCE,
         ],
     },
@@ -1481,8 +1480,8 @@ COMMERCIAL_BANK_PUBLIC_FILL = {
         "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
         "sources": [
             {
-                "label": "Grab 投资者公告：Superbank 2026 年 4 月资产口径",
-                "url": "https://investors.grab.com/news-and-events/news-details/2026/Grab-To-Consolidate-Superbank-Deepening-Financial-Services-Commitment-in-Indonesia-2026-4w4Dqp5R-a/default.aspx",
+                "label": "SEC：Grab Superbank consolidation filing",
+                "url": "https://www.sec.gov/Archives/edgar/data/1855612/000121390026064363/0001213900-26-064363-index.htm",
             },
             COMMERCIAL_BANK_KBMI_MEDIA_SOURCE,
         ],
@@ -1522,7 +1521,6 @@ COMMERCIAL_BANK_PUBLIC_FILL = {
         "coreCapital": "公开资料未稳定披露精确核心资本；需以 OJK/APOLO 报表核验",
         "marketCap": "未上市，市值不适用",
         "sources": [
-            {"label": "Bank Nano Syariah：FAQ / 许可说明入口", "url": "https://www.nanobanksyariah.id/faq"},
             {"label": "Bank Nano Syariah：公告入口", "url": "https://www.nanobanksyariah.id/tentang-kami/pengumuman"},
         ],
     },
@@ -1556,7 +1554,189 @@ COMMERCIAL_BANK_PUBLIC_FILL = {
         "coreCapital": "不适用（数字产品，不是独立银行主体）",
         "marketCap": "不适用（数字产品，不是独立上市主体）",
         "licenseApprovalTime": "不适用（依托母行商业银行牌照）",
-        "sources": [{"label": "LINE Bank by Hana Bank：产品入口", "url": "https://linebank.co.id/"}],
+        "sources": [{"label": "LINE：LINE Bank Indonesia launch", "url": "https://www.linepluscorp.com/pr/news/global/2021/80"}],
+    },
+}
+
+COMMERCIAL_BANK_CONTROL_CHANGES = {
+    "bri": {
+        "controlChangeTime": "1946-02-22：BRI 被确认为印尼共和国第一家政府银行；1992 改制为 PT 后政府仍控股，2003 上市后仍为政府控股。",
+        "sources": [
+            {"label": "BRI：公司历史", "url": "https://www.bri.co.id/en/info-perusahaan"},
+        ],
+    },
+    "bank-mandiri": {
+        "controlChangeTime": "1998-10-02：印尼政府设立 Bank Mandiri；1999-07-31 四家国有银行完成并入，形成现在的国有控股结构。",
+        "sources": [
+            {"label": "Bank Mandiri：公司资料", "url": "https://www.bankmandiri.co.id/en/profil-perusahaan"},
+            {"label": "HKMA：Mandiri 合并生效说明", "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/1999/08/990802-3/"},
+        ],
+    },
+    "bni": {
+        "controlChangeTime": "1968：BNI 被确认为国有商业银行；1992 改制为 Persero、1996 上市后政府仍保持控股。",
+        "sources": [{"label": "BNI：公司历史", "url": "https://www.bni.co.id/en-us/company/about-bni/history/hubunganinvestor/presentationreport"}],
+    },
+    "btn": {
+        "controlChangeTime": "1968-12-18：UU No.20/1968 确认 Bank Tabungan Negara；2009 上市后政府仍保持控股。",
+        "sources": [
+            {"label": "BTN：公司历史", "url": "https://www.btn.co.id/id/about/about-us"},
+        ],
+    },
+    "bca": {
+        "controlChangeTime": "2002：FarIndo Investment 通过战略私募取得 BCA 51% 股权，BCA 从政府重组持股转为私营控股路径。",
+        "sources": [{"label": "BCA：公司历史", "url": "https://www.bca.co.id/id/tentang-bca/korporasi/Sejarah-BCA"}],
+    },
+    "bank-mega": {
+        "controlChangeTime": "1996：Para Group（后为 CT Corpora/Mega Corpora 体系）收购 PT Mega Bank，成为当前控股集团来源。",
+        "sources": [{"label": "Bank Mega：公司资料", "url": "https://bankmega.com/en/about-us/profile-bank-mega/"}],
+    },
+    "panin-bank": {
+        "controlChangeTime": "1971：PaninBank 成立；创始股东体系通过 Panin Financial 延续控制，公开资料未显示后续控制权切换。",
+        "sources": [
+            {"label": "PaninBank：公司资料", "url": "https://www.panin.co.id/id/about-panin/corporate-info"},
+            {"label": "Panin Financial：创始人资料", "url": "https://www.paninfinancial.co.id/id/informasi-umum/manajemen/dewan-komisaris/"},
+        ],
+    },
+    "bank-sinarmas": {
+        "controlChangeTime": "2005：Sinar Mas Multiartha/Sinar Mas 体系收购 Bank Shinta Indonesia，2006 更名为 Bank Sinarmas。",
+        "sources": [{"label": "Bank Sinarmas：公司资料", "url": "https://www.banksinarmas.com/id/informasiumum/tentangkami/profil-bank-sinarmas%26lang%3Den%26lang%3Did"}],
+    },
+    "bank-mayapada": {
+        "controlChangeTime": "1990：Tahir/Mayapada Group 创办并控制 Bank Mayapada；2017 Cathay Life 入股 40% 后，Tahir 仍被披露为控股股东。",
+        "sources": [
+            {"label": "Asia Insurance Review：Cathay 入股 Bank Mayapada", "url": "https://www.asiainsurancereview.com/News/View-NewsLetter-Article/id/38090/Type/eDaily/Indonesia-Cathay-Life-to-acquire-40-stake-in-Bank-Mayapada"},
+        ],
+    },
+    "cimb-niaga": {
+        "controlChangeTime": "2002：Commerce-Asset/CIMB 从 IBRA 取得 Bank Niaga 多数股权；2008 Bank Niaga 与 Lippo Bank 合并为 CIMB Niaga。",
+        "sources": [
+            {"label": "CIMB：2000s history", "url": "https://www.cimb.com/en/who-we-are/history/2000s.html"},
+            {"label": "CIMB Niaga：GCG history", "url": "https://investor.cimbniaga.co.id/gcg/history.html"},
+        ],
+    },
+    "maybank-indonesia": {
+        "controlChangeTime": "2008-12：Maybank 完成 BII 收购及 tender offer，成为当前 Maybank 控股结构来源；2015 更名为 Maybank Indonesia。",
+        "sources": [
+            {"label": "Maybank Indonesia：公司资料", "url": "https://www.maybank.co.id/en/corporateinformation"},
+            {"label": "Kontan：Maybank 完成 BII 收购", "url": "https://keuangan.kontan.co.id/news/maybank-resmi-menguasai-971-saham-bii"},
+        ],
+    },
+    "ocbc-indonesia": {
+        "controlChangeTime": "2004-2005：OCBC 先取得 Bank NISP 22.5% 股权，随后增持至多数股权；2008 更名为 Bank OCBC NISP。",
+        "sources": [
+            {"label": "OCBC：Indonesia milestone", "url": "https://www.ocbc.com/group/media/release/2024/ocbc-deepens-indonesia-presences-with-pt-bank-commonwealth-acquisition.page"},
+            {"label": "OCBC：regulatory disclosure archive", "url": "https://www.ocbc.com/group/investors/regulatory-disclosure.page"},
+        ],
+    },
+    "uob-indonesia": {
+        "controlChangeTime": "2005-10：UOB 取得 Bank Buana 控制权；2010 Bank UOB Indonesia 与 Bank UOB Buana 合并。",
+        "sources": [
+            {"label": "UOB：corporate milestones", "url": "https://www.uobgroup.com/AR2023/our-corporate-milestones.html"},
+            {"label": "Detik：UOB 控股 Bank Buana", "url": "https://finance.detik.com/moneter/d-461731/uob-kuasai-53-saham-bank-buana"},
+        ],
+    },
+    "bank-danamon": {
+        "controlChangeTime": "2019-05-01：MUFG 通过 Danamon 与 BNP 合并及追加持股，持有 Danamon 约 94.1%，成为控股股东。",
+        "sources": [
+            {"label": "MUFG：集团历史", "url": "https://www.mufg.jp/english/profile/overview/history/index.html"},
+            {"label": "MUFG SEC filing：Danamon 控制权", "url": "https://www.sec.gov/Archives/edgar/data/67088/000119312520328263/R10.htm"},
+        ],
+    },
+    "smbc-indonesia": {
+        "controlChangeTime": "2019-02：BTPN 与 Bank Sumitomo Mitsui Indonesia 合并后成为 SMBC 合并子公司；2024 更名为 SMBC Indonesia。",
+        "sources": [{"label": "SMFG：Bank BTPN history", "url": "https://www.smfg.co.jp/english/chronicle20/company/btpn.html"}],
+    },
+    "permata-bank": {
+        "controlChangeTime": "2020-05-20：Bangkok Bank 完成收购 Astra 与 Standard Chartered 合计 89.12% Permata Bank 股权。",
+        "sources": [{"label": "Bangkok Bank：Permata acquisition", "url": "https://www.bangkokbank.com/en/About-Us/News-and-Media/News-Detail?ID=%7B23B78A3A-98FF-451F-A761-DE81B9B781E8%7D"}],
+    },
+    "kb-bank-indonesia": {
+        "controlChangeTime": "2020-08/09：KB Kookmin 通过增资取得 Bank Bukopin 约 67% 股权并获 OJK 批准，成为控股股东；2021 更名。",
+        "sources": [
+            {"label": "Kookmin SEC filing：Bukopin acquisition", "url": "https://www.sec.gov/Archives/edgar/data/1445930/000119312521329114/d157420d6k.htm"},
+        ],
+    },
+    "keb-hana-bank-indonesia": {
+        "controlChangeTime": "2007：Hana Financial Group 取得 Bank Bintang Manunggal 多数股权；2014 与 PT Bank KEB Indonesia 合并为 Bank KEB Hana。",
+        "sources": [
+            {"label": "IFC Disclosure：Hana Indonesia", "url": "https://disclosures.ifc.org/project-detail/SPI/26283/hana-indonesia"},
+            {"label": "Newswire：Hana acquires Bank Bintang Manunggal", "url": "https://www.newswire.co.kr/newsRead.php?no=305410"},
+        ],
+    },
+    "bank-woori-saudara": {
+        "controlChangeTime": "2014：Woori Bank 追加收购 Bank Himpunan Saudara 股权并于 2014-12 完成合并，形成 Woori Saudara 控股结构。",
+        "sources": [{"label": "Woori SEC filing：Bank Saudara acquisition", "url": "https://www.sec.gov/Archives/edgar/data/1264136/000119312526168715/d82423d20f.htm"}],
+    },
+    "bank-shinhan-indonesia": {
+        "controlChangeTime": "2015-11：Shinhan Bank 在已取得 40% Bank Metro Express 后追加取得 50% 股权；2016 完成更名及 CNB 整合。",
+        "sources": [
+            {"label": "Pulse：Shinhan Indonesia acquisition", "url": "https://pulsenews.co.kr/view.php?year=2015&no=1126462"},
+        ],
+    },
+    "ccb-indonesia": {
+        "controlChangeTime": "2016-09-28：建设银行完成收购 Bank Windu 60% 控股权；2016-12 更名为 CCB Indonesia。",
+        "sources": [
+            {"label": "CCB Indonesia：name change disclosure", "url": "https://bankccbi.co.id/news/50"},
+        ],
+    },
+    "bank-jago": {
+        "controlChangeTime": "2019：MEI 与 WTT 合计取得 Bank Artos 51% 股权，成为控股股东；2020 Gojek/GoTo 后续入股但非控股。",
+        "sources": [
+            {"label": "Katadata：Bank Artos acquisition", "url": "https://katadata.co.id/finansial/bursa/5e9a4c3d2f4d2/jerry-ng-dan-sugito-walujo-resmi-akuisisi-bank-artos-rp-243-miliar"},
+        ],
+    },
+    "seabank-indonesia": {
+        "controlChangeTime": "2021-02-10：Bank BKE 获 OJK 批准更名为 SeaBank；Sea Group 通过间接持股成为新控制方。",
+        "sources": [
+            {"label": "SeaBank：about", "url": "https://www.seabank.co.id/perusahaan/info/seabank"},
+            {"label": "Kontan：SeaBank 更名和控制权", "url": "https://keuangan.kontan.co.id/news/seabank-indonesia-jadi-nama-baru-bank-bke-bakal-ramaikan-bisnis-bank-digital/"},
+        ],
+    },
+    "bank-neo-commerce": {
+        "controlChangeTime": "2020-09：Akulaku 进入股权结构并成为最大股东后，Bank Yudha Bhakti 更名为 Bank Neo Commerce。",
+        "sources": [{"label": "Akulaku：Bank Neo Commerce 更名", "url": "https://www.akulaku.com/blog/dikendalikan-akulaku-bank-yudha-bhakti-ganti-nama-jadi-bank-neo-commerce/"}],
+    },
+    "superbank": {
+        "controlChangeTime": "2026-05：Grab 公告将在 Singtel 股权转入 GXS 后合并 Superbank，合计直接及间接持股超过 50%；完成日仍需以后续公告核验。",
+        "sources": [{"label": "SEC：Grab Superbank consolidation filing", "url": "https://www.sec.gov/Archives/edgar/data/1855612/000121390026064363/0001213900-26-064363-index.htm"}],
+    },
+    "krom-bank": {
+        "controlChangeTime": "2022-04：FinAccel/Kredivo 完成收购 Bank Bisnis 75% 股权，成为控股股东，后续转型为 Krom Bank。",
+        "sources": [{"label": "Kredivo：Bank Bisnis acquisition", "url": "https://www.prnewswire.com/news-releases/finaccel-parent-of-kredivo-acquires-the-majority-ownership-of-bank-bisnis-planning-an-entry-into-digital-banking-301516392.html"}],
+    },
+    "bank-aladin-syariah": {
+        "controlChangeTime": "2021-09-24：控股股东名称由 NTI Global Indonesia 变更为 Aladin Global Ventures；该事件不构成实质控制权变更。",
+        "sources": [{"label": "Liputan6：Aladin 控股股东更名", "url": "https://www.liputan6.com/saham/read/4667864/pemegang-saham-pengendali-bank-aladin-syariah-ganti-nama"}],
+    },
+    "bank-saqu": {
+        "controlChangeTime": "2022-09-19：WeLab 与 Astra 完成收购 Bank Jasa Jakarta，双方合计持有约 99.13% 并成为联合控股方；2023 推出 Bank Saqu。",
+        "sources": [
+            {"label": "WeLab：BJJ acquisition", "url": "https://www.welab.co/en/press/welab-and-astra-complete-acquisition-bank-jasa-jakarta/"},
+            {"label": "Astra：Bank Saqu launch", "url": "https://www.astra.co.id/press-release/astra-financial-dan-welab-luncurkan-bank-saqu-sebagai-inovasi-layanan-perbankan-digital"},
+        ],
+    },
+    "bank-nano-syariah": {
+        "controlChangeTime": "2024-01-01：Bank Sinarmas UUS 分拆为 PT Bank Nano Syariah 并正式运营，股东结构为 Bank Sinarmas 51%、Sinar Mas Multiartha 25%、Asuransi Sinarmas 24%。",
+        "sources": [{"label": "Bank Nano Syariah：公告入口", "url": "https://www.nanobanksyariah.id/tentang-kami/pengumuman"}],
+    },
+    "jenius": {
+        "controlChangeTime": "2019-02：BTPN 并入 SMBC 控股结构；Jenius 作为母行数字产品不单独发生股权变更。",
+        "sources": [{"label": "SMFG：Bank BTPN history", "url": "https://www.smfg.co.jp/english/chronicle20/company/btpn.html"}],
+    },
+    "tmrw": {
+        "controlChangeTime": "2005-10：UOB 取得 Bank Buana/UOB Indonesia 控制权；TMRW 为 UOB Indonesia 后续数字产品，不单独发生股权变更。",
+        "sources": [{"label": "UOB：corporate milestones", "url": "https://www.uobgroup.com/AR2023/our-corporate-milestones.html"}],
+    },
+    "digibank": {
+        "controlChangeTime": "1989：DBS Bank 取得 Mitsubishi Bank Indonesia 并更名为 PT Bank DBS Indonesia；digibank 为 2017 推出的数字产品，不单独发生股权变更。",
+        "sources": [
+            {"label": "DBS Indonesia story", "url": "https://www.dbs.com/spark/spark-something/en_id/sparking-possibilities.html"},
+            {"label": "DBS：digibank Indonesia launch", "url": "https://www.dbs.com/newsroom/DBS_launches_digibank_an_entire_bank_in_the_phone_in_Indonesia"},
+        ],
+    },
+    "line-bank": {
+        "controlChangeTime": "2018-10：LINE Financial Asia 取得 Hana Bank Indonesia 20% 股权；LINE Bank 为 2021-06 推出的合作数字银行产品。",
+        "sources": [{"label": "LINE：LINE Bank Indonesia launch", "url": "https://www.linepluscorp.com/pr/news/global/2021/80"}],
     },
 }
 
@@ -1578,12 +1758,12 @@ def commercial_bank_default_value(bank: dict, group: dict, field: str) -> str:
         if "数字银行" in category:
             return "公开资料未稳定披露；需以 OJK/APOLO 报表核验"
         return "公开资料未稳定披露"
-    if field == "licenseApprovalTime":
+    if field == "controlChangeTime":
         if kbmi == "KCBLN":
-            return "公开资料未稳定披露分行经营许可批复日期"
+            return "不适用（外国银行分行，无印尼法人股权控制变更）"
         if kbmi == "数字银行产品":
-            return "不适用（依托母行商业银行牌照）"
-        return "公开资料未稳定披露具体商业银行牌照批复日期"
+            return "不适用（数字产品，股权变更看母行主体）"
+        return "公开资料未稳定披露当前控股股东取得控制权时间"
     return "公开资料未稳定披露"
 
 
@@ -1618,7 +1798,18 @@ def apply_commercial_bank_public_fill() -> None:
                 if bank.get(field) == "报告未列明":
                     bank[field] = commercial_bank_default_value(bank, group, field)
 
-            bank["sources"] = merge_bank_sources(bank.get("sources", []), source_candidates, fill.get("sources", []))
+            control_change = COMMERCIAL_BANK_CONTROL_CHANGES.get(bank["id"], {})
+            bank["controlChangeTime"] = control_change.get(
+                "controlChangeTime",
+                commercial_bank_default_value(bank, group, "controlChangeTime"),
+            )
+            bank.pop("licenseApprovalTime", None)
+            bank["sources"] = merge_bank_sources(
+                bank.get("sources", []),
+                source_candidates,
+                fill.get("sources", []),
+                control_change.get("sources", []),
+            )
 
 
 apply_commercial_bank_public_fill()
@@ -4257,7 +4448,7 @@ html = f"""<!doctype html>
       return `
         <div class="bank-directory">
           <div class="bank-directory-summary">
-            已按研究报告类别整理 ${{total}} 个银行、外国银行分行或数字银行产品条目。点击任一银行进入二级页面，仅查看资产、核心资本、市值、背后控股股东和牌照获批时间。
+            已按研究报告类别整理 ${{total}} 个银行、外国银行分行或数字银行产品条目。点击任一银行进入二级页面，仅查看资产、核心资本、市值、背后控股股东和股权变更时间。
           </div>
           ${{groups.map(group => `
             <section class="bank-group">
@@ -4301,7 +4492,7 @@ html = f"""<!doctype html>
         ["核心资本", bank.coreCapital],
         ["市值", bank.marketCap],
         ["背后控股股东", bank.controllingShareholder],
-        ["牌照获批时间", bank.licenseApprovalTime],
+        ["股权变更时间", bank.controlChangeTime],
       ];
       const bankSources = [];
       (bank.sources || []).forEach(source => {{
@@ -4331,7 +4522,7 @@ html = f"""<!doctype html>
         ${{bankSources.length ? `
           <section class="section source-section">
             <h3>数据来源</h3>
-            <p class="source-note">PDF 缺失项已用公开网页补充。市值为页面快照口径；未上市、外国银行分行和数字产品会显示不适用或未公开披露。</p>
+            <p class="source-note">PDF 缺失项已用公开网页补充。股权变更时间按“当前控股股东或控股集团何时形成现在的控制结构”理解；未上市、外国银行分行和数字产品会显示不适用或未公开披露。</p>
             <div class="source-list">
               ${{bankSources.map(source => `
                 <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">

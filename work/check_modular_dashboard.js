@@ -58,7 +58,7 @@ const commercialBankMarkers = [
   'hash.match(/^license\\/commercial-bank\\/([^/]+)$/)',
   "function bankDetailPage",
   "Bank Nano Syariah",
-  "牌照获批时间",
+  "股权变更时间",
 ];
 
 for (const text of commercialBankMarkers) {
@@ -87,7 +87,7 @@ if (banksWithoutSources.length > 0) {
 }
 
 const unresolvedCommercialBankRows = commercialBanks.filter((bank) =>
-  ["assets", "coreCapital", "marketCap", "licenseApprovalTime"].some((field) =>
+  ["assets", "coreCapital", "marketCap", "controlChangeTime"].some((field) =>
     String(bank[field] || "").includes("报告未列明")
   )
 );
@@ -97,6 +97,15 @@ if (unresolvedCommercialBankRows.length > 0) {
       .map((bank) => bank.id)
       .join(", ")}`
   );
+}
+
+const banksWithoutControlChange = commercialBanks.filter((bank) => !bank.controlChangeTime);
+if (banksWithoutControlChange.length > 0) {
+  throw new Error(`Commercial bank rows missing control change time: ${banksWithoutControlChange.map((bank) => bank.id).join(", ")}`);
+}
+
+if (html.includes("牌照获批时间")) {
+  throw new Error("Commercial bank detail still uses the old license approval label");
 }
 
 const regulatorFieldReferences = [
