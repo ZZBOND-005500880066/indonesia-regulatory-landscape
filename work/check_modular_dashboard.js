@@ -29,6 +29,7 @@ const removed = [
   'id="licenseMatrix"',
   '.metric strong',
   'grid-template-columns: 1.1fr 1.35fr .9fr .9fr .8fr',
+  'class="bank-row bank-head"',
 ];
 
 for (const text of removed) {
@@ -46,6 +47,7 @@ const formattingMarkers = [
   'class="key-data"',
   'class="metric-value"',
   'class="usd-equiv"',
+  'class="bank-shape-pill"',
   'class="bank-row-action"',
   "约 USD",
 ];

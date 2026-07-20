@@ -3536,14 +3536,14 @@ html = f"""<!doctype html>
     }}
 
     .bank-table-wrap {{
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
+      overflow: visible;
     }}
 
     .bank-table {{
-      min-width: 620px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      min-width: 0;
     }}
 
     .detail-layout-wide .bank-table {{
@@ -3553,37 +3553,37 @@ html = f"""<!doctype html>
 
     .bank-row {{
       display: grid;
-      grid-template-columns: minmax(220px, 1fr) minmax(120px, .35fr) 120px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "name type"
+        "action action";
+      gap: 10px 12px;
+      min-height: 98px;
+      padding: 14px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
       color: inherit;
       text-decoration: none;
-      border-top: 1px solid var(--line);
-    }}
-
-    .bank-row:first-child {{
-      border-top: 0;
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
     }}
 
     .bank-row > div {{
-      padding: 12px 13px;
-      border-left: 1px solid var(--line);
+      padding: 0;
+      border-left: 0;
       line-height: 1.45;
     }}
 
-    .bank-row > div:first-child {{
-      border-left: 0;
+    .bank-row:hover {{
+      border-color: #9abcb4;
+      box-shadow: 0 10px 24px rgba(31, 72, 68, .08);
+      transform: translateY(-1px);
     }}
 
-    .bank-row:not(.bank-head):hover {{
-      background: #f7faf8;
-    }}
-
-    .bank-head {{
-      background: #f2f6f4;
-      color: #344150;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
+    .bank-name-cell {{
+      grid-area: name;
+      min-width: 0;
     }}
 
     .bank-name-cell strong {{
@@ -3600,10 +3600,31 @@ html = f"""<!doctype html>
       font-size: 12px;
     }}
 
+    .bank-shape-pill {{
+      grid-area: type;
+      justify-self: end;
+      max-width: 120px;
+      padding: 3px 8px;
+      border: 1px solid #d7e4e0;
+      border-radius: 999px;
+      background: #f8fbfa;
+      color: #4f6170;
+      font-size: 12px;
+      font-weight: 800;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }}
+
     .bank-row-action {{
+      grid-area: action;
+      align-self: end;
+      padding-top: 8px;
+      border-top: 1px dashed #d7e4e0;
       color: #173d3a;
+      font-size: 13px;
       font-weight: 900;
-      text-align: right;
+      text-align: left;
     }}
 
     .bank-detail-grid {{
@@ -3994,7 +4015,7 @@ html = f"""<!doctype html>
         grid-template-columns: 1fr;
       }}
       .detail-layout-wide .competitor-table {{ min-width: 900px; }}
-      .detail-layout-wide .bank-table {{ min-width: 560px; }}
+      .detail-layout-wide .bank-table {{ min-width: 0; }}
       .bank-detail-grid {{ grid-template-columns: 1fr; }}
       .bank-group-title {{ display: block; }}
       .home-dynamic-strip {{ grid-auto-columns: minmax(260px, 86vw); }}
@@ -4542,15 +4563,10 @@ html = f"""<!doctype html>
               </div>
               <div class="bank-table-wrap">
                 <div class="bank-table">
-                  <div class="bank-row bank-head">
-                    <div>银行</div>
-                    <div>KBMI / 形态</div>
-                    <div>详情</div>
-                  </div>
                   ${{(group.banks || []).map(bank => `
                     <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(bank.id)}}">
                       <div class="bank-name-cell"><strong>${{esc(bank.name)}}</strong><span>${{esc(group.category)}}</span></div>
-                      <div>${{esc(bank.kbmi || "")}}</div>
+                      <div class="bank-shape-pill">${{esc(bank.kbmi || "")}}</div>
                       <div class="bank-row-action">查看详情</div>
                     </a>
                   `).join("")}}
