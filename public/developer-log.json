@@ -3,6 +3,20 @@
     {
       "date": "2026-07-20",
       "type": "协作记录",
+      "title": "Add USD equivalents for IDR values",
+      "summary": "zhuangzihao 于 2026-07-20 提交：Add USD equivalents for IDR values",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "c6ae778",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/c6ae778661d7842e11f6ee01d0a499e2e29253e3"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "协作记录",
       "title": "Bold license metric labels",
       "summary": "zhuangzihao 于 2026-07-20 提交：Bold license metric labels",
       "changes": [

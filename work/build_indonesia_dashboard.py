@@ -3543,7 +3543,7 @@ html = f"""<!doctype html>
     }}
 
     .bank-table {{
-      min-width: 920px;
+      min-width: 620px;
     }}
 
     .detail-layout-wide .bank-table {{
@@ -3553,7 +3553,8 @@ html = f"""<!doctype html>
 
     .bank-row {{
       display: grid;
-      grid-template-columns: 1.1fr 1.35fr .9fr .9fr .8fr;
+      grid-template-columns: minmax(220px, 1fr) minmax(120px, .35fr) 120px;
+      align-items: center;
       color: inherit;
       text-decoration: none;
       border-top: 1px solid var(--line);
@@ -3597,6 +3598,12 @@ html = f"""<!doctype html>
       margin-top: 4px;
       color: #697584;
       font-size: 12px;
+    }}
+
+    .bank-row-action {{
+      color: #173d3a;
+      font-weight: 900;
+      text-align: right;
     }}
 
     .bank-detail-grid {{
@@ -3987,7 +3994,7 @@ html = f"""<!doctype html>
         grid-template-columns: 1fr;
       }}
       .detail-layout-wide .competitor-table {{ min-width: 900px; }}
-      .detail-layout-wide .bank-table {{ min-width: 900px; }}
+      .detail-layout-wide .bank-table {{ min-width: 560px; }}
       .bank-detail-grid {{ grid-template-columns: 1fr; }}
       .bank-group-title {{ display: block; }}
       .home-dynamic-strip {{ grid-auto-columns: minmax(260px, 86vw); }}
@@ -4536,19 +4543,15 @@ html = f"""<!doctype html>
               <div class="bank-table-wrap">
                 <div class="bank-table">
                   <div class="bank-row bank-head">
-                    <div>银行 / 形态</div>
-                    <div>背后控股股东</div>
-                    <div>资产</div>
-                    <div>核心资本</div>
-                    <div>KBMI / 类别</div>
+                    <div>银行</div>
+                    <div>KBMI / 形态</div>
+                    <div>详情</div>
                   </div>
                   ${{(group.banks || []).map(bank => `
                     <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(bank.id)}}">
                       <div class="bank-name-cell"><strong>${{esc(bank.name)}}</strong><span>${{esc(group.category)}}</span></div>
-                      <div>${{esc(bank.controllingShareholder)}}</div>
-                      <div>${{moneyText(bank.assets)}}</div>
-                      <div>${{moneyText(bank.coreCapital)}}</div>
                       <div>${{esc(bank.kbmi || "")}}</div>
+                      <div class="bank-row-action">查看详情</div>
                     </a>
                   `).join("")}}
                 </div>
