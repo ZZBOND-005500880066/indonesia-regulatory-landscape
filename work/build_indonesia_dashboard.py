@@ -1402,10 +1402,10 @@ developer_log = [
         "date": "2026-07-20",
         "type": "数据口径",
         "title": "监管动态按印尼语官网字段识别日期",
-        "summary": "优化监管动态日期解析，直接对应 OJK/BI 页面里的 Ditetapkan、Diundangkan 和 Tanggal Berlaku，避免把发布日期、生效日和列表页日期混在一起。",
+        "summary": "优化监管动态日期解析，直接对应 OJK/BI 页面里的制定日期、公布日期和生效日期，避免把发布日期、生效日和列表页日期混在一起。",
         "changes": [
             "监管动态新增 enactedDate 和 promulgatedDate 字段，sourceDate 只作为排序和历史去重口径。",
-            "动态卡片日期标签改为 Ditetapkan、Diundangkan、Tanggal Berlaku；缺少正文日期时才显示 OJK/BI 列表日期。",
+            "动态卡片日期标签改为制定日期、公布日期、生效日期；缺少正文日期时才显示 OJK/BI 列表日期。",
             "每日联网更新器新增印尼语日期解析规则，打开原文页后优先读取官方正文里的日期字段。",
         ],
     },
@@ -1424,7 +1424,7 @@ developer_log = [
         "date": "2026-07-17",
         "type": "数据口径",
         "title": "拆分监管动态官网日期和生效日期",
-        "summary": "修正监管动态日期口径，避免把 OJK 的 Tanggal Berlaku 生效日期误当成发布日期。",
+        "summary": "修正监管动态日期口径，避免把 OJK 的生效日期误当成发布日期。",
         "changes": [
             "监管动态数据新增 sourceDate 和 effectiveDate，sourceDate 用于排序，effectiveDate 单独展示。",
             "页面标签由“发布”改为“官网日期 / 生效日期”，降低误读风险。",
@@ -3475,10 +3475,10 @@ html = f"""<!doctype html>
       const enactedDate = item?.enactedDate || "";
       const promulgatedDate = item?.promulgatedDate || "";
       const tags = [];
-      if (enactedDate) tags.push(`<span class="tag">Ditetapkan：${{esc(enactedDate)}}</span>`);
-      if (promulgatedDate) tags.push(`<span class="tag">Diundangkan：${{esc(promulgatedDate)}}</span>`);
+      if (enactedDate) tags.push(`<span class="tag">制定日期：${{esc(enactedDate)}}</span>`);
+      if (promulgatedDate) tags.push(`<span class="tag">公布日期：${{esc(promulgatedDate)}}</span>`);
       if (sourceDate && !enactedDate && !promulgatedDate) tags.push(`<span class="tag">OJK/BI 列表日期：${{esc(sourceDate)}}</span>`);
-      if (effectiveDate) tags.push(`<span class="tag">Tanggal Berlaku：${{esc(effectiveDate)}}</span>`);
+      if (effectiveDate) tags.push(`<span class="tag">生效日期：${{esc(effectiveDate)}}</span>`);
       if (!tags.length && String(item?.date || "").length > 4) tags.push(`<span class="tag">日期：${{esc(item.date)}}</span>`);
       return tags.join("");
     }}

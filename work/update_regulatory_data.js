@@ -661,7 +661,7 @@ function makeBriefing(candidate, nowIso) {
     sourceLabel: source.name,
     sourceUrl: entry.url,
     sourceOriginalTitle: entry.title,
-    sourceStatus: `每日更新器于 ${nowIso} 核验原文链接；HTTP ${entry.sourceVerifiedStatus || 200}，已按 OJK/BI 印尼语字段拆分 Ditetapkan、Diundangkan 与 Tanggal Berlaku。`,
+    sourceStatus: `每日更新器于 ${nowIso} 核验原文链接；HTTP ${entry.sourceVerifiedStatus || 200}，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。`,
   };
 }
 
