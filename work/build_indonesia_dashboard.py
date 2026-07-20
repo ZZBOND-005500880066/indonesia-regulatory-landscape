@@ -3220,6 +3220,7 @@ html = f"""<!doctype html>
       display: block;
       color: var(--muted);
       font-size: 12px;
+      font-weight: 800;
       margin-bottom: 6px;
     }}
 
