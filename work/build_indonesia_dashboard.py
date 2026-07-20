@@ -1392,6 +1392,237 @@ regulator_map = [
 
 sources = []
 
+COMMERCIAL_BANK_OJK_FINANCIAL_SOURCE = {
+    "label": "OJK：银行公开财务报表入口",
+    "url": "https://www.ojk.go.id/id/kanal/perbankan/data-dan-statistik/laporan-keuangan-perbankan/Default.aspx",
+}
+
+COMMERCIAL_BANK_RULE_SOURCE = {
+    "label": "POJK 12/2021：商业银行和 KBMI 口径",
+    "url": "https://peraturan.bpk.go.id/Details/227209/peraturan-ojk-no-12pojk032021-tahun-2021",
+}
+
+COMMERCIAL_BANK_MARKET_LARGE_SOURCE = {
+    "label": "市值快照：Simply Wall St 印尼大型银行列表（2026-07-19）",
+    "url": "https://simplywall.st/stocks/id/banks/market-cap-large",
+}
+
+COMMERCIAL_BANK_MARKET_SMALL_SOURCE = {
+    "label": "市值快照：Simply Wall St 印尼小型银行列表（2026-07-19）",
+    "url": "https://simplywall.st/stocks/id/banks/market-cap-small",
+}
+
+COMMERCIAL_BANK_KBMI_MEDIA_SOURCE = {
+    "label": "KBMI/数字银行分组核验：Media Asuransi 2025",
+    "url": "https://mediaasuransinews.co.id/asuransi/89-perusahaan-meraih-top-digital-financial-award-2025/",
+}
+
+COMMERCIAL_BANK_MARKET_CAPS = {
+    "bri": ("Rp447.2 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-mandiri": ("Rp417.7 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bni": ("Rp133.4 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "btn": ("Rp17.7 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bca": ("Rp795.6 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-mega": ("Rp46.8 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "panin-bank": ("Rp22.0 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-sinarmas": ("Rp13.4 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-mayapada": ("Rp2.3 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_SMALL_SOURCE),
+    "cimb-niaga": ("Rp40.7 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "maybank-indonesia": ("Rp14.5 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "ocbc-indonesia": ("Rp28.5 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-danamon": ("Rp41.7 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "smbc-indonesia": ("Rp23.8 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "permata-bank": ("Rp86.5 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "kb-bank-indonesia": ("Rp10.1 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-woori-saudara": ("Rp3.1 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_SMALL_SOURCE),
+    "ccb-indonesia": ("Rp2.7 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_SMALL_SOURCE),
+    "bank-jago": ("Rp19.5 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-neo-commerce": ("Rp3.5 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_SMALL_SOURCE),
+    "superbank": ("Rp20.0 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "krom-bank": ("Rp17.3 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_LARGE_SOURCE),
+    "bank-aladin-syariah": ("Rp4.4 trillion（2026-07-19）", COMMERCIAL_BANK_MARKET_SMALL_SOURCE),
+}
+
+COMMERCIAL_BANK_PUBLIC_FILL = {
+    "bank-jago": {
+        "coreCapital": "Rp6-Rp14 trillion（KBMI 2 区间；精确数以 OJK 报表核验）",
+        "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
+        "sources": [
+            {
+                "label": "Bank Jago：2025 业绩新闻稿",
+                "url": "https://www.jago.com/en/media-center/press-release/consistent-growth-continues-in-2025-as-bank-jago-delivers-tangible-benefits-for-customer",
+            },
+            {"label": "Bank Jago：年报入口", "url": "https://www.jago.com/en/transparency/hubungan-investor/annual-reports/15"},
+            COMMERCIAL_BANK_KBMI_MEDIA_SOURCE,
+        ],
+    },
+    "seabank-indonesia": {
+        "coreCapital": "公开资料未稳定披露精确核心资本；需以 OJK/APOLO 报表核验",
+        "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
+        "sources": [
+            {
+                "label": "SeaBank：2025 年报入口",
+                "url": "https://www.seabank.co.id/perusahaan/transparansi/2-hubungan-investor/10-laporan-tahunan/37--/299-laporan-tahunan-seabank-2025",
+            }
+        ],
+    },
+    "bank-neo-commerce": {
+        "assets": "公开资料未稳定披露精确资产；需以 OJK/APOLO 报表核验",
+        "coreCapital": "KBMI 1 区间（≤ Rp6 trillion；精确数以 OJK 报表核验）",
+        "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
+        "sources": [
+            {"label": "Bank Neo Commerce：Investor Relation / 财务报告入口", "url": "https://www.bankneocommerce.co.id/id/company-information/investor-relation"},
+            COMMERCIAL_BANK_KBMI_MEDIA_SOURCE,
+        ],
+    },
+    "superbank": {
+        "assets": "Rp24.0 trillion（2026 年 4 月）",
+        "coreCapital": "KBMI 1 区间（≤ Rp6 trillion；精确数以 OJK 报表核验）",
+        "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
+        "sources": [
+            {
+                "label": "Grab 投资者公告：Superbank 2026 年 4 月资产口径",
+                "url": "https://investors.grab.com/news-and-events/news-details/2026/Grab-To-Consolidate-Superbank-Deepening-Financial-Services-Commitment-in-Indonesia-2026-4w4Dqp5R-a/default.aspx",
+            },
+            COMMERCIAL_BANK_KBMI_MEDIA_SOURCE,
+        ],
+    },
+    "krom-bank": {
+        "assets": "Rp14.77 trillion（Q1 2026）",
+        "coreCapital": "未披露精确核心资本；公开披露 CAR 39.78%（Q1 2026）",
+        "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
+        "sources": [
+            {
+                "label": "Krom Bank：2025 年报与 2026 public expose 公告",
+                "url": "https://krom.id/gelar-rups-krom-bank-setujui-laporan-tahunan-tahun-buku-2025-dan-gelar-public-expose-2026/",
+            }
+        ],
+    },
+    "bank-aladin-syariah": {
+        "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
+        "sources": [
+            {"label": "Bank Aladin：2025 年报入口", "url": "https://aladinbank.id/en/laporan-tahunan/?clean_hf=true"},
+            COMMERCIAL_BANK_KBMI_MEDIA_SOURCE,
+        ],
+    },
+    "bank-saqu": {
+        "controllingShareholder": "Astra Financial 与 WeLab 相关",
+        "assets": "Rp13.11 trillion（2024-12，Bank Jasa Jakarta/Bank Saqu 前身口径）",
+        "coreCapital": "KBMI 2 区间（Rp6-Rp14 trillion；Bank Jasa Jakarta/Bank Saqu 前身口径）",
+        "marketCap": "未上市，市值不适用",
+        "licenseApprovalTime": "公开资料未稳定披露具体商业银行牌照批复日期",
+        "sources": [
+            {"label": "Bank Saqu：公司介绍", "url": "https://banksaqu.co.id/about"},
+            {"label": "Bank Saqu：Bank Jasa Jakarta 转型公告", "url": "https://banksaqu.co.id/en/newsroom/bjj-transform-into-bsq"},
+            COMMERCIAL_BANK_KBMI_MEDIA_SOURCE,
+        ],
+    },
+    "bank-nano-syariah": {
+        "assets": "公开资料未稳定披露精确资产；需以 OJK/APOLO 报表核验",
+        "coreCapital": "公开资料未稳定披露精确核心资本；需以 OJK/APOLO 报表核验",
+        "marketCap": "未上市，市值不适用",
+        "sources": [
+            {"label": "Bank Nano Syariah：FAQ / 许可说明入口", "url": "https://www.nanobanksyariah.id/faq"},
+            {"label": "Bank Nano Syariah：公告入口", "url": "https://www.nanobanksyariah.id/tentang-kami/pengumuman"},
+        ],
+    },
+    "jenius": {
+        "controllingShareholder": "Bank SMBC Indonesia（原 BTPN）旗下数字银行产品",
+        "assets": "不适用（数字产品，不是独立银行主体）",
+        "coreCapital": "不适用（数字产品，不是独立银行主体）",
+        "marketCap": "不适用（数字产品，不是独立上市主体）",
+        "licenseApprovalTime": "不适用（依托母行商业银行牌照）",
+        "sources": [{"label": "Jenius：SMBC Indonesia 名称变更说明", "url": "https://www.jenius.com/article/detail/informasi-perubahan-di-jenius-sebagai-bagian-dari-smbc-indonesia"}],
+    },
+    "tmrw": {
+        "controllingShareholder": "UOB Indonesia 旗下数字银行产品",
+        "assets": "不适用（数字产品，不是独立银行主体）",
+        "coreCapital": "不适用（数字产品，不是独立银行主体）",
+        "marketCap": "不适用（数字产品，不是独立上市主体）",
+        "licenseApprovalTime": "不适用（依托母行商业银行牌照）",
+        "sources": [{"label": "TMRW by UOB：产品入口", "url": "https://www.tmrwbyuob.com/content/uobtmrw/id/en/products.html"}],
+    },
+    "digibank": {
+        "controllingShareholder": "DBS Indonesia 旗下数字银行产品",
+        "assets": "不适用（数字产品，不是独立银行主体）",
+        "coreCapital": "不适用（数字产品，不是独立银行主体）",
+        "marketCap": "不适用（数字产品，不是独立上市主体）",
+        "licenseApprovalTime": "不适用（依托母行商业银行牌照）",
+        "sources": [{"label": "digibank by DBS：产品入口", "url": "https://www.dbs.id/digibank/id/id/default.page"}],
+    },
+    "line-bank": {
+        "controllingShareholder": "KEB Hana Bank Indonesia 相关数字零售产品",
+        "assets": "不适用（数字产品，不是独立银行主体）",
+        "coreCapital": "不适用（数字产品，不是独立银行主体）",
+        "marketCap": "不适用（数字产品，不是独立上市主体）",
+        "licenseApprovalTime": "不适用（依托母行商业银行牌照）",
+        "sources": [{"label": "LINE Bank by Hana Bank：产品入口", "url": "https://linebank.co.id/"}],
+    },
+}
+
+
+def commercial_bank_default_value(bank: dict, group: dict, field: str) -> str:
+    kbmi = bank.get("kbmi", "")
+    category = group.get("category", "")
+    if field == "marketCap":
+        if kbmi == "KCBLN":
+            return "不适用（外国银行分行不单独在印尼上市）"
+        if kbmi == "数字银行产品":
+            return "不适用（数字产品，不是独立上市主体）"
+        return "未上市或公开资料未披露"
+    if field in {"assets", "coreCapital"}:
+        if kbmi == "KCBLN":
+            return "分行口径公开资料未稳定披露"
+        if kbmi == "数字银行产品":
+            return "不适用（数字产品，不是独立银行主体）"
+        if "数字银行" in category:
+            return "公开资料未稳定披露；需以 OJK/APOLO 报表核验"
+        return "公开资料未稳定披露"
+    if field == "licenseApprovalTime":
+        if kbmi == "KCBLN":
+            return "公开资料未稳定披露分行经营许可批复日期"
+        if kbmi == "数字银行产品":
+            return "不适用（依托母行商业银行牌照）"
+        return "公开资料未稳定披露具体商业银行牌照批复日期"
+    return "公开资料未稳定披露"
+
+
+def merge_bank_sources(*source_groups: list[dict]) -> list[dict]:
+    merged = []
+    seen = set()
+    for group in source_groups:
+        for source in group or []:
+            key = (source.get("label"), source.get("url"))
+            if key in seen:
+                continue
+            seen.add(key)
+            merged.append(dict(source))
+    return merged
+
+
+def apply_commercial_bank_public_fill() -> None:
+    commercial_bank = next(item for item in licenses if item["id"] == "commercial-bank")
+    for group in commercial_bank.get("bankDirectory", []):
+        for bank in group.get("banks", []):
+            fill = COMMERCIAL_BANK_PUBLIC_FILL.get(bank["id"], {})
+            for key, value in fill.items():
+                if key != "sources":
+                    bank[key] = value
+
+            source_candidates = [COMMERCIAL_BANK_OJK_FINANCIAL_SOURCE, COMMERCIAL_BANK_RULE_SOURCE]
+            if bank["id"] in COMMERCIAL_BANK_MARKET_CAPS:
+                bank["marketCap"], market_source = COMMERCIAL_BANK_MARKET_CAPS[bank["id"]]
+                source_candidates.append(market_source)
+
+            for field in ("assets", "coreCapital", "marketCap", "licenseApprovalTime"):
+                if bank.get(field) == "报告未列明":
+                    bank[field] = commercial_bank_default_value(bank, group, field)
+
+            bank["sources"] = merge_bank_sources(bank.get("sources", []), source_candidates, fill.get("sources", []))
+
+
+apply_commercial_bank_public_fill()
+
 regulatory_briefings = [
     {
         "date": "2026",
@@ -3246,6 +3477,45 @@ html = f"""<!doctype html>
       font-size: 18px;
     }}
 
+    .source-note {{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }}
+
+    .source-card {{
+      display: block;
+      min-height: 70px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+    }}
+
+    .source-card:hover {{
+      border-color: #9ab7b2;
+      background: #f6fbf8;
+    }}
+
+    .source-card strong {{
+      display: block;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.4;
+    }}
+
+    .source-card span {{
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }}
+
     .briefing-grid {{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4033,6 +4303,12 @@ html = f"""<!doctype html>
         ["背后控股股东", bank.controllingShareholder],
         ["牌照获批时间", bank.licenseApprovalTime],
       ];
+      const bankSources = [];
+      (bank.sources || []).forEach(source => {{
+        if (!source || !source.url) return;
+        if (bankSources.some(item => item.url === source.url && item.label === source.label)) return;
+        bankSources.push(source);
+      }});
       return `
         <div class="detail-hero" data-tone="${{esc(item.tone)}}">
           <button class="btn" onclick="setRoute('commercial-bank')">返回商业银行</button>
@@ -4052,6 +4328,20 @@ html = f"""<!doctype html>
             `).join("")}}
           </div>
         </section>
+        ${{bankSources.length ? `
+          <section class="section source-section">
+            <h3>数据来源</h3>
+            <p class="source-note">PDF 缺失项已用公开网页补充。市值为页面快照口径；未上市、外国银行分行和数字产品会显示不适用或未公开披露。</p>
+            <div class="source-list">
+              ${{bankSources.map(source => `
+                <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
+                  <strong>${{esc(source.label || "来源")}}</strong>
+                  <span>${{esc(source.url)}}</span>
+                </a>
+              `).join("")}}
+            </div>
+          </section>
+        ` : ""}}
       `;
     }}
 

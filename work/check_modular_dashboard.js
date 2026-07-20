@@ -67,6 +67,38 @@ for (const text of commercialBankMarkers) {
   }
 }
 
+const licensesMatch = html.match(/const LICENSES = (\[.*?\]);/s);
+if (!licensesMatch) {
+  throw new Error("Cannot find generated license data");
+}
+
+const licenses = JSON.parse(licensesMatch[1]);
+const commercialBank = licenses.find((item) => item.id === "commercial-bank");
+const commercialBanks = (commercialBank.bankDirectory || []).flatMap((group) => group.banks || []);
+if (commercialBanks.length < 40) {
+  throw new Error("Commercial bank directory lost bank rows");
+}
+
+const banksWithoutSources = commercialBanks.filter(
+  (bank) => !Array.isArray(bank.sources) || bank.sources.length === 0
+);
+if (banksWithoutSources.length > 0) {
+  throw new Error(`Commercial bank rows missing sources: ${banksWithoutSources.map((bank) => bank.id).join(", ")}`);
+}
+
+const unresolvedCommercialBankRows = commercialBanks.filter((bank) =>
+  ["assets", "coreCapital", "marketCap", "licenseApprovalTime"].some((field) =>
+    String(bank[field] || "").includes("报告未列明")
+  )
+);
+if (unresolvedCommercialBankRows.length > 0) {
+  throw new Error(
+    `Commercial bank rows still contain source-document placeholders: ${unresolvedCommercialBankRows
+      .map((bank) => bank.id)
+      .join(", ")}`
+  );
+}
+
 const regulatorFieldReferences = [
   "r.name",
   "r.full",
