@@ -612,7 +612,7 @@ licenses = [
             "PJP 3：非数字汇款或非数字转账指令转发。",
             "QRIS：在印尼国家二维码支付标准下作为发行方或收单方处理二维码支付交易。",
         ],
-        "minCapital": "PJP 1 最低资本金 Rp15 billion，约 USD 900k；PJP 2 为 Rp5 billion；PJP 3 为 Rp0.5-1 billion。非银行 PJP 还需按风险加权交易额计提持续资本，基础比例 10%。",
+        "minCapital": "PJP 1 最低资本金 Rp15 billion；PJP 2 为 Rp5 billion；PJP 3 为 Rp0.5-1 billion。非银行 PJP 还需按风险加权交易额计提持续资本，基础比例 10%。",
         "foreignOwnership": "非银 PJP 至少 15% 股份由印尼公民或印尼法人持有；具表决权股份中至少 51% 必须由本土方持有，且单一最大表决权也应为本土方。BI 按最终表决权穿透评估。",
         "playerCount": "材料口径：PJP1 存量 195 家，其中纯非银约 73 家；PJP2 约 35 家；PJP3 约 324 家。QRIS 服务提供商约 143 家，包括 82 家商业银行、47 家非银一级 PJP、5 家二级非银 PJP、4 家 PIP 和 3 家 BPR。",
         "market": [
@@ -3236,6 +3236,20 @@ html = f"""<!doctype html>
       font-weight: 800;
     }}
 
+    .usd-equiv {{
+      display: inline;
+      margin-left: 4px;
+      color: #607086;
+      font-size: .92em;
+      font-weight: 700;
+    }}
+
+    .fx-note {{
+      margin: 12px 0 0;
+      color: #667386;
+      font-size: 12px;
+    }}
+
     .detail-layout {{
       display: grid;
       grid-template-columns: minmax(0, 1fr) 340px;
@@ -4118,10 +4132,59 @@ html = f"""<!doctype html>
     const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
     const esc = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({{ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }}[char]));
     const uniq = (items) => [...new Set((items || []).filter(Boolean))];
-    const keyDataPattern = /(Rp\\s?[0-9][0-9.,]*(?:\\s?-\\s?Rp\\s?[0-9][0-9.,]*)?\\s?(?:trillion|billion|million|tn)?|USD\\s?[0-9][0-9.,]*\\s?(?:m|bn|million|billion)?|[0-9][0-9.,]*\\s?%|[0-9][0-9.,]*\\s?(?:家|项|条|万|个月|年|日|次)|[0-9]{{4}}(?:-[0-9]{{2}}(?:-[0-9]{{2}})?)?|Q[1-4]\\s?[0-9]{{4}}|KBMI\\s?[1-4]|≤\\s?Rp\\s?[0-9][0-9.,]*\\s?(?:trillion|billion|million)?)/gi;
+    const IDR_USD_RATE = 17944;
+    const IDR_USD_RATE_DATE = "2026-07-17";
+    const IDR_USD_RATE_SOURCE = "Bank Indonesia JISDOR";
+    const IDR_USD_RATE_NOTE = `美元折算按 ${{IDR_USD_RATE_SOURCE}} ${{IDR_USD_RATE_DATE}}：USD 1 = Rp${{IDR_USD_RATE.toLocaleString("en-US")}}，仅作阅读参考。`;
+    const idrMoneyPattern = /\\b(?:Rp|IDR)\\s?[0-9][0-9.,]*(?:\\s?-\\s?(?:(?:Rp|IDR)\\s?)?[0-9][0-9.,]*)?\\s?(?:trillion|billion|million|tn)?/gi;
+    const keyDataPattern = /((?:Rp|IDR)\\s?[0-9][0-9.,]*(?:\\s?-\\s?(?:(?:Rp|IDR)\\s?)?[0-9][0-9.,]*)?\\s?(?:trillion|billion|million|tn)?|USD\\s?[0-9][0-9.,]*\\s?(?:k|m|bn|million|billion)?|[0-9][0-9.,]*\\s?%|[0-9][0-9.,]*\\s?(?:家|项|条|万|个月|年|日|次)|[0-9]{{4}}(?:-[0-9]{{2}}(?:-[0-9]{{2}})?)?|Q[1-4]\\s?[0-9]{{4}}|KBMI\\s?[1-4]|≤\\s?(?:Rp|IDR)\\s?[0-9][0-9.,]*\\s?(?:trillion|billion|million)?)/gi;
+
+    function idrUnitMultiplier(unit) {{
+      const normalized = String(unit || "").toLowerCase();
+      if (normalized === "trillion" || normalized === "tn") return 1000000000000;
+      if (normalized === "billion") return 1000000000;
+      if (normalized === "million") return 1000000;
+      return 1;
+    }}
+
+    function compactUsdNumber(value, digits = 1) {{
+      return Number(value).toFixed(digits).replace(/\\.0+$/, "").replace(/(\\.\\d*[1-9])0+$/, "$1");
+    }}
+
+    function formatUsd(idrAmount) {{
+      const usd = idrAmount / IDR_USD_RATE;
+      if (!Number.isFinite(usd)) return "";
+      if (usd >= 1000000000) return `USD ${{compactUsdNumber(usd / 1000000000, 2)}}bn`;
+      if (usd >= 1000000) return `USD ${{compactUsdNumber(usd / 1000000, 1)}}m`;
+      if (usd >= 1000) return `USD ${{compactUsdNumber(usd / 1000, 1)}}k`;
+      return `USD ${{compactUsdNumber(usd, 0)}}`;
+    }}
+
+    function idrMatchToUsd(match) {{
+      const unitMatch = match.match(/\\b(trillion|billion|million|tn)\\b/i);
+      const multiplier = idrUnitMultiplier(unitMatch ? unitMatch[1] : "");
+      const numbers = [...match.matchAll(/[0-9][0-9.,]*/g)]
+        .map(part => Number.parseFloat(part[0].replace(/,/g, "")))
+        .filter(Number.isFinite)
+        .slice(0, 2);
+      if (!numbers.length) return "";
+      const converted = numbers.map(value => formatUsd(value * multiplier)).filter(Boolean);
+      if (!converted.length) return "";
+      if (converted.length === 1) return converted[0];
+      return `${{converted[0]}}-${{converted[1].replace(/^USD\\s?/, "")}}`;
+    }}
+
+    function moneyText(value) {{
+      return esc(value).replace(idrMoneyPattern, (match, offset, full) => {{
+        const after = full.slice(offset + match.length, offset + match.length + 32);
+        if (/约\\s*USD|approx\\.?\\s*USD/i.test(after)) return match;
+        const usd = idrMatchToUsd(match);
+        return usd ? `${{match}}<span class="usd-equiv">（约 ${{usd}}）</span>` : match;
+      }});
+    }}
 
     function keyData(value) {{
-      return esc(value).replace(keyDataPattern, match => `<strong class="key-data">${{match}}</strong>`);
+      return moneyText(value).replace(keyDataPattern, match => `<strong class="key-data">${{match}}</strong>`);
     }}
 
     function setRoute(route) {{
@@ -4235,14 +4298,14 @@ html = f"""<!doctype html>
           <p>${{esc(item.oneLiner)}}</p>
           <div class="card-meta">
             <span class="tag">${{esc(item.category)}}</span>
-            <span class="tag">${{esc(shortCapital(item.minCapital))}}</span>
+            <span class="tag">${{moneyText(shortCapital(item.minCapital))}}</span>
           </div>
         </a>
       `).join("");
     }}
 
     function shortCapital(text) {{
-      const match = String(text).match(/Rp[0-9.,\\s-]+(?:trillion|billion|million)?|IDR\\s?[0-9.,]+\\s?billion/i);
+      const match = String(text).match(/(?:Rp|IDR)\\s?[0-9][0-9.,]*(?:\\s?-\\s?(?:(?:Rp|IDR)\\s?)?[0-9][0-9.,]*)?\\s?(?:trillion|billion|million|tn)?/i);
       return match ? match[0].replace(/\\s+/g, " ") : "资本见详情";
     }}
 
@@ -4302,7 +4365,7 @@ html = f"""<!doctype html>
           <div class="briefing-meta">
             ${{(item.licenses || []).slice(0, 3).map(x => `<span class="tag">${{esc(x)}}</span>`).join("")}}
           </div>
-          <p><strong>摘要：</strong>${{esc(item.summary)}}</p>
+          <p><strong>摘要：</strong>${{moneyText(item.summary)}}</p>
           <div class="briefing-source-row">
             ${{item.sourceUrl ? `<a class="briefing-source" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel || "查看来源")}}</a>` : ""}}
           </div>
@@ -4327,9 +4390,9 @@ html = f"""<!doctype html>
           <div class="briefing-meta">
             ${{(item.licenses || []).map(x => `<span class="tag">${{esc(x)}}</span>`).join("")}}
           </div>
-          <p><strong>摘要：</strong>${{esc(item.summary)}}</p>
-          <p><strong>影响：</strong>${{esc(item.impact)}}</p>
-          <div class="briefing-action"><strong>建议动作：</strong>${{esc(item.action)}}</div>
+          <p><strong>摘要：</strong>${{moneyText(item.summary)}}</p>
+          <p><strong>影响：</strong>${{moneyText(item.impact)}}</p>
+          <div class="briefing-action"><strong>建议动作：</strong>${{moneyText(item.action)}}</div>
           <div class="briefing-search">法规关键词：${{esc(item.keywords)}}</div>
           <div class="briefing-source-row">
             ${{item.sourceUrl ? `<a class="briefing-source" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel || "查看来源")}}</a>` : ""}}
@@ -4368,7 +4431,7 @@ html = f"""<!doctype html>
     }}
 
     function arrayList(items) {{
-      return `<ul class="list">${{items.map(item => `<li>${{esc(item)}}</li>`).join("")}}</ul>`;
+      return `<ul class="list">${{items.map(item => `<li>${{moneyText(item)}}</li>`).join("")}}</ul>`;
     }}
 
     function renderLegalIndex(items) {{
@@ -4398,8 +4461,8 @@ html = f"""<!doctype html>
             ${{item.competitors.map(c => `
               <article class="competitor">
                 <strong>${{esc(c.name)}}</strong>
-                <p>${{esc(c.position)}}</p>
-                <small>${{esc(c.signal)}}</small>
+                <p>${{moneyText(c.position)}}</p>
+                <small>${{moneyText(c.signal)}}</small>
               </article>
             `).join("")}}
           </div>
@@ -4429,10 +4492,10 @@ html = f"""<!doctype html>
               ${{item.competitors.map(c => `
                 <div class="competitor-row">
                   <div class="competitor-name"><strong>${{esc(c.name)}}</strong><span>${{esc(c.tier || "")}}</span></div>
-                  <div class="competitor-scale">${{esc(c.scale || c.signal || "")}}</div>
-                  <div class="competitor-cell-muted">${{esc(c.position || "")}}</div>
-                  <div class="competitor-cell-muted">${{esc(c.edge || c.signal || "")}}</div>
-                  <div class="competitor-cell-muted">${{esc(c.implication || "")}}</div>
+                  <div class="competitor-scale">${{moneyText(c.scale || c.signal || "")}}</div>
+                  <div class="competitor-cell-muted">${{moneyText(c.position || "")}}</div>
+                  <div class="competitor-cell-muted">${{moneyText(c.edge || c.signal || "")}}</div>
+                  <div class="competitor-cell-muted">${{moneyText(c.implication || "")}}</div>
                 </div>
               `).join("")}}
             </div>
@@ -4483,8 +4546,8 @@ html = f"""<!doctype html>
                     <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(bank.id)}}">
                       <div class="bank-name-cell"><strong>${{esc(bank.name)}}</strong><span>${{esc(group.category)}}</span></div>
                       <div>${{esc(bank.controllingShareholder)}}</div>
-                      <div>${{esc(bank.assets)}}</div>
-                      <div>${{esc(bank.coreCapital)}}</div>
+                      <div>${{moneyText(bank.assets)}}</div>
+                      <div>${{moneyText(bank.coreCapital)}}</div>
                       <div>${{esc(bank.kbmi || "")}}</div>
                     </a>
                   `).join("")}}
@@ -4525,10 +4588,11 @@ html = f"""<!doctype html>
             ${{cards.map(card => `
               <article class="bank-detail-card">
                 <span>${{esc(card[0])}}</span>
-                <strong>${{esc(card[1])}}</strong>
+                <strong>${{moneyText(card[1])}}</strong>
               </article>
             `).join("")}}
           </div>
+          <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
         </section>
         ${{bankSources.length ? `
           <section class="section source-section">
@@ -4554,7 +4618,7 @@ html = f"""<!doctype html>
         <${{wrapperTag}} class="${{wrapperClass}}">
           <div class="aside-box">
             <h3>最新监管规定</h3>
-            ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong><div class="briefing-meta">${{briefingDateTags(r)}}</div><p>${{esc(r.note || r.summary || "")}}</p></div>`).join("")}}
+            ${{rules.map(r => `<div class="rule"><strong>${{r.sourceUrl ? `<a href="${{esc(r.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(r.name)}}</a>` : esc(r.name)}}</strong><div class="briefing-meta">${{briefingDateTags(r)}}</div><p>${{moneyText(r.note || r.summary || "")}}</p></div>`).join("")}}
           </div>
           <div class="aside-box">
             <h3>法规索引</h3>
@@ -4587,6 +4651,7 @@ html = f"""<!doctype html>
             <div class="metric"><span>外资控股</span><div class="metric-value">${{keyData(item.foreignOwnership)}}</div></div>
             <div class="metric"><span>玩家存量</span><div class="metric-value">${{keyData(item.playerCount)}}</div></div>
           </div>
+          <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
         </div>
 
         <div class="detail-layout ${{wideCompetitorLayout ? "detail-layout-wide" : ""}}">

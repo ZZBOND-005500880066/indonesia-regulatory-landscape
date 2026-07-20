@@ -37,10 +37,15 @@ for (const text of removed) {
 }
 
 const formattingMarkers = [
+  "IDR_USD_RATE = 17944",
+  "Bank Indonesia JISDOR",
+  "function moneyText",
   "function keyData",
   "keyDataPattern",
   'class="key-data"',
   'class="metric-value"',
+  'class="usd-equiv"',
+  "约 USD",
 ];
 
 for (const text of formattingMarkers) {
