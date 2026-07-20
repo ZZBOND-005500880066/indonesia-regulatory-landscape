@@ -3474,6 +3474,7 @@ html = f"""<!doctype html>
 
     .competitor-scale {{
       color: #15202d;
+      font-weight: 750;
     }}
 
     .competitor-cell-muted {{
@@ -3604,7 +3605,7 @@ html = f"""<!doctype html>
       margin-bottom: 8px;
     }}
 
-    .bank-detail-value {{
+    .bank-detail-card strong {{
       display: block;
       color: var(--ink);
       font-size: 18px;
@@ -3745,10 +3746,6 @@ html = f"""<!doctype html>
     .briefing-card p {{
       margin: 0;
       color: #4c5968;
-    }}
-
-    .field-label {{
-      color: #6a7684;
     }}
 
     .briefing-meta {{
@@ -4303,7 +4300,7 @@ html = f"""<!doctype html>
           <div class="briefing-meta">
             ${{(item.licenses || []).slice(0, 3).map(x => `<span class="tag">${{esc(x)}}</span>`).join("")}}
           </div>
-          <p><span class="field-label">摘要：</span>${{esc(item.summary)}}</p>
+          <p><strong>摘要：</strong>${{esc(item.summary)}}</p>
           <div class="briefing-source-row">
             ${{item.sourceUrl ? `<a class="briefing-source" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel || "查看来源")}}</a>` : ""}}
           </div>
@@ -4328,9 +4325,9 @@ html = f"""<!doctype html>
           <div class="briefing-meta">
             ${{(item.licenses || []).map(x => `<span class="tag">${{esc(x)}}</span>`).join("")}}
           </div>
-          <p><span class="field-label">摘要：</span>${{esc(item.summary)}}</p>
-          <p><span class="field-label">影响：</span>${{esc(item.impact)}}</p>
-          <div class="briefing-action"><span class="field-label">建议动作：</span>${{esc(item.action)}}</div>
+          <p><strong>摘要：</strong>${{esc(item.summary)}}</p>
+          <p><strong>影响：</strong>${{esc(item.impact)}}</p>
+          <div class="briefing-action"><strong>建议动作：</strong>${{esc(item.action)}}</div>
           <div class="briefing-search">法规关键词：${{esc(item.keywords)}}</div>
           <div class="briefing-source-row">
             ${{item.sourceUrl ? `<a class="briefing-source" href="${{esc(item.sourceUrl)}}" target="_blank" rel="noreferrer">${{esc(item.sourceLabel || "查看来源")}}</a>` : ""}}
@@ -4430,7 +4427,7 @@ html = f"""<!doctype html>
               ${{item.competitors.map(c => `
                 <div class="competitor-row">
                   <div class="competitor-name"><strong>${{esc(c.name)}}</strong><span>${{esc(c.tier || "")}}</span></div>
-                  <div class="competitor-scale">${{keyData(c.scale || c.signal || "")}}</div>
+                  <div class="competitor-scale">${{esc(c.scale || c.signal || "")}}</div>
                   <div class="competitor-cell-muted">${{esc(c.position || "")}}</div>
                   <div class="competitor-cell-muted">${{esc(c.edge || c.signal || "")}}</div>
                   <div class="competitor-cell-muted">${{esc(c.implication || "")}}</div>
@@ -4460,7 +4457,7 @@ html = f"""<!doctype html>
       return `
         <div class="bank-directory">
           <div class="bank-directory-summary">
-            已按研究报告类别整理 <strong class="key-data">${{total}}</strong> 个银行、外国银行分行或数字银行产品条目。点击任一银行进入二级页面，仅查看资产、核心资本、市值、背后控股股东和股权变更时间。
+            已按研究报告类别整理 ${{total}} 个银行、外国银行分行或数字银行产品条目。点击任一银行进入二级页面，仅查看资产、核心资本、市值、背后控股股东和股权变更时间。
           </div>
           ${{groups.map(group => `
             <section class="bank-group">
@@ -4484,9 +4481,9 @@ html = f"""<!doctype html>
                     <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(bank.id)}}">
                       <div class="bank-name-cell"><strong>${{esc(bank.name)}}</strong><span>${{esc(group.category)}}</span></div>
                       <div>${{esc(bank.controllingShareholder)}}</div>
-                      <div>${{keyData(bank.assets)}}</div>
-                      <div>${{keyData(bank.coreCapital)}}</div>
-                      <div>${{keyData(bank.kbmi || "")}}</div>
+                      <div>${{esc(bank.assets)}}</div>
+                      <div>${{esc(bank.coreCapital)}}</div>
+                      <div>${{esc(bank.kbmi || "")}}</div>
                     </a>
                   `).join("")}}
                 </div>
@@ -4526,7 +4523,7 @@ html = f"""<!doctype html>
             ${{cards.map(card => `
               <article class="bank-detail-card">
                 <span>${{esc(card[0])}}</span>
-                <span class="bank-detail-value">${{keyData(card[1])}}</span>
+                <strong>${{esc(card[1])}}</strong>
               </article>
             `).join("")}}
           </div>

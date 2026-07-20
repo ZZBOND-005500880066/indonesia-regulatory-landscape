@@ -27,11 +27,7 @@ const removed = [
   '<a class="module-card" href="#module/compare"',
   'value="module:compare"',
   'id="licenseMatrix"',
-  '<strong>摘要：',
-  '<strong>影响：',
-  '<strong>建议动作：',
   '.metric strong',
-  '.bank-detail-card strong',
 ];
 
 for (const text of removed) {
@@ -44,9 +40,7 @@ const formattingMarkers = [
   "function keyData",
   "keyDataPattern",
   'class="key-data"',
-  'class="field-label"',
   'class="metric-value"',
-  'class="bank-detail-value"',
 ];
 
 for (const text of formattingMarkers) {
