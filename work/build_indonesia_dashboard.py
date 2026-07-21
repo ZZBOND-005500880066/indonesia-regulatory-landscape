@@ -1152,6 +1152,27 @@ licenses = [
                 "position": "钱包、QRIS、商户支付和生态金融入口",
                 "edge": "高频消费场景、商户触点和 GoTo 生态内交叉销售。",
                 "implication": "新进入者很难正面复制规模；更适合作为生态闭环和钱包留存的上限参考。",
+                "assets": "PJP 主体未单独披露资产；公开口径主要看 GoTo 金融服务板块和 GoPay 使用场景。",
+                "equityCapital": "PJP 主体权益未单独公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "GoPay 未单独上市；母公司 GoTo（IDX:GOTO）2026-07-20 市值约 Rp53.02 trillion。",
+                "controllingShareholder": "GoTo Group；运营主体通常按 PT Dompet Anak Bangsa 口径核对。",
+                "controlChangeTime": "未公开单独股权变更完成日；当前按 GoTo/GoPay 生态主体披露和 BI 许可名录核对。",
+                "licenseEntity": "PT Dompet Anak Bangsa",
+                "licenseStatus": "PJP 1 / QRIS 相关支付能力需按 BI 名录逐项核对。",
+                "sources": [
+                    {
+                        "label": "GoPay 官方网站",
+                        "url": "https://gopay.co.id/",
+                    },
+                    {
+                        "label": "GoTo 年报与财务披露",
+                        "url": "https://www.gotocompany.com/en/investor-relations/annual-reports",
+                    },
+                    {
+                        "label": "GoTo 市值参考",
+                        "url": "https://stockanalysis.com/quote/idx/GOTO/market-cap/",
+                    },
+                ],
             },
             {
                 "name": "OVO",
@@ -1160,6 +1181,19 @@ licenses = [
                 "position": "电子钱包、商户支付、消费者促活",
                 "edge": "线下零售触点、用户激励和合作伙伴网络。",
                 "implication": "适合观察钱包补贴退坡后的留存能力，以及商户网络能否转化为低成本交易量。",
+                "assets": "未公开；PJP 主体未单独披露完整资产表。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未单独上市，暂无独立市值。",
+                "controllingShareholder": "Grab 生态相关主体为主要背后方；运营主体按 PT Visionet Internasional 口径核对。",
+                "controlChangeTime": "未公开当前控制权形成的完整交割日；历史上 Grab 曾披露扩大对 OVO 持股。",
+                "licenseEntity": "PT Visionet Internasional",
+                "licenseStatus": "PJP 1 / QRIS 相关支付能力需按 BI 名录逐项核对。",
+                "sources": [
+                    {
+                        "label": "OVO 官方网站",
+                        "url": "https://www.ovo.id/",
+                    },
+                ],
             },
             {
                 "name": "DANA",
@@ -1168,6 +1202,19 @@ licenses = [
                 "position": "钱包、账单、QRIS 和开放支付平台",
                 "edge": "产品覆盖广，线上线下使用场景较均衡。",
                 "implication": "对标重点是支付频次、功能覆盖和合规运营，而不是单一下载量。",
+                "assets": "未公开；PJP 主体未单独披露完整资产表。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未单独上市，暂无独立市值。",
+                "controllingShareholder": "PT Espay Debit Indonesia Koe；背后股东结构涉及 Emtek/Sinar Mas/Ant 等公开市场披露口径，需按最新公司披露复核。",
+                "controlChangeTime": "未公开当前控制权完整变更日；2022 年 Sinar Mas 相关主体入股为重要节点。",
+                "licenseEntity": "PT Espay Debit Indonesia Koe",
+                "licenseStatus": "PJP 1 / QRIS 相关支付能力需按 BI 名录逐项核对。",
+                "sources": [
+                    {
+                        "label": "Emtek 投资者披露入口",
+                        "url": "https://www.emtek.co.id/investor-relation",
+                    },
+                ],
             },
             {
                 "name": "ShopeePay",
@@ -1176,6 +1223,23 @@ licenses = [
                 "position": "电商支付、QRIS、商户优惠和场景金融",
                 "edge": "电商订单、商户促销和金融产品分发场景天然绑定。",
                 "implication": "若没有同等级生态流量，直接做钱包难度较高；更现实的是找垂直场景或收单切入。",
+                "assets": "未公开；PJP 主体未单独披露完整资产表。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未单独上市；母公司 Sea Limited（NYSE:SE）上市，市值随行情波动。",
+                "controllingShareholder": "Sea Limited / Shopee 生态；运营主体按 PT AirPay International Indonesia 口径核对。",
+                "controlChangeTime": "未公开当前控制权形成的完整交割日；按 Sea/Shopee 生态主体披露和 BI 许可名录核对。",
+                "licenseEntity": "PT AirPay International Indonesia",
+                "licenseStatus": "PJP 1 / QRIS 相关支付能力需按 BI 名录逐项核对。",
+                "sources": [
+                    {
+                        "label": "ShopeePay 官方网站",
+                        "url": "https://shopeepay.co.id/",
+                    },
+                    {
+                        "label": "Sea Limited 年报入口",
+                        "url": "https://www.sea.com/investor/annualreports",
+                    },
+                ],
             },
             {
                 "name": "Xendit",
@@ -1184,6 +1248,23 @@ licenses = [
                 "position": "支付网关、收单、虚拟账户、结算和商户工具",
                 "edge": "开发者体验、API 接入、企业客户和多支付方式聚合。",
                 "implication": "支付网关路径的关键是技术稳定性和商户质量，牌照只是企业收单能力的入口。",
+                "assets": "未公开；公开口径主要披露企业支付基础设施和商户覆盖。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Xendit Group；印尼支付主体按 PT Sinar Digital Terdepan 等许可主体口径核对。",
+                "controlChangeTime": "未公开当前控制权变更完成日；当前按 Xendit 官网和 BI 许可名录核对。",
+                "licenseEntity": "PT Sinar Digital Terdepan",
+                "licenseStatus": "PJP 1 / 支付网关和收单能力需按 BI 名录逐项核对。",
+                "sources": [
+                    {
+                        "label": "Xendit Indonesia 官方网站",
+                        "url": "https://www.xendit.co/id/",
+                    },
+                    {
+                        "label": "Xendit 官方公司信息",
+                        "url": "https://www.xendit.co/en/about/",
+                    },
+                ],
             },
             {
                 "name": "DOKU",
@@ -1192,6 +1273,19 @@ licenses = [
                 "position": "网关、收单、商户支付和企业支付管理",
                 "edge": "本地商户关系、支付方式覆盖和多年合规运营经验。",
                 "implication": "适合作为企业支付能力样本；重点看行业客户结构、结算体验和拒付/欺诈控制。",
+                "assets": "未公开；公开口径主要披露商户收单和企业支付服务。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "DOKU Group；运营主体按 PT Nusa Satu Inti Artha / DOKU 口径核对。",
+                "controlChangeTime": "未公开当前控制权变更完成日；当前按 DOKU 官网和 BI 许可名录核对。",
+                "licenseEntity": "PT Nusa Satu Inti Artha",
+                "licenseStatus": "PJP 1 / QRIS 及收单能力需按 BI 名录逐项核对。",
+                "sources": [
+                    {
+                        "label": "DOKU 官方网站",
+                        "url": "https://www.doku.com/",
+                    },
+                ],
             },
             {
                 "name": "Payfazz",
@@ -1200,6 +1294,19 @@ licenses = [
                 "position": "中小商户、代理网络、支付和金融服务分发",
                 "edge": "小微商户和代理触点，适合下沉市场支付与金融服务组合。",
                 "implication": "若目标是 UMKM 支付，关键是代理/商户活跃度和服务成本，而不是单纯拿到 QRIS。",
+                "assets": "未公开；公开口径主要披露 SME 支付和代理网络业务。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Fazz / Payfazz 相关主体；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "材料口径显示 2025-01 获 QRIS 功能；未公开股权变更完成日。",
+                "licenseEntity": "PT Payfazz Teknologi Nusantara",
+                "licenseStatus": "PJP 1 + QRIS（材料口径，需按 BI 名录复核）。",
+                "sources": [
+                    {
+                        "label": "Fazz 官方网站",
+                        "url": "https://fazz.com/id",
+                    },
+                ],
             },
             {
                 "name": "Finture / YUP",
@@ -1208,6 +1315,19 @@ licenses = [
                 "position": "信用支付、PayLater、银行卡和 QRIS 场景",
                 "edge": "以收购方式缩短入场周期，再把支付能力与信用产品绑定。",
                 "implication": "适合作为外资通过存量 PJP1 进入的样本；重点看收购审批、QRIS 补批和支付+信贷边界。",
+                "assets": "未公开；公开口径主要披露 YUP 信用支付、卡产品和 QRIS 场景。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Finture / YUP 相关主体；PJP 入口为 PT Indo Sukses Mandiri。",
+                "controlChangeTime": "2023-2024 年间完成 PT Indo Sukses Mandiri 收购并推进 QRIS；具体交割日需以交易文件复核。",
+                "licenseEntity": "PT Indo Sukses Mandiri",
+                "licenseStatus": "PJP 1；收购后叠加 QRIS 能力。",
+                "sources": [
+                    {
+                        "label": "YUP Indonesia 官方网站",
+                        "url": "https://yupindonesia.com/",
+                    },
+                ],
             },
             {
                 "name": "Airwallex",
@@ -1216,14 +1336,249 @@ licenses = [
                 "position": "跨境收付款、企业支付和本地支付接入",
                 "edge": "跨境企业客户、全球支付网络和本地 PJP 入口的组合。",
                 "implication": "跨境玩家进入 PJP 后，监管重点会落在本地处理、外汇路径、数据和产品审批。",
+                "assets": "未公开；公开口径主要披露跨境企业支付和本地支付接入。",
+                "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Airwallex；印尼 PJP 入口为 PT Skye Sab Indonesia。",
+                "controlChangeTime": "2025-12：Airwallex 披露收购 PT Skye Sab Indonesia 多数股权；QRIS 能力仍需单独确认。",
+                "licenseEntity": "PT Skye Sab Indonesia",
+                "licenseStatus": "PJP 1；QRIS 能力待逐项核验。",
+                "sources": [
+                    {
+                        "label": "Airwallex 收购 Skye 披露",
+                        "url": "https://www.airwallex.com/global/newsroom/airwallex-accelerates-asia-pacific-growth-with-an-acquisition-of-a-majority",
+                    },
+                ],
             },
             {
-                "name": "潜在收购标的",
+                "name": "PT Hensel Davest Indonesia",
                 "tier": "低活跃非银 PJP1",
-                "scale": "PT Hensel Davest Indonesia、PT Reformasi Uang Pembayaran Indonesia、PT Anadana Kode Nontunai 等",
-                "position": "存量牌照入口，部分公开产品痕迹较弱",
-                "edge": "可能缩短申请时间，但功能、系统、审计和历史合规状态需要逐项核查。",
-                "implication": "壳牌照不是低风险捷径；尽调重点是股东变更、系统可用性、BI 报告、未决处罚和 QRIS/产品权限。",
+                "scale": "材料表格列为低活跃 PJP1 标的，未列 QRIS；公开产品痕迹较弱。",
+                "position": "存量 PJP1 牌照观察标的",
+                "edge": "上市主体背景便于初步查公开披露，但支付业务实际活跃度需要尽调。",
+                "implication": "不能只看 PJP1 日期；需重点核查系统、报告、处罚、产品权限和股东变更可行性。",
+                "assets": "未公开到 PJP 业务单体；若按上市主体核对，需另查 HDIT 财报。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "上市主体 HDIT 市值随行情波动；本页不固化实时市值。",
+                "controllingShareholder": "最终控股需按上市公司最新披露复核。",
+                "controlChangeTime": "PJP1 获批：2022-10-31；未列 QRIS；未公开股权变更完成日。",
+                "licenseEntity": "PT Hensel Davest Indonesia",
+                "licenseStatus": "PJP 1；QRIS 未列示。",
+                "sources": [
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Reformasi Uang Pembayaran Indonesia",
+                "tier": "低活跃非银 PJP1",
+                "scale": "材料表格列为低活跃 PJP1 标的，未列 QRIS，产品和官网痕迹较弱。",
+                "position": "存量 PJP1 牌照观察标的",
+                "edge": "可能缩短申请时间，但需重点核查是否具备真实系统、团队和合规报送能力。",
+                "implication": "若作为收购标的，应先核查历史交易、BI 报告、未决处罚和产品权限。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2022-08-09；未列 QRIS；未公开股权变更完成日。",
+                "licenseEntity": "PT Reformasi Uang Pembayaran Indonesia",
+                "licenseStatus": "PJP 1；QRIS 未列示。",
+                "sources": [
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Anadana Kode Nontunai",
+                "tier": "低活跃非银 PJP1",
+                "scale": "材料表格列为低活跃 PJP1 标的，未列 QRIS，产品和官网痕迹较弱。",
+                "position": "存量 PJP1 牌照观察标的",
+                "edge": "牌照时间较新，但缺少可见产品活动，需先核查系统和合规留痕。",
+                "implication": "尽调重点是历史报送、产品审批、系统安全审计和股权可转让性。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2022-08-19；未列 QRIS；未公开股权变更完成日。",
+                "licenseEntity": "PT Anadana Kode Nontunai",
+                "licenseStatus": "PJP 1；QRIS 未列示。",
+                "sources": [
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Reka Multi Aptika",
+                "tier": "低活跃 PJP1 + QRIS",
+                "scale": "材料表格列示 PJP1+QRIS 双资质，产品为 BATPay，但公开活跃度有限。",
+                "position": "存量 PJP1 + QRIS 牌照观察标的",
+                "edge": "已列 QRIS 日期，对收购路径更有吸引力，但仍需核查活跃商户和系统状态。",
+                "implication": "如果目标是快速取得 QRIS 能力，这类标的优先级高于纯 PJP1，但尽调也更关键。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2023-11-13；QRIS：2024-07-11；未公开股权变更完成日。",
+                "licenseEntity": "PT Reka Multi Aptika",
+                "licenseStatus": "PJP 1 + QRIS。",
+                "sources": [
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Fasa Centra Artajaya",
+                "tier": "PJP1 + 汇款/转账历史",
+                "scale": "材料表格列示 PJP1，无 QRIS；FasaPay 有较长运营历史。",
+                "position": "存量 PJP1 牌照观察标的",
+                "edge": "有历史产品痕迹，相比纯壳更容易核查运营记录。",
+                "implication": "适合做跨境或转账能力观察，但需核查 PJP 权限、境内处理和外汇边界。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2021-07-01；未列 QRIS；未公开股权变更完成日。",
+                "licenseEntity": "PT Fasa Centra Artajaya",
+                "licenseStatus": "PJP 1；QRIS 未列示。",
+                "sources": [
+                    {
+                        "label": "FasaPay 官方网站",
+                        "url": "https://www.fasapay.com/",
+                    },
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Ayopop Teknologi Indonesia",
+                "tier": "VC 背景 PJP1",
+                "scale": "材料表格列示 PJP1，无 QRIS；曾获 MDI 等投资，后续业务压力需核查。",
+                "position": "账单支付和存量 PJP1 观察标的",
+                "edge": "曾有账单支付产品和投资人背书，便于核查历史产品与技术资产。",
+                "implication": "若收购，应重点核查业务是否停摆、团队是否仍在、系统和数据是否可迁移。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "未公开文本化披露；材料提及 MDI 等投资背景。",
+                "controlChangeTime": "PJP1 获批：2022-02-21；未列 QRIS；未公开股权变更完成日。",
+                "licenseEntity": "PT Ayopop Teknologi Indonesia",
+                "licenseStatus": "PJP 1；QRIS 未列示。",
+                "sources": [
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Honest Financial Technologies",
+                "tier": "PJP1 + 信用卡/支付产品背景",
+                "scale": "材料表格列示 PJP1，无 QRIS；由前 OVO 高管相关团队打造，业务方向曾有 pivot。",
+                "position": "信用支付、卡产品和存量 PJP1 观察标的",
+                "edge": "管理团队有支付背景，若产品仍活跃，可能比纯壳更有整合价值。",
+                "implication": "需核查其信用业务、PJP 许可边界、产品审批和支付系统状态是否匹配。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Honest Financial Technologies 相关主体；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2023-02-09；未列 QRIS；未公开股权变更完成日。",
+                "licenseEntity": "PT Honest Financial Technologies",
+                "licenseStatus": "PJP 1；QRIS 未列示。",
+                "sources": [
+                    {
+                        "label": "Honest 官方网站",
+                        "url": "https://www.honest.co.id/",
+                    },
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Max Interactives Technologies",
+                "tier": "PJP1 + QRIS / Netzme",
+                "scale": "材料表格列示 PJP1+QRIS，QRIS 时间较早；产品口径对应 Netzme。",
+                "position": "钱包/QRIS 和存量 PJP1 观察标的",
+                "edge": "已有 QRIS 日期和产品品牌，适合做 QRIS 能力尽调样本。",
+                "implication": "重点核查 QRIS 当前可用性、商户活跃度、系统审计和历史处罚。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Max Interactives Technologies / Netzme；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2021-07-01；QRIS：2021-10-30；未公开股权变更完成日。",
+                "licenseEntity": "PT Max Interactives Technologies",
+                "licenseStatus": "PJP 1 + QRIS。",
+                "sources": [
+                    {
+                        "label": "Netzme 官方网站",
+                        "url": "https://www.netzme.id/",
+                    },
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Jatelindo Perkasa Abadi",
+                "tier": "PJP1 + QRIS / Fello",
+                "scale": "材料表格列示 PJP1+QRIS，曾有 Fello 产品；公开产品状态需复核。",
+                "position": "支付服务、QRIS 和存量 PJP1 观察标的",
+                "edge": "PJP 和 QRIS 时间较早，适合观察存量资质的维护成本。",
+                "implication": "尽调重点是产品是否仍活跃、QRIS 商户数据、系统可用性和历史合规状态。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Jatelindo Perkasa Abadi；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2021-07-01；QRIS：2021-10-30；未公开股权变更完成日。",
+                "licenseEntity": "PT Jatelindo Perkasa Abadi",
+                "licenseStatus": "PJP 1 + QRIS。",
+                "sources": [
+                    {
+                        "label": "Jatelindo 官方网站",
+                        "url": "https://jatelindo.co.id/",
+                    },
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
+            },
+            {
+                "name": "PT Yukk Kreasi Indonesia",
+                "tier": "PJP1 + QRIS + 钱包",
+                "scale": "材料表格列示 PJP1+QRIS+钱包，Yukk 仍有公开产品入口。",
+                "position": "钱包、QRIS 和商户支付",
+                "edge": "已有钱包和 QRIS 产品，较纯壳更便于核查真实交易和商户活跃度。",
+                "implication": "可作为 PJP1+QRIS 存量标的的较高优先级样本，但需要核查活跃商户、资金沉淀和合规报送。",
+                "assets": "未公开。",
+                "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Yukk Kreasi Indonesia；最终控股比例未公开文本化披露。",
+                "controlChangeTime": "PJP1 获批：2021-07-01；QRIS：2021-02-24；未公开股权变更完成日。",
+                "licenseEntity": "PT Yukk Kreasi Indonesia",
+                "licenseStatus": "PJP 1 + QRIS + 钱包。",
+                "sources": [
+                    {
+                        "label": "Yukk 官方网站",
+                        "url": "https://yukk.co.id/",
+                    },
+                    {
+                        "label": "BI 支付许可名录入口",
+                        "url": "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+                    },
+                ],
             },
         ],
         "latestRules": [
@@ -4757,6 +5112,8 @@ html = f"""<!doctype html>
       if (multiFinanceMatch) return {{ page: "finance-player", licenseId: "multi-finance", playerId: multiFinanceMatch[1] }};
       const p2pMatch = hash.match(/^license\\/p2p\\/([^/]+)$/);
       if (p2pMatch) return {{ page: "p2p-player", licenseId: "p2p", playerId: p2pMatch[1] }};
+      const pjpMatch = hash.match(/^license\\/pjp\\/([^/]+)$/);
+      if (pjpMatch) return {{ page: "pjp-player", licenseId: "pjp", playerId: pjpMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -5390,6 +5747,176 @@ html = f"""<!doctype html>
       `;
     }}
 
+    function pjpPlayerSlug(player) {{
+      return player.id || slugify(player.name);
+    }}
+
+    function pjpPlayerGroups(item) {{
+      const players = item.competitors || [];
+      const groups = [
+        {{
+          category: "生态钱包和高频支付入口",
+          badge: "钱包",
+          description: "以 App 高频场景、商户网络和生态金融入口放大 PJP/QRIS 价值，重点看支付频次和用户留存。",
+          names: ["GoPay", "OVO", "DANA", "ShopeePay"],
+        }},
+        {{
+          category: "支付网关和企业收单",
+          badge: "网关",
+          description: "面向企业和线上商户，竞争力来自 API 稳定性、支付方式覆盖、风控和结算体验。",
+          names: ["Xendit", "DOKU"],
+        }},
+        {{
+          category: "SME 支付和代理网络",
+          badge: "SME",
+          description: "围绕中小商户、代理网络和下沉市场触点分发支付与金融服务，重点看商户活跃度。",
+          names: ["Payfazz"],
+        }},
+        {{
+          category: "收购进入和跨境支付路径",
+          badge: "收购",
+          description: "通过存量 PJP1 主体缩短入场周期，再补齐 QRIS、产品审批、系统和合规报送。",
+          names: ["Finture / YUP", "Airwallex"],
+        }},
+        {{
+          category: "低活跃 PJP1 / 收购观察标的",
+          badge: "标的",
+          description: "PDF 表格列示的低活跃或产品痕迹较弱主体，价值在牌照时间和功能状态，风险在系统、报送和历史合规。",
+          names: [
+            "PT Hensel Davest Indonesia",
+            "PT Reformasi Uang Pembayaran Indonesia",
+            "PT Anadana Kode Nontunai",
+            "PT Reka Multi Aptika",
+            "PT Fasa Centra Artajaya",
+            "PT Ayopop Teknologi Indonesia",
+            "PT Honest Financial Technologies",
+            "PT Max Interactives Technologies",
+            "PT Jatelindo Perkasa Abadi",
+            "PT Yukk Kreasi Indonesia",
+          ],
+        }},
+      ];
+      const byName = new Map(players.map(player => [player.name, player]));
+      const groupedNames = new Set();
+      const result = groups.map(group => {{
+        const groupPlayers = group.names.map(name => byName.get(name)).filter(Boolean);
+        groupPlayers.forEach(player => groupedNames.add(player.name));
+        return {{ ...group, players: groupPlayers }};
+      }}).filter(group => group.players.length);
+      const remaining = players.filter(player => !groupedNames.has(player.name));
+      if (remaining.length) {{
+        result.push({{
+          category: "其他 PJP 玩家",
+          badge: "其他",
+          description: "报告中列示但暂未归入上述类别的 PJP 玩家。",
+          players: remaining,
+        }});
+      }}
+      return result;
+    }}
+
+    function findPJPPlayer(playerId) {{
+      const item = LICENSES.find(item => item.id === "pjp");
+      return (item?.competitors || []).find(player => pjpPlayerSlug(player) === playerId);
+    }}
+
+    function renderPJPDirectory(item) {{
+      const groups = pjpPlayerGroups(item);
+      const total = groups.reduce((sum, group) => sum + (group.players || []).length, 0);
+      return `
+        <div class="bank-directory">
+          <div class="bank-directory-summary">
+            已按支付场景和入场路径整理 ${{total}} 家 PJP/QRIS 代表玩家。一级页只保留分类、定位和入口；点击任一玩家进入二级信息页，查看资产/公开规模、资本/权益、市值、背后控股股东和股权/牌照变更时间。
+          </div>
+          ${{groups.map(group => `
+            <section class="bank-group">
+              <div class="bank-group-title">
+                <div>
+                  <h4>${{esc(group.category)}}</h4>
+                  <p>${{esc(group.description || "")}}</p>
+                </div>
+                <span class="tag">${{(group.players || []).length}} 家</span>
+              </div>
+              <div class="bank-table-wrap">
+                <div class="bank-table">
+                  ${{(group.players || []).map(player => `
+                    <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(pjpPlayerSlug(player))}}">
+                      <div class="bank-name-cell"><strong>${{esc(player.name)}}</strong><span>${{esc(player.position || player.licenseStatus || group.category)}}</span></div>
+                      <div class="bank-shape-pill player-shape-pill">${{esc(group.badge || player.tier || "")}}</div>
+                      <div class="bank-row-action">查看二级信息</div>
+                    </a>
+                  `).join("")}}
+                </div>
+              </div>
+            </section>
+          `).join("")}}
+        </div>
+      `;
+    }}
+
+    function pjpPlayerPage(item, player) {{
+      if (!player) return detailPage(item);
+      const cards = [
+        ["资产/公开规模", player.assets || player.scale || "未公开"],
+        ["资本/权益", player.equityCapital || "未公开"],
+        ["市值", player.marketCap || "未公开"],
+        ["背后控股股东", player.controllingShareholder || "未公开"],
+        ["股权/牌照变更时间", player.controlChangeTime || "未公开"],
+      ];
+      const playerSources = [];
+      (player.sources || []).forEach(source => {{
+        if (!source || !source.url) return;
+        if (playerSources.some(item => item.url === source.url && item.label === source.label)) return;
+        playerSources.push(source);
+      }});
+      if (!playerSources.some(source => source.url === "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx")) {{
+        playerSources.push({{
+          label: "BI 支付许可名录入口",
+          url: "https://www.bi.go.id/id/layanan/informasi-perizinan/sistem-pembayaran/default.aspx",
+        }});
+      }}
+      return `
+        <div class="detail-hero" data-tone="${{esc(item.tone)}}">
+          <button class="btn" onclick="setRoute('pjp')">返回 PJP</button>
+          <div class="detail-title">
+            <div>
+              <h2>${{esc(player.name)}}</h2>
+              <p>PJP 玩家二级信息</p>
+            </div>
+            <div class="mini-tags">
+              <span class="tag">${{esc(player.licenseEntity || "牌照主体待核")}}</span>
+              <span class="tag">${{esc(player.licenseStatus || player.tier || "PJP")}}</span>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="bank-detail-grid player-detail-grid">
+            ${{cards.map(card => `
+              <article class="bank-detail-card">
+                <span>${{esc(card[0])}}</span>
+                <strong>${{moneyText(card[1])}}</strong>
+              </article>
+            `).join("")}}
+          </div>
+          <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
+        </section>
+        ${{playerSources.length ? `
+          <section class="section source-section">
+            <h3>数据来源</h3>
+            <p class="source-note">PJP 玩家二级页只保留硬信息。多数非银 PJP 未公开单体资产、权益或独立市值；若未披露股权变更，则展示 BI/材料可核的 PJP 或 QRIS 获批时间，并明确不等同于股权交割日。</p>
+            <div class="source-list">
+              ${{playerSources.map(source => `
+                <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
+                  <strong>${{esc(source.label || "来源")}}</strong>
+                  <span>${{esc(source.url)}}</span>
+                </a>
+              `).join("")}}
+            </div>
+          </section>
+        ` : ""}}
+      `;
+    }}
+
     function bankDetailPage(item, bank) {{
       if (!bank) return detailPage(item);
       const cards = [
@@ -5503,8 +6030,8 @@ html = f"""<!doctype html>
             </section>
 
             <section class="info-band">
-              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : "竞争对手板块"}}</h3>
-              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : renderCompetitors(item)}}
+              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : item.id === "pjp" ? "PJP 玩家目录" : "竞争对手板块"}}</h3>
+              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : item.id === "pjp" ? renderPJPDirectory(item) : renderCompetitors(item)}}
             </section>
             ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
@@ -5552,6 +6079,15 @@ html = f"""<!doctype html>
         detail.classList.add("active");
         showModule(null);
         detail.innerHTML = p2pPlayerPage(item, player);
+        qs("#mobileNav").value = item.id;
+        window.scrollTo({{ top: 0, behavior: "instant" }});
+      }} else if (route.page === "pjp-player") {{
+        const item = LICENSES.find(x => x.id === route.licenseId) || LICENSES[0];
+        const player = findPJPPlayer(route.playerId);
+        home.classList.remove("active");
+        detail.classList.add("active");
+        showModule(null);
+        detail.innerHTML = pjpPlayerPage(item, player);
         qs("#mobileNav").value = item.id;
         window.scrollTo({{ top: 0, behavior: "instant" }});
       }} else if (route.page === "license") {{

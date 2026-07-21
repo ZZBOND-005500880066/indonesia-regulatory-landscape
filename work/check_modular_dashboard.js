@@ -140,6 +140,29 @@ for (const text of p2pMarkers) {
   }
 }
 
+const pjpMarkers = [
+  "PJP 玩家目录",
+  "function renderPJPDirectory",
+  "function pjpPlayerPage",
+  'href="#license/${esc(item.id)}/${esc(pjpPlayerSlug(player))}"',
+  'hash.match(/^license\\/pjp\\/([^/]+)$/)',
+  "PJP 玩家二级信息",
+  "资产/公开规模",
+  "股权/牌照变更时间",
+  "生态钱包和高频支付入口",
+  "支付网关和企业收单",
+  "低活跃 PJP1 / 收购观察标的",
+  "PT Hensel Davest Indonesia",
+  "PT Reka Multi Aptika",
+  "PT Yukk Kreasi Indonesia",
+];
+
+for (const text of pjpMarkers) {
+  if (!html.includes(text)) {
+    throw new Error(`Missing PJP player marker: ${text}`);
+  }
+}
+
 const licensesMatch = html.match(/const LICENSES = (\[.*?\]);/s);
 if (!licensesMatch) {
   throw new Error("Cannot find generated license data");
@@ -149,6 +172,7 @@ const licenses = JSON.parse(licensesMatch[1]);
 const commercialBank = licenses.find((item) => item.id === "commercial-bank");
 const multiFinance = licenses.find((item) => item.id === "multi-finance");
 const p2p = licenses.find((item) => item.id === "p2p");
+const pjp = licenses.find((item) => item.id === "pjp");
 const commercialBanks = (commercialBank.bankDirectory || []).flatMap((group) => group.banks || []);
 if (commercialBanks.length < 40) {
   throw new Error("Commercial bank directory lost bank rows");
@@ -215,6 +239,59 @@ const p2pRowsWithoutSources = p2pCompetitors.filter(
 if (p2pRowsWithoutSources.length > 0) {
   throw new Error(
     `P2P players missing sources: ${p2pRowsWithoutSources
+      .map((player) => player.name)
+      .join(", ")}`
+  );
+}
+
+const pjpCompetitors = pjp?.competitors || [];
+if (pjpCompetitors.length < 19) {
+  throw new Error("PJP player directory lost representative players");
+}
+
+for (const name of [
+  "GoPay",
+  "OVO",
+  "DANA",
+  "ShopeePay",
+  "Xendit",
+  "DOKU",
+  "Payfazz",
+  "Finture / YUP",
+  "Airwallex",
+  "PT Hensel Davest Indonesia",
+  "PT Reformasi Uang Pembayaran Indonesia",
+  "PT Anadana Kode Nontunai",
+  "PT Reka Multi Aptika",
+  "PT Fasa Centra Artajaya",
+  "PT Ayopop Teknologi Indonesia",
+  "PT Honest Financial Technologies",
+  "PT Max Interactives Technologies",
+  "PT Jatelindo Perkasa Abadi",
+  "PT Yukk Kreasi Indonesia",
+]) {
+  if (!pjpCompetitors.some((player) => player.name === name)) {
+    throw new Error(`PJP representative player missing: ${name}`);
+  }
+}
+
+const pjpRowsMissingDetailFields = pjpCompetitors.filter((player) =>
+  ["assets", "equityCapital", "marketCap", "controllingShareholder", "controlChangeTime"].some((field) => !player[field])
+);
+if (pjpRowsMissingDetailFields.length > 0) {
+  throw new Error(
+    `PJP players missing second-level detail fields: ${pjpRowsMissingDetailFields
+      .map((player) => player.name)
+      .join(", ")}`
+  );
+}
+
+const pjpRowsWithoutSources = pjpCompetitors.filter(
+  (player) => !Array.isArray(player.sources) || player.sources.length === 0
+);
+if (pjpRowsWithoutSources.length > 0) {
+  throw new Error(
+    `PJP players missing sources: ${pjpRowsWithoutSources
       .map((player) => player.name)
       .join(", ")}`
   );
