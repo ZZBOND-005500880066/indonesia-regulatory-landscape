@@ -1691,22 +1691,43 @@ licenses = [
             {
                 "label": "第二层",
                 "title": "传统头部 BPR 决定区域银行基本盘",
-                "note": "Bank Eka、BPR Lestari 更适合观察区域客户、存贷款产品、线下关系和移动端改造能力。",
+                "note": "Bank Eka、BPR Lestari、BPR Modern Express 和 BPR Hasamitra 更适合观察区域客户、存贷款产品、线下关系和移动端改造能力。",
             },
             {
                 "label": "第三层",
                 "title": "支付合作决定产品体验边界",
-                "note": "BPR 自身不能做支付，但 BPR BK Jateng、BPR Karyajatnika Sadaya 这类案例能观察第三方支付合作如何补齐体验。",
+                "note": "BPR 自身不能做支付，但 BPR BK Jateng、BPR Karyajatnika Sadaya、Universal BPR 这类案例能观察第三方支付或移动银行合作如何补齐体验。",
             },
         ],
         "competitors": [
             {
                 "name": "Komunal / DepositoBPR",
                 "tier": "BPR + P2P + 存款 marketplace",
-                "scale": "材料口径显示连接存款超过 Rp21tn，覆盖 350 家以上 BPR",
+                "scale": "DepositoBPR by Komunal 公开口径显示，截至 2025 年 6 月累计向 350 家以上 BPR 连接超过 IDR 21 trillion 存款。",
                 "position": "BPR 定期存款分发、BPR 存款引流、P2P 项目 channeling",
                 "edge": "把分散 BPR 存款和线上用户入口连接起来，弱化单家 BPR 网点半径限制。",
                 "implication": "若走 BPR 数字化路线，最值得研究的是存款 marketplace、BPR 资金成本和 channeling 资产质量。",
+                "assets": "非单一 BPR 牌照主体；可核公开规模为 DepositoBPR 向合作 BPR 连接存款超过 IDR 21 trillion。",
+                "equityCapital": "不适用：平台本身不是 BPR/BPRS 牌照主体；若后续收购具体 BPR，应逐一核查目标行核心资本和 KPMM。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Komunal Sejahtera Indonesia / Komunal Group；DepositoBPR 是连接 BPR/BPRS 与存款人的聚合服务。",
+                "controlChangeTime": "不适用：DepositoBPR 是聚合平台，不是单一 BPR 控股变更案例；材料将其作为 BPR 网络数字化样本。",
+                "licenseEntity": "PT Komunal Sejahtera Indonesia / DepositoBPR by Komunal",
+                "licenseStatus": "BPR/BPRS 存款聚合平台，不等同于单体 BPR 牌照。",
+                "sources": [
+                    {
+                        "label": "DepositoBPR 联系页：平台法律边界",
+                        "url": "https://depositobpr.id/hubungi-kami",
+                    },
+                    {
+                        "label": "Skystar：DepositoBPR 连接 350+ BPR 与 IDR 21tn 存款",
+                        "url": "https://skystar.vc/depositobpr-by-komunal-platform-connects-over-idr-21-trillion-in-time-deposits-to-350-rural-banks-empowering-local-economies/",
+                    },
+                    {
+                        "label": "Google Play：DepositoBPR OJK 登记信息",
+                        "url": "https://play.google.com/store/apps/details?hl=en&id=com.komunal.depositobpr",
+                    },
+                ],
             },
             {
                 "name": "Alami / Bank Hijra",
@@ -1715,22 +1736,115 @@ licenses = [
                 "position": "伊斯兰小微融资、数字存款和 BPRS 线上化",
                 "edge": "伊斯兰金融品牌、数字化入口和 BPRS 牌照组合更清晰。",
                 "implication": "适合作为 BPR/BPRS 收购后重塑品牌和线上产品的样本；重点看宗教金融定位、客户获取和资产端承接。",
+                "assets": "ANTARA 2022 报道：ALAMI 收购时，原 BPRS Cempaka Al-Amin 资产超过 Rp 92 billion；最新单体资产未在 PDF 或公开报道中列明。",
+                "equityCapital": "ANTARA 2022 报道：ALAMI 初期注资 Rp 15 billion，并承诺 3 个月内增资至 Rp 50 billion；最新核心资本和 KPMM 需通过 OJK/BPRS 公开财报复核。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "ALAMI Group / PT Alami Fintek Sharia；公开报道显示 ALAMI 于 2021 年收购 BPRS Cempaka Al-Amin 并发展为 Hijra Bank。",
+                "controlChangeTime": "2021 年 ALAMI 收购 BPRS Cempaka Al-Amin；最新持股比例和后续品牌化节点需尽调确认。",
+                "licenseEntity": "PT BPRS Hijra Alami",
+                "licenseStatus": "BPRS / 数字化 Sharia BPR 样本。",
+                "sources": [
+                    {
+                        "label": "ANTARA：ALAMI 收购 BPRS 并转型 Hijra Bank",
+                        "url": "https://www.antaranews.com/berita/2970437/alami-group-akuisisi-bprs-percepat-transformasi-digital",
+                    },
+                ],
             },
             {
                 "name": "Bank Eka",
                 "tier": "传统头部 BPR 数字化",
-                "scale": "Eka Mobile 和 Eka Pay，支付体验通过第三方持牌方合作",
+                "scale": "Perbarindo 2025 口径：total asset 约 Rp 11.83 trillion，modal inti 约 Rp 1.39 trillion；PDF 同时列示 Eka Mobile 和 Eka Pay 合作体验。",
                 "position": "区域存贷款、移动端服务和第三方支付合作",
                 "edge": "传统 BPR 客户关系和移动端服务结合，产品更接近区域银行数字化。",
                 "implication": "对标重点是线下客户迁移、移动端活跃度和合作支付方带来的体验改善。",
+                "assets": "Perbarindo 2025 profile：total asset 约 Rp 11.83 trillion；kredit 约 Rp 10.11 trillion。",
+                "equityCapital": "Perbarindo 2025 profile：modal inti 约 Rp 1.39 trillion，modal disetor 约 Rp 636 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Perbarindo 公开页未列示控制股东；PDF 和公开网页可确认其为 1972 年成立的本土 BPR，具体当前 PSP/ultimate shareholder 需用公司治理报告或工商登记二次确认。",
+                "controlChangeTime": "未见可稳定打开的公开来源披露近期控股变更；当前控制结构和历史变更日需尽调确认。",
+                "licenseEntity": "PT BPR Eka Bumi Artha",
+                "licenseStatus": "传统头部 BPR / 区域数字化样本。",
+                "sources": [
+                    {
+                        "label": "Perbarindo：PT BPR Eka Bumi Artha 2025 资产与资本",
+                        "url": "https://perbarindo.org/profile/bpr/51",
+                    },
+                ],
             },
             {
                 "name": "BPR Lestari",
                 "tier": "本土区域型 BPR",
-                "scale": "提供存贷款手机服务，覆盖消费、经营、房产和车贷",
+                "scale": "Perbarindo 2025 口径：total asset 约 Rp 5.92 trillion，modal inti 约 Rp 219.19 billion；BPR Lestari 属于 Lestari Group。",
                 "position": "区域零售银行、消费贷、经营贷和抵押类贷款",
                 "edge": "区域品牌、线下关系和较完整的零售贷款产品组合。",
                 "implication": "更适合作为传统 BPR 收购后的业务基本盘样本；重点看存款稳定性、抵押品管理和区域集中度。",
+                "assets": "Perbarindo 2025 profile：total asset 约 Rp 5.92 trillion；deposito 约 Rp 4.58 trillion，kredit 约 Rp 3.02 trillion。",
+                "equityCapital": "Perbarindo 2025 profile：modal inti 约 Rp 219.19 billion，modal disetor 约 Rp 532.75 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Lestari Capital / Lestari Group；Perbarindo 描述 BPR Lestari Bali 为 Lestari Group 旗下 6 家 BPR 之一。",
+                "controlChangeTime": "未见公开披露近期控股变更；Perbarindo 仅可核当前归属 Lestari Group / PT Lestari Capital。",
+                "licenseEntity": "PT BPR Lestari Bali",
+                "licenseStatus": "本土区域型 BPR / Bali 区域头部样本。",
+                "sources": [
+                    {
+                        "label": "Perbarindo：PT Lestari Bali 2025 资产、资本和 Lestari Group 说明",
+                        "url": "https://perbarindo.org/profile/bpr/4834",
+                    },
+                ],
+            },
+            {
+                "name": "BPR Modern Express",
+                "tier": "区域合并型 BPR",
+                "scale": "Perbarindo 2025 口径：total asset 约 Rp 7.66 trillion，modal inti 约 Rp 876.72 billion；2023 年吸收合并 9 家 BPR。",
+                "position": "印尼东部多省 BPR 合并、区域分支网络和存贷款业务",
+                "edge": "用同一控股集团下 BPR 合并提升资本、系统和跨区域经营效率。",
+                "implication": "适合观察 BPR 合并路径、OJK 审批节奏、资本整合和保留分支网络后的运营治理。",
+                "assets": "Perbarindo 2025 profile：total asset 约 Rp 7.66 trillion；kredit 约 Rp 7.00 trillion。",
+                "equityCapital": "Perbarindo 2025 profile：modal inti 约 Rp 876.72 billion，modal disetor 约 Rp 646.82 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "PT Modern Multiartha；公开报道显示合并后 PT Modern Multiartha 持股约 91.4%。",
+                "controlChangeTime": "2023：10 家同控 BPR 合并，OJK KEP-40/D.03/2023；公开报道预计 2023-04-05 生效。",
+                "licenseEntity": "PT BPR Modern Express",
+                "licenseStatus": "区域合并型 BPR / BPR 集团整合样本。",
+                "sources": [
+                    {
+                        "label": "Perbarindo：PT Modern Express 2025 资产与资本",
+                        "url": "https://perbarindo.org/profile/bpr/95",
+                    },
+                    {
+                        "label": "Kontan：10 家 Modern Multiartha 旗下 BPR 合并安排",
+                        "url": "https://keuangan.kontan.co.id/news/10-bpr-milik-modern-multiartha-akan-merger",
+                    },
+                    {
+                        "label": "EmitenNews：BPR Modern Express 完成 10 家 BPR 合并报道",
+                        "url": "https://www.emitennews.com/news/bpr-modern-express-merger-dengan-10-bank-perkreditan-rakyat-di-indonesia-timur",
+                    },
+                ],
+            },
+            {
+                "name": "BPR Hasamitra",
+                "tier": "Sulawesi 区域型 BPR",
+                "scale": "Perbarindo 2025 口径：total asset 约 Rp 2.97 trillion，modal inti 约 Rp 575.11 billion；PDF 列示 Hasamitra Mobile 和 QRIS/缴费体验。",
+                "position": "Makassar/Sulawesi 区域存贷款、移动银行和账单支付合作",
+                "edge": "区域网点和移动端服务结合，资本水平明显高于最低核心资本门槛。",
+                "implication": "适合观察中大型区域 BPR 在移动端、ATM Bersama、账单支付和本地信用关系上的落地方式。",
+                "assets": "Perbarindo 2025 profile：total asset 约 Rp 2.97 trillion；kredit 约 Rp 2.81 trillion。",
+                "equityCapital": "Perbarindo 2025 profile：modal inti 约 Rp 575.11 billion，modal disetor 约 Rp 203.94 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "未在 PDF 或 Perbarindo 页面中公开列明；需以最新 OJK/公司治理报告或工商登记尽调确认。",
+                "controlChangeTime": "未公开；PDF 仅列示其为印尼本土 BPR 样本，股权变更时间需尽调确认。",
+                "licenseEntity": "PT BPR Hasamitra",
+                "licenseStatus": "区域型 BPR / Sulawesi 样本。",
+                "sources": [
+                    {
+                        "label": "Perbarindo：PT Hasamitra 2025 资产与资本",
+                        "url": "https://perbarindo.org/profile/bpr/66",
+                    },
+                    {
+                        "label": "Hasamitra 官方入口",
+                        "url": "http://hasamitra.com",
+                    },
+                ],
             },
             {
                 "name": "BPR BK Jateng",
@@ -1739,14 +1853,69 @@ licenses = [
                 "position": "地方性 BPR 服务、区域整合和支付体验补齐",
                 "edge": "区域公共属性、整合资源和第三方支付合作空间。",
                 "implication": "适合观察 BPR 不能直接做支付时，如何通过合作方实现类钱包或缴费体验。",
+                "assets": "未在 PDF 中列明；需通过 PT BPR BKK Jateng / OJK 公开财报或地方国资披露复核。",
+                "equityCapital": "未在 PDF 中列明；需通过最新财报或地方国资文件确认核心资本。",
+                "marketCap": "地方性/区域 BPR，未上市，暂无独立市值。",
+                "controllingShareholder": "地方政府/中爪哇区域 BPR BKK 体系；具体股比需以地方国资或公司章程文件确认。",
+                "controlChangeTime": "PDF 口径列示 2019 年整合/合并成立；具体当前控股结构变更日需以当地公司文件尽调确认。",
+                "licenseEntity": "PT BPR BKK Jateng (Perseroda)",
+                "licenseStatus": "地方政府背景区域整合 BPR。",
+                "sources": [
+                    {
+                        "label": "BPR BKK Jateng 官方入口",
+                        "url": "https://bkkjateng.co.id",
+                    },
+                ],
             },
             {
                 "name": "BPR Karyajatnika Sadaya",
                 "tier": "数字化 BPR / QRIS 合作样本",
-                "scale": "材料显示 2025 年 1 月获 QRIS 支付功能",
+                "scale": "Perbarindo 2025 口径：total asset 约 Rp 2.63 trillion，modal inti 约 Rp 205.13 billion；PDF 列示 BPR KS Mobile Banking。",
                 "position": "BPR 存贷款与二维码支付体验结合",
                 "edge": "在 BPR 牌照边界内通过合作方式补齐支付触点。",
                 "implication": "应重点核查 QRIS 功能背后的持牌合作结构，确认 BPR 自身未越界经营支付业务。",
+                "assets": "Perbarindo 2025 profile：total asset 约 Rp 2.63 trillion；deposito 约 Rp 1.73 trillion，kredit 约 Rp 1.61 trillion。",
+                "equityCapital": "Perbarindo 2025 profile：modal inti 约 Rp 205.13 billion，modal disetor 约 Rp 245 billion。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "未在 PDF 或 Perbarindo 页面中公开列明；BPR KS 官方历史页只披露创立和迁址历史，未披露当前控制股东。",
+                "controlChangeTime": "1990 年设立；1999 年 BI 批准迁址至 Bandung。当前控制结构变更时间未公开，需尽调确认。",
+                "licenseEntity": "PT BPR Karyajatnika Sadaya",
+                "licenseStatus": "数字化 BPR / 移动银行与支付合作样本。",
+                "sources": [
+                    {
+                        "label": "Perbarindo：PT Karyajatnika Sadaya 2025 资产与资本",
+                        "url": "https://perbarindo.org/profile/bpr/4090",
+                    },
+                    {
+                        "label": "BPR KS 官方历史页",
+                        "url": "https://infolelang.bprks.co.id/sejarah",
+                    },
+                ],
+            },
+            {
+                "name": "Universal BPR",
+                "tier": "数字化/合并型 BPR",
+                "scale": "官方里程碑显示 2024 年 total asset 达 Rp 2.1 trillion，并完成 Universal BPR 集团合并。",
+                "position": "BPR 存贷款、Universal Mobile、SME 信贷和区域网点扩张",
+                "edge": "以移动银行、AI 信贷数字化和区域合并提升 BPR 的获客和运营效率。",
+                "implication": "适合观察 BPR 从传统存贷向移动银行、SME 服务和集团化合并演进的路径。",
+                "assets": "官方里程碑：2024 年 total asset 达 Rp 2.1 trillion。",
+                "equityCapital": "未在 PDF 或官方里程碑中列明；需通过最新 OJK/公司公开财报确认核心资本。",
+                "marketCap": "未上市，暂无独立市值。",
+                "controllingShareholder": "Kaman Siboro 与 Stephen Satyahadi 于 2003 年建立 Universal BPR 集团；最新具体持股比例需公司治理报告或工商登记确认。",
+                "controlChangeTime": "2003 年建立 Universal BPR 集团；2024 年完成 Universal BPR 集团合并，覆盖 Jabodetabek、Kalimantan Barat、Riau 和 Jambi。",
+                "licenseEntity": "PT BPR Universal",
+                "licenseStatus": "数字化/合并型 BPR 样本。",
+                "sources": [
+                    {
+                        "label": "Universal BPR 官方：里程碑、资产与集团合并",
+                        "url": "https://universalbpr.co.id/tentang-kami/tonggak-sejarah",
+                    },
+                    {
+                        "label": "Universal BPR 官方：移动银行与客户服务入口",
+                        "url": "https://universalbpr.co.id/blog/",
+                    },
+                ],
             },
         ],
         "latestRules": [
@@ -5118,6 +5287,8 @@ html = f"""<!doctype html>
       if (p2pMatch) return {{ page: "p2p-player", licenseId: "p2p", playerId: p2pMatch[1] }};
       const pjpMatch = hash.match(/^license\\/pjp\\/([^/]+)$/);
       if (pjpMatch) return {{ page: "pjp-player", licenseId: "pjp", playerId: pjpMatch[1] }};
+      const bprMatch = hash.match(/^license\\/bpr\\/([^/]+)$/);
+      if (bprMatch) return {{ page: "bpr-player", licenseId: "bpr", playerId: bprMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -5921,6 +6092,153 @@ html = f"""<!doctype html>
       `;
     }}
 
+    function bprPlayerSlug(player) {{
+      return player.id || slugify(player.name);
+    }}
+
+    function bprPlayerGroups(item) {{
+      const players = item.competitors || [];
+      const groups = [
+        {{
+          category: "平台化与数字化 BPR/BPRS 路径",
+          badge: "平台/BPRS",
+          description: "这一组不是都等同于单一 BPR 主体，重点看 BPR 存款聚合、P2P channeling、BPRS 收购和数字化入口如何组合。",
+          names: ["Komunal / DepositoBPR", "Alami / Bank Hijra"],
+        }},
+        {{
+          category: "规模型传统与区域 BPR",
+          badge: "规模型",
+          description: "以区域存贷基本盘和移动银行改造为核心，更适合判断收购后资产、负债、客户迁移和资本补足压力。",
+          names: ["Bank Eka", "BPR Lestari", "BPR Modern Express", "BPR Hasamitra"],
+        }},
+        {{
+          category: "支付合作、移动银行与合并样本",
+          badge: "合作/合并",
+          description: "BPR 自身不能直接经营支付业务，因此这一组重点看第三方支付合作、移动银行体验和集团化合并边界。",
+          names: ["BPR BK Jateng", "BPR Karyajatnika Sadaya", "Universal BPR"],
+        }},
+      ];
+      const byName = new Map(players.map(player => [player.name, player]));
+      const groupedNames = new Set();
+      const result = groups.map(group => {{
+        const groupPlayers = group.names.map(name => byName.get(name)).filter(Boolean);
+        groupPlayers.forEach(player => groupedNames.add(player.name));
+        return {{ ...group, players: groupPlayers }};
+      }}).filter(group => group.players.length);
+      const remaining = players.filter(player => !groupedNames.has(player.name));
+      if (remaining.length) {{
+        result.push({{
+          category: "其他 BPR 样本",
+          badge: "其他",
+          description: "报告中列示但暂未归入前三类的 BPR/相关平台样本。",
+          players: remaining,
+        }});
+      }}
+      return result;
+    }}
+
+    function findBPRPlayer(playerId) {{
+      const item = LICENSES.find(item => item.id === "bpr");
+      return (item?.competitors || []).find(player => bprPlayerSlug(player) === playerId);
+    }}
+
+    function renderBPRDirectory(item) {{
+      const groups = bprPlayerGroups(item);
+      const total = groups.reduce((sum, group) => sum + (group.players || []).length, 0);
+      return `
+        <div class="bank-directory">
+          <div class="bank-directory-summary">
+            已按 BPR 研究报告列示样本整理 ${{total}} 个 BPR/相关平台条目。一级页只保留分类、定位和入口；点击任一条目进入二级信息页，查看资产/公开规模、资本/核心资本、市值、背后控股股东和股权/控股变更时间。
+          </div>
+          ${{groups.map(group => `
+            <section class="bank-group">
+              <div class="bank-group-title">
+                <div>
+                  <h4>${{esc(group.category)}}</h4>
+                  <p>${{esc(group.description || "")}}</p>
+                </div>
+                <span class="tag">${{(group.players || []).length}} 项</span>
+              </div>
+              <div class="bank-table-wrap">
+                <div class="bank-table">
+                  ${{(group.players || []).map(player => `
+                    <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(bprPlayerSlug(player))}}">
+                      <div class="bank-name-cell"><strong>${{esc(player.name)}}</strong><span>${{esc(player.position || player.licenseStatus || group.category)}}</span></div>
+                      <div class="bank-shape-pill player-shape-pill">${{esc(group.badge || player.tier || "")}}</div>
+                      <div class="bank-row-action">查看二级信息</div>
+                    </a>
+                  `).join("")}}
+                </div>
+              </div>
+            </section>
+          `).join("")}}
+        </div>
+      `;
+    }}
+
+    function bprPlayerPage(item, player) {{
+      if (!player) return detailPage(item);
+      const cards = [
+        ["资产/公开规模", player.assets || player.scale || "未公开"],
+        ["资本/核心资本", player.equityCapital || player.coreCapital || "未公开"],
+        ["市值", player.marketCap || "未公开"],
+        ["背后控股股东", player.controllingShareholder || "未公开"],
+        ["股权/控股变更时间", player.controlChangeTime || "未公开"],
+      ];
+      const playerSources = [];
+      (player.sources || []).forEach(source => {{
+        if (!source || !source.url) return;
+        if (playerSources.some(item => item.url === source.url && item.label === source.label)) return;
+        playerSources.push(source);
+      }});
+      if (!playerSources.some(source => source.url === "https://www.ojk.go.id/id/regulasi/Pages/POJK-7-Tahun-2024-Bank-Perekonomian-Rakyat-dan-Bank-Perekonomian-Rakyat-Syariah.aspx")) {{
+        playerSources.push({{
+          label: "OJK POJK 7/2024：BPR/BPRS 基础监管框架",
+          url: "https://www.ojk.go.id/id/regulasi/Pages/POJK-7-Tahun-2024-Bank-Perekonomian-Rakyat-dan-Bank-Perekonomian-Rakyat-Syariah.aspx",
+        }});
+      }}
+      return `
+        <div class="detail-hero" data-tone="${{esc(item.tone)}}">
+          <button class="btn" onclick="setRoute('bpr')">返回 BPR</button>
+          <div class="detail-title">
+            <div>
+              <h2>${{esc(player.name)}}</h2>
+              <p>BPR 玩家二级信息</p>
+            </div>
+            <div class="mini-tags">
+              <span class="tag">${{esc(player.licenseEntity || "主体待核")}}</span>
+              <span class="tag">${{esc(player.licenseStatus || player.tier || "BPR")}}</span>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="bank-detail-grid player-detail-grid">
+            ${{cards.map(card => `
+              <article class="bank-detail-card">
+                <span>${{esc(card[0])}}</span>
+                <strong>${{moneyText(card[1])}}</strong>
+              </article>
+            `).join("")}}
+          </div>
+          <p class="fx-note">${{esc(IDR_USD_RATE_NOTE)}}</p>
+        </section>
+        ${{playerSources.length ? `
+          <section class="section source-section">
+            <h3>数据来源</h3>
+            <p class="source-note">BPR 玩家二级页只保留硬信息。市值只按 BPR 或 BPRS 牌照主体本身是否上市判断；Komunal/DepositoBPR 这类平台型样本会明确标出不是单一 BPR 主体。PDF 和公开网页没有披露的资产、核心资本、股权比例或控股变更日，统一标为未公开或需尽调确认。</p>
+            <div class="source-list">
+              ${{playerSources.map(source => `
+                <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
+                  <strong>${{esc(source.label || "来源")}}</strong>
+                  <span>${{esc(source.url)}}</span>
+                </a>
+              `).join("")}}
+            </div>
+          </section>
+        ` : ""}}
+      `;
+    }}
+
     function bankDetailPage(item, bank) {{
       if (!bank) return detailPage(item);
       const cards = [
@@ -6034,8 +6352,8 @@ html = f"""<!doctype html>
             </section>
 
             <section class="info-band">
-              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : item.id === "pjp" ? "PJP 玩家目录" : "竞争对手板块"}}</h3>
-              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : item.id === "pjp" ? renderPJPDirectory(item) : renderCompetitors(item)}}
+              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : item.id === "pjp" ? "PJP 玩家目录" : item.id === "bpr" ? "BPR 玩家目录" : "竞争对手板块"}}</h3>
+              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : item.id === "pjp" ? renderPJPDirectory(item) : item.id === "bpr" ? renderBPRDirectory(item) : renderCompetitors(item)}}
             </section>
             ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
@@ -6092,6 +6410,15 @@ html = f"""<!doctype html>
         detail.classList.add("active");
         showModule(null);
         detail.innerHTML = pjpPlayerPage(item, player);
+        qs("#mobileNav").value = item.id;
+        window.scrollTo({{ top: 0, behavior: "instant" }});
+      }} else if (route.page === "bpr-player") {{
+        const item = LICENSES.find(x => x.id === route.licenseId) || LICENSES[0];
+        const player = findBPRPlayer(route.playerId);
+        home.classList.remove("active");
+        detail.classList.add("active");
+        showModule(null);
+        detail.innerHTML = bprPlayerPage(item, player);
         qs("#mobileNav").value = item.id;
         window.scrollTo({{ top: 0, behavior: "instant" }});
       }} else if (route.page === "license") {{

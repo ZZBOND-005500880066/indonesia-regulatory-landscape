@@ -164,6 +164,36 @@ for (const text of pjpMarkers) {
   }
 }
 
+const bprMarkers = [
+  "BPR 玩家目录",
+  "function renderBPRDirectory",
+  "function bprPlayerPage",
+  'href="#license/${esc(item.id)}/${esc(bprPlayerSlug(player))}"',
+  'hash.match(/^license\\/bpr\\/([^/]+)$/)',
+  "BPR 玩家二级信息",
+  "资产/公开规模",
+  "资本/核心资本",
+  "股权/控股变更时间",
+  "平台化与数字化 BPR/BPRS 路径",
+  "规模型传统与区域 BPR",
+  "支付合作、移动银行与合并样本",
+  "Komunal / DepositoBPR",
+  "Alami / Bank Hijra",
+  "Bank Eka",
+  "BPR Lestari",
+  "BPR Modern Express",
+  "BPR Hasamitra",
+  "BPR BK Jateng",
+  "BPR Karyajatnika Sadaya",
+  "Universal BPR",
+];
+
+for (const text of bprMarkers) {
+  if (!html.includes(text)) {
+    throw new Error(`Missing BPR player marker: ${text}`);
+  }
+}
+
 const licensesMatch = html.match(/const LICENSES = (\[.*?\]);/s);
 if (!licensesMatch) {
   throw new Error("Cannot find generated license data");
@@ -174,6 +204,7 @@ const commercialBank = licenses.find((item) => item.id === "commercial-bank");
 const multiFinance = licenses.find((item) => item.id === "multi-finance");
 const p2p = licenses.find((item) => item.id === "p2p");
 const pjp = licenses.find((item) => item.id === "pjp");
+const bpr = licenses.find((item) => item.id === "bpr");
 const commercialBanks = (commercialBank.bankDirectory || []).flatMap((group) => group.banks || []);
 if (commercialBanks.length < 40) {
   throw new Error("Commercial bank directory lost bank rows");
@@ -293,6 +324,50 @@ const pjpRowsWithoutSources = pjpCompetitors.filter(
 if (pjpRowsWithoutSources.length > 0) {
   throw new Error(
     `PJP players missing sources: ${pjpRowsWithoutSources
+      .map((player) => player.name)
+      .join(", ")}`
+  );
+}
+
+const bprCompetitors = bpr?.competitors || [];
+if (bprCompetitors.length < 9) {
+  throw new Error("BPR player directory lost PDF-listed representative rows");
+}
+
+for (const name of [
+  "Komunal / DepositoBPR",
+  "Alami / Bank Hijra",
+  "Bank Eka",
+  "BPR Lestari",
+  "BPR Modern Express",
+  "BPR Hasamitra",
+  "BPR BK Jateng",
+  "BPR Karyajatnika Sadaya",
+  "Universal BPR",
+]) {
+  if (!bprCompetitors.some((player) => player.name === name)) {
+    throw new Error(`BPR representative player missing: ${name}`);
+  }
+}
+
+const bprRowsMissingDetailFields = bprCompetitors.filter((player) =>
+  ["assets", "marketCap", "controllingShareholder", "controlChangeTime"].some((field) => !player[field]) ||
+  !(player.equityCapital || player.coreCapital)
+);
+if (bprRowsMissingDetailFields.length > 0) {
+  throw new Error(
+    `BPR players missing second-level detail fields: ${bprRowsMissingDetailFields
+      .map((player) => player.name)
+      .join(", ")}`
+  );
+}
+
+const bprRowsWithoutSources = bprCompetitors.filter(
+  (player) => !Array.isArray(player.sources) || player.sources.length === 0
+);
+if (bprRowsWithoutSources.length > 0) {
+  throw new Error(
+    `BPR players missing sources: ${bprRowsWithoutSources
       .map((player) => player.name)
       .join(", ")}`
   );
