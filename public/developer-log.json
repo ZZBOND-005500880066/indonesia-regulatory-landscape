@@ -3,6 +3,20 @@
     {
       "date": "2026-07-21",
       "type": "协作记录",
+      "title": "Refresh developer log after BPR update",
+      "summary": "zhuangzihao 于 2026-07-21 提交：Refresh developer log after BPR update",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：发布页面",
+        "主要文件：public/developer-log.json、public/index.html"
+      ],
+      "author": "zhuangzihao",
+      "commit": "5731a95",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/5731a9567cc6cf6c34180212fa4298e214e0b351"
+    },
+    {
+      "date": "2026-07-21",
+      "type": "协作记录",
       "title": "Align BPR player detail pages",
       "summary": "zhuangzihao 于 2026-07-21 提交：Align BPR player detail pages",
       "changes": [

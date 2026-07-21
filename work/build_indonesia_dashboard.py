@@ -2843,6 +2843,295 @@ def apply_commercial_bank_public_fill() -> None:
 
 apply_commercial_bank_public_fill()
 
+
+# 2026-07-21 secondary disclosure pass.  Keep this late in the build so that
+# audited / issuer-published figures override the generic public-data fallback,
+# while preserving the earlier hand-curated ownership and licence notes.
+DISCLOSED_BANK_UPDATES = {
+    "citi": {
+        "assets": "Rp99.921 trillion（2024-06-30，Citi Indonesia 官方风险披露）",
+        "coreCapital": "Rp18.668 trillion（Tier 1，2024-06-30）",
+        "marketCap": "不适用（印度尼西亚外国银行分行不是独立上市主体）",
+        "sources": [
+            {
+                "label": "Citi Indonesia：2024 年 6 月风险披露",
+                "url": "https://www.citi.co.id/pdf/0824/semi-annual-risk-disclosures-june-2024.pdf",
+            },
+        ],
+    },
+    "jpmorgan": {
+        "assets": "Rp45.684 trillion（2025-12-31，审计口径）",
+        "coreCapital": "Rp6.161 trillion（监管总资本，2025-12-31）",
+        "marketCap": "不适用（印度尼西亚外国银行分行不是独立上市主体）",
+        "sources": [
+            {
+                "label": "JPMorgan Indonesia：2025 年第四季度财务报告",
+                "url": "https://www.jpmorgan.co.id/content/dam/jpm/global/disclosures/ID/4q2025-published-financial-report.pdf",
+            },
+        ],
+    },
+    "bank-of-america": {
+        "assets": "Rp17.886 trillion（2025-12-31，审计口径）",
+        "coreCapital": "Rp4.967 trillion（Tier 1，2025-12-31）",
+        "marketCap": "不适用（印度尼西亚外国银行分行不是独立上市主体）",
+        "sources": [
+            {
+                "label": "Bank of America Jakarta：2025 年审计报告",
+                "url": "https://www.bankofamerica.co.id/content/dam/flagship/countrypage/apac-indonesia/Annual-Report-2025.pdf",
+            },
+            {
+                "label": "Bank of America Jakarta：2025 年末关键指标",
+                "url": "https://www.bankofamerica.co.id/content/dam/flagship/countrypage/apac-indonesia/Key-Metrics-as-of-31-December-2025.pdf",
+            },
+        ],
+    },
+    "mufg-branch": {
+        "assets": "Rp206.988 trillion（2025-12-31，审计口径）",
+        "marketCap": "不适用（印度尼西亚外国银行分行不是独立上市主体）",
+        "sources": [
+            {
+                "label": "MUFG Bank Jakarta：审计财务报告入口",
+                "url": "https://www.mufg.co.id/about/financial-information/4/audited-financial-report",
+            },
+            {
+                "label": "Danamon：MUFG Jakarta 业务整合公告",
+                "url": "https://www.danamon.co.id/news/2026/05/11/Danamon-Umumkan-Intensi-Mengintegrasikan-Kegiatan-Operasionalnya-dengan-Kantor-Cabang-MUFG",
+            },
+        ],
+    },
+    "standard-chartered": {
+        "assets": "Rp91.902 trillion（2025-12-31，审计口径）",
+        "coreCapital": "Rp12.724 trillion（Tier 1，2025-12-31）",
+        "marketCap": "不适用（印度尼西亚外国银行分行不是独立上市主体）",
+        "sources": [
+            {
+                "label": "Standard Chartered Indonesia：2025 年审计财务报表",
+                "url": "https://av.sc.com/id/content/docs/id-scb-audited-financial-statements.pdf",
+            },
+            {
+                "label": "Standard Chartered Indonesia：2025 年资本披露",
+                "url": "https://av.sc.com/id/content/docs/id-scb-pengungkapan-permodalan-basel.pdf",
+            },
+        ],
+    },
+    "deutsche-bank": {
+        "assets": "Rp46.769 trillion（2025-12-31，审计口径）",
+        "coreCapital": "Rp10.820 trillion（监管总资本，2025-12-31）",
+        "marketCap": "不适用（印度尼西亚外国银行分行不是独立上市主体）",
+        "sources": [
+            {
+                "label": "Deutsche Bank Jakarta：2025 年第四季度公开报告",
+                "url": "https://www.deutsche-bank.co.id/indonesia/documents/quarterly-reports/2025/Q4-2025/Laporan-Publikasi-Periode-Des-2025_v1.pdf",
+            },
+        ],
+    },
+    "bank-of-china-hk-jakarta-branch": {
+        "assets": "Rp76.770 trillion（2025-12-31，审计口径）",
+        "coreCapital": "Rp14.146 trillion（Tier 1，2025-12-31）",
+        "marketCap": "不适用（印度尼西亚外国银行分行不是独立上市主体）",
+        "sources": [
+            {
+                "label": "Bank of China (Hong Kong) Jakarta：2025 年年度报告",
+                "url": "https://www.bankofchina.co.id/dam/en-id/top/about-us/financial-report/annual-report/2025/Laporan-Tahunan-2025-BOCHK-Jakarta.pdf",
+            },
+            {
+                "label": "Bank of China (Hong Kong) Jakarta：2025 年第四季度资本披露",
+                "url": "https://www.bankofchina.co.id/dam/en-id/top/about-us/financial-report/quarterly-report/2025/Pengungkapan-Informasi-Kuantitatif-Eksposur-Risiko-Triwulan-IV-Dec-2025.pdf",
+            },
+        ],
+    },
+    "uob-indonesia": {
+        "marketCap": "不适用（未单独上市）",
+    },
+    "keb-hana-bank-indonesia": {
+        "marketCap": "不适用（未单独上市）",
+    },
+    "bank-shinhan-indonesia": {
+        "marketCap": "不适用（未单独上市）",
+    },
+    "seabank-indonesia": {
+        "coreCapital": "Rp6.184 trillion（核心资本，2025-12-31）",
+        "marketCap": "不适用（未单独上市）",
+        "sources": [
+            {
+                "label": "SeaBank Indonesia：2025 年年度报告",
+                "url": "https://appmanager.seabank.co.id/seamoney/bke/app-manager/live/front_low_code/20260430/444724648000396054.pdf",
+            },
+        ],
+    },
+    "bank-neo-commerce": {
+        "assets": "Rp18.974 trillion（2025-12-31，审计口径）",
+        "sources": [
+            {
+                "label": "Bank Neo Commerce：2025 年审计财务报表",
+                "url": "https://www-cms.bankneo.co.id/storage/files/1/Informasi%20Investor/Longform%20%3A%20Laporan%20Keuangan%20Lengkap/2025/bank%20neo%20commerce%20tbk_billingual_31_Desember_2025.pdf",
+            },
+        ],
+    },
+    "krom-bank": {
+        "coreCapital": "Rp3.255 trillion（核心资本，2025-12-31）",
+        "sources": [
+            {
+                "label": "Krom Bank：2025 年第四季度风险披露",
+                "url": "https://krom.id/wp-content/uploads/2026/03/risk-disclosure-Des-2025-combined_fix-reviewed-2.pdf",
+            },
+        ],
+    },
+    "bank-nano-syariah": {
+        "assets": "Rp9.412 trillion（2026-03-31）",
+        "coreCapital": "Rp1.134 trillion（核心一级资本，2026-03-31）",
+        "sources": [
+            {
+                "label": "Bank Nano Syariah：2026 年第一季度财务报告",
+                "url": "https://nanobanksyariah.id/assets/LK-Bank-Nano-Syariah-Maret-2026-Final.pdf",
+            },
+        ],
+    },
+}
+
+
+DISCLOSED_PLAYER_UPDATES = {
+    "multi-finance": {
+        "FIFGROUP": {
+            "assets": "Rp51.878 trillion（2025-12-31，审计口径）",
+            "equityCapital": "Rp14.438 trillion（2025-12-31，审计口径）",
+            "sources": [
+                {
+                    "label": "PEFINDO：FIFGROUP 2026 评级报告（含 2025 财务数据）",
+                    "url": "https://www.pefindo.com/download/?file=cf0733831d4f6ae565eb0d43e560c5650be9b65f3e2620c390bba1681c82105bdfd2970388606b3383da3b1a5c53920858ee3e24de1d3c1267d6bdb9500aa9213jOKqKprlbTn1FGuabAHDH9rSUberb%2B4qItFwcZzuKCsyPTeNpYIxa1TZgV8ZXUrb22xJCxpokRLrDs%3D&preview=1",
+                },
+            ],
+        },
+        "Astra Credit Companies": {
+            "assets": "Rp42.265 trillion（2025-12-31，审计口径）",
+            "equityCapital": "Rp11.334 trillion（2025-12-31，审计口径）",
+            "sources": [
+                {
+                    "label": "PEFINDO：Astra Sedaya Finance 评级报告（含 2025 财务数据）",
+                    "url": "https://www.pefindo.com/download/?file=fe07254dfd8b76ec4faf3d8e6e9a0205a6120a31342b7a36aec01bbaa2573008d647c5d1303117d47058bfd65bce87398f3dbab9db4625495ed333e9576ef6caYyg1OfTCMdj4HWO60q7I79jjpBuYy6XCIDyqRB9LUfwaoJbihxri3QZdg8KmNebr2O%2Bk%2FjRwsmldVEk%3D&preview=1",
+                },
+            ],
+        },
+        "Mandiri Utama Finance": {
+            "assets": "Rp18.682 trillion（2025-12-31，审计口径）",
+            "equityCapital": "Rp1.882 trillion（2025-12-31，审计口径）",
+            "sources": [
+                {
+                    "label": "Mandiri Utama Finance：2025 年审计财务报表",
+                    "url": "https://www.muf.co.id/wp-content/uploads/2026/02/Laporan-Keuangan-MUF-2025.pdf",
+                },
+            ],
+        },
+        "Home Credit Indonesia": {
+            "assets": "Rp5.109 trillion（2025-12-31，审计口径）",
+            "equityCapital": "Rp1.815 trillion（2025-12-31，审计口径）",
+            "sources": [
+                {
+                    "label": "Home Credit Indonesia：2025 年审计财务报表",
+                    "url": "https://www.homecredit.co.id/dam/jcr%3Ab1c1e008-3d45-495b-8526-cfc224e951d3/Laporan%20Keuangan%20Tahunan%202025%20-%20Audited%20-%20PT%20Home%20Credit%20Indonesia.pdf",
+                },
+            ],
+        },
+        "PT Commerce Finance / SPayLater": {
+            "assets": "Rp6.328 trillion（2025-12-31，未审计口径）",
+            "equityCapital": "Rp697.035 billion（2025-12-31，未审计口径）",
+            "sources": [
+                {
+                    "label": "PT Commerce Finance：2025 年可持续发展报告",
+                    "url": "https://spaylater.co.id/laporan-keberlanjutan-2025.pdf",
+                },
+            ],
+        },
+        "Akulaku Finance Indonesia": {
+            "assets": "Rp2.790 trillion（2025-12-31，公司披露口径）",
+            "equityCapital": "Rp840.870 billion（2025-12-31，公司披露口径）",
+            "sources": [
+                {
+                    "label": "Akulaku Finance：2025 年财务披露入口",
+                    "url": "https://www.akulakufinance.co.id/detail-laporan?data=136",
+                },
+            ],
+        },
+    },
+    "p2p": {
+        "JULO": {
+            "assets": "Rp103.650 billion（2025-12-31，审计口径）",
+        },
+        "Rupiah Cepat": {
+            "assets": "Rp399.310 billion（2025-12-31，审计口径）",
+            "equityCapital": "Rp268.343 billion（2025-12-31，审计口径）",
+            "sources": [
+                {
+                    "label": "Rupiah Cepat：2025 年审计财务报表",
+                    "url": "https://h5.rupiahcepatweb.com/dua2/help/doc/FS20250KUFI.pdf",
+                },
+            ],
+        },
+    },
+    "pjp": {
+        "GoPay": {
+            "controlChangeTime": "2021-05-17：Gojek 与 Tokopedia 合并组建 GoTo，GoPay 纳入 GoTo Financial；该节点为集团重组，不代表 PJP 牌照主体单独换证。",
+            "sources": [
+                {
+                    "label": "GoTo：Gojek 与 Tokopedia 组建 GoTo",
+                    "url": "https://www.gotocompany.com/en/news/press/gojek-tokopedia-combine-goto",
+                },
+            ],
+        },
+        "OVO": {
+            "controlChangeTime": "2021-Q3：Grab 官方季度披露确认已提高其对 OVO 的持股；具体交割日和最终比例未在该披露中单列。",
+            "sources": [
+                {
+                    "label": "Grab：2021 年第三季度业绩及 OVO 持股变动",
+                    "url": "https://www.grab.com/sg/press/others/grab-reports-third-quarter-2021-results/",
+                },
+            ],
+        },
+    },
+    "bpr": {
+        "Alami / Bank Hijra": {
+            "controlChangeTime": "2021-03：PT ALAMI Teknologi Sharia 收购 BPRS Cempaka Al-Amin并形成新控股结构；2021-05-20，OJK 批准其更名为 BPRS Hijra Alami。",
+            "sources": [
+                {
+                    "label": "Hijra Bank：收购、更名与许可沿革",
+                    "url": "https://hijra.id/visi-misi/",
+                },
+                {
+                    "label": "Hijra Bank：2024 年年度报告",
+                    "url": "https://hijra.id/wp-content/uploads/2025/05/laporan-tahunan-annual-report-bprs-hijra-alami-tahun-2024.pdf",
+                },
+            ],
+        },
+    },
+}
+
+
+def apply_secondary_disclosure_updates() -> None:
+    commercial_bank = next(item for item in licenses if item["id"] == "commercial-bank")
+    for group in commercial_bank.get("bankDirectory", []):
+        for bank in group.get("banks", []):
+            update = DISCLOSED_BANK_UPDATES.get(bank["id"])
+            if not update:
+                continue
+            for key, value in update.items():
+                if key != "sources":
+                    bank[key] = value
+            bank["sources"] = merge_bank_sources(bank.get("sources", []), update.get("sources", []))
+
+    for license_id, player_updates in DISCLOSED_PLAYER_UPDATES.items():
+        license_item = next(item for item in licenses if item["id"] == license_id)
+        for player in license_item.get("competitors", []):
+            update = player_updates.get(player["name"])
+            if not update:
+                continue
+            for key, value in update.items():
+                if key != "sources":
+                    player[key] = value
+            player["sources"] = merge_bank_sources(player.get("sources", []), update.get("sources", []))
+
+
+apply_secondary_disclosure_updates()
+
 regulatory_briefings = [
     {
         "date": "2026",
