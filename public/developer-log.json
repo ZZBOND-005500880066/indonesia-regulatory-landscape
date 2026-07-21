@@ -3,6 +3,20 @@
     {
       "date": "2026-07-21",
       "type": "协作记录",
+      "title": "Align BPR player detail pages",
+      "summary": "zhuangzihao 于 2026-07-21 提交：Align BPR player detail pages",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "2909334",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/2909334017f36023f29350d092e3f6f36992df99"
+    },
+    {
+      "date": "2026-07-21",
+      "type": "协作记录",
       "title": "Clarify PJP shareholder listing status",
       "summary": "zhuangzihao 于 2026-07-21 提交：Clarify PJP shareholder listing status",
       "changes": [
