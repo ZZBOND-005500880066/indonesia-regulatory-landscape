@@ -2011,10 +2011,11 @@ licenses = [
         ],
         "minCapital": "本土公司申请 PKA 最低实缴资本 Rp5 billion；外资控股 PKA 仍需遵守外商投资公司最低注册资本和实缴资本 Rp10 billion。",
         "foreignOwnership": "外国个人或实体直接及间接所有权上限 85%。外籍员工限于直接向董事汇报层级或特殊专家/顾问位置，每次任期不超过 3 年，并需 1:1 印尼陪同工及技能转移。",
-        "playerCount": "截至材料披露，8 家原沙盒参与厂商完成 PKA 注册流程并可持续展业，尚无新 PKA 公司走完整流程正式获批；OJK 5 月披露另有 3 家非老沙盒玩家处于申请中。",
+        "playerCount": "截至 2026 年 5 月，OJK 披露 25 家正式登记 ITSK 经营者，其中 8 家 PKA、17 家 PAJK；另有 3 家新 PKA 申请中，本页暂不纳入未完成许可流程的申请人。",
         "market": [
-            "Advance AI 是市场领先者，材料估算 ICS 年收入约 USD 2m，合并 CBI 征信约 USD 3.5m。",
-            "二梯队如 iziDATA、TrustDecision 年收入估计约 USD 500k-600k。",
+            "Advance AI 是市场领先者，PDF 估算 ICS 年收入约 USD 20m，合并 CBI 征信约 USD 35m；该数字不是审计口径。",
+            "PDF 估算 iziDATA、TrustDecision 年收入约 USD 5m-6m；公开公司资料没有单体财务报表可交叉验证。",
+            "OJK 披露 2026 年 3 月 PKA 行业共收到 2,591 万次信用评分数据查询，可作为比单家公司收入估算更可靠的行业使用量指标。",
             "单次调用均价大致 USD 0.02-0.04，盈利关键在调用量、数据成本和多产品交叉销售。",
         ],
         "restrictions": [
@@ -2043,52 +2044,256 @@ licenses = [
         ],
         "competitors": [
             {
+                "id": "trusting-social-indonesia",
+                "name": "Trusting Social Indonesia",
+                "tier": "东南亚电信数据评分平台",
+                "scale": "集团官网披露覆盖 10 亿+消费者、130+金融机构；未单列印尼主体收入",
+                "position": "Telco Credit Score、eKYC、欺诈评分和电信数据画像",
+                "edge": "以电信运营商数据和无传统信用记录客群评分见长，在东南亚多个市场已有银行及消费金融客户。",
+                "implication": "适合作为电信数据型 PKA 的标杆；应重点核验数据授权链、模型解释性和印尼主体收入贡献。",
+                "registrationTime": "2024-07-31：OJK S-399/IK.01/2024",
+                "assets": "未公开：PT Trusting Social Indonesia 未披露单体资产负债表。",
+                "equityCapital": "未公开：未披露单体实缴资本或净资产；不可用集团融资额替代。",
+                "marketCap": "不适用（未单独上市；Trusting Social Group 为私营公司）",
+                "controllingShareholder": "Trusting Social Group / Trust IQ Pte. Ltd. 体系；2022 年 Masan 旗下 The Sherpa 投资 USD 65m，但公开资料未证明其取得控制权。",
+                "controlChangeTime": "2022-04-28：The Sherpa 宣布 USD 65m Series C 战略投资；未见公开资料确认控制权转移。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "Trusting Social：集团简介与业务覆盖",
+                        "url": "https://trustingsocial.com/about-us/",
+                    },
+                    {
+                        "label": "Trusting Social：2022 年 The Sherpa USD 65m 战略投资",
+                        "url": "https://trustingsocial.com/blog/trusting-social-announces-a-strategic-partnership-with-the-masan-group-and-the-initial-close-of-its-series-c-round",
+                    },
+                    {
+                        "label": "AFPI：PT Trusting Social Indonesia 主体资料",
+                        "url": "https://afpi.or.id/profilemember/Trusting-Social",
+                    },
+                ],
+            },
+            {
+                "id": "scoring-teknologi-indonesia",
+                "name": "PT Scoring Teknologi Indonesia",
+                "tier": "Shopee 生态型评分平台",
+                "scale": "Shopee Meter 内嵌 Shopee / ShopeePay；未披露单体收入、资产或用户数",
+                "position": "Shopee Meter / ST Score，基于 Shopee 平台和电商行为数据",
+                "edge": "评分入口嵌入 Shopee 与 ShopeePay，拥有高频交易和消费行为场景。",
+                "implication": "生态数据和分发入口是其核心壁垒；对标时应区分平台协同价值与 PKA 单体商业化能力。",
+                "registrationTime": "2024-11-18：OJK S-562/IK.01/2024",
+                "assets": "未公开：未披露 PT Scoring Teknologi Indonesia 单体财务报表。",
+                "equityCapital": "未公开：未披露单体实缴资本或净资产。",
+                "marketCap": "不适用（该印尼经营主体未单独上市）",
+                "controllingShareholder": "Sea / Shopee 生态关联主体；Shopee 官方条款确认其拥有并运营 Shopee Meter，但未公开直接持股比例。",
+                "controlChangeTime": "2021-09-14：印度尼西亚工商登记快照显示公司设立；未见后续控制权交割公开文件。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "Shopee：Shopee Meter 条款（经营主体与产品入口）",
+                        "url": "https://help.shopee.co.id/portal/4/article/119929-Syarat-dan-Ketentuan-Shopee-Meter",
+                    },
+                    {
+                        "label": "Companies House Indonesia：非官方工商登记聚合页",
+                        "url": "https://companieshouse.id/scoring-teknologi-indonesia",
+                    },
+                ],
+            },
+            {
+                "id": "prime-analytics-indonesia",
+                "name": "Prime Analytics Indonesia",
+                "tier": "CTOS 控股的区域数据评分平台",
+                "scale": "CTOS 以 USD 475,000 取得控制权；CTOS 国际业务未单列 Prime 收入",
+                "position": "电信评分、地址核验、位置评分、收入评分",
+                "edge": "依托 CTOS 的区域信用信息与数据分析能力，并接入印尼电信等非金融数据。",
+                "implication": "适合作为区域数据公司进入印尼的样本；需把收购时控股集团数据与 Prime 单体财务严格分开。",
+                "registrationTime": "2024-11-18：OJK S-563/IK.01/2024",
+                "assets": "RM 2.677m（2023-09-01 收购时 Alt Decisions 集团可识别资产项目合计；含控股公司，不是 Prime 最新单体资产）",
+                "equityCapital": "Rp 10 billion（2023 年收购公告披露的发行股本；不是期末净资产）",
+                "marketCap": "不适用（Prime 未单独上市；CTOS Digital 为上市母公司，但不等于 Prime 市值）",
+                "controllingShareholder": "CTOS Digital Berhad 间接持有约 79.99% / 80%；Alt Decisions 持有 Prime 99.99%。",
+                "controlChangeTime": "2023-09-01：CTOS 完成以 USD 475,000 收购 Alt Decisions 80% 股权，Prime 纳入 CTOS 合并范围。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "CTOS：收购 Alt Decisions / Prime Analytics 公告",
+                        "url": "https://www.insage.com.my/BursaNews/Attachment/202308/20230825/CTOS-AN20230825A1-1.pdf",
+                    },
+                    {
+                        "label": "CTOS：2023 年第四季度报告（收购完成日及可识别资产）",
+                        "url": "https://www.insage.com.my/Upload/Docs/CTOS/CTOS%20Q4%202023.pdf",
+                    },
+                    {
+                        "label": "CTOS：2023 年报（Prime 79.99% 持股口径）",
+                        "url": "https://www.insage.com.my/ir/cmn/downloading.aspx?sCompanyCode=CTOS&sFileName=24355000055866&sReportType=AR",
+                    },
+                ],
+            },
+            {
+                "id": "izidata",
+                "name": "iziDATA",
+                "tier": "数据维度和评分工具型 PKA",
+                "scale": "PDF 估算年收入约 USD 5m-6m（非审计）；官网确认按量计费并服务银行、Multi-Finance 与 P2P",
+                "position": "信用评分、社交媒体号码检测、eKYC 和辅助风控",
+                "edge": "产品轻、按量计费，适合围绕手机号、社交信号和身份校验做风控补充。",
+                "implication": "对标重点是单次调用成本、数据源稳定性和能否从单点工具扩展到完整评分服务。",
+                "registrationTime": "2024-12-16：OJK S-588/IK.01/2024",
+                "assets": "未公开：PT Izi Data Indonesia 未披露单体资产负债表。",
+                "equityCapital": "未公开：未披露单体实缴资本或净资产。",
+                "marketCap": "不适用（未单独上市）",
+                "controllingShareholder": "最终控股股东未公开；公司官网仅披露经营主体为 PT Izi Data Indonesia，未文本化披露最终股东和持股比例。",
+                "controlChangeTime": "2018 年设立并开始运营；未见后续控制权交割公开文件。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "iziDATA：产品、OJK 登记函与认证信息",
+                        "url": "https://www.izidata.co.id/product",
+                    },
+                    {
+                        "label": "iziDATA：公司简介",
+                        "url": "https://izidata.co.id/en/company",
+                    },
+                    {
+                        "label": "iziDATA：隐私政策与 B2B 数据处理角色",
+                        "url": "https://www.izidata.co.id/id/privacy-policy",
+                    },
+                ],
+            },
+            {
+                "id": "advance-ai-bps",
                 "name": "Advance AI / BPS",
                 "tier": "头部 PKA + CBI 协同",
-                "scale": "材料估算 ICS 年收入约 USD 2m，合并 CBI 征信约 USD 3.5m",
+                "scale": "PDF 估算 ICS 年收入约 USD 20m、合并 CBI 约 USD 35m（非审计）",
                 "position": "信用评分、多头、反欺诈、eKYC 和传统信用信息协同",
                 "edge": "同时覆盖另类数据、欺诈识别、eKYC、信用评分和 CBI 征信协同，客户交叉销售空间最大。",
                 "implication": "最适合作为市场上限样本；进入时要重点对比数据合法性、产品组合、金融机构客户覆盖和调用量。",
+                "registrationTime": "2025-01-31：OJK S-50/IK.01/2025",
+                "assets": "未公开：PT Bangun Percaya Sosial 未披露单体资产负债表。",
+                "equityCapital": "未公开：未披露单体实缴资本或净资产。",
+                "marketCap": "不适用（未单独上市；Advance Intelligence Group 为私营集团）",
+                "controllingShareholder": "PT Advance Intelligence Indonesia / Advance Intelligence Group。",
+                "controlChangeTime": "官方公告确认 BPS 为 PT Advance Intelligence Indonesia 子公司；未公开最近一次取得控制权的交割日。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "ADVANCE.AI：BPS 子公司关系及业务承接公告",
+                        "url": "https://advance.ai/news/company-announcement/",
+                    },
+                    {
+                        "label": "ADVANCE.AI：BPS 聚焦信用评分技术",
+                        "url": "https://advance.ai/news/advance-ai-focusing-on-providing-credit-scoring-technology/",
+                    },
+                ],
             },
             {
+                "id": "trustdecision",
                 "name": "TrustDecision",
                 "tier": "中国风控技术输出型 PKA",
-                "scale": "二梯队玩家，材料估计年收入约 USD 500k-600k 区间",
+                "scale": "PDF 估算年收入约 USD 5m-6m（非审计）；公司未披露印尼主体单体收入",
                 "position": "FINScore、eKYC、反欺诈检测和全球风险画像",
                 "edge": "跨市场反欺诈、设备/行为/关系网络能力和模型迭代经验。",
                 "implication": "适合观察中国风控能力在印尼本地化时的合规改造；重点看数据授权、解释性和本地金融机构采纳率。",
+                "registrationTime": "2025-02-25：OJK S-93/IK.01/2025",
+                "assets": "未公开：PT Tongdun Technology Indonesia 未披露单体资产负债表。",
+                "equityCapital": "未公开：未披露单体实缴资本或净资产。",
+                "marketCap": "不适用（未单独上市；TrustDecision / Tongdun 为私营集团）",
+                "controllingShareholder": "Tongdun Technology / TrustDecision 集团；未公开印尼主体的直接持股比例。",
+                "controlChangeTime": "2018-10-04：印度尼西亚工商登记快照显示公司设立；未见后续控制权交割公开文件。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "TrustDecision：信用评分产品",
+                        "url": "https://trustdecision.com/finance/products/credit-scoring",
+                    },
+                    {
+                        "label": "TrustDecision：印度尼西亚官网",
+                        "url": "https://trustdecision.com/id",
+                    },
+                    {
+                        "label": "Companies House Indonesia：PT Tongdun 非官方工商登记聚合页",
+                        "url": "https://companieshouse.id/tongdun-technology-indonesia",
+                    },
+                ],
             },
             {
-                "name": "iziDATA",
-                "tier": "数据维度和评分工具型 PKA",
-                "scale": "二梯队玩家，材料估计年收入约 USD 500k-600k 区间",
-                "position": "信用评分、社交媒体号码检测、eKYC 和辅助风控",
-                "edge": "产品轻、调用成本低，适合围绕手机号、社交信号和身份校验做风控补充。",
-                "implication": "对标重点是单次调用成本、数据源稳定性和是否能从单点工具扩展到完整评分服务。",
-            },
-            {
-                "name": "Prime Analytics",
-                "tier": "CTOS 背景数据评分平台",
-                "scale": "依托 CTOS Digital 区域信用信息和数据分析经验",
-                "position": "电信评分、地址核验、位置评分、收入评分",
-                "edge": "区域信用信息经验和较多非金融数据维度，适合做补充评分和身份校验。",
-                "implication": "适合作为区域数据公司进入印尼的样本；重点看本地数据合作、模型迁移和监管接受度。",
-            },
-            {
+                "id": "aiforesee",
                 "name": "AIForesee",
-                "tier": "原 P2P 风控平台转型",
-                "scale": "原 Investree 信用平台，后由韩国 PFC Technologies 收购",
+                "tier": "原 P2P 风控平台，现属 PFCT",
+                "scale": "原 Investree 信用平台；2025 年 4 月由韩国 PFC Technologies 收购",
                 "position": "eKYC、收入就业、税务、社保、法律风险和多头查询",
                 "edge": "P2P 场景理解、收入/就业/税务等数据维度和贷前风控经验。",
                 "implication": "如果目标客户是 P2P 或现金贷机构，应重点看其场景适配和数据闭环；也要评估 Investree 历史关联的声誉影响。",
+                "registrationTime": "2025-03-10：OJK S-128/IK.01/2025",
+                "assets": "未公开：PT Aiforesee Inovasi Skor 未披露单体资产负债表。",
+                "equityCapital": "未公开：未披露单体实缴资本或净资产。",
+                "marketCap": "不适用（未单独上市；PFCT 为私营公司）",
+                "controllingShareholder": "PFC Technologies（PFCT）；AIForesee 公开表述已完全成为 PFCT 的一部分。",
+                "controlChangeTime": "2025-04-21：PFCT 收购 AIForesee 的交易信息公开；公司于 2025 年 4 月宣布完成归属。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "AIForesee：OJK 登记公告与登记函号",
+                        "url": "https://aiforesee.com/news/aiforesee-resmi-terdaftar-sebagai-ics--information-credit-service--di-ojk",
+                    },
+                    {
+                        "label": "AIForesee：公司已完全归入 PFCT 的公告",
+                        "url": "https://www.linkedin.com/posts/ai-foresee_aiforesee-pfct-nextchapter-activity-7315407734277828613-tWRA",
+                    },
+                    {
+                        "label": "Crunchbase：PFCT 收购日期记录",
+                        "url": "https://www.crunchbase.com/organization/pfct-pfc-technologies/company_financials",
+                    },
+                ],
             },
             {
+                "id": "cloudun-ai",
                 "name": "Cloudun AI",
                 "tier": "AI 风控和咨询型玩家",
-                "scale": "中国和新加坡背景，材料显示提供 credit insights、digital lending 咨询和 AI 反欺诈",
+                "scale": "截至 2024-12，官网披露 90+ 企业客户、近 5,000 万终端用户、交易额超 USD 5bn",
                 "position": "Credit insights、Digital lending 咨询、AI 反欺诈和风控系统",
                 "edge": "更偏系统和咨询能力，可围绕建模、策略、反欺诈和数字贷款流程提供组合服务。",
                 "implication": "适合作为轻资产进入样本；重点看是否具备 PKA 持续合规能力，而不是只做技术外包。",
+                "registrationTime": "2025-03-14：OJK S-137/IK.01/2025",
+                "assets": "未公开：PT Cloudun Technology Indonesia 未披露单体资产负债表。",
+                "equityCapital": "未公开：未披露单体实缴资本或净资产。",
+                "marketCap": "不适用（未单独上市；Cloudun 为私营集团）",
+                "controllingShareholder": "Cloudun Cayman / Singapore 集团体系；未公开印尼主体的直接持股比例。",
+                "controlChangeTime": "2019 年 11 月：印尼主体开始本地市场运营；未见后续控制权转移公开文件。",
+                "sources": [
+                    {
+                        "label": "OJK：2025-03-14 ITSK 登记名单（含登记函号及日期）",
+                        "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                    },
+                    {
+                        "label": "Cloudun：公司沿革、OJK 登记和业务规模",
+                        "url": "https://cloudun.co.id/about-us/",
+                    },
+                    {
+                        "label": "Cloudun：印度尼西亚官网",
+                        "url": "https://cloudun.co.id/",
+                    },
+                ],
             },
         ],
         "latestRules": [
@@ -2119,6 +2324,21 @@ licenses = [
             },
         ],
         "legalIndex": [
+            {
+                "name": "OJK May 2026 ITSK market update: 8 PKA and 17 PAJK",
+                "sourceUrl": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/1014_May_2026_Board_of_Commissioners_Meeting%3A_Financial_Services_Sector_Stability_Maintained_Amid_Increasing_Pressures_on_Global_Economic_Performance",
+                "sourceLabel": "OJK IRU",
+            },
+            {
+                "name": "OJK April 2026 ITSK market update: 25.91 million PKA inquiries in March",
+                "sourceUrl": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/1003_April_2026_Board_of_Commissioners_Meeting%3A_Financial_Services_Sector_Performance_Remains_Resilient_Amid_Persistent_Global_Uncertainties",
+                "sourceLabel": "OJK IRU",
+            },
+            {
+                "name": "OJK list of registered ITSK providers as of 14 March 2025",
+                "sourceUrl": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf",
+                "sourceLabel": "OJK / PDF",
+            },
             {
                 "name": "POJK No.30/2025 on Governance and Risk Management for ITSK Providers",
                 "sourceUrl": "https://ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
@@ -5578,6 +5798,8 @@ html = f"""<!doctype html>
       if (pjpMatch) return {{ page: "pjp-player", licenseId: "pjp", playerId: pjpMatch[1] }};
       const bprMatch = hash.match(/^license\\/bpr\\/([^/]+)$/);
       if (bprMatch) return {{ page: "bpr-player", licenseId: "bpr", playerId: bprMatch[1] }};
+      const icsMatch = hash.match(/^license\\/ics\\/([^/]+)$/);
+      if (icsMatch) return {{ page: "ics-player", licenseId: "ics", playerId: icsMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -6049,6 +6271,143 @@ html = f"""<!doctype html>
           <section class="section source-section">
             <h3>数据来源</h3>
             <p class="source-note">Multi-Finance 玩家二级页仅保留资产、权益/资本、市值、背后控股股东和股权变更时间。未公开或暂未核到的项目会明确标注，不用推测值替代。</p>
+            <div class="source-list">
+              ${{playerSources.map(source => `
+                <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
+                  <strong>${{esc(source.label || "来源")}}</strong>
+                  <span>${{esc(source.url)}}</span>
+                </a>
+              `).join("")}}
+            </div>
+          </section>
+        ` : ""}}
+      `;
+    }}
+
+    function icsPlayerSlug(player) {{
+      return player.id || slugify(player.name);
+    }}
+
+    function icsPlayerGroups(item) {{
+      const players = item.competitors || [];
+      const groups = [
+        {{
+          category: "区域与跨境风控集团",
+          badge: "跨境风控",
+          description: "依靠电信、设备、行为和多市场反欺诈能力进入印尼，重点看数据本地化、授权链及集团协同。",
+          names: ["Trusting Social Indonesia", "Advance AI / BPS", "TrustDecision", "Cloudun AI"],
+        }},
+        {{
+          category: "平台生态型评分",
+          badge: "平台生态",
+          description: "评分产品嵌入大型电商或支付生态，交易数据和原生分发入口构成主要壁垒。",
+          names: ["PT Scoring Teknologi Indonesia"],
+        }},
+        {{
+          category: "本地与区域专业评分",
+          badge: "专业评分",
+          description: "围绕电信、身份、收入、就业、税务、社交及多头数据提供模块化评分和贷前风控服务。",
+          names: ["Prime Analytics Indonesia", "iziDATA", "AIForesee"],
+        }},
+      ];
+      const byName = new Map(players.map(player => [player.name, player]));
+      const groupedNames = new Set();
+      const result = groups.map(group => {{
+        const groupPlayers = group.names.map(name => byName.get(name)).filter(Boolean);
+        groupPlayers.forEach(player => groupedNames.add(player.name));
+        return {{ ...group, players: groupPlayers }};
+      }}).filter(group => group.players.length);
+      const remaining = players.filter(player => !groupedNames.has(player.name));
+      if (remaining.length) {{
+        result.push({{
+          category: "其他 OJK 登记 PKA",
+          badge: "其他",
+          description: "已在 OJK 名单登记、但暂未归入前三类的 PKA 机构。",
+          players: remaining,
+        }});
+      }}
+      return result;
+    }}
+
+    function findICSPlayer(playerId) {{
+      const item = LICENSES.find(item => item.id === "ics");
+      return (item?.competitors || []).find(player => icsPlayerSlug(player) === playerId);
+    }}
+
+    function renderICSDirectory(item) {{
+      const groups = icsPlayerGroups(item);
+      const total = groups.reduce((sum, group) => sum + (group.players || []).length, 0);
+      return `
+        <div class="bank-directory">
+          <div class="bank-directory-summary">
+            已按 OJK 登记名单补齐 ${{total}} 家 PKA。点击任一机构进入二级页面，查看登记时间、资产、权益/资本、市值、背后控股股东、控制权变化及逐项来源。
+          </div>
+          ${{groups.map(group => `
+            <section class="bank-group">
+              <div class="bank-group-title">
+                <div>
+                  <h4>${{esc(group.category)}}</h4>
+                  <p>${{esc(group.description || "")}}</p>
+                </div>
+                <span class="tag">${{(group.players || []).length}} 家</span>
+              </div>
+              <div class="bank-table-wrap">
+                <div class="bank-table">
+                  ${{(group.players || []).map(player => `
+                    <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(icsPlayerSlug(player))}}">
+                      <div class="bank-name-cell"><strong>${{esc(player.name)}}</strong><span>${{esc(player.position || group.category)}}</span></div>
+                      <div class="bank-shape-pill player-shape-pill">${{esc(group.badge || player.tier || "")}}</div>
+                      <div class="bank-row-action">查看机构详情</div>
+                    </a>
+                  `).join("")}}
+                </div>
+              </div>
+            </section>
+          `).join("")}}
+        </div>
+      `;
+    }}
+
+    function icsPlayerPage(item, player) {{
+      if (!player) return detailPage(item);
+      const cards = [
+        ["OJK 登记时间", player.registrationTime || "未公开"],
+        ["资产", player.assets || "未公开"],
+        ["权益/资本", player.equityCapital || "未公开"],
+        ["市值", player.marketCap || "不适用或未公开"],
+        ["背后控股股东", player.controllingShareholder || "未公开"],
+        ["控制权变化", player.controlChangeTime || "未公开"],
+      ];
+      const playerSources = [];
+      (player.sources || []).forEach(source => {{
+        if (!source || !source.url) return;
+        if (playerSources.some(item => item.url === source.url && item.label === source.label)) return;
+        playerSources.push(source);
+      }});
+      return `
+        <div class="detail-hero" data-tone="${{esc(item.tone)}}">
+          <button class="btn" onclick="setRoute('ics')">返回 ICS / PKA</button>
+          <div class="detail-title">
+            <div>
+              <h2>${{esc(player.name)}}</h2>
+              <p>${{esc(player.tier || "PKA 机构二级信息")}}</p>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="bank-detail-grid player-detail-grid">
+            ${{cards.map(card => `
+              <article class="bank-detail-card">
+                <span>${{esc(card[0])}}</span>
+                <strong>${{moneyText(card[1])}}</strong>
+              </article>
+            `).join("")}}
+          </div>
+        </section>
+        ${{playerSources.length ? `
+          <section class="section source-section">
+            <h3>数据来源</h3>
+            <p class="source-note">ICS / PKA 经营主体普遍是未上市私营公司。没有单体报表、实缴资本或直接股比的项目明确标为“未公开”；集团融资额、母公司市值和业务交易额均不冒充印尼主体的资产、权益或市值。</p>
             <div class="source-list">
               ${{playerSources.map(source => `
                 <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
@@ -6641,8 +7000,8 @@ html = f"""<!doctype html>
             </section>
 
             <section class="info-band">
-              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : item.id === "pjp" ? "PJP 玩家目录" : item.id === "bpr" ? "BPR 玩家目录" : "竞争对手板块"}}</h3>
-              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : item.id === "pjp" ? renderPJPDirectory(item) : item.id === "bpr" ? renderBPRDirectory(item) : renderCompetitors(item)}}
+              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : item.id === "pjp" ? "PJP 玩家目录" : item.id === "bpr" ? "BPR 玩家目录" : item.id === "ics" ? "ICS / PKA 机构目录" : "竞争对手板块"}}</h3>
+              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : item.id === "pjp" ? renderPJPDirectory(item) : item.id === "bpr" ? renderBPRDirectory(item) : item.id === "ics" ? renderICSDirectory(item) : renderCompetitors(item)}}
             </section>
             ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
@@ -6708,6 +7067,15 @@ html = f"""<!doctype html>
         detail.classList.add("active");
         showModule(null);
         detail.innerHTML = bprPlayerPage(item, player);
+        qs("#mobileNav").value = item.id;
+        window.scrollTo({{ top: 0, behavior: "instant" }});
+      }} else if (route.page === "ics-player") {{
+        const item = LICENSES.find(x => x.id === route.licenseId) || LICENSES[0];
+        const player = findICSPlayer(route.playerId);
+        home.classList.remove("active");
+        detail.classList.add("active");
+        showModule(null);
+        detail.innerHTML = icsPlayerPage(item, player);
         qs("#mobileNav").value = item.id;
         window.scrollTo({{ top: 0, behavior: "instant" }});
       }} else if (route.page === "license") {{
