@@ -2398,7 +2398,8 @@ licenses = [
         "playerCount": "截至 2026 年 6 月，OJK 记录有 17 家正式注册 PAJK；26 项 PAJK 经营许可申请处于评估中，其中 17 家存量注册机构和 9 家新申请机构。",
         "market": [
             "OJK 以整个 PAJK 行业统计，未单独披露 Loan Aggregator 市场规模。",
-            "2025 年 PAJK 获合作金融机构批准的交易金额 Rp26.76 trillion，累计用户 1,164.48 万。",
+            "2025 年 PAJK 获合作金融机构批准的交易金额 Rp26.76 trillion，累计用户 1,644.48 万；研究报告汇总的 PAJK 总资产为 Rp1.8046 trillion。",
+            "截至 2025 年末，PAJK 共建立 1,073 项合作关系，其中 756 项对接持牌金融机构；机构网络和真实转化率比单纯下载量更重要。",
             "2026 年 1-5 月累计成交额 Rp10.30 trillion，月均约 Rp2.06 trillion。",
             "2026 年 5 月用户数增至 1,829 万，竞争重点从流量转向匹配准确度、申请完成率和放款转化率。",
         ],
@@ -2429,62 +2430,394 @@ licenses = [
         "competitors": [
             {
                 "name": "Cermati",
+                "id": "cermati",
                 "tier": "综合消费金融聚合平台",
                 "scale": "覆盖信用卡、个人贷款、保险、投资、黄金和信用评分，更接近全品类金融超市",
                 "position": "信用卡、个人贷款、保险、投资和信用评分",
                 "edge": "产品线最宽，能用流量入口做交叉销售和用户生命周期管理。",
                 "implication": "适合作为 PAJK/聚合平台上限样本；进入时要重点看获客成本、复购、交叉销售和金融机构合作深度。",
+                "legalEntity": "PT Agregasi Cermat Indonesia；平台历史经营体系属于 Cermati Fintech Group",
+                "regulatoryStatus": "OJK 登记函 S-136/IK.01/2025（2025-03-14）；是否已完成 POJK 4/2025 下经营许可转换，仍应以 OJK FIND/SPRINT 的实时状态为准",
+                "registrationTime": "2025-03-14（S-136/IK.01/2025）",
+                "assets": "未公开印尼 PAJK 经营主体的单体资产",
+                "equityCapital": "未公开单体权益或实缴资本；集团融资额不作为资本替代值",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "Cermati 创始团队与多家机构投资者共同持股；公开资料未披露 PT Agregasi Cermat Indonesia 的最终控股比例",
+                "controlChangeTime": "2018 年 Djarum Group 收购 Finch Capital 的 Cermati 少数股权；公开资料没有证明该交易形成控制权变更",
+                "sources": [
+                    {"label": "OJK：截至 2025-03-14 的 ITSK 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf"},
+                    {"label": "Cermati：公司与平台介绍", "url": "https://cermati.group/"},
+                    {"label": "Cermati：现行平台经营主体", "url": "https://www.cermati.com/tentang-cermati"},
+                    {"label": "Finch Capital：2018 年少数股权退出", "url": "https://news.finchcapital.com/post/102f1rr/indonesias-djarum-group-buys-finch-capital-stake-in-fintech-startup-cermati"},
+                ],
             },
             {
                 "name": "CashCerdas",
+                "id": "cashcerdas",
                 "tier": "线上贷款比较平台",
                 "scale": "垂直贷款导流平台，覆盖 KTA、P2P、BPR 贷款和短期现金贷",
                 "position": "个人无抵押贷款、P2P、BPR 贷款和短期现金需求",
                 "edge": "产品聚焦，用户意图明确，适合做贷款申请前端和 lead 分发。",
                 "implication": "对标重点是流量质量、申请表单完成率、合作贷款机构质量和合规披露，而不是单纯页面访问量。",
+                "legalEntity": "PT Teknologi Cerdas Finansial",
+                "regulatoryStatus": "OJK 登记函 S-580/IK.01/2024（2024-12-04）；2026 年经营许可转换状态需以 OJK FIND/SPRINT 实时核验",
+                "registrationTime": "2024-12-04（S-580/IK.01/2024）",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "最终控股股东及直接持股比例未公开",
+                "controlChangeTime": "未检索到公开控股权变更；需通过工商簿册和 OJK 许可申请材料核验",
+                "sources": [
+                    {"label": "OJK：截至 2025 年 2 月的 ITSK 登记名单", "url": "https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Terdaftar%20Posisi%2011%20Maret%202025.pdf"},
+                    {"label": "CashCerdas：服务条款与经营主体", "url": "https://www.cashcerdas.id/terms.html"},
+                    {"label": "OJK：监管沙盒结果", "url": "https://gesit.ojk.go.id/GESIT/_uploads/202407231112_Data%20GESIT%20Hasil%20Regulatory%20Sandbox%20per%2030%20April%202024.pdf"},
+                ],
             },
             {
                 "name": "Pilih Kredit",
+                "id": "pilih-kredit",
                 "tier": "贷款比较及申请导流",
                 "scale": "覆盖消费贷、现金贷、教育贷和经营贷等多类贷款需求",
                 "position": "多类型贷款比较、申请导流和借款人筛选",
                 "edge": "贷款品类覆盖较宽，能承接不同额度、期限和用途的借款需求。",
                 "implication": "如果做轻资产导流，关键是把合作金融机构、产品条件和借款人画像匹配得足够准确。",
+                "legalEntity": "PT Estrend Teknologi Digital",
+                "regulatoryStatus": "OJK 登记函 S-42/IK.01/2025（2025-01-31）；2026 年经营许可转换状态需以 OJK FIND/SPRINT 实时核验",
+                "registrationTime": "2025-01-31（S-42/IK.01/2025）",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "最终控股股东及直接持股比例未公开",
+                "controlChangeTime": "未检索到公开控股权变更；需通过工商簿册和 OJK 许可申请材料核验",
+                "sources": [
+                    {"label": "OJK：截至 2025 年 2 月的 ITSK 登记名单", "url": "https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Terdaftar%20Posisi%2011%20Maret%202025.pdf"},
+                    {"label": "Pilih Kredit：隐私政策与经营主体", "url": "https://www.pilihkredit.id/privasi"},
+                    {"label": "OJK：监管沙盒结果", "url": "https://gesit.ojk.go.id/GESIT/_uploads/202407231112_Data%20GESIT%20Hasil%20Regulatory%20Sandbox%20per%2030%20April%202024.pdf"},
+                ],
+            },
+            {
+                "name": "Finfy",
+                "id": "finfy",
+                "tier": "综合金融产品聚合平台",
+                "scale": "提供贷款、信用及其他金融产品信息聚合；官网披露已取得 OJK 登记、PSE 和 ISO 27001",
+                "position": "个人贷款与金融产品聚合、数字申请入口",
+                "edge": "较晚进入但合规信息披露完整，适合作为 2025 年新增登记玩家样本。",
+                "implication": "新申请者应同步规划 OJK、PSE、信息安全认证和本地治理人员，而不是把 PAJK 许可作为单一项目。",
+                "legalEntity": "PT Unicorn Technology Indonesia",
+                "regulatoryStatus": "官网披露 OJK 登记函 S-237/IK.01/2025（2025-05-14）；2026 年经营许可状态仍应以 OJK FIND/SPRINT 实时核验",
+                "registrationTime": "2025-05-14（S-237/IK.01/2025）",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "最终控股股东及持股比例未公开；官网仅披露董事和监事",
+                "controlChangeTime": "2025-09/12 官网披露管理层任职变化；不能据此认定发生控股权变更",
+                "sources": [
+                    {"label": "Finfy：公司、登记与治理信息", "url": "https://finfy.id/tentang-kami"},
+                    {"label": "OJK FIND：实时许可核验入口", "url": "https://find.ojk.go.id/"},
+                    {"label": "OJK POJK 4/2025：PAJK 正式许可框架", "url": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/294_OJK_Regulation_Number_4_2025_concerning_Providers_of_Financial_Services_Aggregations"},
+                ],
             },
             {
                 "name": "Ringkas",
+                "id": "ringkas",
                 "tier": "数字按揭基础设施",
-                "scale": "连接 25 家以上银行，2025 年完成 USD 5.1m Pre-Series A",
+                "scale": "官网称连接 30 家以上 LJK、覆盖 700 多个网点；2025 年完成 USD 5.1m Pre-Series A",
                 "position": "KPR 按揭预审、银行连接、开发商/购房场景",
                 "edge": "把按揭申请资料、银行预审和房产交易场景连接起来，客单价高、链路长。",
                 "implication": "高价值贷款聚合应重点看审批链路数字化、银行覆盖和开发商/中介入口，而不是只看贷款产品数量。",
+                "legalEntity": "PT Ringkas Asia Technology",
+                "regulatoryStatus": "OJK 登记函 S-550/IK.01/2024（2024-11-08）；官网持续标注为 OJK 登记 PAJK",
+                "registrationTime": "2024-11-08（S-550/IK.01/2024）",
+                "assets": "未公开单体资产；USD 5.1m 融资额不等于资产",
+                "equityCapital": "未公开单体权益或实缴资本；融资额不作为权益替代值",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "创始人 Ilya Kravtsov、Leroy Pinto、Yoko Simon 与机构投资者共同持股；最终控制比例未公开",
+                "controlChangeTime": "2025-05 完成 USD 5.1m Pre-Series A，投资者包括 Flourish Ventures、Kadan Capital 等；未披露控制权转移",
+                "sources": [
+                    {"label": "OJK：截至 2025 年 2 月的 ITSK 登记名单", "url": "https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Terdaftar%20Posisi%2011%20Maret%202025.pdf"},
+                    {"label": "Ringkas：公司、创始人、登记与业务规模", "url": "https://ringkas.co.id/en/about-us"},
+                    {"label": "Ringkas：合作机构规模", "url": "https://ringkas.co.id/en/faqs/apa-itu-ringkas/"},
+                    {"label": "KrASIA：2025 年 Pre-Series A", "url": "https://kr-asia.com/pulses/153763"},
+                ],
             },
             {
                 "name": "IDEAL",
+                "id": "ideal",
                 "tier": "一站式 KPR 平台",
-                "scale": "覆盖新房、二手房、转按揭和多用途抵押贷款",
+                "scale": "2021 年成立，覆盖新房、二手房、转按揭和多用途抵押贷款；2022 年完成 USD 3.8m pre-seed",
                 "position": "房贷、转按揭、抵押贷款和购房金融流程",
                 "edge": "围绕房产交易做端到端服务，能提升用户资料准备和贷款审批效率。",
                 "implication": "适合作为垂直场景聚合样本；判断重点是金融合作方、房源/开发商触点和实际放款转化。",
+                "legalEntity": "PT Hidup Ideal Sejahtera",
+                "regulatoryStatus": "OJK 登记函 S-534/IK.01/2024（2024-10-31）；2026 年经营许可转换状态需以 OJK FIND/SPRINT 实时核验",
+                "registrationTime": "2024-10-31（S-534/IK.01/2024）",
+                "assets": "未公开单体资产；USD 3.8m 融资额不等于资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "创始团队与 AC Ventures、Alpha JWC、Living Lab Ventures、Ciputra Group 等投资者共同持股；控制比例未公开",
+                "controlChangeTime": "2022-07 完成 USD 3.8m pre-seed；未披露该轮融资导致控制权转移",
+                "sources": [
+                    {"label": "OJK：2024-10 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%20October%202024.pdf"},
+                    {"label": "IDEAL：公司与业务介绍", "url": "https://www.ideal.id/id/about"},
+                    {"label": "OJK：监管沙盒结果", "url": "https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Regulatory-Sandbox/Documents/Hasil%20Regulatory%20Sandbox%20Periode%209%20Agustus%202023%20-%2030%20April%2020224.pdf"},
+                    {"label": "TechNode Global：2022 年 pre-seed", "url": "https://technode.global/2022/07/27/indonesias-ideal-locks-in-3-8m-funding-co-led-by-ac-ventures-and-alpha-jwc/"},
+                ],
+            },
+            {
+                "name": "Loan Market Indonesia",
+                "id": "loan-market-indonesia",
+                "tier": "线下顾问网络与贷款聚合",
+                "scale": "官网列示 38 家贷款机构；2023 年披露 26 个办事处和 200 多名 Loan Adviser",
+                "position": "KPR、KTA、车辆融资、经营贷及顾问式贷款匹配",
+                "edge": "Ray White 房产生态、线下顾问网络与多家金融机构合作形成高接触转化能力。",
+                "implication": "按揭聚合并非只有 App 模式；顾问产能、分行管理、房产入口和贷款机构覆盖同样决定转化。",
+                "legalEntity": "PT Loan Market Indo",
+                "regulatoryStatus": "OJK 登记函 S-194/IK.01/2025（2025-04-21）；2026 年经营许可转换状态需以 OJK FIND/SPRINT 实时核验",
+                "registrationTime": "2025-04-21（S-194/IK.01/2025）",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "White Family Business Group / Ray White 生态；印尼主体的直接股比未公开",
+                "controlChangeTime": "官网持续披露其为 Ray White 姊妹公司；未检索到印尼主体公开控股权转移日期",
+                "sources": [
+                    {"label": "OJK：截至 2025-04-21 的 ITSK 登记名单", "url": "https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Terdaftar%20Posisi%2021%20April%202025.pdf"},
+                    {"label": "Loan Market：经营主体、集团与合作机构", "url": "https://www.loanmarket.co.id/tentang-kami"},
+                    {"label": "Loan Market：办事处与顾问规模", "url": "https://www.loanmarket.co.id/news/loan-market-indonesia-beri-penghargaan-kepada-kantor-dan-agen-terbaiknya-di-regional-surabaya"},
+                    {"label": "OJK：监管沙盒结果", "url": "https://gesit.ojk.go.id/GESIT/_uploads/202407231112_Data%20GESIT%20Hasil%20Regulatory%20Sandbox%20per%2030%20April%202024.pdf"},
+                ],
             },
             {
                 "name": "Yup",
+                "id": "yup",
                 "tier": "信用支付及消费金融生态",
                 "scale": "信用额度、PayLater、Visa 信用卡和 QRIS 支付组合",
                 "position": "消费信用、支付场景和循环额度",
                 "edge": "通过支付和信用额度提高日常使用频次，和纯导流平台相比更容易沉淀交易数据。",
                 "implication": "如果 Loan Aggregator 想提高留存，需要考虑是否只是导流，还是能接入支付、额度或会员场景。",
+                "legalEntity": "PT Finture Tech Indonesia",
+                "regulatoryStatus": "OJK 登记函 S-515/IK.01/2024（2024-10-08）；官网持续标注受 OJK 登记和监管",
+                "registrationTime": "2024-10-08（S-515/IK.01/2024）",
+                "assets": "未公开印尼经营主体单体资产；集团累计融资不是资产",
+                "equityCapital": "未公开单体权益或实缴资本；集团股权融资不作为资本替代值",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "Finture/Yup 创始团队及多轮机构投资者共同持股；最终控股比例未公开",
+                "controlChangeTime": "2025-09 宣布 USD 32m C-1 轮融资、累计股权融资超过 USD 100m；未披露控制权转移",
+                "sources": [
+                    {"label": "OJK：2024-10 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%20October%202024.pdf"},
+                    {"label": "Yup：公司与业务介绍", "url": "https://finture.id/about"},
+                    {"label": "Yup：隐私政策与登记函", "url": "https://finture.id/agreement/privace"},
+                    {"label": "Yup：2025 年 C-1 融资公告", "url": "https://www.prnewswire.com/news-releases/yup-the-southeast-asia-nubank-raises-32-million-in-c-1-round-bringing-total-equity-funding-to-over-100-million-302569166.html"},
+                ],
+            },
+            {
+                "name": "Fazz Business",
+                "id": "fazz-business",
+                "tier": "企业融资与嵌入式金融聚合",
+                "scale": "企业贷款额度最高 Rp2bn，官网披露利率约 1%-3%/月、期限最长 36 个月",
+                "position": "UMKM 营运资金、企业账户及合作金融机构贷款入口",
+                "edge": "把融资入口放入企业支付和账户场景，能复用商户现金流与交易关系。",
+                "implication": "B2B 聚合的壁垒更多来自商户场景、交易数据和资金方组合，而不是消费端流量。",
+                "legalEntity": "PT Xfers Indonesia Teknologi",
+                "regulatoryStatus": "OJK 旧制记录 S-2/IK.01/2023（2023-08-28），监管沙盒结果为“推荐并须登记”；官网称已在 OJK 登记，但未在公开资料中核到 POJK 4/2025 下的新经营许可函",
+                "registrationTime": "2023-08-28（旧制 S-2/IK.01/2023）；2026 正式许可状态待 OJK FIND/SPRINT 核验",
+                "assets": "未公开印尼经营主体单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "Fazz Financial Group；印尼主体直接股比和最终控制比例未公开",
+                "controlChangeTime": "2021 年 Payfazz 与 Xfers 合并形成 Fazz 集团；公开资料未披露 PT Xfers Indonesia Teknologi 的后续控制权转移",
+                "sources": [
+                    {"label": "OJK：2023-08 旧制 ITSK 名单", "url": "https://www.ojk.go.id/en/berita-dan-kegiatan/publikasi/Documents/Pages/List-of-Digital-Finance-Innovation-Provider-as-of-August-2023/List%20of%20Digital%20Finance%20Innovation%20Provider%20as%20of%20August%202023.pdf"},
+                    {"label": "OJK：监管沙盒结果", "url": "https://gesit.ojk.go.id/GESIT/_uploads/202407231112_Data%20GESIT%20Hasil%20Regulatory%20Sandbox%20per%2030%20April%202024.pdf"},
+                    {"label": "Fazz Business：产品、主体及集团归属", "url": "https://business.fazz.com/product/riplay_fazz_business.pdf"},
+                    {"label": "Fazz：集团历史与创始团队", "url": "https://fazz.com/about/"},
+                ],
+            },
+            {
+                "name": "Seedflex",
+                "id": "seedflex",
+                "tier": "按销售还款的嵌入式企业信贷",
+                "scale": "以 Pay-As-You-Sell Advance 连接商户平台和资金方；2025 年完成 USD 3.2m seed extension",
+                "position": "平台商户营运资金、动态还款、API 嵌入式融资",
+                "edge": "用实时销售数据承保并随销售自动还款，适合现金流波动较大的小微商户。",
+                "implication": "嵌入式融资需要同时证明数据授权、平台分账、资金方合作和违约处置链条。",
+                "legalEntity": "PT Seedflex Technologies Indonesia",
+                "regulatoryStatus": "官网披露 PAJK 登记编号 2024100000000217（2025-06-11），并于 2025-06-25 宣布正式登记；2026 年状态仍建议用 OJK FIND 实时复核",
+                "registrationTime": "2025-06-11（官网披露编号 2024100000000217）",
+                "assets": "未公开印尼经营主体单体资产；USD 3.2m 集团融资额不等于资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "创始人 Ritwik Ghosh、Sauvik Ghosh 与机构投资者共同持股；最终控制比例未公开",
+                "controlChangeTime": "2025-05 seed extension 引入 Z Venture Capital、Iterative，并由 500 Global 等跟投；未披露控制权转移",
+                "sources": [
+                    {"label": "Seedflex Indonesia：登记、经营主体与业务模式", "url": "https://www.seedflex.id/tentangkami"},
+                    {"label": "Seedflex Indonesia：2025-06 登记公告", "url": "https://www.seedflex.id/blog"},
+                    {"label": "Seedflex：2025 年 USD 3.2m 融资公告", "url": "https://www.seedflex.com/news/seedflex-raises-us3-2-million"},
+                    {"label": "OJK FIND：实时许可核验入口", "url": "https://find.ojk.go.id/"},
+                ],
+            },
+            {
+                "name": "Artaku",
+                "id": "artaku",
+                "tier": "BPR 抵押贷款融资代理",
+                "scale": "以 App 连接借款人与附近 BPR、LKM 或典当机构，主打 BPKB/SHM 抵押融资",
+                "position": "车辆/房产抵押贷款申请、BPR lead 分发",
+                "edge": "面向区域 BPR 的本地网络与抵押物导向筛选，可降低无效申请。",
+                "implication": "切入 BPR 融资聚合要建设本地机构覆盖、抵押物核验和线下履约能力。",
+                "legalEntity": "PT Sarana Pasar Digital",
+                "regulatoryStatus": "OJK 登记函 S-533/IK.01/2024（2024-10-31）；AFTECH 2026-07 会员页仍列示为 ITSK Terdaftar",
+                "registrationTime": "2024-10-31（S-533/IK.01/2024）",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "最终控股股东及直接持股比例未公开；AFTECH 列示 Rocky Tanumihardjo 为董事长/关键人",
+                "controlChangeTime": "未检索到公开控股权变更；需通过工商簿册和 OJK 许可申请材料核验",
+                "sources": [
+                    {"label": "OJK：2024-10 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%20October%202024.pdf"},
+                    {"label": "Artaku：平台条款与经营主体", "url": "https://artaku.id/term.html"},
+                    {"label": "AFTECH：Artaku 会员档案", "url": "https://fintech.id/en/community/aftech-members/66ca05c3d5d4ab5c2dfa3d9e"},
+                ],
+            },
+            {
+                "name": "Lendana",
+                "id": "lendana",
+                "tier": "特定客群融资代理",
+                "scale": "旧制 Financing Agent，面向印尼劳工等客群连接金融机构并数字化核验、转交贷款申请",
+                "position": "特定客群借款人获客、资料核验和贷款申请分发",
+                "edge": "通过垂直客群与线下生态提高借款人识别和产品匹配效率。",
+                "implication": "垂直客群可降低获客成本，但对身份、就业、跨境数据和代理责任的合规要求更高。",
+                "legalEntity": "PT Lendana Digitalindo Nusantara",
+                "regulatoryStatus": "OJK 登记函 S-595/IK.01/2024（2024-12-27）；2026 年经营许可转换状态需以 OJK FIND/SPRINT 实时核验",
+                "registrationTime": "2024-12-27（S-595/IK.01/2024）；旧制最早记录 2019-10-25",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "最终控股股东及直接持股比例未公开",
+                "controlChangeTime": "未检索到公开控股权变更；2024 年管理层任职信息不等同于控制权变化",
+                "sources": [
+                    {"label": "OJK：截至 2025 年 2 月的 ITSK 登记名单", "url": "https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Terdaftar%20Posisi%2011%20Maret%202025.pdf"},
+                    {"label": "OJK：2023-08 旧制 Financing Agent 名单", "url": "https://www.ojk.go.id/en/berita-dan-kegiatan/publikasi/Documents/Pages/List-of-Digital-Finance-Innovation-Provider-as-of-August-2023/List%20of%20Digital%20Finance%20Innovation%20Provider%20as%20of%20August%202023.pdf"},
+                    {"label": "OJK FIND：实时许可核验入口", "url": "https://find.ojk.go.id/"},
+                ],
             },
             {
                 "name": "Komunal / DepositoBPR",
+                "id": "komunal-depositobpr",
                 "tier": "BPR 网络聚合平台",
-                "scale": "累计连接存款超过 Rp21 trillion，覆盖 350 家以上 BPR",
+                "scale": "聚合数百家 BPR/BPRS 的存款产品；报告披露累计连接存款超过 Rp21tn、覆盖 350 家以上 BPR",
                 "position": "BPR 存款聚合、BPR 网络连接和区域金融机构分发",
                 "edge": "掌握大量 BPR 合作关系，说明区域金融机构网络本身可以成为聚合入口。",
                 "implication": "虽然不是贷款聚合的直接同类，但对进入 BPR 贷款/存款生态有参考价值，重点看机构网络和合规合作协议。",
+                "legalEntity": "PT Komunal Sejahtera Indonesia（DepositoBPR）；集团另有 PT Komunal Finansial Indonesia 等主体",
+                "regulatoryStatus": "OJK 登记函 S-576/IK.01/2024（2024-11-29）；官网持续标注受 OJK 登记和监管",
+                "registrationTime": "2024-11-29（S-576/IK.01/2024）",
+                "assets": "未公开 PAJK 经营主体单体资产；平台累计存款撮合额不等于资产",
+                "equityCapital": "未公开单体权益或实缴资本；集团融资额不作为权益替代值",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "创始团队与 East Ventures、Skystar、Gobi、Sumitomo、JAFCO 等投资者共同持股；PT Komunal Sejahtera Indonesia 的最终控制比例未公开",
+                "controlChangeTime": "2023 年 USD 8.5m 融资，2024 年又完成约 USD 5.5m Series A extension；未披露控制权转移",
+                "sources": [
+                    {"label": "OJK：截至 2025 年 2 月的 ITSK 登记名单", "url": "https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Terdaftar%20Posisi%2011%20Maret%202025.pdf"},
+                    {"label": "DepositoBPR：业务、登记函与覆盖网络", "url": "https://depositobpr.id/"},
+                    {"label": "DepositoBPR：经营主体与旧制监管状态", "url": "https://depositobpr.id/faq/umum"},
+                    {"label": "East Ventures：2023 年 USD 8.5m 融资", "url": "https://east.vc/id/berita/press-release/komunal-raih-pendanaan-baru-yang-dipimpin-oleh-east-ventures"},
+                ],
+            },
+            {
+                "name": "eFunding",
+                "id": "efunding",
+                "tier": "伊斯兰金融产品聚合",
+                "scale": "网站型 Sharia Funding Agent，聚合伊斯兰银行储蓄、存款与融资产品",
+                "position": "LKS 产品信息、申请入口与 Sharia 存款/融资分发",
+                "edge": "以伊斯兰金融垂直定位和合作 LKS 网络建立信任与差异化。",
+                "implication": "Sharia 聚合需要在商业合作之外同步处理产品合规、信息披露和宗教治理口径。",
+                "legalEntity": "PT Efunding Teknologi Keuangan",
+                "regulatoryStatus": "OJK 登记函 S-61/IK.01/2025（2025-02-07）；官网持续标注为 OJK 登记 PAJK",
+                "registrationTime": "2025-02-07（S-61/IK.01/2025）",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "最终控股股东及直接持股比例未公开",
+                "controlChangeTime": "未检索到公开控股权变更；需通过工商簿册和 OJK 许可申请材料核验",
+                "sources": [
+                    {"label": "OJK：截至 2025-03-14 的 ITSK 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf"},
+                    {"label": "eFunding：公司、产品与登记函", "url": "https://efunding.id/tentang-kami"},
+                    {"label": "eFunding：服务条款与经营主体", "url": "https://efunding.id/syarat-dan-ketentuan"},
+                ],
+            },
+            {
+                "name": "OTTO",
+                "id": "otto",
+                "tier": "综合金融与生活服务聚合 App",
+                "scale": "覆盖贷款、保险、投资及账单等服务，并与持牌金融机构和分销伙伴合作",
+                "position": "消费金融产品聚合、社区分销与超级 App 场景",
+                "edge": "从 Ponsel Duit 演进到多产品超级 App，可复用社区、支付和账单场景。",
+                "implication": "多场景聚合能增加触达频率，但需要按产品逐一划清平台、持牌供应方和销售责任。",
+                "legalEntity": "PT IndoArtha Perkasa Sukses",
+                "regulatoryStatus": "OJK 登记函 S-76/IK.01/2025（2025-02-17）；官网持续标注为 OJK 登记 PAJK",
+                "registrationTime": "2025-02-17（S-76/IK.01/2025）",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "OttoDigital Group；2017 年历史资料显示前身由本地伙伴与 Allianz SE 合作设立，但当前直接股比未公开",
+                "controlChangeTime": "2017 年成立 PT IndoAlliz Perkasa Sukses；2020 年更名 PT IndoArtha Perkasa Sukses；2022 年 Ponsel Duit 升级为 OTTO，未披露同期控制权转移",
+                "sources": [
+                    {"label": "OJK：截至 2025-03-14 的 ITSK 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf"},
+                    {"label": "OTTO：公司历史与平台演进", "url": "https://otto.id/tentang-perusahaan/"},
+                    {"label": "OTTO：隐私政策与经营主体", "url": "https://otto.id/kebijakan-privasi/"},
+                ],
+            },
+            {
+                "name": "ReLi.id",
+                "id": "reli-id",
+                "tier": "金融集团综合产品聚合",
+                "scale": "聚合 Reliance Group 的投资、保险、融资及其他金融服务入口",
+                "position": "集团内证券、保险、融资等产品的数字化分发",
+                "edge": "依托既有持牌金融集团，可在一个入口中形成跨产品协同。",
+                "implication": "金融集团自建聚合入口的核心是关联交易边界、产品适当性和跨主体数据治理。",
+                "legalEntity": "PT Reliance Integrasi Dunia Anda",
+                "regulatoryStatus": "OJK 登记函 S-126/IK.01/2025（2025-03-10）；2026 年经营许可转换状态需以 OJK FIND/SPRINT 实时核验",
+                "registrationTime": "2025-03-10（S-126/IK.01/2025）",
+                "assets": "未公开 ReLi.id 经营主体单体资产；集团财务不作为该主体资产替代值",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：该经营主体未上市；关联集团信息不等于其市值",
+                "controllingShareholder": "PT Reliance Capital Management；集团公开财务报表将 PT Reliance Integrasi Dunia Anda 列为受控主体",
+                "controlChangeTime": "至少在 2021 年集团财务报表中已列为受 PT Reliance Capital Management 控制；具体取得控制日期未公开",
+                "sources": [
+                    {"label": "OJK：截至 2025-03-14 的 ITSK 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%2014%20Maret%202025.pdf"},
+                    {"label": "Reliance Group：ReLi.id 数字平台", "url": "https://www.relianceindonesia.com/digital-platform"},
+                    {"label": "Reliance Capital Management：2021 年财务报表", "url": "https://relianceindonesia.com/cfind/source/files/financialstatement2021.pdf"},
+                ],
+            },
+            {
+                "name": "Finetiks",
+                "id": "finetiks",
+                "tier": "个人财务管理与产品聚合",
+                "scale": "AI 个人财务管理、储蓄与金融产品接入；与 Bank Victoria 等持牌机构合作",
+                "position": "个人资产负债视图、财务习惯与储蓄/投资产品入口",
+                "edge": "以财务管理工具形成高频数据入口，再导向储蓄、投资等金融产品。",
+                "implication": "工具型聚合的关键是用户授权、账户数据安全和工具功能与产品销售之间的责任隔离。",
+                "legalEntity": "PT Finetiks Inovasi Indonesia",
+                "regulatoryStatus": "OJK 登记函 S-516/IK.01/2024（OJK 名单列示 2024-10-08；公司博客称 2024-09-27 发函），2026 年状态建议以 OJK FIND 为准",
+                "registrationTime": "2024-10-08（OJK 名单）；公司披露发函日为 2024-09-27",
+                "assets": "未公开单体资产",
+                "equityCapital": "未公开单体权益或实缴资本",
+                "marketCap": "不适用：未上市私营公司",
+                "controllingShareholder": "创始人 Cameron Goh、Edwin Ardiwinata 与投资人共同持股；最终控股比例未公开",
+                "controlChangeTime": "未检索到公开控股权变更；官网展示创始团队与投资机构标识，但不足以推定控制关系",
+                "sources": [
+                    {"label": "OJK：2024-10 登记名单", "url": "https://www.ojk.go.id/en/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/List%20of%20Registered%20ITSK%20Providers%20as%20of%20October%202024.pdf"},
+                    {"label": "OJK SIPENA：S-516/IK.01/2024 数字文件核验", "url": "https://sipena.ojk.go.id/home/verification/document/a6a35981-d95b-4731-8a1f-626b2a49368e/OJK-071024-040145"},
+                    {"label": "Finetiks：公司、创始人与业务介绍", "url": "https://www.finetiks.com/en/about-us"},
+                    {"label": "Finetiks：OJK 登记说明", "url": "https://www.finetiks.com/en/blog/finetiks-terdaftar-ojk"},
+                ],
             },
         ],
         "latestRules": [
+            {
+                "name": "OJK 2026 年 6 月行业更新",
+                "note": "OJK 披露 17 家 PAJK、26 项 PAJK 经营许可申请（17 家存量机构与 9 家新申请），2026 年 5 月合作方批准交易 Rp2.19 trillion、用户 1,829 万。",
+                "sourceUrl": "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/1028_June_2026_Board_of_Commissioners_Meeting%3A_Maintaining_Financial_Sector_Resilience_and_Strong_Intermediation_to_Support_Economic_Growth",
+            },
             {
                 "name": "POJK No.4/2025",
                 "note": "PAJK 从旧注册和沙盒模式转向正式经营许可制度，明确金融服务聚合商的准入、资本、外资、合作金融机构、数据和信息安全要求。",
@@ -5800,6 +6133,8 @@ html = f"""<!doctype html>
       if (bprMatch) return {{ page: "bpr-player", licenseId: "bpr", playerId: bprMatch[1] }};
       const icsMatch = hash.match(/^license\\/ics\\/([^/]+)$/);
       if (icsMatch) return {{ page: "ics-player", licenseId: "ics", playerId: icsMatch[1] }};
+      const loanAggregatorMatch = hash.match(/^license\\/loan-aggregator\\/([^/]+)$/);
+      if (loanAggregatorMatch) return {{ page: "loan-aggregator-player", licenseId: "loan-aggregator", playerId: loanAggregatorMatch[1] }};
       const match = hash.match(/^license\\/(.+)$/);
       if (match) return {{ page: "license", id: match[1] }};
       return {{ page: "home" }};
@@ -6421,6 +6756,167 @@ html = f"""<!doctype html>
       `;
     }}
 
+    function loanAggregatorPlayerSlug(player) {{
+      return player.id || slugify(player.name);
+    }}
+
+    function loanAggregatorPlayerGroups(item) {{
+      const players = item.competitors || [];
+      const groups = [
+        {{
+          category: "综合消费金融聚合",
+          badge: "综合聚合",
+          description: "覆盖消费贷、信用卡及多类金融产品，核心指标是获客成本、申请完成率和跨品类转化。",
+          names: ["Cermati", "CashCerdas", "Pilih Kredit", "Finfy"],
+        }},
+        {{
+          category: "按揭及住房融资聚合",
+          badge: "按揭/KPR",
+          description: "围绕房产、KPR 和抵押贷款建立银行、开发商、顾问及申请流程连接。",
+          names: ["Ringkas", "IDEAL", "Loan Market Indonesia"],
+        }},
+        {{
+          category: "融资代理及嵌入式信贷",
+          badge: "融资代理",
+          description: "把企业或个人融资嵌入支付、商户、平台和垂直客群场景，强调数据、资金方和分发入口。",
+          names: ["Yup", "Fazz Business", "Seedflex", "Artaku", "Lendana"],
+        }},
+        {{
+          category: "非贷款及综合 PAJK",
+          badge: "综合/非贷",
+          description: "包括存款、Sharia、投资、保险及个人财务管理聚合，用于观察 PAJK 的业务边界和集团协同。",
+          names: ["Komunal / DepositoBPR", "eFunding", "OTTO", "ReLi.id", "Finetiks"],
+        }},
+      ];
+      const byName = new Map(players.map(player => [player.name, player]));
+      const groupedNames = new Set();
+      const result = groups.map(group => {{
+        const groupPlayers = group.names.map(name => byName.get(name)).filter(Boolean);
+        groupPlayers.forEach(player => groupedNames.add(player.name));
+        return {{ ...group, players: groupPlayers }};
+      }}).filter(group => group.players.length);
+      const remaining = players.filter(player => !groupedNames.has(player.name));
+      if (remaining.length) {{
+        result.push({{
+          category: "其他报告列示平台",
+          badge: "其他",
+          description: "研究报告列示、但暂未归入前四类的聚合或融资代理平台。",
+          players: remaining,
+        }});
+      }}
+      return result;
+    }}
+
+    function findLoanAggregatorPlayer(playerId) {{
+      const item = LICENSES.find(item => item.id === "loan-aggregator");
+      return (item?.competitors || []).find(player => loanAggregatorPlayerSlug(player) === playerId);
+    }}
+
+    function renderLoanAggregatorDirectory(item) {{
+      const groups = loanAggregatorPlayerGroups(item);
+      const total = groups.reduce((sum, group) => sum + (group.players || []).length, 0);
+      return `
+        <div class="bank-directory">
+          <div class="bank-directory-summary">
+            已补齐研究报告列示的 ${{total}} 家市场对标平台。这里的 17 家是报告的可比玩家集合，不等同于 OJK 在 2026 年 6 月统计的 17 家存量 PAJK；每个二级页均单独标注经营主体、历史登记函和当前状态核验边界。
+          </div>
+          ${{groups.map(group => `
+            <section class="bank-group">
+              <div class="bank-group-title">
+                <div>
+                  <h4>${{esc(group.category)}}</h4>
+                  <p>${{esc(group.description || "")}}</p>
+                </div>
+                <span class="tag">${{(group.players || []).length}} 家</span>
+              </div>
+              <div class="bank-table-wrap">
+                <div class="bank-table">
+                  ${{(group.players || []).map(player => `
+                    <a class="bank-row" href="#license/${{esc(item.id)}}/${{esc(loanAggregatorPlayerSlug(player))}}">
+                      <div class="bank-name-cell"><strong>${{esc(player.name)}}</strong><span>${{esc(player.position || player.regulatoryStatus || group.category)}}</span></div>
+                      <div class="bank-shape-pill player-shape-pill">${{esc(group.badge || player.tier || "")}}</div>
+                      <div class="bank-row-action">查看平台详情</div>
+                    </a>
+                  `).join("")}}
+                </div>
+              </div>
+            </section>
+          `).join("")}}
+        </div>
+      `;
+    }}
+
+    function loanAggregatorPlayerPage(item, player) {{
+      if (!player) return detailPage(item);
+      const cards = [
+        ["监管/登记状态", player.regulatoryStatus || "需以 OJK FIND/SPRINT 实时核验"],
+        ["经营主体", player.legalEntity || "未公开"],
+        ["OJK 登记时间", player.registrationTime || "未公开"],
+        ["资产", player.assets || "未公开"],
+        ["权益/资本", player.equityCapital || "未公开"],
+        ["市值", player.marketCap || "不适用或未公开"],
+        ["背后控股股东", player.controllingShareholder || "未公开"],
+        ["控制权变化", player.controlChangeTime || "未公开"],
+      ];
+      const playerSources = [];
+      (player.sources || []).forEach(source => {{
+        if (!source || !source.url) return;
+        if (playerSources.some(item => item.url === source.url && item.label === source.label)) return;
+        playerSources.push(source);
+      }});
+      if (!playerSources.some(source => source.url === "https://find.ojk.go.id/")) {{
+        playerSources.push({{
+          label: "OJK FIND：金融机构实时许可核验入口",
+          url: "https://find.ojk.go.id/",
+        }});
+      }}
+      if (!playerSources.some(source => source.url.includes("ArticleList/View/294_OJK_Regulation_Number_4_2025"))) {{
+        playerSources.push({{
+          label: "OJK POJK 4/2025：PAJK 正式经营许可框架",
+          url: "https://iru.ojk.go.id/iru/WebSite/ArticleList/View/294_OJK_Regulation_Number_4_2025_concerning_Providers_of_Financial_Services_Aggregations",
+        }});
+      }}
+      return `
+        <div class="detail-hero" data-tone="${{esc(item.tone)}}">
+          <button class="btn" onclick="setRoute('loan-aggregator')">返回 Loan Aggregator</button>
+          <div class="detail-title">
+            <div>
+              <h2>${{esc(player.name)}}</h2>
+              <p>${{esc(player.tier || "PAJK / 聚合平台二级信息")}}</p>
+            </div>
+            <div class="mini-tags">
+              <span class="tag">${{esc(player.legalEntity || "经营主体待核")}}</span>
+              <span class="tag">${{esc(player.registrationTime || "登记时间待核")}}</span>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="bank-detail-grid player-detail-grid">
+            ${{cards.map(card => `
+              <article class="bank-detail-card">
+                <span>${{esc(card[0])}}</span>
+                <strong>${{moneyText(card[1])}}</strong>
+              </article>
+            `).join("")}}
+          </div>
+        </section>
+        ${{playerSources.length ? `
+          <section class="section source-section">
+            <h3>数据来源</h3>
+            <p class="source-note">Loan Aggregator / PAJK 玩家普遍是未上市私营公司。未公开的单体资产、权益、实缴资本和直接股比均明确标注；集团融资、平台撮合额和关联上市集团市值不冒充牌照经营主体的财务数据。历史 OJK 登记函也不自动等同于已完成 POJK 4/2025 下的经营许可转换，当前状态请以 OJK FIND/SPRINT 为准。</p>
+            <div class="source-list">
+              ${{playerSources.map(source => `
+                <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
+                  <strong>${{esc(source.label || "来源")}}</strong>
+                  <span>${{esc(source.url)}}</span>
+                </a>
+              `).join("")}}
+            </div>
+          </section>
+        ` : ""}}
+      `;
+    }}
+
     function p2pPlayerSlug(player) {{
       return player.id || slugify(player.name);
     }}
@@ -7000,8 +7496,8 @@ html = f"""<!doctype html>
             </section>
 
             <section class="info-band">
-              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : item.id === "pjp" ? "PJP 玩家目录" : item.id === "bpr" ? "BPR 玩家目录" : item.id === "ics" ? "ICS / PKA 机构目录" : "竞争对手板块"}}</h3>
-              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : item.id === "pjp" ? renderPJPDirectory(item) : item.id === "bpr" ? renderBPRDirectory(item) : item.id === "ics" ? renderICSDirectory(item) : renderCompetitors(item)}}
+              <h3>${{item.id === "commercial-bank" ? "商业银行玩家库" : item.id === "multi-finance" ? "Multi-Finance 玩家目录" : item.id === "p2p" ? "P2P 竞争对手目录" : item.id === "pjp" ? "PJP 玩家目录" : item.id === "bpr" ? "BPR 玩家目录" : item.id === "ics" ? "ICS / PKA 机构目录" : item.id === "loan-aggregator" ? "Loan Aggregator / PAJK 玩家目录" : "竞争对手板块"}}</h3>
+              ${{item.id === "commercial-bank" ? renderBankDirectory(item) : item.id === "multi-finance" ? renderMultiFinanceDirectory(item) : item.id === "p2p" ? renderP2PDirectory(item) : item.id === "pjp" ? renderPJPDirectory(item) : item.id === "bpr" ? renderBPRDirectory(item) : item.id === "ics" ? renderICSDirectory(item) : item.id === "loan-aggregator" ? renderLoanAggregatorDirectory(item) : renderCompetitors(item)}}
             </section>
             ${{wideCompetitorLayout ? renderReferenceBoxes(item, rules, true) : ""}}
           </div>
@@ -7076,6 +7572,15 @@ html = f"""<!doctype html>
         detail.classList.add("active");
         showModule(null);
         detail.innerHTML = icsPlayerPage(item, player);
+        qs("#mobileNav").value = item.id;
+        window.scrollTo({{ top: 0, behavior: "instant" }});
+      }} else if (route.page === "loan-aggregator-player") {{
+        const item = LICENSES.find(x => x.id === route.licenseId) || LICENSES[0];
+        const player = findLoanAggregatorPlayer(route.playerId);
+        home.classList.remove("active");
+        detail.classList.add("active");
+        showModule(null);
+        detail.innerHTML = loanAggregatorPlayerPage(item, player);
         qs("#mobileNav").value = item.id;
         window.scrollTo({{ top: 0, behavior: "instant" }});
       }} else if (route.page === "license") {{

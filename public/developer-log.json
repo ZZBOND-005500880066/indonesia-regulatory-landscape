@@ -3,6 +3,20 @@
     {
       "date": "2026-07-21",
       "type": "协作记录",
+      "title": "Enrich ICS licence holder data",
+      "summary": "zhuangzihao 于 2026-07-21 提交：Enrich ICS licence holder data",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "8813922",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/8813922b85cd119dd8152296685ebd2fddf5f51b"
+    },
+    {
+      "date": "2026-07-21",
+      "type": "协作记录",
       "title": "Enrich disclosed licence holder data",
       "summary": "zhuangzihao 于 2026-07-21 提交：Enrich disclosed licence holder data",
       "changes": [
