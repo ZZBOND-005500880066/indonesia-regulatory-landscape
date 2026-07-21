@@ -1,6 +1,34 @@
 {
   "entries": [
     {
+      "date": "2026-07-21",
+      "type": "协作记录",
+      "title": "Align PJP player detail pages",
+      "summary": "zhuangzihao 于 2026-07-21 提交：Align PJP player detail pages",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "271c76a",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/271c76a9399ce1cf5f2b2071b54679265117800e"
+    },
+    {
+      "date": "2026-07-20",
+      "type": "自动更新",
+      "title": "Update regulatory history [skip ci]",
+      "summary": "github-actions[bot] 于 2026-07-20 提交：Update regulatory history [skip ci]",
+      "changes": [
+        "提交人：github-actions[bot]",
+        "涉及范围：数据快照",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json"
+      ],
+      "author": "github-actions[bot]",
+      "commit": "5ff3ea4",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/5ff3ea4a0657fc5fe3cee930cc1276ee973c7174"
+    },
+    {
       "date": "2026-07-20",
       "type": "协作记录",
       "title": "Align P2P player detail fields",

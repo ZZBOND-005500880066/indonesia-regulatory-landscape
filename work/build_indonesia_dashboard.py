@@ -1154,8 +1154,8 @@ licenses = [
                 "implication": "新进入者很难正面复制规模；更适合作为生态闭环和钱包留存的上限参考。",
                 "assets": "PJP 主体未单独披露资产；公开口径主要看 GoTo 金融服务板块和 GoPay 使用场景。",
                 "equityCapital": "PJP 主体权益未单独公开；PJP 1 监管最低资本为 Rp15 billion。",
-                "marketCap": "GoPay 未单独上市；母公司 GoTo（IDX:GOTO）2026-07-20 市值约 Rp53.02 trillion。",
-                "controllingShareholder": "GoTo Group；运营主体通常按 PT Dompet Anak Bangsa 口径核对。",
+                "marketCap": "PJP 牌照主体 PT Dompet Anak Bangsa 未单独上市，暂无独立市值；GoTo 为上市集团背景，但不等同于 GoPay/PJP 主体市值。",
+                "controllingShareholder": "GoTo Group / GoTo Financial 体系；运营主体按 PT Dompet Anak Bangsa 口径核对。",
                 "controlChangeTime": "未公开单独股权变更完成日；当前按 GoTo/GoPay 生态主体披露和 BI 许可名录核对。",
                 "licenseEntity": "PT Dompet Anak Bangsa",
                 "licenseStatus": "PJP 1 / QRIS 相关支付能力需按 BI 名录逐项核对。",
@@ -1168,10 +1168,6 @@ licenses = [
                         "label": "GoTo 年报与财务披露",
                         "url": "https://www.gotocompany.com/en/investor-relations/annual-reports",
                     },
-                    {
-                        "label": "GoTo 市值参考",
-                        "url": "https://stockanalysis.com/quote/idx/GOTO/market-cap/",
-                    },
                 ],
             },
             {
@@ -1183,8 +1179,8 @@ licenses = [
                 "implication": "适合观察钱包补贴退坡后的留存能力，以及商户网络能否转化为低成本交易量。",
                 "assets": "未公开；PJP 主体未单独披露完整资产表。",
                 "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
-                "marketCap": "未单独上市，暂无独立市值。",
-                "controllingShareholder": "Grab 生态相关主体为主要背后方；运营主体按 PT Visionet Internasional 口径核对。",
+                "marketCap": "PJP 牌照主体 PT Visionet Internasional 未单独上市，暂无独立市值；Grab 为上市集团背景，但不等同于 OVO/PJP 主体市值。",
+                "controllingShareholder": "Grab 体系为主要背后方；运营主体按 PT Visionet Internasional 口径核对，公开年报中 OVO 通常通过 Bumi Cakrawala Perkasa 等结构披露。",
                 "controlChangeTime": "未公开当前控制权形成的完整交割日；历史上 Grab 曾披露扩大对 OVO 持股。",
                 "licenseEntity": "PT Visionet Internasional",
                 "licenseStatus": "PJP 1 / QRIS 相关支付能力需按 BI 名录逐项核对。",
@@ -1192,6 +1188,10 @@ licenses = [
                     {
                         "label": "OVO 官方网站",
                         "url": "https://www.ovo.id/",
+                    },
+                    {
+                        "label": "Grab 2025 Form 20-F",
+                        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001855612/222605cb-e428-49c5-a2ca-9a9574fec847.html",
                     },
                 ],
             },
@@ -1204,8 +1204,8 @@ licenses = [
                 "implication": "对标重点是支付频次、功能覆盖和合规运营，而不是单一下载量。",
                 "assets": "未公开；PJP 主体未单独披露完整资产表。",
                 "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
-                "marketCap": "未单独上市，暂无独立市值。",
-                "controllingShareholder": "PT Espay Debit Indonesia Koe；背后股东结构涉及 Emtek/Sinar Mas/Ant 等公开市场披露口径，需按最新公司披露复核。",
+                "marketCap": "PJP 牌照主体 PT Espay Debit Indonesia Koe / DANA 未单独上市，暂无独立市值；若未来 IPO，需另行更新。",
+                "controllingShareholder": "运营主体为 PT Espay Debit Indonesia Koe；公开披露和媒体口径显示背后股东涉及 Emtek/Sinar Mas/Lazada/Ant 等，最终持股比例需以最新公司注册或股东名册复核。",
                 "controlChangeTime": "未公开当前控制权完整变更日；2022 年 Sinar Mas 相关主体入股为重要节点。",
                 "licenseEntity": "PT Espay Debit Indonesia Koe",
                 "licenseStatus": "PJP 1 / QRIS 相关支付能力需按 BI 名录逐项核对。",
@@ -1213,6 +1213,10 @@ licenses = [
                     {
                         "label": "Emtek 投资者披露入口",
                         "url": "https://www.emtek.co.id/investor-relation",
+                    },
+                    {
+                        "label": "Katadata：DANA 股东与 IPO 计划",
+                        "url": "https://katadata.co.id/finansial/bursa/69d73c651bb47/menyibak-gurita-bisnis-dssa-bersiap-bawa-ipo-dana-dan-vidio-usai-stock-split",
                     },
                 ],
             },
@@ -1225,7 +1229,7 @@ licenses = [
                 "implication": "若没有同等级生态流量，直接做钱包难度较高；更现实的是找垂直场景或收单切入。",
                 "assets": "未公开；PJP 主体未单独披露完整资产表。",
                 "equityCapital": "未公开；PJP 1 监管最低资本为 Rp15 billion。",
-                "marketCap": "未单独上市；母公司 Sea Limited（NYSE:SE）上市，市值随行情波动。",
+                "marketCap": "PJP 牌照主体 PT AirPay International Indonesia 未单独上市，暂无独立市值；Sea Limited 为上市集团背景，但不等同于 ShopeePay/PJP 主体市值。",
                 "controllingShareholder": "Sea Limited / Shopee 生态；运营主体按 PT AirPay International Indonesia 口径核对。",
                 "controlChangeTime": "未公开当前控制权形成的完整交割日；按 Sea/Shopee 生态主体披露和 BI 许可名录核对。",
                 "licenseEntity": "PT AirPay International Indonesia",
@@ -1304,7 +1308,7 @@ licenses = [
                 "sources": [
                     {
                         "label": "Fazz 官方网站",
-                        "url": "https://fazz.com/id",
+                        "url": "https://fazz.com/id/",
                     },
                 ],
             },
@@ -1359,7 +1363,7 @@ licenses = [
                 "implication": "不能只看 PJP1 日期；需重点核查系统、报告、处罚、产品权限和股东变更可行性。",
                 "assets": "未公开到 PJP 业务单体；若按上市主体核对，需另查 HDIT 财报。",
                 "equityCapital": "PJP 1 监管最低资本为 Rp15 billion；实际可用资本需尽调确认。",
-                "marketCap": "上市主体 HDIT 市值随行情波动；本页不固化实时市值。",
+                "marketCap": "例外：PT Hensel Davest Indonesia Tbk（IDX:HDIT）为上市主体；但上市公司市值不等同于 PJP 牌照价值，仍需结合支付业务活跃度尽调。",
                 "controllingShareholder": "最终控股需按上市公司最新披露复核。",
                 "controlChangeTime": "PJP1 获批：2022-10-31；未列 QRIS；未公开股权变更完成日。",
                 "licenseEntity": "PT Hensel Davest Indonesia",
@@ -5903,7 +5907,7 @@ html = f"""<!doctype html>
         ${{playerSources.length ? `
           <section class="section source-section">
             <h3>数据来源</h3>
-            <p class="source-note">PJP 玩家二级页只保留硬信息。多数非银 PJP 未公开单体资产、权益或独立市值；若未披露股权变更，则展示 BI/材料可核的 PJP 或 QRIS 获批时间，并明确不等同于股权交割日。</p>
+            <p class="source-note">PJP 玩家二级页只保留硬信息。市值只按牌照主体本身是否上市判断，母公司或关联上市集团只作为股东方背景，不作为 PJP 主体市值；若未披露股权变更，则展示 BI/材料可核的 PJP 或 QRIS 获批时间，并明确不等同于股权交割日。</p>
             <div class="source-list">
               ${{playerSources.map(source => `
                 <a class="source-card" href="${{esc(source.url)}}" target="_blank" rel="noopener noreferrer">
