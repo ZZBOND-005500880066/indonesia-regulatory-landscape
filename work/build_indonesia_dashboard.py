@@ -4649,10 +4649,10 @@ lending_chart_markup = """
               </label>
             </div>
             <div class="lending-legend" aria-label="图表系列">
-              <span><i style="--series-color: var(--bank)" aria-hidden="true"></i>银行贷款</span>
-              <span><i style="--series-color: var(--pay)" aria-hidden="true"></i>消费信贷（含车、不含房）</span>
-              <span><i style="--series-color: var(--market)" aria-hidden="true"></i>数字银行样本</span>
               <span><i style="--series-color: var(--digital)" aria-hidden="true"></i>银行 BNPL</span>
+              <span><i style="--series-color: var(--market)" aria-hidden="true"></i>数字银行样本</span>
+              <span><i style="--series-color: var(--pay)" aria-hidden="true"></i>消费信贷（含车、不含房）</span>
+              <span><i style="--series-color: var(--bank)" aria-hidden="true"></i>银行贷款</span>
             </div>
             <div class="lending-chart-wrap">
               <svg class="lending-chart" role="img" aria-labelledby="lendingChartTitle lendingChartDesc"></svg>
@@ -4679,9 +4679,9 @@ deposit_chart_markup = """
               </label>
             </div>
             <div class="lending-legend" aria-label="图表系列">
-              <span><i style="--series-color: var(--bank)" aria-hidden="true"></i>银行总存款</span>
-              <span><i style="--series-color: var(--pay)" aria-hidden="true"></i>居民部门存款</span>
               <span><i style="--series-color: var(--market)" aria-hidden="true"></i>六家样本数字银行</span>
+              <span><i style="--series-color: var(--pay)" aria-hidden="true"></i>居民部门存款</span>
+              <span><i style="--series-color: var(--bank)" aria-hidden="true"></i>银行总存款</span>
             </div>
             <div class="lending-chart-wrap">
               <svg class="lending-chart deposit-chart" role="img" aria-labelledby="depositChartTitle depositChartDesc"></svg>
@@ -4769,7 +4769,7 @@ lending_chart_js = """
       const detail = qs(".lending-detail", root);
       const rateInput = qs("#lendingFxRate", root);
       const svgNS = "http://www.w3.org/2000/svg";
-      const stackOrder = [0, 3, 2, 1];
+      const stackOrder = [3, 2, 1, 0];
       const numberFormat = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 1 });
       const axisFormat = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 0 });
       const monthFormat = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "short", timeZone: "UTC" });
@@ -4904,7 +4904,8 @@ lending_chart_js = """
           svg.appendChild(label);
         });
 
-        LENDING_SERIES.forEach((item, seriesIndex) => {
+        stackOrder.forEach((seriesIndex) => {
+          const item = LENDING_SERIES[seriesIndex];
           const runs = [];
           let currentRun = [];
           LENDING_MONTHS.forEach((_, monthIndex) => {
@@ -5231,7 +5232,8 @@ deposit_chart_js = """
           svg.appendChild(label);
         });
 
-        DEPOSIT_SERIES.forEach((item, seriesIndex) => {
+        stackOrder.forEach((seriesIndex) => {
+          const item = DEPOSIT_SERIES[seriesIndex];
           const runs = [];
           let currentRun = [];
           DEPOSIT_MONTHS.forEach((_, monthIndex) => {
