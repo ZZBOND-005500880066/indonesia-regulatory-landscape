@@ -3,6 +3,20 @@
     {
       "date": "2026-07-21",
       "type": "协作记录",
+      "title": "Enrich Loan Aggregator market data",
+      "summary": "zhuangzihao 于 2026-07-21 提交：Enrich Loan Aggregator market data",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "273cf52",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/273cf528eb31573c43075b1dd8cbae48882fe9c6"
+    },
+    {
+      "date": "2026-07-21",
+      "type": "协作记录",
       "title": "Enrich ICS licence holder data",
       "summary": "zhuangzihao 于 2026-07-21 提交：Enrich ICS licence holder data",
       "changes": [

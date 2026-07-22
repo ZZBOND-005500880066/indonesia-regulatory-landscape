@@ -11,6 +11,11 @@ const required = [
   'data-module-page="updates"',
   'data-module-page="developer-log"',
   '#module/licenses',
+  'id="lendingOverview"',
+  'id="lendingFxRate"',
+  "LENDING_DEFAULT_USD_RATE = 15000",
+  "function initLendingChart",
+  "USD 十亿",
 ];
 
 for (const text of required) {
