@@ -8414,11 +8414,11 @@ html = f"""<!doctype html>
     function bankDetailPage(item, bank) {{
       if (!bank) return detailPage(item);
       const cards = [
-        ["资产", bank.assets],
-        ["核心资本", bank.coreCapital],
-        ["市值", bank.marketCap],
-        ["背后控股股东", bank.controllingShareholder],
-        ["股权变更时间", bank.controlChangeTime],
+        ["资产/公开规模", bank.assets || "未公开披露"],
+        ["资本/核心资本", bank.coreCapital || bank.equityCapital || "未公开披露"],
+        ["市值", bank.marketCap || "不适用或未公开披露"],
+        ["背后控股股东", bank.controllingShareholder || "未公开披露"],
+        ["牌照/股权变更时间", bank.controlChangeTime || bank.licenseApprovalTime || "未公开披露"],
       ];
       const bankSources = [];
       (bank.sources || []).forEach(source => {{
@@ -8436,7 +8436,7 @@ html = f"""<!doctype html>
           </div>
         </div>
         <section class="section">
-          <div class="bank-detail-grid">
+          <div class="bank-detail-grid player-detail-grid">
             ${{cards.map(card => `
               <article class="bank-detail-card">
                 <span>${{esc(card[0])}}</span>
