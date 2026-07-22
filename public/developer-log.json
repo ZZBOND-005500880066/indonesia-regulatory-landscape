@@ -3,6 +3,20 @@
     {
       "date": "2026-07-22",
       "type": "协作记录",
+      "title": "Shorten lending chart title",
+      "summary": "zhuangzihao 于 2026-07-22 提交：Shorten lending chart title",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "633c83a",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/633c83a8a8d980cdde3753216c62cd6bf9411a47"
+    },
+    {
+      "date": "2026-07-22",
+      "type": "协作记录",
       "title": "Refresh generated dashboard output",
       "summary": "zhuangzihao 于 2026-07-22 提交：Refresh generated dashboard output",
       "changes": [

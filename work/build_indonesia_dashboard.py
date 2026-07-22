@@ -4361,11 +4361,24 @@ developer_log = build_automatic_developer_log(developer_log)
 
 
 lending_chart_css = """
-    .lending-overview {
+    .market-chart-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 18px;
       margin: 0 0 26px;
-      padding: 20px 0 22px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    }
+
+    .lending-overview {
+      display: flex;
+      min-width: 0;
+      height: 100%;
+      flex-direction: column;
+      margin: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
     }
 
     .lending-overview-header {
@@ -4511,6 +4524,11 @@ lending_chart_css = """
       pointer-events: none;
     }
 
+    .lending-chart .series-endpoint {
+      stroke: var(--panel);
+      stroke-width: 2;
+    }
+
     .lending-chart .interaction-layer {
       fill: transparent;
       cursor: crosshair;
@@ -4576,6 +4594,24 @@ lending_chart_css = """
       font-size: 12px;
     }
 
+    @media (max-width: 1250px) {
+      .market-chart-grid .lending-overview-header {
+        display: block;
+      }
+
+      .market-chart-grid .lending-fx-control {
+        width: min(100%, 300px);
+        min-width: 0;
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .market-chart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 760px) {
       .lending-overview-header {
         display: block;
@@ -4625,6 +4661,43 @@ lending_chart_markup = """
             <div class="lending-detail" role="status" aria-live="polite"></div>
             <p class="lending-note">四项口径存在包含与重叠关系，堆叠高度不代表行业贷款总额；中间缺失月份仅作直线连接，悬停仍显示“—”。</p>
           </section>
+"""
+
+
+deposit_chart_markup = """
+          <section class="lending-overview deposit-overview" id="depositOverview" aria-labelledby="depositOverviewTitle">
+            <div class="lending-overview-header">
+              <div class="lending-overview-title">
+                <span class="eyebrow">Deposit Market</span>
+                <h4 id="depositOverviewTitle">存款余额走势</h4>
+                <p>2024 年 1 月至 2026 年 5 月，按 IDR 万亿原值及与左侧相同的零点尺度绘制。</p>
+              </div>
+              <label class="lending-fx-control" for="depositFxRate">
+                <span class="lending-fx-label">图表换算汇率</span>
+                <span class="lending-fx-row"><span>1 USD =</span><input class="lending-fx-input" id="depositFxRate" type="number" value="15000" min="1" step="1" inputmode="decimal" aria-describedby="depositFxHelp"><span>IDR</span></span>
+                <span class="lending-fx-help" id="depositFxHelp">可手动修改；只影响美元换算，不改变曲线比例。</span>
+              </label>
+            </div>
+            <div class="lending-legend" aria-label="图表系列">
+              <span><i style="--series-color: var(--bank)" aria-hidden="true"></i>银行总存款</span>
+              <span><i style="--series-color: var(--pay)" aria-hidden="true"></i>居民部门存款</span>
+              <span><i style="--series-color: var(--market)" aria-hidden="true"></i>六家样本数字银行</span>
+            </div>
+            <div class="lending-chart-wrap">
+              <svg class="lending-chart deposit-chart" role="img" aria-labelledby="depositChartTitle depositChartDesc"></svg>
+              <div class="lending-tooltip deposit-tooltip" role="status" aria-hidden="true"></div>
+            </div>
+            <div class="lending-detail deposit-detail" role="status" aria-live="polite"></div>
+            <p class="lending-note">总存款已包含居民与数字银行存款，堆叠高度不代表行业存款总额；仅连接覆盖期内缺口，不对覆盖期外外推。</p>
+          </section>
+"""
+
+
+market_charts_markup = f"""
+          <div class="market-chart-grid">
+{lending_chart_markup}
+{deposit_chart_markup}
+          </div>
 """
 
 
@@ -4775,7 +4848,7 @@ lending_chart_js = """
         const xAt = (index) => margin.left + xStep * index;
         const totals = LENDING_MONTHS.map((_, index) => stackTotal(index));
         const tickStep = 2000;
-        const axisMax = Math.ceil(Math.max(...totals) / tickStep) * tickStep;
+        const axisMax = Math.max(14000, Math.ceil(Math.max(...totals) / tickStep) * tickStep);
         const yAt = (value) => margin.top + plotHeight - (value / axisMax) * plotHeight;
         const labelEvery = width <= 600 ? 6 : 3;
         svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
@@ -4956,6 +5029,347 @@ lending_chart_js = """
 
       rateInput.addEventListener("input", updateRate);
       lendingChartRender = render;
+      render();
+      if ("ResizeObserver" in window) {
+        const resizeObserver = new ResizeObserver(render);
+        resizeObserver.observe(root);
+      } else {
+        window.addEventListener("resize", render);
+      }
+    }
+"""
+
+
+deposit_chart_js = """
+    const DEPOSIT_DEFAULT_USD_RATE = 15000;
+    const DEPOSIT_FX_STORAGE_KEY = "indonesia-license-library-deposit-fx-rate";
+    const DEPOSIT_MONTHS = [
+      "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06",
+      "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12",
+      "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06",
+      "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12",
+      "2026-01", "2026-02", "2026-03", "2026-04", "2026-05"
+    ];
+    const DEPOSIT_SERIES = [
+      {
+        name: "银行总存款",
+        color: "var(--bank)",
+        values: [
+          8415.282, 8440.845, 8601.220, 8653.014, 8698.703, 8722.035,
+          8686.720, 8649.871, 8720.782, 8751.160, 8835.901, 8837.242,
+          8879.258, 8925.881, 9010.153, 9046.540, 9072.045, 9328.996,
+          9294.373, null, null, null, null, null, null, null, null, null, null
+        ]
+      },
+      {
+        name: "居民部门存款",
+        color: "var(--pay)",
+        values: [
+          3966.511, 3886.122, 3883.867, 3899.953, 3876.277, 3902.270,
+          3906.114, 3887.628, 3879.384, 3895.612, 3870.326, 3890.932,
+          3860.387, 3841.035, 3924.825, 3893.940, 3868.823, 3933.692,
+          3934.916, 3897.581, 3919.086, 3920.588, 3939.323, 3995.484,
+          null, null, null, null, null
+        ]
+      },
+      {
+        name: "六家样本数字银行",
+        color: "var(--market)",
+        values: [
+          54.553, 56.425, null, 57.269, 58.904, null,
+          61.883, 62.091, null, 68.958, 68.787, null,
+          74.809, 76.489, null, 81.554, 80.890, null,
+          87.635, 89.328, null, 96.900, 100.207, null,
+          95.075, 95.981, null, 101.663, 102.535
+        ]
+      }
+    ];
+    let depositChartRender = () => {};
+
+    function initDepositChart() {
+      const root = qs("#depositOverview");
+      if (!root || root.dataset.initialized === "true") return;
+      root.dataset.initialized = "true";
+      const svg = qs(".deposit-chart", root);
+      const wrap = qs(".lending-chart-wrap", root);
+      const tooltip = qs(".deposit-tooltip", root);
+      const detail = qs(".deposit-detail", root);
+      const rateInput = qs("#depositFxRate", root);
+      const svgNS = "http://www.w3.org/2000/svg";
+      const stackOrder = [2, 1, 0];
+      const numberFormat = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 1 });
+      const axisFormat = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 0 });
+      const monthFormat = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "short", timeZone: "UTC" });
+      let exchangeRate = DEPOSIT_DEFAULT_USD_RATE;
+      let activeMonthIndex = DEPOSIT_MONTHS.length - 1;
+      let tooltipVisible = false;
+
+      try {
+        const storedRate = Number(window.localStorage.getItem(DEPOSIT_FX_STORAGE_KEY));
+        if (Number.isFinite(storedRate) && storedRate > 0) exchangeRate = storedRate;
+      } catch (error) {
+        exchangeRate = DEPOSIT_DEFAULT_USD_RATE;
+      }
+      rateInput.value = String(exchangeRate);
+
+      const createSvg = (name, attrs = {}) => {
+        const node = document.createElementNS(svgNS, name);
+        Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, String(value)));
+        return node;
+      };
+      const formatMonth = (month) => monthFormat.format(new Date(`${month}-01T00:00:00Z`));
+      const toUsdBillions = (idrTrillions) => idrTrillions * 1000 / exchangeRate;
+      const formatPair = (value) => value == null
+        ? "—"
+        : `Rp ${numberFormat.format(value)} tn / USD ${numberFormat.format(toUsdBillions(value))}bn`;
+      const actualValues = (monthIndex) => DEPOSIT_SERIES.map((item) => item.values[monthIndex]);
+      const displayValue = (seriesIndex, monthIndex) => {
+        const exact = DEPOSIT_SERIES[seriesIndex].values[monthIndex];
+        if (exact != null) return exact;
+        let previous = monthIndex - 1;
+        let next = monthIndex + 1;
+        while (previous >= 0 && DEPOSIT_SERIES[seriesIndex].values[previous] == null) previous -= 1;
+        while (next < DEPOSIT_MONTHS.length && DEPOSIT_SERIES[seriesIndex].values[next] == null) next += 1;
+        if (previous < 0 || next >= DEPOSIT_MONTHS.length) return null;
+        const previousValue = DEPOSIT_SERIES[seriesIndex].values[previous];
+        const nextValue = DEPOSIT_SERIES[seriesIndex].values[next];
+        const ratio = (monthIndex - previous) / (next - previous);
+        return previousValue + (nextValue - previousValue) * ratio;
+      };
+      const stackBase = (seriesIndex, monthIndex) => {
+        let total = 0;
+        const position = stackOrder.indexOf(seriesIndex);
+        for (let index = 0; index < position; index += 1) {
+          total += displayValue(stackOrder[index], monthIndex) || 0;
+        }
+        return total;
+      };
+      const stackTop = (seriesIndex, monthIndex) => {
+        const value = displayValue(seriesIndex, monthIndex);
+        return value == null ? null : stackBase(seriesIndex, monthIndex) + value;
+      };
+      const stackTotal = (monthIndex) => DEPOSIT_SERIES.reduce(
+        (sum, _, seriesIndex) => sum + (displayValue(seriesIndex, monthIndex) || 0),
+        0
+      );
+      const pathFromPoints = (points) => points
+        .map((point, index) => `${index === 0 ? "M" : "L"}${point.x.toFixed(2)},${point.y.toFixed(2)}`)
+        .join(" ");
+      const detailHtml = (monthIndex) => {
+        const values = actualValues(monthIndex);
+        return `<span class="lending-detail-month">${formatMonth(DEPOSIT_MONTHS[monthIndex])}</span>${DEPOSIT_SERIES.map((item, index) => `<span>${item.name} <strong>${formatPair(values[index])}</strong></span>`).join("")}`;
+      };
+      const tooltipHtml = (monthIndex) => {
+        const values = actualValues(monthIndex);
+        return `<div class="lending-tooltip-month">${formatMonth(DEPOSIT_MONTHS[monthIndex])} · 汇率 1:${axisFormat.format(exchangeRate)}</div>${DEPOSIT_SERIES.map((item, index) => `<div class="lending-tooltip-row"><span>${item.name}</span><strong>${formatPair(values[index])}</strong></div>`).join("")}`;
+      };
+
+      const render = () => {
+        const measuredWidth = Math.floor(wrap.getBoundingClientRect().width || root.getBoundingClientRect().width);
+        const width = Math.max(320, measuredWidth || 920);
+        const height = width <= 560 ? 360 : 420;
+        const margin = { top: 30, right: width <= 430 ? 58 : 72, bottom: 42, left: width <= 430 ? 54 : 64 };
+        const plotWidth = width - margin.left - margin.right;
+        const plotHeight = height - margin.top - margin.bottom;
+        const xStep = plotWidth / (DEPOSIT_MONTHS.length - 1);
+        const xAt = (index) => margin.left + xStep * index;
+        const totals = DEPOSIT_MONTHS.map((_, index) => stackTotal(index));
+        const tickStep = 2000;
+        const axisMax = Math.max(14000, Math.ceil(Math.max(...totals) / tickStep) * tickStep);
+        const yAt = (value) => margin.top + plotHeight - (value / axisMax) * plotHeight;
+        const labelEvery = width <= 600 ? 6 : 3;
+        svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+        svg.replaceChildren();
+
+        const title = createSvg("title", { id: "depositChartTitle" });
+        title.textContent = "印度尼西亚三项存款余额堆叠折线图";
+        const desc = createSvg("desc", { id: "depositChartDesc" });
+        desc.textContent = `左轴为 IDR 万亿，右轴按 1 USD 等于 ${axisFormat.format(exchangeRate)} IDR 换算为 USD 十亿。两张图使用一致的零点与 IDR 纵轴尺度。`;
+        svg.append(title, desc);
+
+        for (let tick = 0; tick <= axisMax; tick += tickStep) {
+          const y = yAt(tick);
+          svg.appendChild(createSvg("line", {
+            class: tick === 0 ? "baseline" : "grid",
+            x1: margin.left,
+            y1: y,
+            x2: width - margin.right,
+            y2: y
+          }));
+          const leftLabel = createSvg("text", {
+            class: "tick-label",
+            x: margin.left - 8,
+            y: y + 4,
+            "text-anchor": "end"
+          });
+          leftLabel.textContent = axisFormat.format(tick);
+          const rightLabel = createSvg("text", {
+            class: "tick-label",
+            x: width - margin.right + 8,
+            y: y + 4,
+            "text-anchor": "start"
+          });
+          rightLabel.textContent = `$${numberFormat.format(toUsdBillions(tick))}bn`;
+          svg.append(leftLabel, rightLabel);
+        }
+
+        const leftAxisLabel = createSvg("text", { class: "axis-label", x: margin.left, y: 13 });
+        leftAxisLabel.textContent = "IDR 万亿";
+        const rightAxisLabel = createSvg("text", { class: "axis-label", x: width - margin.right, y: 13, "text-anchor": "end" });
+        rightAxisLabel.textContent = "USD 十亿";
+        svg.append(leftAxisLabel, rightAxisLabel);
+
+        DEPOSIT_MONTHS.forEach((month, index) => {
+          if (index % labelEvery !== 0 && index !== DEPOSIT_MONTHS.length - 1) return;
+          const label = createSvg("text", {
+            class: "month-label",
+            x: xAt(index),
+            y: height - 12,
+            "text-anchor": index === 0 ? "start" : index === DEPOSIT_MONTHS.length - 1 ? "end" : "middle"
+          });
+          label.textContent = month;
+          svg.appendChild(label);
+        });
+
+        DEPOSIT_SERIES.forEach((item, seriesIndex) => {
+          const runs = [];
+          let currentRun = [];
+          DEPOSIT_MONTHS.forEach((_, monthIndex) => {
+            if (displayValue(seriesIndex, monthIndex) == null) {
+              if (currentRun.length) runs.push(currentRun);
+              currentRun = [];
+            } else {
+              currentRun.push(monthIndex);
+            }
+          });
+          if (currentRun.length) runs.push(currentRun);
+          runs.forEach((run) => {
+            const topPoints = run.map((monthIndex) => ({ x: xAt(monthIndex), y: yAt(stackTop(seriesIndex, monthIndex)) }));
+            const basePoints = [...run].reverse().map((monthIndex) => ({ x: xAt(monthIndex), y: yAt(stackBase(seriesIndex, monthIndex)) }));
+            svg.appendChild(createSvg("path", {
+              class: "stack-area",
+              d: `${pathFromPoints(topPoints)} ${basePoints.map((point) => `L${point.x.toFixed(2)},${point.y.toFixed(2)}`).join(" ")} Z`,
+              fill: item.color
+            }));
+            svg.appendChild(createSvg("path", {
+              class: "stack-line",
+              d: pathFromPoints(topPoints),
+              stroke: item.color
+            }));
+          });
+
+          const actualIndices = item.values
+            .map((value, index) => value == null ? null : index)
+            .filter((index) => index != null);
+          [actualIndices[0], actualIndices[actualIndices.length - 1]].forEach((monthIndex) => {
+            if (monthIndex == null) return;
+            svg.appendChild(createSvg("circle", {
+              class: "series-endpoint",
+              cx: xAt(monthIndex),
+              cy: yAt(stackTop(seriesIndex, monthIndex)),
+              r: 3.5,
+              fill: item.color
+            }));
+          });
+        });
+
+        const crosshair = createSvg("line", {
+          class: "crosshair",
+          x1: margin.left,
+          y1: margin.top,
+          x2: margin.left,
+          y2: margin.top + plotHeight
+        });
+        const points = DEPOSIT_SERIES.map((item) => createSvg("circle", {
+          class: "hover-point",
+          cx: margin.left,
+          cy: margin.top,
+          r: 4,
+          fill: item.color
+        }));
+        svg.append(crosshair, ...points);
+
+        const showMonth = (monthIndex) => {
+          activeMonthIndex = monthIndex;
+          const x = xAt(monthIndex);
+          crosshair.setAttribute("x1", String(x));
+          crosshair.setAttribute("x2", String(x));
+          crosshair.setAttribute("opacity", "1");
+          DEPOSIT_SERIES.forEach((item, seriesIndex) => {
+            const top = stackTop(seriesIndex, monthIndex);
+            const point = points[seriesIndex];
+            if (top == null || item.values[monthIndex] == null) {
+              point.setAttribute("opacity", "0");
+              return;
+            }
+            point.setAttribute("cx", String(x));
+            point.setAttribute("cy", String(yAt(top)));
+            point.setAttribute("opacity", "1");
+          });
+          tooltip.innerHTML = tooltipHtml(monthIndex);
+          tooltip.style.visibility = "visible";
+          tooltip.setAttribute("aria-hidden", "false");
+          tooltipVisible = true;
+          detail.innerHTML = detailHtml(monthIndex);
+          const wrapRect = wrap.getBoundingClientRect();
+          const svgRect = svg.getBoundingClientRect();
+          const scaleX = svgRect.width / width;
+          const scaleY = svgRect.height / height;
+          let left = svgRect.left - wrapRect.left + x * scaleX;
+          let top = svgRect.top - wrapRect.top + yAt(stackTotal(monthIndex)) * scaleY;
+          tooltip.style.left = `${left}px`;
+          tooltip.style.top = `${top}px`;
+          const tooltipRect = tooltip.getBoundingClientRect();
+          const halfWidth = tooltipRect.width / 2;
+          left = Math.max(halfWidth + 5, Math.min(wrapRect.width - halfWidth - 5, left));
+          top = Math.max(tooltipRect.height + 14, top);
+          tooltip.style.left = `${left}px`;
+          tooltip.style.top = `${top}px`;
+        };
+
+        const interaction = createSvg("rect", {
+          class: "interaction-layer",
+          x: margin.left,
+          y: margin.top,
+          width: plotWidth,
+          height: plotHeight,
+          "aria-label": "在图表上移动以查看每个月的三项存款余额"
+        });
+        interaction.addEventListener("pointermove", (event) => {
+          const matrix = svg.getScreenCTM();
+          if (!matrix) return;
+          const point = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse());
+          const monthIndex = Math.max(0, Math.min(DEPOSIT_MONTHS.length - 1, Math.round((point.x - margin.left) / xStep)));
+          showMonth(monthIndex);
+        });
+        interaction.addEventListener("pointerleave", () => {
+          crosshair.setAttribute("opacity", "0");
+          points.forEach((point) => point.setAttribute("opacity", "0"));
+          tooltip.style.visibility = "hidden";
+          tooltip.setAttribute("aria-hidden", "true");
+          tooltipVisible = false;
+        });
+        svg.appendChild(interaction);
+        detail.innerHTML = detailHtml(activeMonthIndex);
+        if (tooltipVisible) showMonth(activeMonthIndex);
+      };
+
+      const updateRate = () => {
+        const nextRate = Number(rateInput.value);
+        const valid = Number.isFinite(nextRate) && nextRate > 0;
+        rateInput.setAttribute("aria-invalid", valid ? "false" : "true");
+        if (!valid) return;
+        exchangeRate = nextRate;
+        try {
+          window.localStorage.setItem(DEPOSIT_FX_STORAGE_KEY, String(exchangeRate));
+        } catch (error) {
+          // The chart still works when browser storage is unavailable.
+        }
+        render();
+      };
+
+      rateInput.addEventListener("input", updateRate);
+      depositChartRender = render;
       render();
       if ("ResizeObserver" in window) {
         const resizeObserver = new ResizeObserver(render);
@@ -6600,7 +7014,7 @@ html = f"""<!doctype html>
               <p>每张牌照进入后可阅读业务范围、资本门槛、外资控制、玩家存量、限制、竞品和法规索引。</p>
             </div>
           </div>
-{lending_chart_markup}
+{market_charts_markup}
           <div class="license-grid" id="licenseGrid"></div>
         </section>
 
@@ -6654,6 +7068,7 @@ html = f"""<!doctype html>
     const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
     const esc = (value) => String(value ?? "").replace(/[&<>"']/g, char => ({{ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }}[char]));
 {lending_chart_js}
+{deposit_chart_js}
     const uniq = (items) => [...new Set((items || []).filter(Boolean))];
     const IDR_USD_RATE = 17944;
     const IDR_USD_RATE_DATE = "2026-07-17";
@@ -8206,7 +8621,10 @@ html = f"""<!doctype html>
         detail.classList.remove("active");
         home.classList.add("active");
         showModule(route.id);
-        if (route.id === "licenses") window.requestAnimationFrame(lendingChartRender);
+        if (route.id === "licenses") window.requestAnimationFrame(() => {{
+          lendingChartRender();
+          depositChartRender();
+        }});
         qs("#mobileNav").value = "module:" + route.id;
         window.scrollTo({{ top: 0, behavior: "instant" }});
       }} else {{
@@ -8320,6 +8738,7 @@ html = f"""<!doctype html>
       renderRegulators();
       renderLicenseGrid();
       initLendingChart();
+      initDepositChart();
       renderSources();
       await loadExternalUpdates();
       await loadDeveloperLog();
