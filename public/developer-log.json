@@ -1,6 +1,34 @@
 {
   "entries": [
     {
+      "date": "2026-07-22",
+      "type": "协作记录",
+      "title": "Add lending chart to license library",
+      "summary": "zhuangzihao 于 2026-07-22 提交：Add lending chart to license library",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py、work/check_modular_dashboard.js"
+      ],
+      "author": "zhuangzihao",
+      "commit": "19c2f15",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/19c2f1527b5be2801ab2e610ab2d4782a2f5e2ef"
+    },
+    {
+      "date": "2026-07-21",
+      "type": "自动更新",
+      "title": "Update regulatory history [skip ci]",
+      "summary": "github-actions[bot] 于 2026-07-21 提交：Update regulatory history [skip ci]",
+      "changes": [
+        "提交人：github-actions[bot]",
+        "涉及范围：数据快照",
+        "主要文件：data/regulatory-history.json、data/regulatory-updates.json"
+      ],
+      "author": "github-actions[bot]",
+      "commit": "3d5a0d0",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/3d5a0d076f6edcdacd5eb58596e07c1ebeeb27a7"
+    },
+    {
       "date": "2026-07-21",
       "type": "协作记录",
       "title": "Enrich Loan Aggregator market data",
