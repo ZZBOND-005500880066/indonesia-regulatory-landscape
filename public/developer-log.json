@@ -3,6 +3,20 @@
     {
       "date": "2026-07-22",
       "type": "协作记录",
+      "title": "Refresh generated dashboard output",
+      "summary": "zhuangzihao 于 2026-07-22 提交：Refresh generated dashboard output",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：发布页面",
+        "主要文件：public/developer-log.json、public/index.html"
+      ],
+      "author": "zhuangzihao",
+      "commit": "3e47a8e",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/3e47a8ebf433af7074bd20d6cb7161ea91ecb521"
+    },
+    {
+      "date": "2026-07-22",
+      "type": "协作记录",
       "title": "Add lending chart to license library",
       "summary": "zhuangzihao 于 2026-07-22 提交：Add lending chart to license library",
       "changes": [

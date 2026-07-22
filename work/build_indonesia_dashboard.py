@@ -4603,7 +4603,7 @@ lending_chart_markup = """
             <div class="lending-overview-header">
               <div class="lending-overview-title">
                 <span class="eyebrow">Lending Market</span>
-                <h4 id="lendingOverviewTitle">信贷余额走势（真实比例）</h4>
+                <h4 id="lendingOverviewTitle">信贷余额走势</h4>
                 <p>2024 年 1 月至 2026 年 5 月，按 IDR 万亿原值绘制；悬停月份可同时查看 IDR 与 USD 换算值。</p>
               </div>
               <label class="lending-fx-control" for="lendingFxRate">
@@ -4782,7 +4782,7 @@ lending_chart_js = """
         svg.replaceChildren();
 
         const title = createSvg("title", { id: "lendingChartTitle" });
-        title.textContent = "印度尼西亚四项信贷余额真实比例堆叠折线图";
+        title.textContent = "印度尼西亚四项信贷余额堆叠折线图";
         const desc = createSvg("desc", { id: "lendingChartDesc" });
         desc.textContent = `左轴为 IDR 万亿，右轴按 1 USD 等于 ${axisFormat.format(exchangeRate)} IDR 换算为 USD 十亿。中间缺失月份用直线连接。`;
         svg.append(title, desc);
