@@ -3,6 +3,20 @@
     {
       "date": "2026-07-22",
       "type": "协作记录",
+      "title": "Ensure bank player detail cards have fallbacks",
+      "summary": "zhuangzihao 于 2026-07-22 提交：Ensure bank player detail cards have fallbacks",
+      "changes": [
+        "提交人：zhuangzihao",
+        "涉及范围：生成器与更新脚本、发布页面",
+        "主要文件：public/developer-log.json、public/index.html、work/build_indonesia_dashboard.py"
+      ],
+      "author": "zhuangzihao",
+      "commit": "c98a17b",
+      "commitUrl": "https://github.com/ZZBOND-005500880066/indonesia-regulatory-landscape/commit/c98a17b2e635598877b6a385ce8e51e157a92c64"
+    },
+    {
+      "date": "2026-07-22",
+      "type": "协作记录",
       "title": "Put smaller chart series at stack base",
       "summary": "zhuangzihao 于 2026-07-22 提交：Put smaller chart series at stack base",
       "changes": [
