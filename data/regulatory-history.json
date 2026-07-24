@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-24T01:59:15.547Z",
+  "generatedAt": "2026-07-24T09:29:34.641Z",
   "generatedDate": "2026-07-24",
   "mode": "accumulated-history",
   "reason": "github-actions",
   "siteHistoryStartDate": "2026-07-17",
-  "latestSnapshotGeneratedAt": "2026-07-24T01:59:15.547Z",
+  "latestSnapshotGeneratedAt": "2026-07-24T09:29:34.641Z",
   "sourcesChecked": [
     {
       "id": "ojk-regulasi",
@@ -21,9 +21,10 @@
       "name": "BI Publikasi Peraturan",
       "regulator": "BI",
       "url": "https://www.bi.go.id/id/publikasi/peraturan/Default.aspx",
-      "ok": false,
-      "status": "FETCH_ERROR",
-      "error": "fetch failed"
+      "ok": true,
+      "status": 200,
+      "itemsFound": 67,
+      "matchedItems": 2
     },
     {
       "id": "bi-peraturan-pages",
@@ -42,7 +43,7 @@
       "url": "https://jdih.bi.go.id/",
       "ok": true,
       "status": 200,
-      "itemsFound": 1,
+      "itemsFound": 44,
       "matchedItems": 0
     }
   ],
@@ -53,7 +54,7 @@
       "effectiveDate": "2026-07-07",
       "enactedDate": "2026-07-07",
       "promulgatedDate": null,
-      "title": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+      "title": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
       "regulator": "OJK",
       "licenses": [
         "商业银行",
@@ -73,18 +74,18 @@
         "ics",
         "loan-aggregator"
       ],
-      "level": "�?,
-      "summary": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?,
-      "impact": "这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
-      "action": "把原文加入对应牌照法规索引，并在准入、收购、产品上线和持续合规清单中复核影响�?,
+      "level": "高",
+      "summary": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。",
+      "impact": "这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
+      "action": "把原文加入对应牌照法规索引，并在准入、收购、产品上线和持续合规清单中复核影响。",
       "keywords": "padk, anti pencucian uang, 商业银行, BPR, Multi-Finance, P2P, PJP, ICS / PKA, Loan Aggregator",
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx",
       "sourceOriginalTitle": "Pedoman Penerapan Program Anti Pencucian Uang, Pencegahan Pendanaan Terorisme, dan Pencegahan Pendanaan Proliferasi Senjata Pemusnah Massal Bagi Wali Amanat",
-      "sourceStatus": "每日更新器于 2026-07-24T01:59:15.547Z 核验原文链接；HTTP 200，已�?OJK/BI 官网字段拆分制定日期、公布日期与生效日期�?,
+      "sourceStatus": "每日更新器于 2026-07-24T09:29:34.641Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-20",
       "lastSeenDate": "2026-07-24",
-      "seenCount": 4
+      "seenCount": 5
     },
     {
       "date": "2026",
@@ -96,28 +97,28 @@
       "licenseIds": [
         "bpr"
       ],
-      "level": "�?,
-      "summary": "OJK 发布 POJK Nomor 7 Tahun 2026，主题为 Bank Perekonomian Rakyat 的最低资本充足和最低核心资本满足要求�?,
-      "impact": "BPR 收购或数字化改造不能只看历史实缴资本和壳价，还要重新核算资本充足、核心资本缺口和后续补资压力�?,
-      "action": "BPR 标的池增加核心资本缺口、资本充足率、历史利润留存、股东补资能力和 OJK 资本整改要求字段�?,
+      "level": "高",
+      "summary": "OJK 发布 POJK Nomor 7 Tahun 2026，主题为 Bank Perekonomian Rakyat 的最低资本充足和最低核心资本满足要求。",
+      "impact": "BPR 收购或数字化改造不能只看历史实缴资本和壳价，还要重新核算资本充足、核心资本缺口和后续补资压力。",
+      "action": "BPR 标的池增加核心资本缺口、资本充足率、历史利润留存、股东补资能力和 OJK 资本整改要求字段。",
       "keywords": "POJK Nomor 7 Tahun 2026 Kewajiban Penyediaan Modal Minimum Pemenuhan Modal Inti Minimum Bank Perekonomian Rakyat",
-      "sourceLabel": "OJK 官方法规�?,
+      "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceOriginalTitle": "Kewajiban Penyediaan Modal Minimum dan Pemenuhan Modal Inti Minimum Bank Perekonomian Rakyat",
-      "sourceStatus": "人工核验基准快照保留；每日更新器�?2026-07-24T01:59:15.547Z 运行后未发现可替代的更新条目�?,
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-07-24T09:29:34.641Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
       "lastSeenDate": "2026-07-24",
-      "seenCount": 8,
+      "seenCount": 9,
       "sourceDate": "2026-06-12",
       "effectiveDate": "2026-06-30",
       "enactedDate": "2026-06-04",
       "promulgatedDate": "2026-06-12",
-      "sourceAltLabel": "备用：OJK 站内检�?,
+      "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Kewajiban%20Penyediaan%20Modal%20Minimum%20Bank%20Perekonomian%20Rakyat"
     },
     {
       "date": "2025",
-      "title": "PADK 45/PADK.06/2025：融资公司及伊斯兰融资公司月度报�?,
+      "title": "PADK 45/PADK.06/2025：融资公司及伊斯兰融资公司月度报告",
       "regulator": "OJK",
       "licenses": [
         "Multi-Finance"
@@ -125,18 +126,18 @@
       "licenseIds": [
         "multi-finance"
       ],
-      "level": "�?,
-      "summary": "OJK 发布�?PADK 45/PADK.06/2025，规则主题是融资公司及伊斯兰融资公司月度报告�?,
-      "impact": "这项规则会影响融资公司月报的字段、频率和口径一致性，收购或申牌时要重点看历史报送质量�?,
-      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明�?,
+      "level": "中",
+      "summary": "OJK 发布了 PADK 45/PADK.06/2025，规则主题是融资公司及伊斯兰融资公司月度报告。",
+      "impact": "这项规则会影响融资公司月报的字段、频率和口径一致性，收购或申牌时要重点看历史报送质量。",
+      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明。",
       "keywords": "padk, laporan, Multi-Finance",
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
       "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-07-24T01:59:15.547Z 核验原文链接；HTTP 200，已�?OJK/BI 官网字段拆分制定日期、公布日期与生效日期�?,
+      "sourceStatus": "每日更新器于 2026-07-24T09:29:34.641Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-17",
       "lastSeenDate": "2026-07-24",
-      "seenCount": 8,
+      "seenCount": 9,
       "sourceDate": "2025-12-23",
       "effectiveDate": "2027-07-01",
       "enactedDate": "2025-12-23",
@@ -154,28 +155,28 @@
         "ics",
         "loan-aggregator"
       ],
-      "level": "�?,
-      "summary": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理�?,
-      "impact": "ICS/PKA、PAJK/Loan Aggregator �?ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数�?系统治理和持续合规�?,
-      "action": "申牌或收购时增加治理框架、风险管理制度、信息安全职责、第三方外包管理和董事会监督材料的尽调要求�?,
+      "level": "高",
+      "summary": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理。",
+      "impact": "ICS/PKA、PAJK/Loan Aggregator 等 ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数据/系统治理和持续合规。",
+      "action": "申牌或收购时增加治理框架、风险管理制度、信息安全职责、第三方外包管理和董事会监督材料的尽调要求。",
       "keywords": "POJK Nomor 30 Tahun 2025 Tata Kelola Manajemen Risiko Penyelenggara Inovasi Teknologi Sektor Keuangan",
-      "sourceLabel": "OJK 官方法规�?,
+      "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
       "sourceOriginalTitle": "Penerapan Tata Kelola dan Manajemen Risiko Bagi Penyelenggara Inovasi Teknologi Sektor Keuangan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器�?2026-07-24T01:59:15.547Z 运行后未发现可替代的更新条目�?,
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-07-24T09:29:34.641Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
       "lastSeenDate": "2026-07-24",
-      "seenCount": 8,
+      "seenCount": 9,
       "sourceDate": "2025-12-02",
       "effectiveDate": "2026-07-01",
       "enactedDate": "2025-11-21",
       "promulgatedDate": "2025-12-02",
-      "sourceAltLabel": "备用：OJK 站内检�?,
+      "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Penerapan%20Tata%20Kelola%20Manajemen%20Risiko%20Penyelenggara%20Inovasi%20Teknologi%20Sektor%20Keuangan"
     },
     {
       "date": "2025",
-      "title": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修�?,
+      "title": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
       "regulator": "OJK",
       "licenses": [
         "Multi-Finance"
@@ -183,18 +184,18 @@
       "licenseIds": [
         "multi-finance"
       ],
-      "level": "�?,
-      "summary": "OJK 修订�?SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告�?,
-      "impact": "这项规则聚焦风险投资公司月度报送，�?PVML 体系下的报表口径、数据完整性和历史补正风险有关�?,
-      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明�?,
+      "level": "高",
+      "summary": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。",
+      "impact": "这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
+      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明。",
       "keywords": "seojk, surat edaran, laporan, Multi-Finance",
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
       "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-07-24T01:59:15.547Z 核验原文链接；HTTP 200，已�?OJK/BI 官网字段拆分制定日期、公布日期与生效日期�?,
+      "sourceStatus": "每日更新器于 2026-07-24T09:29:34.641Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-17",
       "lastSeenDate": "2026-07-24",
-      "seenCount": 8,
+      "seenCount": 9,
       "sourceDate": "2025-10-22",
       "effectiveDate": "2027-04-01",
       "enactedDate": "2025-10-22",
@@ -202,7 +203,7 @@
     },
     {
       "date": "2025",
-      "title": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报�?,
+      "title": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
       "regulator": "OJK",
       "licenses": [
         "商业银行",
@@ -220,18 +221,18 @@
         "ics",
         "loan-aggregator"
       ],
-      "level": "�?,
-      "summary": "OJK 发布�?SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告�?,
-      "impact": "这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求�?,
-      "action": "补充投诉 SLA、公开披露、定期报告、工单留痕、催收投诉和外包投诉管理检查项�?,
+      "level": "高",
+      "summary": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。",
+      "impact": "这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+      "action": "补充投诉 SLA、公开披露、定期报告、工单留痕、催收投诉和外包投诉管理检查项。",
       "keywords": "seojk, pengaduan, laporan, 商业银行, BPR, Multi-Finance, P2P, ICS / PKA, Loan Aggregator",
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
       "sourceOriginalTitle": "Publikasi Penanganan Pengaduan dan Laporan Layanan Pengaduan",
-      "sourceStatus": "每日更新器于 2026-07-24T01:59:15.547Z 核验原文链接；HTTP 200，已�?OJK/BI 官网字段拆分制定日期、公布日期与生效日期�?,
+      "sourceStatus": "每日更新器于 2026-07-24T09:29:34.641Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-17",
       "lastSeenDate": "2026-07-24",
-      "seenCount": 8,
+      "seenCount": 9,
       "sourceDate": "2025-09-08",
       "effectiveDate": "2027-01-01",
       "enactedDate": "2025-09-08",
@@ -241,35 +242,35 @@
   "licenses": {
     "commercial-bank": [
       {
-        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
         "sourceDate": "2026-07-07",
         "effectiveDate": "2026-07-07",
         "enactedDate": "2026-07-07",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-20",
-        "note": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
+        "note": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。 这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报�?,
+        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布�?SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告�?这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求�?,
+        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
     "bpr": [
       {
-        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
         "sourceDate": "2026-07-07",
         "effectiveDate": "2026-07-07",
         "enactedDate": "2026-07-07",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-20",
-        "note": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
+        "note": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。 这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
@@ -279,105 +280,105 @@
         "enactedDate": "2026-06-04",
         "promulgatedDate": "2026-06-12",
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布 POJK Nomor 7 Tahun 2026，主题为 Bank Perekonomian Rakyat 的最低资本充足和最低核心资本满足要求�?BPR 收购或数字化改造不能只看历史实缴资本和壳价，还要重新核算资本充足、核心资本缺口和后续补资压力�?,
+        "note": "OJK 发布 POJK Nomor 7 Tahun 2026，主题为 Bank Perekonomian Rakyat 的最低资本充足和最低核心资本满足要求。 BPR 收购或数字化改造不能只看历史实缴资本和壳价，还要重新核算资本充足、核心资本缺口和后续补资压力。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报�?,
+        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布�?SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告�?这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求�?,
+        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
     "multi-finance": [
       {
-        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
         "sourceDate": "2026-07-07",
         "effectiveDate": "2026-07-07",
         "enactedDate": "2026-07-07",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-20",
-        "note": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
+        "note": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。 这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
-        "name": "PADK 45/PADK.06/2025：融资公司及伊斯兰融资公司月度报�?,
+        "name": "PADK 45/PADK.06/2025：融资公司及伊斯兰融资公司月度报告",
         "sourceDate": "2025-12-23",
         "effectiveDate": "2027-07-01",
         "enactedDate": "2025-12-23",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布�?PADK 45/PADK.06/2025，规则主题是融资公司及伊斯兰融资公司月度报告�?这项规则会影响融资公司月报的字段、频率和口径一致性，收购或申牌时要重点看历史报送质量�?,
+        "note": "OJK 发布了 PADK 45/PADK.06/2025，规则主题是融资公司及伊斯兰融资公司月度报告。 这项规则会影响融资公司月报的字段、频率和口径一致性，收购或申牌时要重点看历史报送质量。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx"
       },
       {
-        "name": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修�?,
+        "name": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
         "sourceDate": "2025-10-22",
         "effectiveDate": "2027-04-01",
         "enactedDate": "2025-10-22",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 修订�?SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告�?这项规则聚焦风险投资公司月度报送，�?PVML 体系下的报表口径、数据完整性和历史补正风险有关�?,
+        "note": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。 这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报�?,
+        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布�?SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告�?这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求�?,
+        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
     "p2p": [
       {
-        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
         "sourceDate": "2026-07-07",
         "effectiveDate": "2026-07-07",
         "enactedDate": "2026-07-07",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-20",
-        "note": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
+        "note": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。 这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报�?,
+        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布�?SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告�?这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求�?,
+        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
     "pjp": [
       {
-        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
         "sourceDate": "2026-07-07",
         "effectiveDate": "2026-07-07",
         "enactedDate": "2026-07-07",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-20",
-        "note": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
+        "note": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。 这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       }
     ],
     "ics": [
       {
-        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
         "sourceDate": "2026-07-07",
         "effectiveDate": "2026-07-07",
         "enactedDate": "2026-07-07",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-20",
-        "note": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
+        "note": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。 这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
@@ -387,29 +388,29 @@
         "enactedDate": "2025-11-21",
         "promulgatedDate": "2025-12-02",
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理�?ICS/PKA、PAJK/Loan Aggregator �?ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数�?系统治理和持续合规�?,
+        "note": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理。 ICS/PKA、PAJK/Loan Aggregator 等 ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数据/系统治理和持续合规。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报�?,
+        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布�?SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告�?这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求�?,
+        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
     "loan-aggregator": [
       {
-        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指�?,
+        "name": "PADK 4/2026：反洗钱、反恐融资和防扩散融资实施指引",
         "sourceDate": "2026-07-07",
         "effectiveDate": "2026-07-07",
         "enactedDate": "2026-07-07",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-20",
-        "note": "OJK 发布�?PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引�?这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告�?,
+        "note": "OJK 发布了 PADK 4/2026，规则主题是反洗钱、反恐融资和防扩散融资实施指引。 这项规则补强 AML/CFT/CPF 执行口径，涉及客户识别、交易监测、可疑活动处理和合规报告。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
@@ -419,17 +420,17 @@
         "enactedDate": "2025-11-21",
         "promulgatedDate": "2025-12-02",
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理�?ICS/PKA、PAJK/Loan Aggregator �?ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数�?系统治理和持续合规�?,
+        "note": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理。 ICS/PKA、PAJK/Loan Aggregator 等 ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数据/系统治理和持续合规。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报�?,
+        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布�?SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告�?这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求�?,
+        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ]
