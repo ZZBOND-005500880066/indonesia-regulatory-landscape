@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-07T04:57:49.687Z",
-  "generatedDate": "2026-09-07",
+  "generatedAt": "2026-09-08T04:54:07.540Z",
+  "generatedDate": "2026-09-08",
   "mode": "accumulated-history",
   "reason": "github-actions",
   "siteHistoryStartDate": "2026-07-17",
-  "latestSnapshotGeneratedAt": "2026-09-07T04:57:49.687Z",
+  "latestSnapshotGeneratedAt": "2026-09-08T04:54:07.540Z",
   "sourcesChecked": [
     {
       "id": "ojk-regulasi",
@@ -14,7 +14,7 @@
       "ok": true,
       "status": 200,
       "itemsFound": 202,
-      "matchedItems": 5
+      "matchedItems": 4
     },
     {
       "id": "bi-peraturan-default",
@@ -105,10 +105,10 @@
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceOriginalTitle": "Kewajiban Penyediaan Modal Minimum dan Pemenuhan Modal Inti Minimum Bank Perekonomian Rakyat",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-07T04:57:49.687Z 运行后未发现可替代的更新条目。",
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-08T04:54:07.540Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-09-07",
-      "seenCount": 52,
+      "lastSeenDate": "2026-09-08",
+      "seenCount": 53,
       "sourceDate": "2026-06-12",
       "effectiveDate": "2026-06-30",
       "enactedDate": "2026-06-04",
@@ -134,10 +134,10 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
       "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-09-07T04:57:49.687Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
+      "sourceStatus": "每日更新器于 2026-09-08T04:54:07.540Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-09-07",
-      "seenCount": 52,
+      "lastSeenDate": "2026-09-08",
+      "seenCount": 53,
       "sourceDate": "2025-12-23",
       "effectiveDate": "2027-07-01",
       "enactedDate": "2025-12-23",
@@ -163,10 +163,10 @@
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
       "sourceOriginalTitle": "Penerapan Tata Kelola dan Manajemen Risiko Bagi Penyelenggara Inovasi Teknologi Sektor Keuangan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-07T04:57:49.687Z 运行后未发现可替代的更新条目。",
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-08T04:54:07.540Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-09-07",
-      "seenCount": 52,
+      "lastSeenDate": "2026-09-08",
+      "seenCount": 53,
       "sourceDate": "2025-12-02",
       "effectiveDate": "2026-07-01",
       "enactedDate": "2025-11-21",
@@ -192,10 +192,10 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
       "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-09-07T04:57:49.687Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
+      "sourceStatus": "每日更新器于 2026-09-08T04:54:07.540Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-09-07",
-      "seenCount": 52,
+      "lastSeenDate": "2026-09-08",
+      "seenCount": 53,
       "sourceDate": "2025-10-22",
       "effectiveDate": "2027-04-01",
       "enactedDate": "2025-10-22",
@@ -203,7 +203,7 @@
     },
     {
       "date": "2025",
-      "title": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+      "title": "投诉处理公开与投诉服务报告规则更新",
       "regulator": "OJK",
       "licenses": [
         "商业银行",
@@ -221,18 +221,18 @@
         "ics",
         "loan-aggregator"
       ],
-      "level": "高",
-      "summary": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。",
-      "impact": "这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
-      "action": "补充投诉 SLA、公开披露、定期报告、工单留痕、催收投诉和外包投诉管理检查项。",
-      "keywords": "seojk, pengaduan, laporan, 商业银行, BPR, Multi-Finance, P2P, ICS / PKA, Loan Aggregator",
-      "sourceLabel": "OJK Regulasi",
+      "level": "中",
+      "summary": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。",
+      "impact": "面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
+      "action": "为各牌照子页面增加消费者投诉合规核查项：投诉 SLA、公开披露、定期报告、工单留痕、催收投诉和外包投诉管理。",
+      "keywords": "20/SEOJK.08/2025 Publikasi Penanganan Pengaduan Laporan Layanan Pengaduan",
+      "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
       "sourceOriginalTitle": "Publikasi Penanganan Pengaduan dan Laporan Layanan Pengaduan",
-      "sourceStatus": "每日更新器于 2026-09-07T04:57:49.687Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-08T04:54:07.540Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-09-07",
-      "seenCount": 52,
+      "lastSeenDate": "2026-09-08",
+      "seenCount": 53,
       "sourceDate": "2025-09-08",
       "effectiveDate": "2027-01-01",
       "enactedDate": "2025-09-08",
@@ -252,13 +252,13 @@
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+        "name": "投诉处理公开与投诉服务报告规则更新",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
@@ -284,13 +284,13 @@
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+        "name": "投诉处理公开与投诉服务报告规则更新",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
@@ -326,13 +326,13 @@
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+        "name": "投诉处理公开与投诉服务报告规则更新",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
@@ -348,13 +348,13 @@
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-4-Tahun-2026-Pedoman-Penerapan-Program-APUPPT-dan-Pencegahan-Pendanaan-Proliferasi-Senjata-Pemusnah-Massal-Bagi-Wali.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+        "name": "投诉处理公开与投诉服务报告规则更新",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
@@ -392,13 +392,13 @@
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+        "name": "投诉处理公开与投诉服务报告规则更新",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
@@ -424,24 +424,24 @@
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
       },
       {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+        "name": "投诉处理公开与投诉服务报告规则更新",
         "sourceDate": "2025-09-08",
         "effectiveDate": "2027-01-01",
         "enactedDate": "2025-09-08",
         "promulgatedDate": null,
         "firstSeenDate": "2026-07-17",
-        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ]
   },
   "diagnostics": {
-    "candidates": 7,
-    "validatedBriefings": 4,
-    "discardedUnverified": 3,
-    "generatedBriefings": 4,
-    "fallbackBriefings": 2,
-    "currentBriefings": 6,
+    "candidates": 6,
+    "validatedBriefings": 2,
+    "discardedUnverified": 4,
+    "generatedBriefings": 2,
+    "fallbackBriefings": 3,
+    "currentBriefings": 5,
     "previousBriefings": 6,
     "addedBriefings": 0,
     "totalBriefings": 6,
