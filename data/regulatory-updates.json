@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-20T05:04:16.703Z",
-  "generatedDate": "2026-09-20",
+  "generatedAt": "2026-09-21T05:10:05.549Z",
+  "generatedDate": "2026-09-21",
   "mode": "daily-online-fetch",
   "reason": "github-actions",
   "sourcesChecked": [
@@ -47,30 +47,6 @@
   ],
   "briefings": [
     {
-      "date": "2026",
-      "sourceDate": "2026-08-24",
-      "effectiveDate": "2026-08-24",
-      "enactedDate": "2026-08-24",
-      "promulgatedDate": null,
-      "title": "PADK 9/2026：Bentuk dan Susunan Laporan Penerapan Tata Kelola Yang Bai...",
-      "regulator": "OJK",
-      "licenses": [
-        "ICS / PKA"
-      ],
-      "licenseIds": [
-        "ics"
-      ],
-      "level": "高",
-      "summary": "OJK 发布了 PADK 9/2026，规则主题是Bentuk dan Susunan Laporan Penerapan Tata Kelola Yang Baik bagi Penyelenggara Inovasi Teknologi Sektor Keuangan。",
-      "impact": "ICS/PKA 的治理、数据来源、模型解释、信息系统和持续监管要求可能变化。",
-      "action": "申牌或收购材料中补齐董事会职责、风险管理制度、信息安全职责、外包管理和持续合规机制。",
-      "keywords": "padk, tata kelola, laporan, ICS / PKA",
-      "sourceLabel": "OJK Regulasi",
-      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-9-Tahun-2026-Bentuk-dan-Susunan-Laporan-Penerapan-Tata-Kelola-Yang-Baik-bagi-Penyelenggara-ITSK.aspx",
-      "sourceOriginalTitle": "Bentuk dan Susunan Laporan Penerapan Tata Kelola Yang Baik bagi Penyelenggara Inovasi Teknologi Sektor Keuangan",
-      "sourceStatus": "每日更新器于 2026-09-20T05:04:16.703Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
-    },
-    {
       "date": "2025",
       "sourceDate": "2025-10-22",
       "effectiveDate": "2027-04-01",
@@ -92,7 +68,7 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
       "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-09-20T05:04:16.703Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceStatus": "每日更新器于 2026-09-21T05:10:05.549Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2025",
@@ -116,7 +92,7 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
       "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-09-20T05:04:16.703Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceStatus": "每日更新器于 2026-09-21T05:10:05.549Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2026",
@@ -141,7 +117,7 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Kewajiban%20Penyediaan%20Modal%20Minimum%20Bank%20Perekonomian%20Rakyat",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-20T05:04:16.703Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-21T05:10:05.549Z 运行后未发现可替代的更新条目。"
     },
     {
       "date": "2026",
@@ -168,7 +144,7 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Penerapan%20Tata%20Kelola%20Manajemen%20Risiko%20Penyelenggara%20Inovasi%20Teknologi%20Sektor%20Keuangan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-20T05:04:16.703Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-21T05:10:05.549Z 运行后未发现可替代的更新条目。"
     },
     {
       "date": "2025",
@@ -200,38 +176,10 @@
       "keywords": "20/SEOJK.08/2025 Publikasi Penanganan Pengaduan Laporan Layanan Pengaduan",
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-20T05:04:16.703Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-21T05:10:05.549Z 运行后未发现可替代的更新条目。"
     }
   ],
   "licenses": {
-    "ics": [
-      {
-        "name": "PADK 9/2026：Bentuk dan Susunan Laporan Penerapan Tata Kelola Yang Bai...",
-        "sourceDate": "2026-08-24",
-        "effectiveDate": "2026-08-24",
-        "enactedDate": "2026-08-24",
-        "promulgatedDate": null,
-        "note": "OJK 发布了 PADK 9/2026，规则主题是Bentuk dan Susunan Laporan Penerapan Tata Kelola Yang Baik bagi Penyelenggara Inovasi Teknologi Sektor Keuangan。 ICS/PKA 的治理、数据来源、模型解释、信息系统和持续监管要求可能变化。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-9-Tahun-2026-Bentuk-dan-Susunan-Laporan-Penerapan-Tata-Kelola-Yang-Baik-bagi-Penyelenggara-ITSK.aspx"
-      },
-      {
-        "name": "ITSK 经营者治理和风险管理规则落地",
-        "sourceDate": "2025-12-02",
-        "effectiveDate": "2026-07-01",
-        "enactedDate": "2025-11-21",
-        "promulgatedDate": "2025-12-02",
-        "note": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理。 ICS/PKA、PAJK/Loan Aggregator 等 ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数据/系统治理和持续合规。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
-      },
-      {
-        "name": "投诉处理公开与投诉服务报告规则更新",
-        "sourceDate": "2025-09-08",
-        "effectiveDate": "2027-01-01",
-        "enactedDate": "2025-09-08",
-        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
-      }
-    ],
     "bpr": [
       {
         "name": "BPR 最低资本与核心资本要求更新",
@@ -269,6 +217,25 @@
         "promulgatedDate": null,
         "note": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。 这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx"
+      },
+      {
+        "name": "投诉处理公开与投诉服务报告规则更新",
+        "sourceDate": "2025-09-08",
+        "effectiveDate": "2027-01-01",
+        "enactedDate": "2025-09-08",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
+      }
+    ],
+    "ics": [
+      {
+        "name": "ITSK 经营者治理和风险管理规则落地",
+        "sourceDate": "2025-12-02",
+        "effectiveDate": "2026-07-01",
+        "enactedDate": "2025-11-21",
+        "promulgatedDate": "2025-12-02",
+        "note": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理。 ICS/PKA、PAJK/Loan Aggregator 等 ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数据/系统治理和持续合规。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
       },
       {
         "name": "投诉处理公开与投诉服务报告规则更新",
@@ -321,9 +288,9 @@
   },
   "diagnostics": {
     "candidates": 6,
-    "validatedBriefings": 3,
-    "discardedUnverified": 3,
-    "generatedBriefings": 3,
+    "validatedBriefings": 2,
+    "discardedUnverified": 4,
+    "generatedBriefings": 2,
     "fallbackBriefings": 3
   }
 }
