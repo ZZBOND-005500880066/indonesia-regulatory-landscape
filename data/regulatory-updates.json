@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-22T05:11:17.089Z",
-  "generatedDate": "2026-09-22",
+  "generatedAt": "2026-09-23T04:55:36.356Z",
+  "generatedDate": "2026-09-23",
   "mode": "daily-online-fetch",
   "reason": "github-actions",
   "sourcesChecked": [
@@ -9,10 +9,9 @@
       "name": "OJK Regulasi",
       "regulator": "OJK",
       "url": "https://www.ojk.go.id/id/regulasi/Default.aspx",
-      "ok": true,
-      "status": 200,
-      "itemsFound": 202,
-      "matchedItems": 4
+      "ok": false,
+      "status": "FETCH_ERROR",
+      "error": "fetch failed"
     },
     {
       "id": "bi-peraturan-default",
@@ -29,9 +28,10 @@
       "name": "BI Publikasi Peraturan",
       "regulator": "BI",
       "url": "https://www.bi.go.id/id/publikasi/peraturan/Pages/default.aspx",
-      "ok": false,
-      "status": "FETCH_ERROR",
-      "error": "fetch failed"
+      "ok": true,
+      "status": 200,
+      "itemsFound": 82,
+      "matchedItems": 0
     },
     {
       "id": "jdih-bi",
@@ -45,54 +45,6 @@
     }
   ],
   "briefings": [
-    {
-      "date": "2025",
-      "sourceDate": "2025-10-22",
-      "effectiveDate": "2027-04-01",
-      "enactedDate": "2025-10-22",
-      "promulgatedDate": null,
-      "title": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
-      "regulator": "OJK",
-      "licenses": [
-        "Multi-Finance"
-      ],
-      "licenseIds": [
-        "multi-finance"
-      ],
-      "level": "高",
-      "summary": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。",
-      "impact": "这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
-      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明。",
-      "keywords": "seojk, surat edaran, laporan, Multi-Finance",
-      "sourceLabel": "OJK Regulasi",
-      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
-      "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-09-22T05:11:17.089Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
-    },
-    {
-      "date": "2025",
-      "sourceDate": "2025-12-23",
-      "effectiveDate": "2027-07-01",
-      "enactedDate": "2025-12-23",
-      "promulgatedDate": null,
-      "title": "PADK 45/PADK.06/2025：融资公司及伊斯兰融资公司月度报告",
-      "regulator": "OJK",
-      "licenses": [
-        "Multi-Finance"
-      ],
-      "licenseIds": [
-        "multi-finance"
-      ],
-      "level": "中",
-      "summary": "OJK 发布了 PADK 45/PADK.06/2025，规则主题是融资公司及伊斯兰融资公司月度报告。",
-      "impact": "这项规则会影响融资公司月报的字段、频率和口径一致性，收购或申牌时要重点看历史报送质量。",
-      "action": "尽调时要求目标公司提供近 24 个月报送文件、OJK/BI 回执、补正记录和内部报表口径说明。",
-      "keywords": "padk, laporan, Multi-Finance",
-      "sourceLabel": "OJK Regulasi",
-      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
-      "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-09-22T05:11:17.089Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
-    },
     {
       "date": "2026",
       "sourceDate": "2026-06-12",
@@ -116,7 +68,7 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Kewajiban%20Penyediaan%20Modal%20Minimum%20Bank%20Perekonomian%20Rakyat",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-22T05:11:17.089Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-23T04:55:36.356Z 运行后未发现可替代的更新条目。"
     },
     {
       "date": "2026",
@@ -143,7 +95,29 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Penerapan%20Tata%20Kelola%20Manajemen%20Risiko%20Penyelenggara%20Inovasi%20Teknologi%20Sektor%20Keuangan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-22T05:11:17.089Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-23T04:55:36.356Z 运行后未发现可替代的更新条目。"
+    },
+    {
+      "date": "2025",
+      "sourceDate": "2025-12-23",
+      "effectiveDate": "2027-07-01",
+      "enactedDate": "2025-12-23",
+      "title": "融资公司月度报告规则更新",
+      "regulator": "OJK",
+      "licenses": [
+        "Multi-Finance"
+      ],
+      "licenseIds": [
+        "multi-finance"
+      ],
+      "level": "中",
+      "summary": "OJK 发布 PADK 45/PADK.06/2025，主题为普通融资公司和伊斯兰融资公司的月度报告。",
+      "impact": "Multi-Finance 的监管报送频率、字段完整性和口径一致性会成为合规重点，收购存量公司时需要核验历史月报质量和整改记录。",
+      "action": "尽调要求目标公司提供近 24 个月月报、OJK 回执、补正记录、NPF/gearing 报送口径和核心业务分项数据。",
+      "keywords": "45/PADK.06/2025 Laporan Bulanan Perusahaan Pembiayaan Perusahaan Pembiayaan Syariah",
+      "sourceLabel": "OJK 官方法规页",
+      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-23T04:55:36.356Z 运行后未发现可替代的更新条目。"
     },
     {
       "date": "2025",
@@ -175,7 +149,7 @@
       "keywords": "20/SEOJK.08/2025 Publikasi Penanganan Pengaduan Laporan Layanan Pengaduan",
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-22T05:11:17.089Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-23T04:55:36.356Z 运行后未发现可替代的更新条目。"
     }
   ],
   "licenses": {
@@ -200,22 +174,12 @@
     ],
     "multi-finance": [
       {
-        "name": "PADK 45/PADK.06/2025：融资公司及伊斯兰融资公司月度报告",
+        "name": "融资公司月度报告规则更新",
         "sourceDate": "2025-12-23",
         "effectiveDate": "2027-07-01",
         "enactedDate": "2025-12-23",
-        "promulgatedDate": null,
-        "note": "OJK 发布了 PADK 45/PADK.06/2025，规则主题是融资公司及伊斯兰融资公司月度报告。 这项规则会影响融资公司月报的字段、频率和口径一致性，收购或申牌时要重点看历史报送质量。",
+        "note": "OJK 发布 PADK 45/PADK.06/2025，主题为普通融资公司和伊斯兰融资公司的月度报告。 Multi-Finance 的监管报送频率、字段完整性和口径一致性会成为合规重点，收购存量公司时需要核验历史月报质量和整改记录。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx"
-      },
-      {
-        "name": "SEOJK 23/SEOJK.06/2025：风险投资公司及伊斯兰风险投资公司月度报告修订",
-        "sourceDate": "2025-10-22",
-        "effectiveDate": "2027-04-01",
-        "enactedDate": "2025-10-22",
-        "promulgatedDate": null,
-        "note": "OJK 修订了 SEOJK 23/SEOJK.06/2025，规则主题是风险投资公司及伊斯兰风险投资公司月度报告。 这项规则聚焦风险投资公司月度报送，和 PVML 体系下的报表口径、数据完整性和历史补正风险有关。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx"
       },
       {
         "name": "投诉处理公开与投诉服务报告规则更新",
@@ -286,10 +250,10 @@
     ]
   },
   "diagnostics": {
-    "candidates": 6,
-    "validatedBriefings": 2,
-    "discardedUnverified": 4,
-    "generatedBriefings": 2,
-    "fallbackBriefings": 3
+    "candidates": 2,
+    "validatedBriefings": 0,
+    "discardedUnverified": 2,
+    "generatedBriefings": 0,
+    "fallbackBriefings": 4
   }
 }
