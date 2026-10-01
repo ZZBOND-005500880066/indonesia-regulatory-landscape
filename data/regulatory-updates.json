@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T05:45:01.381Z",
-  "generatedDate": "2026-09-30",
+  "generatedAt": "2026-10-01T06:12:05.779Z",
+  "generatedDate": "2026-10-01",
   "mode": "daily-online-fetch",
   "reason": "github-actions",
   "sourcesChecked": [
@@ -68,7 +68,31 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
       "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-09-30T05:45:01.381Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceStatus": "每日更新器于 2026-10-01T06:12:05.779Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+    },
+    {
+      "date": "2026",
+      "sourceDate": "2026-09-21",
+      "effectiveDate": "2026-09-30",
+      "enactedDate": "2026-09-21",
+      "promulgatedDate": null,
+      "title": "PADK 10/2026：Manajemen Risiko Country Risk dan Transfer Risk Bagi Ban...",
+      "regulator": "OJK",
+      "licenses": [
+        "商业银行"
+      ],
+      "licenseIds": [
+        "commercial-bank"
+      ],
+      "level": "高",
+      "summary": "OJK 发布了 PADK 10/2026，规则主题是Manajemen Risiko Country Risk dan Transfer Risk Bagi Bank Umum。",
+      "impact": "商业银行准入、治理、资本、消费者保护或报送口径可能需要同步更新。",
+      "action": "申牌或收购材料中补齐董事会职责、风险管理制度、信息安全职责、外包管理和持续合规机制。",
+      "keywords": "padk, manajemen risiko, 商业银行",
+      "sourceLabel": "OJK Regulasi",
+      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-10-Tahun-2026-Penerapan-Manajemen-Risiko-Country-Risk-dan-Transfer-Risk-Bagi-Bank-Umum.aspx",
+      "sourceOriginalTitle": "Penerapan Manajemen Risiko Country Risk dan Transfer Risk Bagi Bank Umum",
+      "sourceStatus": "每日更新器于 2026-10-01T06:12:05.779Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2025",
@@ -92,7 +116,7 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
       "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-09-30T05:45:01.381Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceStatus": "每日更新器于 2026-10-01T06:12:05.779Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2026",
@@ -117,7 +141,7 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Kewajiban%20Penyediaan%20Modal%20Minimum%20Bank%20Perekonomian%20Rakyat",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-30T05:45:01.381Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-01T06:12:05.779Z 运行后未发现可替代的更新条目。"
     },
     {
       "date": "2026",
@@ -144,7 +168,7 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Penerapan%20Tata%20Kelola%20Manajemen%20Risiko%20Penyelenggara%20Inovasi%20Teknologi%20Sektor%20Keuangan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-30T05:45:01.381Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-01T06:12:05.779Z 运行后未发现可替代的更新条目。"
     },
     {
       "date": "2025",
@@ -176,10 +200,29 @@
       "keywords": "20/SEOJK.08/2025 Publikasi Penanganan Pengaduan Laporan Layanan Pengaduan",
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-09-30T05:45:01.381Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-01T06:12:05.779Z 运行后未发现可替代的更新条目。"
     }
   ],
   "licenses": {
+    "commercial-bank": [
+      {
+        "name": "PADK 10/2026：Manajemen Risiko Country Risk dan Transfer Risk Bagi Ban...",
+        "sourceDate": "2026-09-21",
+        "effectiveDate": "2026-09-30",
+        "enactedDate": "2026-09-21",
+        "promulgatedDate": null,
+        "note": "OJK 发布了 PADK 10/2026，规则主题是Manajemen Risiko Country Risk dan Transfer Risk Bagi Bank Umum。 商业银行准入、治理、资本、消费者保护或报送口径可能需要同步更新。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-10-Tahun-2026-Penerapan-Manajemen-Risiko-Country-Risk-dan-Transfer-Risk-Bagi-Bank-Umum.aspx"
+      },
+      {
+        "name": "投诉处理公开与投诉服务报告规则更新",
+        "sourceDate": "2025-09-08",
+        "effectiveDate": "2027-01-01",
+        "enactedDate": "2025-09-08",
+        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
+      }
+    ],
     "bpr": [
       {
         "name": "BPR 最低资本与核心资本要求更新",
@@ -265,16 +308,6 @@
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
       }
     ],
-    "commercial-bank": [
-      {
-        "name": "投诉处理公开与投诉服务报告规则更新",
-        "sourceDate": "2025-09-08",
-        "effectiveDate": "2027-01-01",
-        "enactedDate": "2025-09-08",
-        "note": "OJK 发布 SEOJK 20/SEOJK.08/2025，主题为投诉处理公开和投诉服务报告。 面向消费者的银行、BPR、融资公司、P2P、金融科技聚合/评分服务都需要关注投诉披露、服务报告和消费者保护留痕。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
-      }
-    ],
     "p2p": [
       {
         "name": "投诉处理公开与投诉服务报告规则更新",
@@ -288,9 +321,9 @@
   },
   "diagnostics": {
     "candidates": 6,
-    "validatedBriefings": 2,
-    "discardedUnverified": 4,
-    "generatedBriefings": 2,
+    "validatedBriefings": 3,
+    "discardedUnverified": 3,
+    "generatedBriefings": 3,
     "fallbackBriefings": 3
   }
 }
