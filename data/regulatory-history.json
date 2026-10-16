@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-15T04:54:44.869Z",
-  "generatedDate": "2026-10-15",
+  "generatedAt": "2026-10-16T04:45:06.345Z",
+  "generatedDate": "2026-10-16",
   "mode": "accumulated-history",
   "reason": "github-actions",
   "siteHistoryStartDate": "2026-07-17",
-  "latestSnapshotGeneratedAt": "2026-10-15T04:54:44.869Z",
+  "latestSnapshotGeneratedAt": "2026-10-16T04:45:06.345Z",
   "sourcesChecked": [
     {
       "id": "ojk-regulasi",
@@ -21,19 +21,19 @@
       "name": "BI Publikasi Peraturan",
       "regulator": "BI",
       "url": "https://www.bi.go.id/id/publikasi/peraturan/Default.aspx",
-      "ok": true,
-      "status": 200,
-      "itemsFound": 66,
-      "matchedItems": 2
+      "ok": false,
+      "status": 500,
+      "itemsFound": 0,
+      "matchedItems": 0
     },
     {
       "id": "bi-peraturan-pages",
       "name": "BI Publikasi Peraturan",
       "regulator": "BI",
       "url": "https://www.bi.go.id/id/publikasi/peraturan/Pages/default.aspx",
-      "ok": true,
-      "status": 200,
-      "itemsFound": 82,
+      "ok": false,
+      "status": 500,
+      "itemsFound": 0,
       "matchedItems": 0
     },
     {
@@ -48,6 +48,33 @@
     }
   ],
   "briefings": [
+    {
+      "date": "2026",
+      "sourceDate": "2026-09-30",
+      "effectiveDate": "2026-09-30",
+      "enactedDate": "2026-09-21",
+      "promulgatedDate": "2026-09-30",
+      "title": "POJK 17/2026：Rencana Bisnis Bank Umum",
+      "regulator": "OJK",
+      "licenses": [
+        "商业银行"
+      ],
+      "licenseIds": [
+        "commercial-bank"
+      ],
+      "level": "中",
+      "summary": "OJK 发布了 POJK 17/2026，规则主题是Rencana Bisnis Bank Umum。",
+      "impact": "商业银行准入、治理、资本、消费者保护或报送口径可能需要同步更新。",
+      "action": "把原文加入对应牌照法规索引，并在准入、收购、产品上线和持续合规清单中复核影响。",
+      "keywords": "pojk, 商业银行",
+      "sourceLabel": "OJK Regulasi",
+      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-17-Tahun-2026-Rencana-Bisnis-Bank-Umum.aspx",
+      "sourceOriginalTitle": "Rencana Bisnis Bank Umum",
+      "sourceStatus": "每日更新器于 2026-10-16T04:45:06.345Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
+      "firstSeenDate": "2026-10-16",
+      "lastSeenDate": "2026-10-16",
+      "seenCount": 1
+    },
     {
       "date": "2026",
       "sourceDate": "2026-09-21",
@@ -70,10 +97,10 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-10-Tahun-2026-Penerapan-Manajemen-Risiko-Country-Risk-dan-Transfer-Risk-Bagi-Bank-Umum.aspx",
       "sourceOriginalTitle": "Penerapan Manajemen Risiko Country Risk dan Transfer Risk Bagi Bank Umum",
-      "sourceStatus": "每日更新器于 2026-10-15T04:54:44.869Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
+      "sourceStatus": "每日更新器于 2026-10-16T04:45:06.345Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-10-01",
-      "lastSeenDate": "2026-10-15",
-      "seenCount": 14
+      "lastSeenDate": "2026-10-16",
+      "seenCount": 15
     },
     {
       "date": "2026",
@@ -159,10 +186,10 @@
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceOriginalTitle": "Kewajiban Penyediaan Modal Minimum dan Pemenuhan Modal Inti Minimum Bank Perekonomian Rakyat",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-15T04:54:44.869Z 运行后未发现可替代的更新条目。",
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-16T04:45:06.345Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-10-15",
-      "seenCount": 90,
+      "lastSeenDate": "2026-10-16",
+      "seenCount": 91,
       "sourceDate": "2026-06-12",
       "effectiveDate": "2026-06-30",
       "enactedDate": "2026-06-04",
@@ -188,10 +215,10 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
       "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-10-15T04:54:44.869Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
+      "sourceStatus": "每日更新器于 2026-10-16T04:45:06.345Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-10-15",
-      "seenCount": 90,
+      "lastSeenDate": "2026-10-16",
+      "seenCount": 91,
       "sourceDate": "2025-12-23",
       "effectiveDate": "2027-07-01",
       "enactedDate": "2025-12-23",
@@ -217,10 +244,10 @@
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
       "sourceOriginalTitle": "Penerapan Tata Kelola dan Manajemen Risiko Bagi Penyelenggara Inovasi Teknologi Sektor Keuangan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-15T04:54:44.869Z 运行后未发现可替代的更新条目。",
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-16T04:45:06.345Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-10-15",
-      "seenCount": 90,
+      "lastSeenDate": "2026-10-16",
+      "seenCount": 91,
       "sourceDate": "2025-12-02",
       "effectiveDate": "2026-07-01",
       "enactedDate": "2025-11-21",
@@ -246,10 +273,10 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
       "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-10-15T04:54:44.869Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
+      "sourceStatus": "每日更新器于 2026-10-16T04:45:06.345Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-10-15",
-      "seenCount": 88,
+      "lastSeenDate": "2026-10-16",
+      "seenCount": 89,
       "sourceDate": "2025-10-22",
       "effectiveDate": "2027-04-01",
       "enactedDate": "2025-10-22",
@@ -283,10 +310,10 @@
       "sourceLabel": "OJK 官方法规页",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
       "sourceOriginalTitle": "Publikasi Penanganan Pengaduan dan Laporan Layanan Pengaduan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-15T04:54:44.869Z 运行后未发现可替代的更新条目。",
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-10-16T04:45:06.345Z 运行后未发现可替代的更新条目。",
       "firstSeenDate": "2026-07-17",
-      "lastSeenDate": "2026-10-15",
-      "seenCount": 90,
+      "lastSeenDate": "2026-10-16",
+      "seenCount": 91,
       "sourceDate": "2025-09-08",
       "effectiveDate": "2027-01-01",
       "enactedDate": "2025-09-08",
@@ -295,6 +322,16 @@
   ],
   "licenses": {
     "commercial-bank": [
+      {
+        "name": "POJK 17/2026：Rencana Bisnis Bank Umum",
+        "sourceDate": "2026-09-30",
+        "effectiveDate": "2026-09-30",
+        "enactedDate": "2026-09-21",
+        "promulgatedDate": "2026-09-30",
+        "firstSeenDate": "2026-10-16",
+        "note": "OJK 发布了 POJK 17/2026，规则主题是Rencana Bisnis Bank Umum。 商业银行准入、治理、资本、消费者保护或报送口径可能需要同步更新。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-17-Tahun-2026-Rencana-Bisnis-Bank-Umum.aspx"
+      },
       {
         "name": "PADK 10/2026：Manajemen Risiko Country Risk dan Transfer Risk Bagi Ban...",
         "sourceDate": "2026-09-21",
@@ -510,15 +547,15 @@
     ]
   },
   "diagnostics": {
-    "candidates": 8,
-    "validatedBriefings": 3,
-    "discardedUnverified": 5,
-    "generatedBriefings": 3,
+    "candidates": 6,
+    "validatedBriefings": 4,
+    "discardedUnverified": 2,
+    "generatedBriefings": 4,
     "fallbackBriefings": 3,
-    "currentBriefings": 6,
+    "currentBriefings": 7,
     "previousBriefings": 8,
-    "addedBriefings": 0,
-    "totalBriefings": 8,
+    "addedBriefings": 1,
+    "totalBriefings": 9,
     "historyLimit": 500
   }
 }
