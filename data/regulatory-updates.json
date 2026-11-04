@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-03T07:01:48.508Z",
-  "generatedDate": "2026-11-03",
+  "generatedAt": "2026-11-04T06:44:59.471Z",
+  "generatedDate": "2026-11-04",
   "mode": "daily-online-fetch",
   "reason": "github-actions",
   "sourcesChecked": [
@@ -68,7 +68,7 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-23-SEOJK06-2025-Laporan-Bulanan-Perusahaan-Modal-Ventura-dan-Perusahaan-Modal-Ventura-Syariah.aspx",
       "sourceOriginalTitle": "Perubahan Atas Surat Edaran Otoritas Jasa Keuangan Nomor 25/SEOJK.05/2019 tentang Laporan Bulanan Perusahaan Modal Ventura dan Perusahaan Modal Ventura Syariah",
-      "sourceStatus": "每日更新器于 2026-11-03T07:01:48.508Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceStatus": "每日更新器于 2026-11-04T06:44:59.471Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2025",
@@ -92,31 +92,31 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-45-PADK06-2025-Laporan-Bulanan-Perusahaan-Pembiayaan-dan-Perusahaan-Pembiayaan-Syariah.aspx",
       "sourceOriginalTitle": "Laporan Bulanan Perusahaan Pembiayaan dan Perusahaan Pembiayaan Syariah",
-      "sourceStatus": "每日更新器于 2026-11-03T07:01:48.508Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceStatus": "每日更新器于 2026-11-04T06:44:59.471Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2026",
-      "sourceDate": "2026-09-30",
-      "effectiveDate": "2026-09-30",
-      "enactedDate": "2026-09-21",
-      "promulgatedDate": "2026-09-30",
-      "title": "POJK 17/2026：Rencana Bisnis Bank Umum",
+      "sourceDate": "2026-10-19",
+      "effectiveDate": "2026-10-19",
+      "enactedDate": "2026-10-19",
+      "promulgatedDate": null,
+      "title": "PADK 13/2026：Rencana Bisnis Bank Perekonomian Rakyat Syariah",
       "regulator": "OJK",
       "licenses": [
-        "商业银行"
+        "BPR"
       ],
       "licenseIds": [
-        "commercial-bank"
+        "bpr"
       ],
       "level": "中",
-      "summary": "OJK 发布了 POJK 17/2026，规则主题是Rencana Bisnis Bank Umum。",
-      "impact": "商业银行准入、治理、资本、消费者保护或报送口径可能需要同步更新。",
+      "summary": "OJK 发布了 PADK 13/2026，规则主题是Rencana Bisnis Bank Perekonomian Rakyat Syariah。",
+      "impact": "BPR 收购、补资、核心资本、业务范围或数字化改造路径可能需要重新测算。",
       "action": "把原文加入对应牌照法规索引，并在准入、收购、产品上线和持续合规清单中复核影响。",
-      "keywords": "pojk, 商业银行",
+      "keywords": "padk, BPR",
       "sourceLabel": "OJK Regulasi",
-      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-17-Tahun-2026-Rencana-Bisnis-Bank-Umum.aspx",
-      "sourceOriginalTitle": "Rencana Bisnis Bank Umum",
-      "sourceStatus": "每日更新器于 2026-11-03T07:01:48.508Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-13-Tahun-2026-Rencana-Bisnis-Bank-Perekonomian-Rakyat-Syariah.aspx",
+      "sourceOriginalTitle": "Rencana Bisnis Bank Perekonomian Rakyat Syariah",
+      "sourceStatus": "每日更新器于 2026-11-04T06:44:59.471Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2025",
@@ -150,7 +150,7 @@
       "sourceLabel": "OJK Regulasi",
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx",
       "sourceOriginalTitle": "Publikasi Penanganan Pengaduan dan Laporan Layanan Pengaduan",
-      "sourceStatus": "每日更新器于 2026-11-03T07:01:48.508Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
+      "sourceStatus": "每日更新器于 2026-11-04T06:44:59.471Z 核验原文链接；HTTP 200，已按 OJK/BI 官网字段拆分制定日期、公布日期与生效日期。"
     },
     {
       "date": "2026",
@@ -175,7 +175,7 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-7-Tahun-2026-Kewajiban-Penyediaan-Modal-Minimum-dan-Pemenuhan-Modal-Inti-Minimum-Bank-Perekonomian-Rakyat.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Kewajiban%20Penyediaan%20Modal%20Minimum%20Bank%20Perekonomian%20Rakyat",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-11-03T07:01:48.508Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-11-04T06:44:59.471Z 运行后未发现可替代的更新条目。"
     },
     {
       "date": "2026",
@@ -202,31 +202,20 @@
       "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx",
       "sourceAltLabel": "备用：OJK 站内检索",
       "sourceAltUrl": "https://www.ojk.go.id/id/regulasi/_layouts/15/osssearchresults.aspx?u=https%3A%2F%2Fwww.ojk.go.id%2Fid%2Fregulasi&k=Penerapan%20Tata%20Kelola%20Manajemen%20Risiko%20Penyelenggara%20Inovasi%20Teknologi%20Sektor%20Keuangan",
-      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-11-03T07:01:48.508Z 运行后未发现可替代的更新条目。"
+      "sourceStatus": "人工核验基准快照保留；每日更新器于 2026-11-04T06:44:59.471Z 运行后未发现可替代的更新条目。"
     }
   ],
   "licenses": {
-    "commercial-bank": [
-      {
-        "name": "POJK 17/2026：Rencana Bisnis Bank Umum",
-        "sourceDate": "2026-09-30",
-        "effectiveDate": "2026-09-30",
-        "enactedDate": "2026-09-21",
-        "promulgatedDate": "2026-09-30",
-        "note": "OJK 发布了 POJK 17/2026，规则主题是Rencana Bisnis Bank Umum。 商业银行准入、治理、资本、消费者保护或报送口径可能需要同步更新。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-17-Tahun-2026-Rencana-Bisnis-Bank-Umum.aspx"
-      },
-      {
-        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
-        "sourceDate": "2025-09-08",
-        "effectiveDate": "2027-01-01",
-        "enactedDate": "2025-09-08",
-        "promulgatedDate": null,
-        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
-        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
-      }
-    ],
     "bpr": [
+      {
+        "name": "PADK 13/2026：Rencana Bisnis Bank Perekonomian Rakyat Syariah",
+        "sourceDate": "2026-10-19",
+        "effectiveDate": "2026-10-19",
+        "enactedDate": "2026-10-19",
+        "promulgatedDate": null,
+        "note": "OJK 发布了 PADK 13/2026，规则主题是Rencana Bisnis Bank Perekonomian Rakyat Syariah。 BPR 收购、补资、核心资本、业务范围或数字化改造路径可能需要重新测算。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/PADK-13-Tahun-2026-Rencana-Bisnis-Bank-Perekonomian-Rakyat-Syariah.aspx"
+      },
       {
         "name": "BPR 最低资本与核心资本要求更新",
         "sourceDate": "2026-06-12",
@@ -305,6 +294,17 @@
         "note": "OJK 发布 POJK Nomor 30 Tahun 2025，主题为金融科技创新部门经营者的治理与风险管理。 ICS/PKA、PAJK/Loan Aggregator 等 ITSK 相关主体的准入后监管会更关注董事会责任、风险管理、内控、数据/系统治理和持续合规。",
         "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/POJK-Nomor-30-Tahun-2025-Penerapan-Tata-Kelola-dan-Manajemen-Risiko-Bagi-Penyelenggara-Inovasi-Teknologi-Sektor-Keuangan.aspx"
       },
+      {
+        "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
+        "sourceDate": "2025-09-08",
+        "effectiveDate": "2027-01-01",
+        "enactedDate": "2025-09-08",
+        "promulgatedDate": null,
+        "note": "OJK 发布了 SEOJK 20/SEOJK.08/2025，规则主题是投诉处理公开与投诉服务报告。 这项规则强化投诉披露和服务报告，对面向消费者的银行、融资、P2P、聚合和数据类服务都有合规留痕要求。",
+        "sourceUrl": "https://www.ojk.go.id/id/regulasi/Pages/SEOJK-20-SEOJK08-2025-Publikasi-Penanganan-Pengaduan-dan-Laporan-Layanan-Pengaduan.aspx"
+      }
+    ],
+    "commercial-bank": [
       {
         "name": "SEOJK 20/SEOJK.08/2025：投诉处理公开与投诉服务报告",
         "sourceDate": "2025-09-08",
